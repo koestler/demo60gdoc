@@ -1,0 +1,54 @@
+\chapter{Theory}
+The proposed 60 GHz receiver in theory
+
+\section{Frequencies}
+\begin{itemize}
+\item RX and TX-LO offset to make sure LSB part is out of band
+\item Frequency space pictures of Baseband, TX-IF, 60G, RX-IF, Baseband
+\item Sub-nyquist sampling because of component restrictions
+\end{itemize}
+
+\section{Frame strucutre}
+\begin{itemize}
+\item ZEROS FES CES FIRST\_PES DATA PES DATA PES ... ZEROS
+\item Explain reason of all fields
+\item Explain cyclic properties
+\end{itemize}
+
+\section{Frequency offset estimation and correction}
+\section{Phase noise estimation and correction}
+
+\chapter{Simulation}
+\begin{itemize}
+\item general simulation flow
+\item simulated effects
+\item replace more and more by hardware
+\end{itemize}
+
+\chapter{Implementation}
+\section{Experiment setup}
+Overview picture
+
+\section{Arbitrary waveform generator: Tektronix AWG 7122C}
+\section{58-63 GHz V-band Converter: Sivers IMA FC1005V/00}
+\section{Mini-Circuits: High-Pass Filter, Amplifiers}
+\section{Texas-Instruments Balun: ADC-WB-BB}
+\section{Texes-Instruments ADC 12d1800}
+
+\section{Xilinix Virtex 7: VC707}
+\subsection{Acquisition}
+Interface to ADC
+\subsection{Storage}
+DDR3 Ram
+
+\subsection{Download}
+Usb2 download
+
+\chapter{Results}
+\section{Narrow Band Transmission}
+\subsection{Phase Noise measueremnts}
+\subsection{High Modulation}
+
+\section{Full Bandwidth Transmission}
+\subsection{Transmitter Channel Imbalance}
+\subsection{90deg Coupler Error Measurement and Correction}
