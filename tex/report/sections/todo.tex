@@ -1,43 +1,86 @@
+\chapter{Introduction}
+
+\section{Motivation}
+\begin{itemize}
+\item Importance of mobile communication
+\item Need for bigger datarates
+\end{itemize}
+
+\section{60 GHz}
+\begin{itemize}
+\item huge bandwidth possible
+\item Big delay spread
+\item Phase noise
+\item Big freespace attenuation
+\item Possibility of small antenna arrays with many antennas
+\item Almost no interferer at the moment (and later due to high attenuation)
+\end{itemize}
+
 \chapter{Theory}
 The proposed 60 GHz receiver in theory
 
+\section{Modulation and Pulse Shaping Scheme}
+\begin{itemize}
+\item bpsk / QAM
+\item root raised cosine filter for pulse shaping
+\end{itemize}
+
 \section{Frequencies}
 \begin{itemize}
-\item RX and TX-LO offset to make sure LSB part is out of band
 \item Frequency space pictures of Baseband, TX-IF, 60G, RX-IF, Baseband
-\item Sub-nyquist sampling because of component restrictions
+\item RX and TX-LO offset to make sure LSB part is out of band
+\item Sub-nyquist sampling, reference to component restrictions
+\item Show how sub-nyquist sampling works with hilbert transform to generate analytical signal
 \end{itemize}
 
 \section{Frame strucutre}
 \begin{itemize}
+\item 802.11ad oriented
 \item ZEROS FES CES FIRST\_PES DATA PES DATA PES ... ZEROS
 \item Explain reason of all fields
 \item Explain cyclic properties
 \end{itemize}
 
 \section{Frequency offset estimation and correction}
+
 \section{Phase noise estimation and correction}
+\begin{itemize}
+\item Cite phase noise measurements of Radoslav
+\item Explain how to estimate and correct it
+\end{itemize}
 
 \chapter{Simulation}
 \begin{itemize}
-\item general simulation flow
-\item simulated effects
-\item replace more and more by hardware
+\item General simulation flow using Matlab
+\item Simulated scenaries:
+  \begin{itemize}
+  \item Baseband receiver
+  \item Simulated 90 deg coupler using hilbert transform
+  \item hardware baseband QI receiver
+  \item hardware intermediate frequency QI receiver
+  \end{itemize}
+\item Replace more and more by hardware
 \end{itemize}
 
 \chapter{Implementation}
-\section{Experiment setup}
+\section{Final Experiment setup}
 Overview picture
 
-\section{Arbitrary waveform generator: Tektronix AWG 7122C}
-\section{58-63 GHz V-band Converter: Sivers IMA FC1005V/00}
-\section{Mini-Circuits: High-Pass Filter, Amplifiers}
-\section{Texas-Instruments Balun: ADC-WB-BB}
-\section{Texes-Instruments ADC 12d1800}
+\subsection{Arbitrary waveform generator: Tektronix AWG 7122C}
+\subsection{58-63 GHz V-band Converter: Sivers IMA FC1005V/00}
+\subsection{Mini-Circuits: High-Pass Filter, Amplifiers}
+\subsection{Texas-Instruments Balun: ADC-WB-BB}
+\subsection{Texes-Instruments ADC 12d1800}
+\subsection{Xilinix Virtex 7: VC707}
 
-\section{Xilinix Virtex 7: VC707}
+\section{FPGA}
 \subsection{Acquisition}
-Interface to ADC
+\begin{itemize}
+\item FMC Plug
+\item 4 x 12 bits parallel at 450 MHz
+\item FPGA implementation
+\end{itemize}
+
 \subsection{Storage}
 DDR3 Ram
 
@@ -46,9 +89,26 @@ Usb2 download
 
 \chapter{Results}
 \section{Narrow Band Transmission}
+\subsection{Channel impluse response}
+Show typical channel impulse response of one reflector setup.
+Show delay spread.
+
 \subsection{Phase Noise measueremnts}
-\subsection{High Modulation}
+Phase-Noise plot measured using many short frames, show that correction algorithm works
+
+\subsection{High Modulation Rate}
+Show that high modulation rates and multi GB/s throughput is possible (QAM 256?)
 
 \section{Full Bandwidth Transmission}
 \subsection{Transmitter Channel Imbalance}
+Show that transmitter channel imbalance is not an issue
+
 \subsection{90deg Coupler Error Measurement and Correction}
+Show error introduced by non-perfect 90 deg spliter. Show how it can be corrected
+
+\chapter{Conclusion \& Outlook}
+\begin{itemize}
+\item Multi GB/s throughput is possible using high QAM modulation rates.
+\item Phase noise has a considerable impact.
+
+\end{itemize}
