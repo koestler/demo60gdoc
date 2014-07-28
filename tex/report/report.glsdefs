@@ -1,0 +1,510 @@
+\ifglsentryexists{ADC}{}%
+{%
+\gls@defglossaryentry{ADC}%
+{%
+name={ADC},%
+sort={ADC},%
+type={acronym},%
+first={Analog to Digital Converter (ADC)},%
+firstplural={Analog to Digital Converters(ADCs)},%
+text={ADC},%
+plural={ADCs},%
+description={Analog to Digital Converter},%
+descriptionplural={Analog to Digital Converter\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Analog to Digital Converter},%
+longplural={Analog to Digital Converters},%
+short={ADC},%
+shortplural={ADCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DAB}{}%
+{%
+\gls@defglossaryentry{DAB}%
+{%
+name={DAB},%
+sort={DAB},%
+type={acronym},%
+first={Digital Audio Broadcasting (DAB)},%
+firstplural={Digital Audio Broadcastings(DABs)},%
+text={DAB},%
+plural={DABs},%
+description={Digital Audio Broadcasting},%
+descriptionplural={Digital Audio Broadcasting\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Digital Audio Broadcasting},%
+longplural={Digital Audio Broadcastings},%
+short={DAB},%
+shortplural={DABs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DFT}{}%
+{%
+\gls@defglossaryentry{DFT}%
+{%
+name={DFT},%
+sort={DFT},%
+type={acronym},%
+first={Discrete Fourier Transform (DFT)},%
+firstplural={Discrete Fourier Transforms(DFTs)},%
+text={DFT},%
+plural={DFTs},%
+description={Discrete Fourier Transform},%
+descriptionplural={Discrete Fourier Transform\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Discrete Fourier Transform},%
+longplural={Discrete Fourier Transforms},%
+short={DFT},%
+shortplural={DFTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DIF}{}%
+{%
+\gls@defglossaryentry{DIF}%
+{%
+name={DIF},%
+sort={DIF},%
+type={acronym},%
+first={Decimation-in-Frequency (DIF)},%
+firstplural={Decimation-in-Frequencys(DIFs)},%
+text={DIF},%
+plural={DIFs},%
+description={Decimation-in-Frequency},%
+descriptionplural={Decimation-in-Frequency\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Decimation-in-Frequency},%
+longplural={Decimation-in-Frequencys},%
+short={DIF},%
+shortplural={DIFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DIT}{}%
+{%
+\gls@defglossaryentry{DIT}%
+{%
+name={DIT},%
+sort={DIT},%
+type={acronym},%
+first={Decimation-in-Time (DIT)},%
+firstplural={Decimation-in-Times(DITs)},%
+text={DIT},%
+plural={DITs},%
+description={Decimation-in-Time},%
+descriptionplural={Decimation-in-Time\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Decimation-in-Time},%
+longplural={Decimation-in-Times},%
+short={DIT},%
+shortplural={DITs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ETH}{}%
+{%
+\gls@defglossaryentry{ETH}%
+{%
+name={ETH},%
+sort={ETH},%
+type={acronym},%
+first={Swiss Federal Institute of Technology (ETH)},%
+firstplural={Swiss Federal Institute of Technologys(ETHs)},%
+text={ETH},%
+plural={ETHs},%
+description={Swiss Federal Institute of Technology},%
+descriptionplural={Swiss Federal Institute of Technology\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Swiss Federal Institute of Technology},%
+longplural={Swiss Federal Institute of Technologys},%
+short={ETH},%
+shortplural={ETHs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FFT}{}%
+{%
+\gls@defglossaryentry{FFT}%
+{%
+name={FFT},%
+sort={FFT},%
+type={acronym},%
+first={Fast Fourier Transform (FFT)},%
+firstplural={Fast Fourier Transforms(FFTs)},%
+text={FFT},%
+plural={FFTs},%
+description={Fast Fourier Transform},%
+descriptionplural={Fast Fourier Transform\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Fast Fourier Transform},%
+longplural={Fast Fourier Transforms},%
+short={FFT},%
+shortplural={FFTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{GE}{}%
+{%
+\gls@defglossaryentry{GE}%
+{%
+name={GE},%
+sort={GE},%
+type={acronym},%
+first={Gate Equivalents (GE)},%
+firstplural={Gate Equivalentss(GEs)},%
+text={GE},%
+plural={GEs},%
+description={Gate Equivalents},%
+descriptionplural={Gate Equivalents\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Gate Equivalents},%
+longplural={Gate Equivalentss},%
+short={GE},%
+shortplural={GEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IDFT}{}%
+{%
+\gls@defglossaryentry{IDFT}%
+{%
+name={IDFT},%
+sort={IDFT},%
+type={acronym},%
+first={Inverse \acrlong {DFT} (IDFT)},%
+firstplural={Inverse \acrlong {DFT}s(IDFTs)},%
+text={IDFT},%
+plural={IDFTs},%
+description={Inverse \acrlong {DFT}},%
+descriptionplural={Inverse \acrlong {DFT}\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Inverse \acrlong {DFT}},%
+longplural={Inverse \acrlong {DFT}s},%
+short={IDFT},%
+shortplural={IDFTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IFFT}{}%
+{%
+\gls@defglossaryentry{IFFT}%
+{%
+name={IFFT},%
+sort={IFFT},%
+type={acronym},%
+first={Inverse \acrlong {FFT} (IFFT)},%
+firstplural={Inverse \acrlong {FFT}s(IFFTs)},%
+text={IFFT},%
+plural={IFFTs},%
+description={Inverse \acrlong {FFT}},%
+descriptionplural={Inverse \acrlong {FFT}\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Inverse \acrlong {FFT}},%
+longplural={Inverse \acrlong {FFT}s},%
+short={IFFT},%
+shortplural={IFFTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IIS}{}%
+{%
+\gls@defglossaryentry{IIS}%
+{%
+name={IIS},%
+sort={IIS},%
+type={acronym},%
+first={Integrated Systems Laboratory (IIS)},%
+firstplural={Integrated Systems Laboratorys(IISs)},%
+text={IIS},%
+plural={IISs},%
+description={Integrated Systems Laboratory},%
+descriptionplural={Integrated Systems Laboratory\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Integrated Systems Laboratory},%
+longplural={Integrated Systems Laboratorys},%
+short={IIS},%
+shortplural={IISs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LUT}{}%
+{%
+\gls@defglossaryentry{LUT}%
+{%
+name={LUT},%
+sort={LUT},%
+type={acronym},%
+first={Look-up Table (LUT)},%
+firstplural={Look-up Tables(LUTs)},%
+text={LUT},%
+plural={LUTs},%
+description={Look-up Table},%
+descriptionplural={Look-up Table\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Look-up Table},%
+longplural={Look-up Tables},%
+short={LUT},%
+shortplural={LUTs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LTE}{}%
+{%
+\gls@defglossaryentry{LTE}%
+{%
+name={LTE},%
+sort={LTE},%
+type={acronym},%
+first={Long Term Evolution (LTE)},%
+firstplural={Long Term Evolutions(LTEs)},%
+text={LTE},%
+plural={LTEs},%
+description={Long Term Evolution},%
+descriptionplural={Long Term Evolution\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Long Term Evolution},%
+longplural={Long Term Evolutions},%
+short={LTE},%
+shortplural={LTEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{OFDM}{}%
+{%
+\gls@defglossaryentry{OFDM}%
+{%
+name={OFDM},%
+sort={OFDM},%
+type={acronym},%
+first={Orthogonal Frequency-Division Multiplexing (OFDM)},%
+firstplural={Orthogonal Frequency-Division Multiplexings(OFDMs)},%
+text={OFDM},%
+plural={OFDMs},%
+description={Orthogonal Frequency-Division Multiplexing},%
+descriptionplural={Orthogonal Frequency-Division Multiplexing\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Orthogonal Frequency-Division Multiplexing},%
+longplural={Orthogonal Frequency-Division Multiplexings},%
+short={OFDM},%
+shortplural={OFDMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{RAM}{}%
+{%
+\gls@defglossaryentry{RAM}%
+{%
+name={RAM},%
+sort={RAM},%
+type={acronym},%
+first={Random-access Memory (RAM)},%
+firstplural={Random-access Memorys(RAMs)},%
+text={RAM},%
+plural={RAMs},%
+description={Random-access Memory},%
+descriptionplural={Random-access Memory\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Random-access Memory},%
+longplural={Random-access Memorys},%
+short={RAM},%
+shortplural={RAMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SPDF}{}%
+{%
+\gls@defglossaryentry{SPDF}%
+{%
+name={SPDF},%
+sort={SPDF},%
+type={acronym},%
+first={Single-Path Delay Feedback (SPDF)},%
+firstplural={Single-Path Delay Feedbacks(SPDFs)},%
+text={SPDF},%
+plural={SPDFs},%
+description={Single-Path Delay Feedback},%
+descriptionplural={Single-Path Delay Feedback\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Single-Path Delay Feedback},%
+longplural={Single-Path Delay Feedbacks},%
+short={SPDF},%
+shortplural={SPDFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{VHDL}{}%
+{%
+\gls@defglossaryentry{VHDL}%
+{%
+name={VHDL},%
+sort={VHDL},%
+type={acronym},%
+first={Very High Speed Integrated Circuit Hardware Description Language (VHDL)},%
+firstplural={Very High Speed Integrated Circuit Hardware Description Languages(VHDLs)},%
+text={VHDL},%
+plural={VHDLs},%
+description={Very High Speed Integrated Circuit Hardware Description Language},%
+descriptionplural={Very High Speed Integrated Circuit Hardware Description Language\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Very High Speed Integrated Circuit Hardware Description Language},%
+longplural={Very High Speed Integrated Circuit Hardware Description Languages},%
+short={VHDL},%
+shortplural={VHDLs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

@@ -1,0 +1,104 @@
+\pdfminorversion=5
+\newcommand{\mytitle}{Mixed Radix FFT Core Generator}
+\newcommand{\myname}{Lorenz Koestler}
+\newcommand{\myterm}{Winter Term 2012}
+
+\documentclass[11pt, a4paper, titlepage, twoside]{book}
+
+\usepackage[nouppercase]{scrpage2} % Kopf- und Fusszeilen formatieren
+\usepackage[hang,bf]{caption}
+\usepackage{ifpdf}
+\usepackage[pdftex]{graphicx} \message{ETHkopf} 
+\usepackage{fullpage}
+\usepackage[
+  colorlinks=true,        % links are colored
+  citecolor=black,         % color of cite links
+  %pagecolor=blue,         % color of page links
+  linkcolor=black,         % color of hyperref links
+  menucolor=black,         % color of Acrobat Reader menu buttons
+  urlcolor=black,          % color of urls \url{}
+  bookmarks=true, hyperindex=true, breaklinks=true,
+  baseurl={http://www.iis.ee.ethz.ch},
+  pdftitle={\mytitle},
+  pdfauthor={\myname},
+  pdfsubject={DFT Core generator},
+  pdfkeywords={FFT, DFT, OFDM, Radix}
+]{hyperref}
+\usepackage[
+  style=long,
+  acronym,
+  nonumberlist,
+  numberline,
+  section=chapter,
+  nomain
+]{glossaries} 
+\usepackage[english]{babel}
+\usepackage{verbatim}
+\usepackage{algorithm}
+\usepackage{algpseudocode}      % for algorithms
+\usepackage{cite}               % will become: [2], [5]--[7]  (using cite.sty)
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pdfpages}
+\usepackage{dirtree}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\makeglossaries
+\makeindex
+
+\input{macros}   	% include standard macros
+
+\begin{document}
+\setlength{\headsep}{2ex}
+\setlength{\headheight}{1.1\baselineskip}
+\pagestyle{scrheadings}
+
+\input{acronyms}
+% Add all glossary entries, even if they were not used in the text
+\glsaddall
+
+\frontmatter
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+
+\title{\mytitle}
+\author{\myname}
+\date{\myterm}
+
+\begin{titlepage}
+  \input{sections/titlepage}
+\end{titlepage}
+
+\input{sections/abstract}
+\input{sections/ack}
+
+\tableofcontents
+
+\mainmatter
+
+\input{sections/introduction}
+
+\chapter{Introduction}
+
+\appendix
+
+\cleardoublepage
+\def\acronymname{Abbreviations}
+\phantomsection
+\addcontentsline{toc}{chapter}{Abbreviations}
+\printglossaries
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\listoftables\addcontentsline{toc}{chapter}{List of Tables}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline {toc}{chapter}{Bibliography} 
+\bibliographystyle{IEEEtranS}
+\bibliography{report}
+
+\end{document}
