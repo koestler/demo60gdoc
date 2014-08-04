@@ -1,18 +1,116 @@
 \chapter{FPGA}
-\subsection{Overview}
+A powerfull Virtex-7 \gls{FPGA} was used to for the real time signal processing.
+During this thesis the data from the \gls{ADC} is acquired and stored at in real
+time and than passed to Matlab running on a personal computer to both test
+the analog part of the system while keeping the fast implementation speed
+and flexibility of Matlab to test the rest of the digital signal processing steps
+of the receiver. Nevertheless the architecture was choosen such that it is easy
+to step by step replace parts of the signal processing from Matlab to the
+\gls{FPGA}.
+
+\section{Architecutre Overview}
+The three main tasks of the digital design are to acquire and store the data
+produced by the \gls{ADC} in real time and to download this data to a
+personal computer in a reasonable time for further processing. \\
+
+As shown in \figref{fig:fpga_architecture_overview} the most important
+modules of the design are the \verb|Adc12d1800| which interfaces the
+\gls{ADC}, \verb|Ram| which uses a DDR3-\gls{RAM} to store the data
+and \verb|Microblaze|, a soft-core processor, which controls the
+\gls{USB} 2 data download. \verb|Data2Ram| is interface logic used
+to connect the \gls{Ram} and \gls{Adc} and \verb|AxiSlave| implements
+an interface between the Axi-Bus used by the Microblaze processor
+and the custom \verb|Ram| module. \\
+
+In the following sections each of this modules is shortly described followed
+by some insights how clocking and reset is implemented.
+
+\begin{figure}[ht]
+  \centering
+  %\includegraphics[width=\textwidth]{figures/}
+  \caption{Overview of the architecture}
+  \label{fig:fpga_architecture_overview}
+\end{figure}
+
 \begin{itemize}
-\item Block diagram of all modules and clock domains
-\item Short discription of the purpose of each module
 \item Some words about where more receiver functions can be added
 \item Req/Ack-protocoll, everything stallable
 \end{itemize}
 
-\subsection{Clock domain planing}
-\begin{itemize}
-\item Reset
-\end{itemize}
+\subsection{Req/Ack Protocol}
+\label{sec:fpga_reqack}
+Between all modules a simple comminucation protocoll is used that allows
+one way communication whenever the sender and the receiver are both
+ready. As a consequence all module have to be stallable. By only using
+one such protocoll arbitrary modules can often be connected
+without any additional glue logic. \\
 
-\subsection{Acquisition}
+The protocol requires the sender to provide a request output which
+is asserted if it has data to send. The receiver only than can apply
+an assert output if its acknowledge output if it is ready to receive
+the data in at the next positive clock edge. Data is transferred whenever
+there is a positive clock edge and req and ack are both asserted (high). \\
+
+Because the acknowledge output of a receiver by definition always depends on the
+request input of a receiver, this leads to long chains of routing and
+\gls{LUT} resources if not implemented well. Therefor a simple so called
+req/ack breaker (see \figref{fig:fpa_reqack_breaker} is used to seperate
+this chains by a register.
+This has also the advantage that long routing distances can be seperated by inserting
+registers into the data and control path.
+
+\todo{add reference to req/ack paper}
+
+\begin{figure}[ht]
+  \centering
+  %\includegraphics[width=\textwidth]{figures/}
+  \caption{Design of the Req/Ack Breaker}
+  \label{fig:fpga_reaack_breaker}
+\end{figure}
+
+\subsection{Data Acquisition: Adc12d1800}
+Data acquistions is done by the module \verb|Adc12d1800| which interfaces
+the \verb|Adc12d1800rf| by Texas Instruments. In our case the ADC is configured
+to sample two channels, an in-phase and a quadrature phase channel, at up to 1.8 GHz
+or to sample one channel at 3.6 Ghz. The nominal resolution is 12 bits.
+This results in a total bandwidth of $5.4 \text{Gb}/\text{s}$.
+Since 1.8 GHz and especially 3.6 GHz is far beyond what the IO-Pads of all
+\glspl{FPGA} \todo{reference needed} and most \glspl{ASIC} can handle,
+the ADC can output on 4 parallel streams of 12 bit each. \\
+
+Since this 4 streams might be routed with different wire lengths on a \gls{PCB}
+each stream has it's clock aligned to the data.
+In order to half the maximum frequency of the clock line to the same as the one
+of the data lines, the data change on positive and negativ clock edges
+(\gls{DDR}). \\
+
+At full speed, this results in a switching frequency of 450 MHz for all data
+and clock lines. To support this high speed while reducing power consumption,
+and the influence of noise compared to classical \gls{CMOS} signaling, 
+\gls{LVDS} is used. \\
+
+Since the maximum clock frequencies of the Virtex \glspl{FPGA} for logic
+including \gls{LUT} slices and routings with fanouts above 4
+are limited to around 200 to 300 MHz, the input stream needs to be further
+parallelized. \\
+
+As shown in \figref{fig:fpga_adc} the implemented design uses
+a total of 5 stages to paralellize and concentrate the data to only
+one single data rate stream following the req/ack protocol described in
+\secref{sec:fpga_reqack}.
+
+\subsubsection{Stage 0: Differential to Single-ended Conversion}
+Each of the 12 bits and the clock of the 4 streams arrive at at the input bank
+of the \gls{FPGA} at two neighbouring pads forming a \gls{LVDS} pair.
+First this differential signal is converted to a single ended signal using
+{\emDifferential Signaling Input Buffer} (IBUFDS) primitives located next
+to the pads. This results in $4 \times 12$ bits single ended double data rates
+signals plus 4 single ended clock signals at up to 450 MHz.
+
+\subsubsection{Stage 1: Double Data Rate to Single Data Rate Conversion}
+
+
+
 \begin{itemize}
 \item Challenges of high speed data aquisition
 \item FMC Plug
@@ -37,4 +135,8 @@
 \item Microblaze software and its features
 \item Implemented endpoints and the transfer protocol
 \item Linux software for download
+
+\section{Clock domains}
+\section{Resets}
+
 \end{itemize}
