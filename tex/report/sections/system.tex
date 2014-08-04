@@ -1,0 +1,51 @@
+\chapter{Communication System and its simulation}
+
+
+\begin{itemize}
+\item 802.11ad oriented receiver
+\item but non standard supplient
+\item aim: show that big datarates are possible
+\item aim: use to investigate phase noise behaviour and find other non ideal effects
+\item perfomance limiting impairments
+\end{itemize}
+
+\section{Modulation and Pulse Shaping Scheme}
+\begin{itemize}
+\item bpsk / QAM
+\item root raised cosine filter for pulse shaping
+\end{itemize}
+
+
+\section{Frame strucutre}
+\begin{itemize}
+\item 802.11ad oriented
+\item ZEROS FES CES FIRST\_PES DATA PES DATA PES ... ZEROS
+\item Explain reason of all fields
+\item Explain cyclic properties
+\end{itemize}
+
+\section{Frequency offset estimation and correction}
+
+\section{Phase noise estimation and correction}
+\begin{itemize}
+\item Cite phase noise measurements of Radoslav
+\item Explain how to estimate and correct it
+\item reference to own results in later chapter
+\end{itemize}
+
+\section{Simulation}
+\begin{itemize}
+\item General simulation flow using Matlab
+\item Simulated scenarios:
+  \begin{itemize}
+  \item Baseband receiver
+  \item Simulated 90 deg coupler using hilbert transform
+  \item hardware baseband QI receiver
+  \item hardware intermediate frequency QI receiver
+  \end{itemize}
+\item Interface to AWG
+\item Interface to Oscilloscope
+\item Interface to FPGA
+\item Replace more and more by hardware
+\end{itemize}
+

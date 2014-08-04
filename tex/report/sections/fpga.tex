@@ -1,0 +1,40 @@
+\chapter{FPGA}
+\subsection{Overview}
+\begin{itemize}
+\item Block diagram of all modules and clock domains
+\item Short discription of the purpose of each module
+\item Some words about where more receiver functions can be added
+\item Req/Ack-protocoll, everything stallable
+\end{itemize}
+
+\subsection{Clock domain planing}
+\begin{itemize}
+\item Reset
+\end{itemize}
+
+\subsection{Acquisition}
+\begin{itemize}
+\item Challenges of high speed data aquisition
+\item FMC Plug
+\item 4 x 12 bits ddr at 450 MHz
+\item IDDR, INFIFO placement
+\item Clock distribution
+\item difficulties with reset 
+\end{itemize}
+
+\subsection{Storage}
+\begin{itemize}
+\item DDR3 and its difficulties (refresh, address scheme etc.)
+\item Bandwidth calculcation (mes. numbers of datathroughput)
+\item MIG of xilinx and it's userinterface
+\item pitfall: Mask-Bits 
+\end{itemize}
+
+\subsection{Download}
+\begin{itemize}
+\item considered options: UART, Ethernet, USB2
+\item Used USB-PHY and Usb2 Ip Core of xilinx
+\item Microblaze software and its features
+\item Implemented endpoints and the transfer protocol
+\item Linux software for download
+\end{itemize}
