@@ -37,7 +37,7 @@ by some insights how clocking and reset is implemented.
 \item Req/Ack-protocoll, everything stallable
 \end{itemize}
 
-\subsection{Req/Ack Protocol}
+\section{Req/Ack Protocol}
 \label{sec:fpga_reqack}
 Between all modules a simple comminucation protocoll is used that allows
 one way communication whenever the sender and the receiver are both
@@ -68,7 +68,7 @@ registers into the data and control path.
   \label{fig:fpga_reaack_breaker}
 \end{figure}
 
-\subsection{Data Acquisition: Adc12d1800}
+\section{Data Acquisition: Adc12d1800}
 Data acquistions is done by the module \verb|Adc12d1800| which interfaces
 the \verb|Adc12d1800rf| by Texas Instruments. In our case the ADC is configured
 to sample two channels, an in-phase and a quadrature phase channel, at up to 1.8 GHz
@@ -86,30 +86,83 @@ of the data lines, the data change on positive and negativ clock edges
 
 At full speed, this results in a switching frequency of 450 MHz for all data
 and clock lines. To support this high speed while reducing power consumption,
-and the influence of noise compared to classical \gls{CMOS} signaling, 
+and the influence of noise compared to classical \gls{CMOS} signaling,
 \gls{LVDS} is used. \\
 
 Since the maximum clock frequencies of the Virtex \glspl{FPGA} for logic
 including \gls{LUT} slices and routings with fanouts above 4
 are limited to around 200 to 300 MHz, the input stream needs to be further
-parallelized. \\
+parallelized. This desin uses a frequency of 250 MHz to output
+the data of the \gls{ADC} for further processing. At this frequency
+the only 4 ns are available between clock edges which is exeeded easily
+as soon as a signal is routed far across the \gls{FPGA} die,
+has a fanout of more than about 4, crossing clock domains leads
+to clock skew or by more than about 3 logic slices between registers.
+This makes the \gls{FPGA} design challanging since often multiple
+complete synthesis, map, place \& route and timing analysis runs are
+needed to find a design that meets timing. \\
 
 As shown in \figref{fig:fpga_adc} the implemented design uses
 a total of 5 stages to paralellize and concentrate the data to only
 one single data rate stream following the req/ack protocol described in
 \secref{sec:fpga_reqack}.
 
-\subsubsection{Stage 0: Differential to Single-ended Conversion}
+\subsection{Stage 0: Differential to Single-ended Conversion}
 Each of the 12 bits and the clock of the 4 streams arrive at at the input bank
 of the \gls{FPGA} at two neighbouring pads forming a \gls{LVDS} pair.
 First this differential signal is converted to a single ended signal using
-{\emDifferential Signaling Input Buffer} (IBUFDS) primitives located next
-to the pads. This results in $4 \times 12$ bits single ended double data rates
-signals plus 4 single ended clock signals at up to 450 MHz.
+{\em Differential Signaling Input Buffer} (IBUFDS) primitives located next
+to the pads. \\
 
-\subsubsection{Stage 1: Double Data Rate to Single Data Rate Conversion}
+This results in $4 \times 12$ bits single ended double data rates
+signals plus 4 single ended clocks at up to 450 MHz.
 
+\subsection{Stage 1: Double Data Rate to Single Data Rate Conversion}
+\label{sec:fpga_adc_s1}
+Next the first parallelization step is performed by outputing two new
+bits on every positive clock edge instead of one on positive and negativ
+clock edges. The Virtex-7 \gls{FPGA} have a dedicated hardware primitive
+called {\em Input Dual Data-Rate Register} (IDDR) for this.
+This primitives are placed next to the differential input buffers
+and are automatically mapped correctly by the Xilinix tools. \\
 
+This results in $4 \times 24$ bits of single ended single data rate
+signals plus 4 single ended clocks at up to 450 MHz.
+
+\subsection{Stage 2: Input FIFO}
+Since 450 MHz is still beyond what can be routed through the general
+routing resources and captured by registers, Xilinx added a special
+{\em Input First-In, First-Out} primitive (IN\_FIFO)
+directly into the IO-bank which can parallelize the data by a factor of two.
+This primitive has a total of ten 4 bit wide input busses.
+The primitive can be configured to concatenate two such input words
+to one 8 bit wide output word and therefore provides a total of
+ten 8 bit wide output words. \\
+
+Four such IN\_FIFO are available for each
+input/output bank consisting of a total of 50 pads aligned in a single row.
+In our design each of the four 24-bit input streams is located at one
+input/output bank and is routed to the inputs of one IN\_FIFO primitive.
+Since the timing only holds if the instance in the middle of the bank
+is used and the mapping tools map the IN\_FIFO instance to other
+locations depending on the routings of the outputs, all those
+IN\_FIFO primitives where manually constrained to the correct location. \\
+
+Also these IN\_FIFO support an independed input and output clock.
+As input clock the clock signals provides by the \gls{ADC} are each fed
+into a so called {\em Advanced Mixed Mode Clock Manager} (MMCME2\_ADV).
+This allows to arbitrarily shift the phases of the clocks to ensure
+correct data capturing. The same clock was also used for the
+IDDR-registers described in \secref{sec:fpga_adc_s1}. \\
+
+For each input bank one such clock manager exists. To ensure that
+always the one next to the input clock pads and the IN\_FIFO is
+used, the four MMCME2\_ADV instances are also manually constrained to
+one specific location. \\
+
+This results in $4 \times 48$ bits of single ended single data rate signals.
+
+\subsection{Stage 3: }
 
 \begin{itemize}
 \item Challenges of high speed data aquisition
@@ -117,7 +170,7 @@ signals plus 4 single ended clock signals at up to 450 MHz.
 \item 4 x 12 bits ddr at 450 MHz
 \item IDDR, INFIFO placement
 \item Clock distribution
-\item difficulties with reset 
+\item difficulties with reset
 \end{itemize}
 
 \subsection{Storage}
@@ -125,7 +178,7 @@ signals plus 4 single ended clock signals at up to 450 MHz.
 \item DDR3 and its difficulties (refresh, address scheme etc.)
 \item Bandwidth calculcation (mes. numbers of datathroughput)
 \item MIG of xilinx and it's userinterface
-\item pitfall: Mask-Bits 
+\item pitfall: Mask-Bits
 \end{itemize}
 
 \subsection{Download}
@@ -136,7 +189,9 @@ signals plus 4 single ended clock signals at up to 450 MHz.
 \item Implemented endpoints and the transfer protocol
 \item Linux software for download
 
-\section{Clock domains}
-\section{Resets}
+  \section{Clock domains}
+\label{sec:fpga_clocks}
+
+  \section{Resets}
 
 \end{itemize}
