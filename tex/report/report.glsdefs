@@ -28,19 +28,19 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{DAB}{}%
+\ifglsentryexists{ASIC}{}%
 {%
-\gls@defglossaryentry{DAB}%
+\gls@defglossaryentry{ASIC}%
 {%
-name={DAB},%
-sort={DAB},%
+name={ADIC},%
+sort={ADIC},%
 type={acronym},%
-first={Digital Audio Broadcasting (DAB)},%
-firstplural={Digital Audio Broadcastings(DABs)},%
-text={DAB},%
-plural={DABs},%
-description={Digital Audio Broadcasting},%
-descriptionplural={Digital Audio Broadcasting\acrpluralsuffix },%
+first={Application-Specific Integrated Circuit (ADIC)},%
+firstplural={Application-Specific Integrated Circuits(ADICs)},%
+text={ADIC},%
+plural={ADICs},%
+description={Application-Specific Integrated Circuit},%
+descriptionplural={Application-Specific Integrated Circuit\acrpluralsuffix },%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -49,28 +49,28 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Digital Audio Broadcasting},%
-longplural={Digital Audio Broadcastings},%
-short={DAB},%
-shortplural={DABs},%
+long={Application-Specific Integrated Circuit},%
+longplural={Application-Specific Integrated Circuits},%
+short={ADIC},%
+shortplural={ADICs},%
 counter={page},%
 parent={},%
 %
 }%
 }%
-\ifglsentryexists{DFT}{}%
+\ifglsentryexists{CMOS}{}%
 {%
-\gls@defglossaryentry{DFT}%
+\gls@defglossaryentry{CMOS}%
 {%
-name={DFT},%
-sort={DFT},%
+name={CMOS},%
+sort={CMOS},%
 type={acronym},%
-first={Discrete Fourier Transform (DFT)},%
-firstplural={Discrete Fourier Transforms(DFTs)},%
-text={DFT},%
-plural={DFTs},%
-description={Discrete Fourier Transform},%
-descriptionplural={Discrete Fourier Transform\acrpluralsuffix },%
+first={Complementary Metal-Oxide-Semiconductor (CMOS)},%
+firstplural={Complementary Metal-Oxide-Semiconductors(CMOSs)},%
+text={CMOS},%
+plural={CMOSs},%
+description={Complementary Metal-Oxide-Semiconductor},%
+descriptionplural={Complementary Metal-Oxide-Semiconductor\acrpluralsuffix },%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -79,28 +79,28 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Discrete Fourier Transform},%
-longplural={Discrete Fourier Transforms},%
-short={DFT},%
-shortplural={DFTs},%
+long={Complementary Metal-Oxide-Semiconductor},%
+longplural={Complementary Metal-Oxide-Semiconductors},%
+short={CMOS},%
+shortplural={CMOSs},%
 counter={page},%
 parent={},%
 %
 }%
 }%
-\ifglsentryexists{DIF}{}%
+\ifglsentryexists{DDR}{}%
 {%
-\gls@defglossaryentry{DIF}%
+\gls@defglossaryentry{DDR}%
 {%
-name={DIF},%
-sort={DIF},%
+name={DDR},%
+sort={DDR},%
 type={acronym},%
-first={Decimation-in-Frequency (DIF)},%
-firstplural={Decimation-in-Frequencys(DIFs)},%
-text={DIF},%
-plural={DIFs},%
-description={Decimation-in-Frequency},%
-descriptionplural={Decimation-in-Frequency\acrpluralsuffix },%
+first={Double Data Rate (DDR)},%
+firstplural={Double Data Rates(DDRs)},%
+text={DDR},%
+plural={DDRs},%
+description={Double Data Rate},%
+descriptionplural={Double Data Rate\acrpluralsuffix },%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -109,40 +109,10 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Decimation-in-Frequency},%
-longplural={Decimation-in-Frequencys},%
-short={DIF},%
-shortplural={DIFs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{DIT}{}%
-{%
-\gls@defglossaryentry{DIT}%
-{%
-name={DIT},%
-sort={DIT},%
-type={acronym},%
-first={Decimation-in-Time (DIT)},%
-firstplural={Decimation-in-Times(DITs)},%
-text={DIT},%
-plural={DITs},%
-description={Decimation-in-Time},%
-descriptionplural={Decimation-in-Time\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Decimation-in-Time},%
-longplural={Decimation-in-Times},%
-short={DIT},%
-shortplural={DITs},%
+long={Double Data Rate},%
+longplural={Double Data Rates},%
+short={DDR},%
+shortplural={DDRs},%
 counter={page},%
 parent={},%
 %
@@ -208,19 +178,19 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{GE}{}%
+\ifglsentryexists{FPGA}{}%
 {%
-\gls@defglossaryentry{GE}%
+\gls@defglossaryentry{FPGA}%
 {%
-name={GE},%
-sort={GE},%
+name={FPGA},%
+sort={FPGA},%
 type={acronym},%
-first={Gate Equivalents (GE)},%
-firstplural={Gate Equivalentss(GEs)},%
-text={GE},%
-plural={GEs},%
-description={Gate Equivalents},%
-descriptionplural={Gate Equivalents\acrpluralsuffix },%
+first={Field Programmable Gate Array (FPGA)},%
+firstplural={Field Programmable Gate Arrays(FPGAs)},%
+text={FPGA},%
+plural={FPGAs},%
+description={Field Programmable Gate Array},%
+descriptionplural={Field Programmable Gate Array\acrpluralsuffix },%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -229,28 +199,28 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Gate Equivalents},%
-longplural={Gate Equivalentss},%
-short={GE},%
-shortplural={GEs},%
+long={Field Programmable Gate Array},%
+longplural={Field Programmable Gate Arrays},%
+short={FPGA},%
+shortplural={FPGAs},%
 counter={page},%
 parent={},%
 %
 }%
 }%
-\ifglsentryexists{IDFT}{}%
+\ifglsentryexists{LVDS}{}%
 {%
-\gls@defglossaryentry{IDFT}%
+\gls@defglossaryentry{LVDS}%
 {%
-name={IDFT},%
-sort={IDFT},%
+name={LVDS},%
+sort={LVDS},%
 type={acronym},%
-first={Inverse \acrlong {DFT} (IDFT)},%
-firstplural={Inverse \acrlong {DFT}s(IDFTs)},%
-text={IDFT},%
-plural={IDFTs},%
-description={Inverse \acrlong {DFT}},%
-descriptionplural={Inverse \acrlong {DFT}\acrpluralsuffix },%
+first={Low-Voltage Differential Signaling (LVDS)},%
+firstplural={Low-Voltage Differential Signalings(LVDSs)},%
+text={LVDS},%
+plural={LVDSs},%
+description={Low-Voltage Differential Signaling},%
+descriptionplural={Low-Voltage Differential Signaling\acrpluralsuffix },%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -259,70 +229,10 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Inverse \acrlong {DFT}},%
-longplural={Inverse \acrlong {DFT}s},%
-short={IDFT},%
-shortplural={IDFTs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{IFFT}{}%
-{%
-\gls@defglossaryentry{IFFT}%
-{%
-name={IFFT},%
-sort={IFFT},%
-type={acronym},%
-first={Inverse \acrlong {FFT} (IFFT)},%
-firstplural={Inverse \acrlong {FFT}s(IFFTs)},%
-text={IFFT},%
-plural={IFFTs},%
-description={Inverse \acrlong {FFT}},%
-descriptionplural={Inverse \acrlong {FFT}\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Inverse \acrlong {FFT}},%
-longplural={Inverse \acrlong {FFT}s},%
-short={IFFT},%
-shortplural={IFFTs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{IIS}{}%
-{%
-\gls@defglossaryentry{IIS}%
-{%
-name={IIS},%
-sort={IIS},%
-type={acronym},%
-first={Integrated Systems Laboratory (IIS)},%
-firstplural={Integrated Systems Laboratorys(IISs)},%
-text={IIS},%
-plural={IISs},%
-description={Integrated Systems Laboratory},%
-descriptionplural={Integrated Systems Laboratory\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Integrated Systems Laboratory},%
-longplural={Integrated Systems Laboratorys},%
-short={IIS},%
-shortplural={IISs},%
+long={Low-Voltage Differential Signaling},%
+longplural={Low-Voltage Differential Signalings},%
+short={LVDS},%
+shortplural={LVDSs},%
 counter={page},%
 parent={},%
 %
@@ -358,19 +268,19 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{LTE}{}%
+\ifglsentryexists{PCB}{}%
 {%
-\gls@defglossaryentry{LTE}%
+\gls@defglossaryentry{PCB}%
 {%
-name={LTE},%
-sort={LTE},%
+name={PCB},%
+sort={PCB},%
 type={acronym},%
-first={Long Term Evolution (LTE)},%
-firstplural={Long Term Evolutions(LTEs)},%
-text={LTE},%
-plural={LTEs},%
-description={Long Term Evolution},%
-descriptionplural={Long Term Evolution\acrpluralsuffix },%
+first={Printed Circuit Board (PCB)},%
+firstplural={Printed Circuit Boards(PCBs)},%
+text={PCB},%
+plural={PCBs},%
+description={Printed Circuit Board},%
+descriptionplural={Printed Circuit Board\acrpluralsuffix },%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -379,40 +289,10 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Long Term Evolution},%
-longplural={Long Term Evolutions},%
-short={LTE},%
-shortplural={LTEs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{OFDM}{}%
-{%
-\gls@defglossaryentry{OFDM}%
-{%
-name={OFDM},%
-sort={OFDM},%
-type={acronym},%
-first={Orthogonal Frequency-Division Multiplexing (OFDM)},%
-firstplural={Orthogonal Frequency-Division Multiplexings(OFDMs)},%
-text={OFDM},%
-plural={OFDMs},%
-description={Orthogonal Frequency-Division Multiplexing},%
-descriptionplural={Orthogonal Frequency-Division Multiplexing\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Orthogonal Frequency-Division Multiplexing},%
-longplural={Orthogonal Frequency-Division Multiplexings},%
-short={OFDM},%
-shortplural={OFDMs},%
+long={Printed Circuit Board},%
+longplural={Printed Circuit Boards},%
+short={PCB},%
+shortplural={PCBs},%
 counter={page},%
 parent={},%
 %
@@ -448,19 +328,19 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{SPDF}{}%
+\ifglsentryexists{USB}{}%
 {%
-\gls@defglossaryentry{SPDF}%
+\gls@defglossaryentry{USB}%
 {%
-name={SPDF},%
-sort={SPDF},%
+name={USB},%
+sort={USB},%
 type={acronym},%
-first={Single-Path Delay Feedback (SPDF)},%
-firstplural={Single-Path Delay Feedbacks(SPDFs)},%
-text={SPDF},%
-plural={SPDFs},%
-description={Single-Path Delay Feedback},%
-descriptionplural={Single-Path Delay Feedback\acrpluralsuffix },%
+first={Universal Serial Bus (USB)},%
+firstplural={Universal Serial Buss(USBs)},%
+text={USB},%
+plural={USBs},%
+description={Universal Serial Bus},%
+descriptionplural={Universal Serial Bus\acrpluralsuffix },%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -469,40 +349,10 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Single-Path Delay Feedback},%
-longplural={Single-Path Delay Feedbacks},%
-short={SPDF},%
-shortplural={SPDFs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{VHDL}{}%
-{%
-\gls@defglossaryentry{VHDL}%
-{%
-name={VHDL},%
-sort={VHDL},%
-type={acronym},%
-first={Very High Speed Integrated Circuit Hardware Description Language (VHDL)},%
-firstplural={Very High Speed Integrated Circuit Hardware Description Languages(VHDLs)},%
-text={VHDL},%
-plural={VHDLs},%
-description={Very High Speed Integrated Circuit Hardware Description Language},%
-descriptionplural={Very High Speed Integrated Circuit Hardware Description Language\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={Very High Speed Integrated Circuit Hardware Description Language},%
-longplural={Very High Speed Integrated Circuit Hardware Description Languages},%
-short={VHDL},%
-shortplural={VHDLs},%
+long={Universal Serial Bus},%
+longplural={Universal Serial Buss},%
+short={USB},%
+shortplural={USBs},%
 counter={page},%
 parent={},%
 %
