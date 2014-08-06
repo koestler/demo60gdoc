@@ -58,6 +58,66 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{AXI}{}%
+{%
+\gls@defglossaryentry{AXI}%
+{%
+name={AXI},%
+sort={AXI},%
+type={acronym},%
+first={Advanced eXtensible Interface (AXI)},%
+firstplural={Advanced eXtensible Interfaces(AXIs)},%
+text={AXI},%
+plural={AXIs},%
+description={Advanced eXtensible Interface},%
+descriptionplural={Advanced eXtensible Interface\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Advanced eXtensible Interface},%
+longplural={Advanced eXtensible Interfaces},%
+short={AXI},%
+shortplural={AXIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{AWG}{}%
+{%
+\gls@defglossaryentry{AWG}%
+{%
+name={AWG},%
+sort={AWG},%
+type={acronym},%
+first={Arbitrary Waveform Generator (AWG)},%
+firstplural={Arbitrary Waveform Generators(AWGs)},%
+text={AWG},%
+plural={AWGs},%
+description={Arbitrary Waveform Generator},%
+descriptionplural={Arbitrary Waveform Generator\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Arbitrary Waveform Generator},%
+longplural={Arbitrary Waveform Generators},%
+short={AWG},%
+shortplural={AWGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{CMOS}{}%
 {%
 \gls@defglossaryentry{CMOS}%
@@ -113,6 +173,36 @@ long={Double Data Rate},%
 longplural={Double Data Rates},%
 short={DDR},%
 shortplural={DDRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DC}{}%
+{%
+\gls@defglossaryentry{DC}%
+{%
+name={DC},%
+sort={DC},%
+type={acronym},%
+first={Direct Current (DC)},%
+firstplural={Direct Currents(DCs)},%
+text={DC},%
+plural={DCs},%
+description={Direct Current},%
+descriptionplural={Direct Current\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Direct Current},%
+longplural={Direct Currents},%
+short={DC},%
+shortplural={DCs},%
 counter={page},%
 parent={},%
 %
@@ -208,6 +298,156 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{FMC}{}%
+{%
+\gls@defglossaryentry{FMC}%
+{%
+name={FMC},%
+sort={FMC},%
+type={acronym},%
+first={FPGA Mezzanine Card (FMC)},%
+firstplural={FPGA Mezzanine Cards(FMCs)},%
+text={FMC},%
+plural={FMCs},%
+description={FPGA Mezzanine Card},%
+descriptionplural={FPGA Mezzanine Card\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={FPGA Mezzanine Card},%
+longplural={FPGA Mezzanine Cards},%
+short={FMC},%
+shortplural={FMCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FSM}{}%
+{%
+\gls@defglossaryentry{FSM}%
+{%
+name={FSM},%
+sort={FSM},%
+type={acronym},%
+first={Finite State Machine (FSM)},%
+firstplural={Finite State Machines(FSMs)},%
+text={FSM},%
+plural={FSMs},%
+description={Finite State Machine},%
+descriptionplural={Finite State Machine\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Finite State Machine},%
+longplural={Finite State Machines},%
+short={FSM},%
+shortplural={FSMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FIFO}{}%
+{%
+\gls@defglossaryentry{FIFO}%
+{%
+name={FIFO},%
+sort={FIFO},%
+type={acronym},%
+first={First-In, First-Out (Memory) (FIFO)},%
+firstplural={First-In, First-Out (Memory)s(FIFOs)},%
+text={FIFO},%
+plural={FIFOs},%
+description={First-In, First-Out (Memory)},%
+descriptionplural={First-In, First-Out (Memory)\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={First-In, First-Out (Memory)},%
+longplural={First-In, First-Out (Memory)s},%
+short={FIFO},%
+shortplural={FIFOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IP}{}%
+{%
+\gls@defglossaryentry{IP}%
+{%
+name={IP},%
+sort={IP},%
+type={acronym},%
+first={Intellectual Property (IP)},%
+firstplural={Intellectual Propertys(IPs)},%
+text={IP},%
+plural={IPs},%
+description={Intellectual Property},%
+descriptionplural={Intellectual Property\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Intellectual Property},%
+longplural={Intellectual Propertys},%
+short={IP},%
+shortplural={IPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IF}{}%
+{%
+\gls@defglossaryentry{IF}%
+{%
+name={IF},%
+sort={IF},%
+type={acronym},%
+first={Intermediate Frequency (IF)},%
+firstplural={Intermediate Frequencys(IFs)},%
+text={IF},%
+plural={IFs},%
+description={Intermediate Frequency},%
+descriptionplural={Intermediate Frequency\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Intermediate Frequency},%
+longplural={Intermediate Frequencys},%
+short={IF},%
+shortplural={IFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{LVDS}{}%
 {%
 \gls@defglossaryentry{LVDS}%
@@ -268,6 +508,186 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{LED}{}%
+{%
+\gls@defglossaryentry{LED}%
+{%
+name={LED},%
+sort={LED},%
+type={acronym},%
+first={Light-Emitting Diode (LED)},%
+firstplural={Light-Emitting Diodes(LEDs)},%
+text={LED},%
+plural={LEDs},%
+description={Light-Emitting Diode},%
+descriptionplural={Light-Emitting Diode\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Light-Emitting Diode},%
+longplural={Light-Emitting Diodes},%
+short={LED},%
+shortplural={LEDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LSBand}{}%
+{%
+\gls@defglossaryentry{LSBand}%
+{%
+name={LSB},%
+sort={LSB},%
+type={acronym},%
+first={Lower Side Band (LSB)},%
+firstplural={Lower Side Bands(LSBs)},%
+text={LSB},%
+plural={LSBs},%
+description={Lower Side Band},%
+descriptionplural={Lower Side Band\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Lower Side Band},%
+longplural={Lower Side Bands},%
+short={LSB},%
+shortplural={LSBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LO}{}%
+{%
+\gls@defglossaryentry{LO}%
+{%
+name={LO},%
+sort={LO},%
+type={acronym},%
+first={Local Oscillator (LO)},%
+firstplural={Local Oscillators(LOs)},%
+text={LO},%
+plural={LOs},%
+description={Local Oscillator},%
+descriptionplural={Local Oscillator\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Local Oscillator},%
+longplural={Local Oscillators},%
+short={LO},%
+shortplural={LOs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MSB}{}%
+{%
+\gls@defglossaryentry{MSB}%
+{%
+name={MSB},%
+sort={MSB},%
+type={acronym},%
+first={Most significant bit (MSB)},%
+firstplural={Most significant bits(MSBs)},%
+text={MSB},%
+plural={MSBs},%
+description={Most significant bit},%
+descriptionplural={Most significant bit\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Most significant bit},%
+longplural={Most significant bits},%
+short={MSB},%
+shortplural={MSBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MIG}{}%
+{%
+\gls@defglossaryentry{MIG}%
+{%
+name={MIG},%
+sort={MIG},%
+type={acronym},%
+first={Memory Interface Generator (MIG)},%
+firstplural={Memory Interface Generators(MIGs)},%
+text={MIG},%
+plural={MIGs},%
+description={Memory Interface Generator},%
+descriptionplural={Memory Interface Generator\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Memory Interface Generator},%
+longplural={Memory Interface Generators},%
+short={MIG},%
+shortplural={MIGs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{MB}{}%
+{%
+\gls@defglossaryentry{MB}%
+{%
+name={MB},%
+sort={MB},%
+type={acronym},%
+first={Microblaze (MB)},%
+firstplural={Microblazes(MBs)},%
+text={MB},%
+plural={MBs},%
+description={Microblaze},%
+descriptionplural={Microblaze\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Microblaze},%
+longplural={Microblazes},%
+short={MB},%
+shortplural={MBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{PCB}{}%
 {%
 \gls@defglossaryentry{PCB}%
@@ -293,6 +713,66 @@ long={Printed Circuit Board},%
 longplural={Printed Circuit Boards},%
 short={PCB},%
 shortplural={PCBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{PHY}{}%
+{%
+\gls@defglossaryentry{PHY}%
+{%
+name={PHY},%
+sort={PHY},%
+type={acronym},%
+first={Physical Layer (PHY)},%
+firstplural={Physical Layers(PHYs)},%
+text={PHY},%
+plural={PHYs},%
+description={Physical Layer},%
+descriptionplural={Physical Layer\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Physical Layer},%
+longplural={Physical Layers},%
+short={PHY},%
+shortplural={PHYs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{PLL}{}%
+{%
+\gls@defglossaryentry{PLL}%
+{%
+name={PLL},%
+sort={PLL},%
+type={acronym},%
+first={Phase-Locked Loop (PLL)},%
+firstplural={Phase-Locked Loops(PLLs)},%
+text={PLL},%
+plural={PLLs},%
+description={Phase-Locked Loop},%
+descriptionplural={Phase-Locked Loop\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Phase-Locked Loop},%
+longplural={Phase-Locked Loops},%
+short={PLL},%
+shortplural={PLLs},%
 counter={page},%
 parent={},%
 %
@@ -328,6 +808,156 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{RF}{}%
+{%
+\gls@defglossaryentry{RF}%
+{%
+name={RF},%
+sort={RF},%
+type={acronym},%
+first={Radio Frequency (RF)},%
+firstplural={Radio Frequencys(RFs)},%
+text={RF},%
+plural={RFs},%
+description={Radio Frequency},%
+descriptionplural={Radio Frequency\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Radio Frequency},%
+longplural={Radio Frequencys},%
+short={RF},%
+shortplural={RFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{RX}{}%
+{%
+\gls@defglossaryentry{RX}%
+{%
+name={RX},%
+sort={RX},%
+type={acronym},%
+first={Receiver / receive (RX)},%
+firstplural={Receiver / receives(RXs)},%
+text={RX},%
+plural={RXs},%
+description={Receiver / receive},%
+descriptionplural={Receiver / receive\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Receiver / receive},%
+longplural={Receiver / receives},%
+short={RX},%
+shortplural={RXs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SGMII}{}%
+{%
+\gls@defglossaryentry{SGMII}%
+{%
+name={SGMII},%
+sort={SGMII},%
+type={acronym},%
+first={Serial Gigabit Media Independent Interface (SGMII)},%
+firstplural={Serial Gigabit Media Independent Interfaces(SGMIIs)},%
+text={SGMII},%
+plural={SGMIIs},%
+description={Serial Gigabit Media Independent Interface},%
+descriptionplural={Serial Gigabit Media Independent Interface\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Serial Gigabit Media Independent Interface},%
+longplural={Serial Gigabit Media Independent Interfaces},%
+short={SGMII},%
+shortplural={SGMIIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SNR}{}%
+{%
+\gls@defglossaryentry{SNR}%
+{%
+name={SNR},%
+sort={SNR},%
+type={acronym},%
+first={Signal to Noise Ratio (SNR)},%
+firstplural={Signal to Noise Ratios(SNRs)},%
+text={SNR},%
+plural={SNRs},%
+description={Signal to Noise Ratio},%
+descriptionplural={Signal to Noise Ratio\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Signal to Noise Ratio},%
+longplural={Signal to Noise Ratios},%
+short={SNR},%
+shortplural={SNRs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{TX}{}%
+{%
+\gls@defglossaryentry{TX}%
+{%
+name={TX},%
+sort={TX},%
+type={acronym},%
+first={Transmitter / transmitt (TX)},%
+firstplural={Transmitter / transmitts(TXs)},%
+text={TX},%
+plural={TXs},%
+description={Transmitter / transmitt},%
+descriptionplural={Transmitter / transmitt\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Transmitter / transmitt},%
+longplural={Transmitter / transmitts},%
+short={TX},%
+shortplural={TXs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{USB}{}%
 {%
 \gls@defglossaryentry{USB}%
@@ -351,6 +981,36 @@ user5={},%
 user6={},%
 long={Universal Serial Bus},%
 longplural={Universal Serial Buss},%
+short={USB},%
+shortplural={USBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{USBand}{}%
+{%
+\gls@defglossaryentry{USBand}%
+{%
+name={USB},%
+sort={USB},%
+type={acronym},%
+first={Upper Side Band (USB)},%
+firstplural={Upper Side Bands(USBs)},%
+text={USB},%
+plural={USBs},%
+description={Upper Side Band},%
+descriptionplural={Upper Side Band\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Upper Side Band},%
+longplural={Upper Side Bands},%
 short={USB},%
 shortplural={USBs},%
 counter={page},%

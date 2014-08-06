@@ -1,4 +1,5 @@
 \chapter{FPGA}
+\label{chap:fpga}
 A powerfull Virtex-7 \gls{FPGA} Evaluation board VC707
 was used to for the real time signal processing.
 During this thesis the data from the \gls{ADC} is acquired and stored at in real
@@ -207,7 +208,7 @@ on the trigger input or the trigger button is pressed,
 the \gls{RAM} of the \gls{FPGA} board is completely overwritten with new
 \gls{ADC} samples. \\
 
-The used \gls{RAM} module MT8JTF1286Hz offers is a standard \gls{DDR3} \gls{RAM}
+The used \gls{RAM} module MT8JTF1286Hz offers is a standard DDR3 \gls{RAM}
 and offers a total of 1 GiB of space devided into 8 banks of 128 MiB each.
 This allows for parallel data transfers of 64 bits at speed of up to 800 MHz
 resulting in a maximal bandwidth of $12.8 \text{GB}/\text{s}$. \\
@@ -230,7 +231,7 @@ in a 512 bit wide user interface of the \gls{MIG} core running at 125 MHz
 and a maximal bandwidth of $8 \text{GB}/\text{s}$. This is still slightly
 higher than bandwidth of the \gls{ADC} and therefore allows realtime
 storage of all data. Since there is 1 GiB \gls{RAM}
-a total of $\approx 3.6 \codt 10^8$ complex samples can be saved. This
+a total of $\approx 3.6 \cdot 10^8$ complex samples can be saved. This
 takes $\approx 190 \text{ms}$ at full \gls{ADC} speed. \\
 
 Experiments showed that when consecutively writing to all addresses the
@@ -267,18 +268,18 @@ the CP2103GM USB-to-UART bridge IC soldered on the VC707. Sice it's
 maximal baud rate is limited to $1 \text{Mbit}/\text{s}$ a complete
 download of 1 GiB would take about 18 minutes which was considered to slow. \\
 
-Next the Tri-Speed Ethernet \arcshort{PHY} device was considered since
+Next the Tri-Speed Ethernet \acrshort{PHY} device was considered since
 the high data rates of up to $1 \text{GBit}/\text{s}$ and the versatility
 of beeing able to connect it via existing network infrastrucutre made
 it look perfect for the job. The lack of a good reference design and the
 availability of open cores to connectect to the \gls{PHY} via 
-\arcshort{SGMII} as well as the effort needed to implement
+\acrshort{SGMII} as well as the effort needed to implement
 the network and transport (ip/udp) layer to reach a high
 versatility then led to the third solution. \\
 
 The VC707 also includes a USB3320 USB 2.0 ULPI device and Xilinx provides
 a out of the box \gls{IP} core to connect to it. The theoretical maximal
-raw bandwidth of $60 \text{MB}/\gls{s}$ would allow for a relatively fast
+raw bandwidth of $60 \text{MB}/\text{s}$ would allow for a relatively fast
 download. Also \gls{USB} is very common way to connect to modern laboratory
 equipment. This led to the followng solution:
 
@@ -299,7 +300,7 @@ a \gls{AXI} bus is used:
 \end{itemize}
 
 Since the \gls{RAM} module had to be optimized for best write performance
-as described in \secref{sec:fpga\_storage} not the standard Xilinx \gls{IP}
+as described in \secref{sec:fpga_storage} not the standard Xilinx \gls{IP}
 core to interface the \gls{MIG} core to the \gls{AXI} bus was used.
 Instead a custom \gls{AXI} peripheral was implemented which allows to
 control an monitor the data acquisition and a second peripheral allows
