@@ -2,7 +2,7 @@ all:    compile soft-clean
 
 compile:
 	pdflatex report.tex
-	bibtex report
+#bibtex report
 	makeglossaries report
 	pdflatex report.tex
 	pdflatex report.tex

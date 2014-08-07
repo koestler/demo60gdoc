@@ -148,6 +148,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{CPU}{}%
+{%
+\gls@defglossaryentry{CPU}%
+{%
+name={CPU},%
+sort={CPU},%
+type={acronym},%
+first={Central Processing Unit (CPU)},%
+firstplural={Central Processing Units(CPUs)},%
+text={CPU},%
+plural={CPUs},%
+description={Central Processing Unit},%
+descriptionplural={Central Processing Unit\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Central Processing Unit},%
+longplural={Central Processing Units},%
+short={CPU},%
+shortplural={CPUs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{DDR}{}%
 {%
 \gls@defglossaryentry{DDR}%
@@ -233,6 +263,36 @@ long={Swiss Federal Institute of Technology},%
 longplural={Swiss Federal Institute of Technologys},%
 short={ETH},%
 shortplural={ETHs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{EDK}{}%
+{%
+\gls@defglossaryentry{EDK}%
+{%
+name={EDK},%
+sort={EDK},%
+type={acronym},%
+first={Embedded Development Kit (EDK)},%
+firstplural={Embedded Development Kits(EDKs)},%
+text={EDK},%
+plural={EDKs},%
+description={Embedded Development Kit},%
+descriptionplural={Embedded Development Kit\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Embedded Development Kit},%
+longplural={Embedded Development Kits},%
+short={EDK},%
+shortplural={EDKs},%
 counter={page},%
 parent={},%
 %
@@ -1013,6 +1073,36 @@ long={Upper Side Band},%
 longplural={Upper Side Bands},%
 short={USB},%
 shortplural={USBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{UI}{}%
+{%
+\gls@defglossaryentry{UI}%
+{%
+name={UI},%
+sort={UI},%
+type={acronym},%
+first={User Interface (UI)},%
+firstplural={User Interfaces(UIs)},%
+text={UI},%
+plural={UIs},%
+description={User Interface},%
+descriptionplural={User Interface\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={User Interface},%
+longplural={User Interfaces},%
+short={UI},%
+shortplural={UIs},%
 counter={page},%
 parent={},%
 %
