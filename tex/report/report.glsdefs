@@ -118,6 +118,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{ack}{}%
+{%
+\gls@defglossaryentry{ack}%
+{%
+name={ack},%
+sort={ack},%
+type={acronym},%
+first={acknowledge (ack)},%
+firstplural={acknowledges(acks)},%
+text={ack},%
+plural={acks},%
+description={acknowledge},%
+descriptionplural={acknowledge\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={acknowledge},%
+longplural={acknowledges},%
+short={ack},%
+shortplural={acks},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{CMOS}{}%
 {%
 \gls@defglossaryentry{CMOS}%
@@ -233,6 +263,36 @@ long={Direct Current},%
 longplural={Direct Currents},%
 short={DC},%
 shortplural={DCs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DMA}{}%
+{%
+\gls@defglossaryentry{DMA}%
+{%
+name={DMA},%
+sort={DMA},%
+type={acronym},%
+first={Direct Memory Access (DMA)},%
+firstplural={Direct Memory Accesss(DMAs)},%
+text={DMA},%
+plural={DMAs},%
+description={Direct Memory Access},%
+descriptionplural={Direct Memory Access\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Direct Memory Access},%
+longplural={Direct Memory Accesss},%
+short={DMA},%
+shortplural={DMAs},%
 counter={page},%
 parent={},%
 %
@@ -478,6 +538,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{INetP}{}%
+{%
+\gls@defglossaryentry{INetP}%
+{%
+name={IP},%
+sort={IP},%
+type={acronym},%
+first={Internet Protocol (IP)},%
+firstplural={Internet Protocols(IPs)},%
+text={IP},%
+plural={IPs},%
+description={Internet Protocol},%
+descriptionplural={Internet Protocol\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Internet Protocol},%
+longplural={Internet Protocols},%
+short={IP},%
+shortplural={IPs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{IF}{}%
 {%
 \gls@defglossaryentry{IF}%
@@ -503,6 +593,36 @@ long={Intermediate Frequency},%
 longplural={Intermediate Frequencys},%
 short={IF},%
 shortplural={IFs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IO}{}%
+{%
+\gls@defglossaryentry{IO}%
+{%
+name={IO},%
+sort={IO},%
+type={acronym},%
+first={Input / Output (IO)},%
+firstplural={Input / Outputs(IOs)},%
+text={IO},%
+plural={IOs},%
+description={Input / Output},%
+descriptionplural={Input / Output\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Input / Output},%
+longplural={Input / Outputs},%
+short={IO},%
+shortplural={IOs},%
 counter={page},%
 parent={},%
 %
@@ -928,6 +1048,36 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{req}{}%
+{%
+\gls@defglossaryentry{req}%
+{%
+name={req},%
+sort={req},%
+type={acronym},%
+first={request (req)},%
+firstplural={requests(reqs)},%
+text={req},%
+plural={reqs},%
+description={request},%
+descriptionplural={request\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={request},%
+longplural={requests},%
+short={req},%
+shortplural={reqs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
 \ifglsentryexists{SGMII}{}%
 {%
 \gls@defglossaryentry{SGMII}%
@@ -1103,6 +1253,36 @@ long={User Interface},%
 longplural={User Interfaces},%
 short={UI},%
 shortplural={UIs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{UDP}{}%
+{%
+\gls@defglossaryentry{UDP}%
+{%
+name={UDP},%
+sort={UDP},%
+type={acronym},%
+first={User Datagram Protocol (UDP)},%
+firstplural={User Datagram Protocols(UDPs)},%
+text={UDP},%
+plural={UDPs},%
+description={User Datagram Protocol},%
+descriptionplural={User Datagram Protocol\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={User Datagram Protocol},%
+longplural={User Datagram Protocols},%
+short={UDP},%
+shortplural={UDPs},%
 counter={page},%
 parent={},%
 %
