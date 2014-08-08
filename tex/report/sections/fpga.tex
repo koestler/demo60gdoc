@@ -480,6 +480,17 @@ away by logic optimization and has no output buffer.
 This additional reset synchronizers are reset by the second global reset network
 which releases the reset two 5 MHz clocks periods earlier.  \\
 
+Another challange was to correctly reset the IN\_FIFO used in the
+\gls{ADC} module as described in \secref{sec:fpga_adc}. Those FIFO
+cross the boundry between the clocks provides by the \gls{ADC} and
+the internal 250 MHz clock. The 4 clocks of the 4 channels might
+have a slightly different phase, are derived from the same clock, the
+\gls{ADC} sampling clock, though. It is crucial to release the reset
+of all IN\_FIFO during the same \gls{ADC} sampling clock period to avoid
+missalignment of the data. For that purpose, the global 5 MHz
+reset is first synchronized to a phase shifted version of I0's clock and
+than synchronized to the four \gls{ADC} clocks. \\
+
 \begin{figure}
   \centering
   \includegraphics{figures/RstSync}
@@ -494,9 +505,6 @@ which releases the reset two 5 MHz clocks periods earlier.  \\
   \label{fig:fpga_rst_generation}
 \end{figure}
 
-
-
-% describe how global 5 MHz is used
 % describe special case of adc reset: 90 deg shift
 
 \section{Tools \& Development flow}
