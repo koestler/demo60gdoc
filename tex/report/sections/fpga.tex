@@ -1,6 +1,6 @@
 \chapter{FPGA}
 \label{chap:fpga}
-A powerfull Virtex-7 \gls{FPGA} Evaluation board VC707
+A powerful Virtex-7 \gls{FPGA} Evaluation board VC707
 was used to for the real time signal processing.
 For the experiments performed in this thesis
 the data from the \gls{ADC} is acquired, stored in real time
@@ -8,11 +8,11 @@ and than passed to Matlab running on a personal computer.
 This allowed to both test the analog part of the system
 while keeping the fast implementation speed and flexibility of Matlab
 to test the rest of the digital signal processing steps of the receiver.
-Nevertheless the architecture was choosen such that it is now easy
+Nevertheless the architecture was chosen such that it is now easy
 to step by step move parts of the signal processing from Matlab to the
 \gls{FPGA}. \\
 
-\section{Architecutre Overview}
+\section{Architecture Overview}
 The three main tasks of the digital design are first do interface
 the \gls{ADC} and acquire its data, then to store them on a
 \gls{DDR} \gls{RAM} and finally to allow a computer to
@@ -25,7 +25,7 @@ and Microblaze, a soft-core processor, which controls the
 \gls{USB} 2 data download. Data2Ram is the interface logic used
 to connect the \gls{ADC} directly to the \gls{RAM}. Later the receiver logic,
 starting with frame synchronization could be implemented
-at this place.AxiSlave implements an interface between the
+at this place. AxiSlave implements an interface between the
 \acrshort{AXI}-Bus used by the Microblaze processor and the custom
 Ram module. \\
 
@@ -38,14 +38,14 @@ by some insights how clocking and reset is implemented. \\
   \caption{Overview of the architecture}
   \label{fig:fpga_architecture_overview}
 \end{figure}
-\todo{add daa paths, remove clock domains}
+\todo{add data paths, remove clock domains}
 
 \section{Req/Ack Protocol}
 \label{sec:fpga_reqack}
-Between most modules a simple comminucation protocoll is used that allows
+Between most modules a simple communication protocol is used that allows
 one way communication whenever the sender and the receiver are both
 ready. As a consequence all modules have to be stallable. By only using
-one such protocoll arbitrary modules can often be connected
+one such protocol arbitrary modules can often be connected
 without any additional glue logic. \\
 
 The protocol requires the sender to provide a \acrfull{req} output which
@@ -63,7 +63,7 @@ register into the data path. This results in one cycle delay but makes the
 \gls{ack} signal depending on a local register only and not on the
 \gls{req} signal. \\
 
-This has also the advantage that long routing distances can be seperated by
+This has also the advantage that long routing distances can be separated by
 inserting registers into the data and control path. \\
 
 \section{Data Acquisition: Adc12d1800}
@@ -74,11 +74,11 @@ to the Virtex-7 evaluation board (see \secref{sec:comp_virtex7})
 using one of the two \gls{FMC} plugs.
 A listing of all connections can be found in \secref{sec:app_adc_fpga_con}. \\
 
-Data acquistion is done by the module Adc12d1800. In our case the ADC is
+Data acquisition is done by the module Adc12d1800. In our case the ADC is
 configured to sample two channels, an in-phase and a quadrature phase channel,
-at up to 1.8 GHz or to sample one channel at 3.6 Ghz.
+at up to 1.8 GHz or to sample one channel at 3.6 GHz.
 The nominal resolution is 12 bits. This results in a total bandwidth of
-$5.4 \text{Gb}/\text{s}$. \\
+$5.4 \text{GB}/\text{s}$. \\
 Since 1.8 GHz and especially 3.6 GHz is far beyond what the IO-Pads of all
 \glspl{FPGA} \todo{reference needed} and most \glspl{ASIC} can handle,
 the ADC can output on 4 parallel streams of 12 bits each. \\
@@ -86,7 +86,7 @@ the ADC can output on 4 parallel streams of 12 bits each. \\
 Since this 4 streams might be routed with different wire lengths on a \gls{PCB}
 each stream has it's own clock which is aligned to the data.
 In order to half the maximum frequency of the clock line,
-the data change on positive and negativ clock edges (\gls{DDR}). \\
+the data change on positive and negative clock edges (\gls{DDR}). \\
 
 At full speed, this results in a switching frequency of 450 MHz for all data
 and clock lines. To support this high speed while reducing power consumption,
@@ -94,20 +94,20 @@ and the influence of noise compared to classical \gls{CMOS} signaling,
 \gls{LVDS} is used. \\
 
 Since the maximum clock frequencies of the Virtex \glspl{FPGA} for logic
-including \gls{LUT} slices and routings with some fanout
+including \gls{LUT} slices and medium to high fan-outs
 are limited to around 200 to 300 MHz, the input stream needs to be further
-parallelized. This desin uses a frequency of 250 MHz to output
+parallelised. This design uses a frequency of 250 MHz to output
 the data of the \gls{ADC} for further processing. At this frequency
-the only 4 ns are available between clock edges which is exeeded easily
-as soon as a signal is routed far across the \gls{FPGA} die,
-has a fanout of more than about 4, when crossing clock domains which leads
+the only $4\;\text{ns}$ are available between clock edges which is exceeded
+easily as soon as a signal is routed far across the \gls{FPGA} die,
+has a fan-out of more than about 4, when crossing clock domains which leads
 to clock skew or by more than about 3 logic slices between registers.
-This makes the \gls{FPGA} design challanging since often multiple
+This makes the \gls{FPGA} design challenging since often multiple
 complete synthesis, map, place \& route and timing analysis runs are
 needed to find a design that meets timing. \\
 
 As shown in \figref{fig:fpga_adc} the implemented design uses
-a total of 4 stages to paralellize and centralize the data to
+a total of 4 stages to parallelise and centralize the data to
 one single data stream. \\
 
 \begin{figure}[ht]
@@ -129,12 +129,12 @@ signals plus 4 single ended clocks at up to 450 MHz. \\
 
 \subsection{Stage 1: Double Data Rate to Single Data Rate Conversion}
 \label{sec:fpga_adc_s1}
-Next the first parallelization step is performed by outputing two new
-bits on every positive clock edge instead of one on positive and one on negativ
+Next the first parallelisation step is performed by outputting two new
+bits on every positive clock edge instead of one on positive and one on negative
 clock edges. The Virtex-7 \gls{FPGA} have a dedicated hardware primitive
 called {\em Input Dual Data-Rate Register} (IDDR) for this.
 This primitives are placed next to the differential input buffers
-and are automatically mapped correctly by the Xilinix tools. \\
+and are automatically mapped correctly by the Xilinx tools. \\
 
 This results in $4 \times 24$ bits of single ended single data rate
 signals plus 4 single ended clocks at up to 450 MHz. \\
@@ -143,22 +143,22 @@ signals plus 4 single ended clocks at up to 450 MHz. \\
 Since 450 MHz is still beyond what can be routed through the general
 routing resources and captured by registers, Xilinx added a special
 {\em Input First-In, First-Out} primitive (IN\_FIFO)
-directly into the IO-bank which can parallelize the data by a factor of two.
-This primitive has a total of ten 4 bit wide input busses.
+directly into the IO-bank which can parallelise the data by a factor of two.
+This primitive has a total of ten 4 bit wide input buses.
 The primitive can be configured to concatenate two consecutive input words
 to one 8 bit wide output word and therefore provides a total of
 ten 8 bit wide output words. \\
 
 Four such IN\_FIFO are available for each
 input/output bank consisting of a total of 50 pads aligned in a single row.
-In our design each of the four 24-bit input streams is located at a seperate
+In our design each of the four 24-bit input streams is located at a separate
 input/output bank and is routed to the inputs of one IN\_FIFO primitive.
 Since the timing only holds if the IN\_FIFO instance in the middle of the bank
-is used and the mapping tools map prefere other locations depending on the
+is used. Because mapping tools prefer other locations depending on the
 routing of the outputs, all those IN\_FIFO primitives where manually constrained
 to the correct location. \\
 
-These IN\_FIFO also support an independed input and output clock.
+These IN\_FIFO also support an independent input and output clock.
 As input clock the clock signals provided by the \gls{ADC} are each fed
 into a so called {\em Advanced Mixed Mode Clock Manager} (MMCME2\_ADV).
 This allows to arbitrarily shift the phases of the clocks to ensure
@@ -175,37 +175,37 @@ This results in $4 \times 48$ bits of single ended single data rate signals. \\
 \begin{figure}
   \centering
   \includegraphics{figures/adc_input_bank}
-  \caption{View of the pysical location of the primitives forming the
+  \caption{View of the physical location of the primitives forming the
     \gls{ADC} interface on the \gls{FPGA}}
   \label{fig:adc_input_bank}
 \end{figure}
 
 \subsection{Stage 3: Centralization and Reordering}
 \label{sec:fpga_adc_s3}
-All previous stages kept the four input streams seperated
-and were placed close to four input bank spread accross the whole die.
+All previous stages kept the four input streams separated
+and were placed close to four input bank spread across the whole die.
 Hence the data has to be routed to one place first.
-This is done by allocating three req/ack breakers
-(see \figref{fig:fpga_reaack_breaker}) in series for each of the four channels.
-This induces a high flexibility to the tools in allocating routing resources
-and putting registers in between. \\
+This is done by allocating three req/ack breakers in series for each of the
+four channels.
+This induces a high flexibility to the tools in allocating routing
+resources and putting registers in between. \\
 
 The four last \gls{req}/\gls{ack} breakers of the four channels are then connected
 to one single \gls{req}/\gls{ack} breaker which forms the final output of the
 \gls{ADC} module. The data is ordered in such a way, that the final 192 bit
 wide output vector is formatted as follows:
 \[Q_7\;I_7\;Q_6\;I_6\;Q_5\;I_5\;Q_4\;I_4\;Q_3\;I_3\;Q_2\;I_2\;Q_1\;I_1\;Q_0\;I_0\]
-Where $Q_t$ and $I_t$ are the quadrature channel repectively in-phase channel
+Where $Q_t$ and $I_t$ are the quadrature channel respectively in-phase channel
 12 bit words at time $t$.
 The index $t$ is the time step. A higher number means later in time.
 All the words are formatted with \gls{MSB} first. \\
 
 This results in $1 \times 192$ bits of single ended single data rate signals. \\
 
-\subsection{Testpattern generator}
+\subsection{Test pattern generator}
 For debugging purposes the \gls{ADC} interface has a built in test pattern
 generator which outputs 16 words of 12 bit numbers in parallel such that
-when lining them up to 192 bit vectors this results in a continous count.
+when lining them up to 192 bit vectors this results in a continuous count.
 
 \section{Storage}
 \label{sec:fpga_storage}
@@ -214,11 +214,11 @@ button is pressed, the \gls{RAM} is completely overwritten with a new run of
 \gls{ADC} samples. \\
 
 The arm signal (see \figref{fig:fpga_architecture_overview}) is deasserted
-by the \gls{MB} processor wihle a download option is in process
+by the \gls{MB} processor while a download option is in process
 (see \secref{sec:fpga_download}) to avoid mixing up multiple runs. \\
 
 The used \gls{RAM} module MT8JTF1286Hz is a standard \acrshort{DDR}3 \gls{RAM}
-and offers a total of 1 GiB of space spread accross 8 banks of 128 MiB each.
+and offers a total of 1 GiB of space spread across 8 banks of 128 MiB each.
 This allows for parallel data transfers of 64 bits at speed of up to 800 MHz
 resulting in a maximal bandwidth of $12.8 \text{GB}/\text{s}$. \\
 
@@ -236,7 +236,7 @@ of 800 MHz I used only 500 MHz as \gls{RAM} clock rate.
 When configuring the core to use a 1:4 multiplexing, the \gls{UI} runs
 at 125 MHz, has a $4 \cdot 2 \cdot 64 = 512$ bits wide data bus
 and a maximal bandwidth of $8 \text{GB}/\text{s}$. This is still slightly
-higher than bandwidth of the \gls{ADC} and therefore allows realtime
+higher than bandwidth of the \gls{ADC} and therefore allows real-time
 storage of all data. Since there is 1 GiB \gls{RAM}
 a total of $\approx 3.6 \cdot 10^8$ complex samples can be saved. This
 takes $\approx 190 \text{ms}$ at full \gls{ADC} speed. \\
@@ -244,21 +244,21 @@ takes $\approx 190 \text{ms}$ at full \gls{ADC} speed. \\
 Experiments showed that it is possible to consecutively writing to all
 addresses without the \gls{MIG} core stalling for refresh options.
 Whenever, during the write requests, one sole read request
-is perfomed, the \gls{UI} of the \gls{MIG} core stalls for about 11
+is performed, the \gls{UI} of the \gls{MIG} core stalls for about 11
 cycles. This is not an issue as in our case we first write
 to all addresses, then stop writing and read out a part of the memory
 at much lower speeds (see \secref{sec:fpga_download}). \\
 
 Since the \gls{ADC} module outputs the data at 250 MHz in a 192 bit
 wide vector and the \gls{RAM} module can write 512 bit wide vectors
-at only 125 MHz a bus converter is used which concatenats 192 bits
+at only 125 MHz a bus converter is used which concatenates 192 bits
 words until at least 512 bits are available. Behind this converter
-a \gls{FIFO} memory is added to cross the clock boundry and to be able
+a \gls{FIFO} memory is added to cross the clock boundary and to be able
 to hold some samples when the \gls{MIG} user interface stalls. \\
 
 During implementation care has to be exercised to the mask bits,
 which are designed to prevent parts of the 64 bit written in parallel to be
-overwritten and therefor allow for partial writtes without first performing
+overwritten and therefor allow for partial writes without first performing
 a read operation. Accidentally having these pins stuck at 1 due to
 not connecting them prevents initialization and further reads from
 working. \\
@@ -270,16 +270,17 @@ it is sent to a personal computer.
 Different options for downloading the 1 GiB of data from the \gls{FPGA}
 to a computer were considered: \\
 
-The simplest implementation would be to use the CP2103GM USB-to-UART
-bridge IC soldered on the VC707. Sice it's maximal baud rate is limited to
-$1 \text{Mbit}/\text{s}$ a complete download of 1 GiB would take about
-18 minutes which was considered to be too slow. \\
+The simplest implementation would be to use the CP2103GM
+\acrshort{USB}-to-\acrshort{UART} bridge \gls{IC} soldered on the VC707.
+Since it's maximal baud rate is limited to $1 \text{Mbit}/\text{s}$
+a complete download of 1 GiB would take about 18 minutes which was
+considered to be too slow. \\
 
 Next the Tri-Speed Ethernet \acrshort{PHY} device was considered.
-The high data rates of up to $1 \text{GBit}/\text{s}$ and the versatility
-of beeing able to connect it to existing network infrastrucutre made
+The high data rates of up to $1 \text{Gbit}/\text{s}$ and the versatility
+of being able to connect it to existing network infrastructure made
 it look perfect for the job. The lack of a good reference design and
-availability of open cores to connectect to the \gls{PHY} via
+availability of open cores to connected to the \gls{PHY} via
 \acrshort{SGMII} as well as the effort needed to implement
 the network and transport (\acrshort{INetP}/\acrshort{UDP}) layer
 led to the third solution. \\
@@ -290,20 +291,20 @@ raw bandwidth of $60 \text{MB}/\text{s}$ would allow for a relatively fast
 download. Also \gls{USB} is very common way to connect to modern laboratory
 equipment.
 
-\subsection{Microblaze Softcore processor}
+\subsection{Microblaze Soft-core processor}
 Since the initialization, control logic and packet formatting
 used to implement the \gls{USB} slave device can much easier be implemented
-in software than using lookup tables and \glspl{FSM} a
-\gls{MB} softcore processor was configured into the \gls{FPGA}. \\
+in software than using look-up tables and \glspl{FSM} a
+\gls{MB} soft-core processor was configured into the \gls{FPGA}. \\
 
 As primary system bus to connect the processor to the following peripherals
 a \gls{AXI} bus is used:
 \begin{itemize}
-\item RS232 Uart for status and debug outputs
+\item RS232 \gls{UART} for status and debug outputs
 \item 4 Bit output to control debug \glspl{LED}
 \item USB 2 controller
 \item An interrupt controller
-\item The custom 60 Ghz receiver peripheral
+\item The custom 60 GHz receiver peripheral
 \end{itemize}
 
 Since the \gls{RAM} module had to be optimized for best write performance
@@ -316,7 +317,7 @@ for memory mapped read access of the \gls{RAM} by the \gls{MB}. \\
 For simplicity the \gls{DMA} unit of the \gls{USB} peripheral was not used.
 Instead the data was first read from the custom 60 GHz peripheral
 by the \gls{MB} processor and then written to \gls{USB} peripheral.
-This allows for datatransfer rates of about $16 \text{MB} / \text{s}$
+This allows for data transfer rates of about $16 \text{MB} / \text{s}$
 which is already fast enough. \\
 
 \subsection{Protocol}
@@ -328,7 +329,7 @@ is not supported. \\
 
 Endpoint 0 is a standardized control endpoint. It's purpose is to
 enumerate the bus\footnote{give the slave a unique address} and to provide the
-host computer with informations about basic parameters and the other entpoints
+host computer with information about basic parameters and the other endpoints
 implemented by the slave. It's exact behaviour is defined by the
 ``Chapter 9 USB Device Framework'' of the \gls{USB}2 standard \todo{add reference}. \\
 
@@ -337,10 +338,10 @@ while endpoint does the same into the other direction. They both use the maximal
 possible packet size of 512 byte in bulk transfer mode. \\
 
 Endpoint 3 is used in bulk mode to transfer short binary requests used to
-inistiate data transfers by allowing to set a write address pointer,
+initiate data transfers by allowing to set a write address pointer,
 to set a read address pointer and to request a number of blocks to receive. \\
 
-Finally endpoint 4 is used in bulk mode to responde to the requests sent
+Finally endpoint 4 is used in bulk mode to respond to the requests sent
 to endpoint 3 with either a success or an error code and to receive information
 about the current read / write pointers and the amount of available memory. \\
 
@@ -363,15 +364,15 @@ and written to a binary file which can be read very fast in Matlab. \\
 \label{sec:fpga_clocks}
 
 As a result of the different clocking constraints of the externals interfaces,
-a relativley complex clocking scheme had to be applied as drawn in
+a relatively complex clocking scheme had to be applied as drawn in
 \figref{fig:fpga_clock_domains}. Except for parts of the \acrshort{IO} interfaces,
-synchronous positive edge triggerd registers were used. For the synchronization
+synchronous positive edge triggered registers were used. For the synchronization
 of the data paths crossing clock boundaries the numerous FIFO36E1 primitives
 were used. Those configure the block \gls{RAM} cells to act as a \gls{FIFO}
 memory. A wrapper is used to use many of those primitives to allow for the
 wide vectors of up to 540 bits.
 An exception are the \gls{ADC} and \gls{RAM} blocks which use
-spezicalized IN\_FIFO and OUT\_FIFO and can do a 1:2 de-/multiplexing
+specialized IN\_FIFO and OUT\_FIFO and can do a 1:2 de-/multiplexing
 using two independent input and output clocks. \\
 
 \figref{fig:fpga_clock_generation} shows all the \glspl{PLL} used to derive the
@@ -387,11 +388,11 @@ are described. The closely related reset implementation is described
 in \secref{sec:fpga_reset}. \\
 
 \subsection{\gls{ADC}}
-The \gls{ADC} provides a clock parallel to each of the four datastreams.
+The \gls{ADC} provides a clock parallel to each of the four data streams.
 The four clocks I0 Clk, I1 Clk, Q0 Clk and Q1 Clk are shown on
-\figref{fig:fpga_architecture_overview} and are refered to as \gls{ADC} clocks.
+\figref{fig:fpga_architecture_overview} and are referred to as \gls{ADC} clocks.
 They can be up to 900 MHz (1.8 $\text{GS}/\text{s}$ \gls{DDR})
-and also significately slower for slow (eg. 800 $\text{MS}/\text{s}$)
+and also significantly slower for slow (e.g. 800 $\text{MS}/\text{s}$)
 sampling rates. \\
 
 Each differential \gls{ADC} clock clock is first converted to a single ended
@@ -403,26 +404,26 @@ Since the edges of the \gls{ADC} clocks and the corresponding data lines
 are aligned, a phase shift of $90^\circ$ was found to work well and captures
 the data during the stable period. \\
 
-After parallelization a new clock domain, the \gls{ADC} \gls{UI} clock
+After parallelisation a new clock domain, the \gls{ADC} \gls{UI} clock
 is used to do the centralization and reordering as described in
 \secref{sec:fpga_adc_s3},
 to do the bus conversion and finally to put the data into a \gls{FIFO}
 traversing to the clock region of the \gls{RAM} \gls{UI} described
 in \secref{sec:fpga_storage}. This clock has to be strictly greater than
 $\frac{900\;\text{MHz}}{4} = 225\;\text{MHz}$ to avoid the
-IN\_FIFO from filling up. Also there needs to be a minimuml
+IN\_FIFO from filling up. Also there needs to be a minimal
 distance between an edge of the \gls{ADC} \gls{UI} and the
 \gls{RAM} \gls{UI} clock in order for the FIFO36E1 to work correctly.
-Hence a clock rate of 250 MHz was choosen. \\
+Hence a clock rate of 250 MHz was chosen. \\
 
 \subsection{\gls{RAM}}
 \label{sec:fpga_clock_ram}
 The used \gls{DDR} \gls{RAM} module can be clocked up to 800 MHz which would
-allow for a datarate of
+allow for a data rate of
 $2 \cdot 64\;\text{bit} \cdot 800\;\text{MHz} = 12.8 \text{GB} / \text{s}$.
 As described in \secref{sec:fpga_storage}, a lower frequency of 500 MHz
-was choosen. To allow interfacing the \gls{MB} at a as low as possible speed,
-the \gls{MIG} core was configured to use an internal 1:4 multipexing. This results
+was chosen. To allow interfacing the \gls{MB} at a as low as possible speed,
+the \gls{MIG} core was configured to use an internal 1:4 multiplexing. This results
 in \gls{RAM} \gls{UI} clock of 125 MHz.
 
 \subsection{\acrfull{MB}}
@@ -431,7 +432,7 @@ it's own clock running at 100 MHz. \\
 
 Later test runs showed, that the warning of the Platform studio saying that the
 \gls{MB} runs only up to 100 MHz could be ignored and the \gls{MB} including
-the \gls{USB} interface can run at 125 MHz as well. This removes one clock boundry
+the \gls{USB} interface can run at 125 MHz as well. This removes one clock boundary
 slightly increases the download speed by faster copying data from the
 \gls{RAM} to the \gls{USB} buffer. \\
 
@@ -456,7 +457,7 @@ In consequence of the many clocking regions, implementing a correct
 reset scheme turned out to be trickier than one might think. \\
 
 In general high active asynchronous resets were implemented for all
-registers. Whenever a clock boundry had to be crossed, a reset synchronizer
+registers. Whenever a clock boundary had to be crossed, a reset synchronizer
 as shown in \figref{fig:fpga_rst_sync} was used. The first register
 makes sure the reset is release synchronous to the positive clock edge
 of the target clock in order to have a full clock period to distribute
@@ -464,40 +465,40 @@ the reset signal so all target registers. The second register is
 to make sure possible meta stability problems of the first registers would
 no propagate. Clock and reset distribution networks both need to
 distribute a signal with a limited amount of jitter and skew to a possibly
-high fan-out. Therefor the same routing ressources can be used.  \\
+high fan-out. Therefor the same routing resources can be used.  \\
 
 An overview of the reset distribution is given in
 \figref{fig:fpga_rst_generation}. The reset can be triggered
 by an external button or by the general reset of the \gls{FPGA}
-used while downloadig the bit file. Because the main system clock is
+used while downloading the bit file. Because the main system clock is
 not available during reset, this reset input is debounced using a
 156 MHz clock generated by a second oscillator on the VC707 board.
 When the reset is released, first the \gls{MIG} core starts
 it's \gls{PLL}, needs some time to initialize the \gls{RAM} and than
-outputs a initializiation complete signal which is used to derive the main reset
+outputs a initialization complete signal which is used to derive the main reset
 for the rest of the logic including the \gls{MB} and \gls{ADC} modules.
 This main reset signal is than first synchronized to 5 MHz which is a
-integer devider of all clocks and therefore is only released synchronous
+integer divider of all clocks and therefore is only released synchronous
 to all clocks. \\
 
 Because the very long setup time of the synchronous reset input of the FIFO36E1
-can only be met at 240 MHz if there is a reset synchronoization register
+can only be met at 240 MHz if there is a reset synchronization register
 close to the FIFO primitive. Two 5 MHz synchronous global resets are than
-globaly distributed. The normal master reset used for all logic except
-for the FIFOs. They have an additional reset synchronizer, which is
-placed next to each FIFO primitive, prevented from beeing trimmed
+globally distributed. The normal master reset used for all logic except
+for the \glspl{FIFO}. They have an additional reset synchronizer, which is
+placed next to each \gls{FIFO} primitive, prevented from being trimmed
 away by logic optimization and has no output buffer.
 This additional reset synchronizers are reset by the second global reset network
 which releases the reset two 5 MHz clock periods earlier.  \\
 
-Another challange was to correctly reset the IN\_FIFO used in the
+Another challenge was to correctly reset the IN\_FIFO used in the
 \gls{ADC} module as described in \secref{sec:fpga_adc}. These \glspl{FIFO}
-cross the boundry between the clock regions provided by the \gls{ADC} and
+cross the boundary between the clock regions provided by the \gls{ADC} and
 the internal 250 MHz clock. The 4 clocks of the 4 channels might
 have a slightly different phase, are derived from the same clock, the
 \gls{ADC} sampling clock, though. It is crucial to release the reset
 of all IN\_FIFO during the same \gls{ADC} sampling clock period to avoid
-missalignment of the data. For that purpose, the global 5 MHz
+misalignment of the data. For that purpose, the global 5 MHz
 reset is first synchronized to a phase shifted version of I0's clock and
 than synchronized to the four \gls{ADC} clocks. \\
 
@@ -518,7 +519,7 @@ than synchronized to the four \gls{ADC} clocks. \\
 \section{Tools \& Development flow}
 \label{sec:fpga_tools}
 
-The \gls{FPGA} design and it's software consists of three differents
+The \gls{FPGA} design and it's software consists of three different
 main parts: \\
 
 First the \gls{ADC} interface, the \gls{RAM} and the connecting
@@ -527,7 +528,7 @@ in the \gls{RAM}. This part was fully developed using the Xilinx ISE 14.4
 design suite. For testing an debugging manually inserted ChipScope
 instruments were used, which form a logic analyzer running on the \gls{FPGA}
 alongside the other modules. Since these instruments shares the same logic,
-memory and routing resources, they heavely influence the mapping and routing
+memory and routing resources, they heavily influence the mapping and routing
 of the logic and therefor the timing of the circuit which can make debugging
 timing problems cumbersome. \\
 This project than interfaces directly to many externals pins and implements
@@ -546,9 +547,18 @@ consisting mainly of an Eclipse plugin. \\
 The development process of course was not linear. These three steps were
 iterated over multiple times. A complete run of synthesis, map,
 place \& route, timing analysis and bit file generation
-took between 20 minutes and 2 hours depending on how thight the timing was
-and on how big the memory of the ChipScope instruments was choosen.
+took between 20 minutes and 2 hours depending on how tight the timing was
+and on how big the memory of the ChipScope instruments was chosen.
 Since especially the debugging of the \gls{RAM} module and the implementation of
 a correct reset behaviour (see \secref{sec:fpga_reset}) included a lot of
 trial \& error, dozens of \acrshort{CPU} and man hours were spent on the
 compiling the design.
+
+%%  LocalWords:  FPGA Virtex VC Matlab DDR fpga Adc Microblaze AXI rf
+%%  LocalWords:  AxiSlave Req Ack stallable req ack LUT virtex FMC ns
+%%  LocalWords:  adc ASIC CMOS LVDS parallelised parallelise IBUFDS
+%%  LocalWords:  parallelisation IDDR Xilinx MMCME MSB deasserted JTF
+%%  LocalWords:  GiB MiB IP UI CP UART IC Mbit Tri PHY Gbit SGMII UDP
+%%  LocalWords:  INetP ULPI FSM DMA middleware libusb de PLL SiT Clk
+%%  LocalWords:  synchronizer rst jitter debounced synchronizers ISE
+%%  LocalWords:  ChipScope EDK

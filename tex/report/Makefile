@@ -28,6 +28,7 @@ soft-clean:
 	rm -f report.blg
 	rm -f report.acr
 	rm -f report.alg
+	rm -f report.glsdefs
 	rm -f texput.log
 
 clean:  soft-clean
