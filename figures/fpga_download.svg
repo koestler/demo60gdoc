@@ -9,8 +9,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="621.07874"
-   height="373.04724"
+   width="621.0788"
+   height="373.0473"
    id="svg4653"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="476.32384"
-     inkscape:cy="154.02332"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="387.60519"
+     inkscape:cy="184.90274"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -34,9 +34,9 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="2560"
-     inkscape:window-height="1418"
-     inkscape:window-x="1680"
-     inkscape:window-y="0"
+     inkscape:window-height="1393"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -52,8 +52,8 @@
        units="mm"
        spacingx="1mm"
        spacingy="1mm"
-       originx="-111.03252mm"
-       originy="-153.73994mm" />
+       originx="-109.85889mm"
+       originy="-154.85887mm" />
   </sodipodi:namedview>
   <metadata
      id="metadata4658">
@@ -63,6 +63,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -70,76 +71,77 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-52.649605,-431.78345)">
+     transform="translate(-48.49107,-427.81866)">
     <rect
        style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect4663"
        width="265.74802"
        height="283.46457"
-       x="53.149605"
-       y="432.28345" />
+       x="48.99107"
+       y="428.31866" />
     <rect
        style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect5173"
        width="265.74805"
-       height="70.86615"
-       x="53.149605"
-       y="733.46454" />
+       height="70.866165"
+       x="48.99107"
+       y="729.49982"
+       ry="0" />
     <rect
        style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect5175"
        width="230.31496"
-       height="70.866127"
-       x="70.866142"
-       y="627.16534" />
+       height="70.866173"
+       x="66.707603"
+       y="623.20056" />
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="60.236221"
-       y="754.72437"
+       x="56.077682"
+       y="750.75964"
        id="text5177"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5179"
-         x="60.236221"
-         y="754.72437">USB3320 USB 2.0 ULPI</tspan><tspan
+         x="56.077682"
+         y="750.75964">USB3320 USB 2.0 ULPI</tspan><tspan
          sodipodi:role="line"
-         x="60.236221"
-         y="779.72437"
+         x="56.077682"
+         y="775.75964"
          id="tspan5181">Transceive</tspan></text>
     <rect
        style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect5175-0"
        width="230.31496"
-       height="70.866127"
-       x="70.866142"
-       y="520.86615" />
+       height="70.86615"
+       x="66.707603"
+       y="516.90137" />
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="74.409447"
-       y="655.51178"
+       x="73.794212"
+       y="644.46045"
        id="text5177-5"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="74.409447"
-         y="655.51178"
+         x="73.794212"
+         y="644.46045"
          id="tspan5181-5">AXI USB 2.0</tspan><tspan
          sodipodi:role="line"
-         x="74.409447"
-         y="680.51178"
+         x="73.794212"
+         y="669.46045"
          id="tspan5227">Device Controller</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="77.952759"
-       y="542.12598"
+       x="73.794212"
+       y="538.16119"
        id="text5229"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5231"
-         x="77.952759"
-         y="542.12598">Microblaze Processor</tspan></text>
+         x="73.794212"
+         y="538.16119">Microblaze Processor</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot5233"
@@ -150,150 +152,245 @@
            height="50"
            x="75.35714"
            y="461.64789" /></flowRegion><flowPara
-         id="flowPara5239"></flowPara></flowRoot>    <text
+         id="flowPara5239" /></flowRoot>    <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="76.771591"
-       y="470.00925"
+       x="56.077682"
+       y="449.57852"
        id="text5241"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5243"
-         x="76.771591"
-         y="470.00925">FPGA</tspan></text>
+         x="56.077682"
+         y="449.57852">FPGA</tspan></text>
     <rect
        style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect4663-3"
-       width="265.74802"
-       height="372.04724"
-       x="407.48032"
-       y="432.28345" />
+       width="265.74808"
+       height="372.04721"
+       x="403.32178"
+       y="428.31866" />
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="428.34354"
-       y="475.06"
+       x="410.40839"
+       y="446.03522"
        id="text5263"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5265"
-         x="428.34354"
-         y="475.06">Computer</tspan></text>
+         x="410.40839"
+         y="446.03522">Computer</tspan></text>
     <rect
        style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect5175-0-4"
-       width="230.31497"
-       height="35.433056"
-       x="425.19684"
-       y="751.18109" />
+       width="230.31494"
+       height="35.433102"
+       x="421.03833"
+       y="747.21631" />
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="432.28345"
-       y="772.44092"
+       x="428.12494"
+       y="768.4762"
        id="text5285"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5287"
-         x="432.28345"
-         y="772.44092">USB PHY</tspan></text>
+         x="428.12494"
+         y="768.4762">USB PHY</tspan></text>
     <rect
        style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect5175-0-4-5"
-       width="230.31497"
-       height="35.433056"
-       x="425.19684"
-       y="698.03149" />
+       width="230.31494"
+       height="35.43309"
+       x="421.03833"
+       y="694.06671" />
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="432.28345"
-       y="719.29132"
+       x="428.12494"
+       y="715.3266"
        id="text5285-7"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5287-5"
-         x="432.28345"
-         y="719.29132">Linux Kernel</tspan></text>
+         x="428.12494"
+         y="715.3266">Linux Kernel</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="450"
-       y="648.42517"
+       x="445.84146"
+       y="644.46045"
        id="text5285-75"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5287-9"
-         x="450"
-         y="648.42517">libusb</tspan></text>
+         x="445.84146"
+         y="644.46045">libusb</tspan></text>
     <rect
        style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect5175-0-4-4"
-       width="230.31496"
-       height="88.582703"
-       x="425.19684"
-       y="591.73224" />
+       width="230.31494"
+       height="88.58268"
+       x="421.03833"
+       y="587.76752" />
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="432.28345"
-       y="612.99207"
+       x="428.12494"
+       y="609.02734"
        id="text5285-8"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5287-1"
-         x="432.28345"
-         y="612.99207">C-Program</tspan></text>
+         x="428.12494"
+         y="609.02734">C-Program</tspan></text>
     <rect
        style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect5175-0-4-51"
-       width="230.31497"
-       height="35.433056"
-       x="425.19684"
-       y="503.1496" />
+       width="230.31494"
+       height="35.433067"
+       x="421.03833"
+       y="499.18481" />
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="432.28345"
-       y="524.40942"
+       x="428.12494"
+       y="520.4447"
        id="text5285-9"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5287-6"
-         x="432.28345"
-         y="524.40942">Matlab</tspan></text>
+         x="428.12494"
+         y="520.4447">Matlab</tspan></text>
     <rect
        style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="rect5346"
-       width="194.8819"
-       height="35.433071"
-       x="442.91336"
-       y="627.16534" />
+       width="194.88188"
+       height="35.433102"
+       x="438.75485"
+       y="623.20056" />
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="523.80292"
-       y="564.4585"
+       x="555.68396"
+       y="566.50763"
        id="text5348"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5350"
-         x="523.80292"
-         y="564.4585">binary file</tspan></text>
+         x="555.68396"
+         y="566.50763">binary file</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="340.15747"
-       y="729.92126"
+       x="360.80209"
+       y="733.04309"
        id="text5352"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5354"
-         x="340.15747"
-         y="729.92126">USB 2</tspan><tspan
+         x="360.80209"
+         y="733.04309"
+         style="text-align:center;text-anchor:middle">USB 2</tspan><tspan
          sodipodi:role="line"
-         x="340.15747"
-         y="754.92126"
-         id="tspan5356">cable</tspan></text>
+         x="360.80209"
+         y="758.04309"
+         id="tspan5356"
+         style="text-align:center;text-anchor:middle">cable</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 417.49501,764.93285 -99.2126,0"
+       id="path3024"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 314.7391,764.93285 7.08662,-3.54331 0,7.08661 -7.08662,-3.5433"
+       id="path3026"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 421.03832,764.93285 -7.08662,-3.54331 0,7.08661 7.08662,-3.5433"
+       id="path3026-9"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 138.07375,265.82656 0,28.34645"
+       id="path3814"
+       inkscape:connector-curvature="0"
+       transform="translate(52.649605,431.78345)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 138.07375,187.8738 0,-28.34646"
+       id="path3818"
+       inkscape:connector-curvature="0"
+       transform="translate(52.649605,431.78345)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 492.40446,258.73994 0,-28.34645"
+       id="path3820"
+       inkscape:connector-curvature="0"
+       transform="translate(52.649605,431.78345)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 492.40446,311.88955 0,-10.62992"
+       id="path3822"
+       inkscape:connector-curvature="0"
+       transform="translate(52.649605,431.78345)" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 492.40446,155.98404 0,-49.6063"
+       id="path3824"
+       inkscape:connector-curvature="0"
+       transform="translate(52.649605,431.78345)"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 138.07375,155.98404 3.54331,7.08661 -7.08662,0 3.54331,-7.08661"
+       id="path3826"
+       inkscape:connector-curvature="0"
+       transform="translate(52.649605,431.78345)" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 190.72335,694.0667 3.54331,7.08661 -7.08662,0 3.54331,-7.08661"
+       id="path3826-9"
+       inkscape:connector-curvature="0"
+       inkscape:transform-center-x="7.086613" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 545.05406,729.49977 3.54331,7.08661 -7.08662,0 3.54331,-7.08661"
+       id="path3826-3"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 545.05406,658.63363 3.54331,7.08661 -7.08662,0 3.54331,-7.08661"
+       id="path3826-7"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 545.05406,534.61788 3.54331,7.08661 -7.08662,0 3.54331,-7.08661"
+       id="path3826-4"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 190.72335,623.20056 3.54331,-7.08661 -7.08662,0 3.54331,7.08661"
+       id="path3826-49"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 190.72336,729.49977 3.54331,-7.08661 -7.08662,0 3.54331,7.08661"
+       id="path3826-49-4"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 545.05406,747.21631 3.54331,-7.08661 -7.08662,0 3.54331,7.08661"
+       id="path3826-49-6"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       d="m 545.05406,694.06669 3.54331,-7.08661 -7.08662,0 3.54331,7.08661"
+       id="path3826-49-0"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>
