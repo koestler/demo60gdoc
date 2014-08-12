@@ -1,12 +1,23 @@
 \chapter{Receiver Design}
+\label{chap:rx}
 \section{Receiver Architecture}
 \subsection{Quadrature Baseband Sampling Receiver}
-The most simple and
+
 \begin{itemize}
-\item Show overview picture of architecture
-\item Frequency space pictures of Baseband, TX-IF, 60G, RX-IF, Baseband
-\item Con: LO Self-Mixing leads to DC-Offset that has to be blocked using a
+\item Band filter: very difficult to make ajastuble -> filter whole band
+\item First IF has to be high enough such that the undesired side band lies
+  outside the band filter.
+\item high enough is > rf bandwidth / 2 (when USB / LSB  can be switched later)
+\item since $\omega_{\text{LO}_1}$ for the 60 GHz case is high enough, the mirror
+  of the desired signal at $f_{\text{RF}} + \omega_{\text{LO}_1}$ is filtered
+  by the implementation of the filter.
+\item channel filter: suppressed signal from nabourigh channels
+\item use quadrature sampling because of assymetric signal
+\item Low-Pass filter to avoid aliasing
+\item Con: Self-Missing of $\omega_{\text{LO}_2}$ leads to DC-Offset that has to be blocked using a
   High-Pass-Filter also removes a small part of the signal
+\item erste Mixer -> hoch, LSB aus Band
+\item zweiter Mixer -> tief, besserer Mixer, wenig Carrier leakage
 \end{itemize}
 
 \begin{figure}[ht]
@@ -18,9 +29,16 @@ The most simple and
 
 \subsection{Intermediate Frequency Sampling Receiver}
 \begin{itemize}
-\item Show overview picture of architecture
-\item Frequency space pictures of Baseband, TX-IF, 60G, RX-IF, Baseband
-\item RX and TX-LO offset to make sure LSB part is out of band
+\item Two mixer paths and $90^\circ$ couplers can be used to optain a
+  single sided donmixed signal
+\item High-Pass filter removes signal between RX $\text{LO}_1$ and channel (including TX LO)
+\item Second Mixer mixes to first Nyquist zone, Low-Pass filter avoids aliasing
+\item RX and TX-LO offset to make sure sent LSB residual does not possitively
+  interfer with signal by non perfect LSB suppression in RX.
+\item Pro: No high first IF to suppress LSB
+\item Con: Sharp high- / low-pass Filter needed
+\item Con: high ADC sampling speed
+\item Presentation: show theory of 90 deg cancelation
 \end{itemize}
 
 \begin{figure}[ht]
@@ -30,13 +48,47 @@ The most simple and
   \label{fig:rx_if_bd}
 \end{figure}
 
+\begin{figure}[ht]
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/if_rx_freq_tx_if}
+    \caption{\gls{TX} \gls{IF}}
+    \label{fig:rx_if_freq_tx_if}
+  \end{subfigure}
+  \vspace{8ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/if_rx_freq_rf}
+    \caption{\gls{RF}}
+    \label{fig:rx_if_freq_rf}
+  \end{subfigure}
+  \vspace{8ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/if_rx_freq_rx_if1}
+    \caption{\gls{RX} high \gls{IF}}
+    \label{fig:rx_if_freq_rx_if1}
+  \end{subfigure}
+  \vspace{8ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/if_rx_freq_rx_if2}
+    \caption{\gls{RX} low \gls{IF}}
+    \label{fig:rx_if_freq_rx_if2}
+  \end{subfigure}
+  \caption{Intermediate Frequency Sampling Receiver in Frequency Domain}
+  \label{fig:rx_if_freq}
+\end{figure}
+
 \subsection{Quadrate Intermediate Frequency Sub-Nyquist Sampling Receiver}
 \begin{itemize}
-\item Show overview picture of architecture
-\item Motivation: Save external mixer
-\item Frequency space pictures of Baseband, TX-IF, 60G, RX-IF, Baseband
-\item Sub-nyquist sampling, reference to component restrictions
-\item Show how sub-nyquist sampling works with hilbert transform to generate analytical signal
+\item USB / LSB problem similar to IF-Mixer image suppression
+\item Problem can be solved by using only one mixer and quadrature sampling.
+\item Needs double the bandwidth to sample both channels with the full
+  signal bandwidth
+\item Use sub-nyquist sampling to avoid DC-offset problem and low-frequency
+  limitation of components (carrier leakage)
+\item Only very few components needed -> less non-idealities
 \end{itemize}
 
 \begin{figure}[ht]

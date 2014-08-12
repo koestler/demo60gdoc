@@ -1,22 +1,55 @@
-\chapter{Communication System and its simulation}
+\chapter{Communication and Measurement System}
+In order to analyse the different receiver designs described in
+\chapref{chap:rx} and to experiment with different channels
+and system parameters a versatile comminication system
+including a simulation framework and interfaces to the hardware
+was needed. \\
 
+The primary aim of the setup to show, that multi-gigabit per second
+throughput is possible using high modulation and wide channels.
+Also the effect of phase noise and other performance limiting impairments
+were investigated. \\
 
-\begin{itemize}
-\item 802.11ad oriented receiver
-\item but non standard supplient
-\item aim: show that big datarates are possible
-\item aim: use to investigate phase noise behaviour and find other non ideal effects
-\item perfomance limiting impairments
-\end{itemize}
+To achiev all this goals a flexible Matlab script supporting
+many different configurations was written. It allows to simulate
+the different receivers designs but also interfaces to the hardware
+to replace the \gls{RF} parts by real hardware. Matlab was chosen
+because of it's widespread use in communication systems research. \\
+
+To optimally contribute to existing work, many parameters including
+the important parts of the frame structure as well as modulation
+schemes were done according to the proposed IEEE 802.11ad standard.
+Since this system is soley for research and to avoid spending any
+time on unnecessary features, the used system is not compliant to the
+proposed standard though. \\
+
+\section{Transmitter}
+Since the implementation of the \gls{RF} part of the
+transmitter was of minor intreset for this work,
+an \gls{AWG} described in \secref{osec:comp_awg}
+and a Sivers 58-63 GHz converter were used. \\
 
 \section{Modulation and Pulse Shaping Scheme}
-\begin{itemize}
-\item bpsk / QAM
-\item root raised cosine filter for pulse shaping
-\end{itemize}
+Because the training and estimation fields are not used to 
+transmitt any information but only to synchronize in time
+and frequency and to measure channel properties they were all
+modulated using \gls{BPSK}. \\
 
+For the data fields \gls{BPSK}, \gls{QPSK} and arbitrary, even
+\gls{QAM} modulations were implemented. Therby the datarate
+can be maximized depending on the \gls{SNR}. \\
+
+A \gls{RRC}-filter was used for pulse shaping. It has the big advantage that
+the same filter can be used for transmission and reception. \\
 
 \section{Frame strucutre}
+\label{sec:sys_frame_struct}
+
+Very similar to the standard, the transmitted frames are build as shown in
+\figref{fig:sys_frame_struct}.
+
+
+
 \begin{itemize}
 \item 802.11ad oriented
 \item ZEROS FES CES FIRST\_PES DATA PES DATA PES ... ZEROS
