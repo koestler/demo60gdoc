@@ -1,7 +1,67 @@
-\chapter{Receiver Design}
+\chapter{Selection of Receiver Architecture}
 \label{chap:rx}
+
+A wide variety of different receiver designs exists each with it's advantages
+and drawbacks. To come up with an optimal design, different receiver designs
+were investigated using theoretical considerations and some were simulated to
+further understand them. Thereby the focal point was on architectures we could
+build in hardware using the Sivers IMA 58-63 GHz converter described in
+\secref{sec:comp_sives}. \\
+
+The following secions cover three different architectures. There are example
+frequencies given that are supported by the hardware available. Also their
+advantages and drawbacks are disscussed.
+
+\section{Transmitter Architecture}
+During this report always the same transmitter architecture was used.
+It consists of two channel \gls{DAC} converting the 1.8 GHz wide
+\gls{TX} \gls{IF} signal at $f_{\text{TX IF}}$ and a $90^\circ$ phase shifted
+version. \\
+
+This two signals are than up-converter to
+\gls{RF} and a $90^\circ$ coupler is used to suppress the \gls{LSB}
+as good as possible.
+Therefor the \gls{USB} considered the desired signal and the
+not redidual \gls{LSB} an interferer. \\
+
+It was measured that in our setup the \gls{TX} \gls{LO} leackage
+to the output \gls{RF} signal has similar power than the desired
+signal it self. Therefor this leackage has to be considered and is
+shown in all of the following spectrum drawing.
+$f_{\text{TX IF}} = f_{\text{c}} - f_{\text{TX LO}}$ can be chosen accordingly
+such that this leackage can be well enough suppressed.
+
 \section{Receiver Architecture}
 \subsection{Quadrature Baseband Sampling Receiver}
+The Quadrature Baseband Sampling Receiver drawn in \figref{fig:rx_quad_base_bd}
+starts with a band filter which is the same for all three architecurs.
+It is used to minimize the total power supplied to a \gls{LNA}
+which has the main influence of the total noise figure of the receiver
+and limits the maximum bandwidth which is downmixed.
+Unfortenutely ajastable \gls{RF} filters are very hard to build. Therefor
+the band filter is fixed to the whole band of interest. \\
+
+Then a first mixer uses a \gls{LO} $f_{\text{RX LO}} = 55 \text{GHz}$
+to mix the signal at $f_{\text{c}} = 60.9 \text{GHz}$
+to an \gls{IF} of $f_{\text{RX IF}} = f_{\text{c}} - f_{\text{RX LO}}$.
+The two signals $\pm (f_{\text{c}} + f_{\text{RX LO}})$ are not relevant
+since their frequency is above 100 GHz and well beyond what the
+mixer output can drive. $f_{\text{RX IF}}$ has to be high enough such
+that $-f_{\text{c}} + f_{\text{RX LO}}$ does not convolve with the
+desired signal which give a lower bound
+$f_{\text{RX IF}} \beq \text{BW}_{\text{band filter}}$ for the \gls{RX}
+\gls{IF} frequency. \\
+
+A fixed channel filter is than used to suppress any signal
+comming from neighbouring channels including the \gls{TX} \gls{LO}
+leackage witch was also mixed down. \\
+
+After all energy ex
+
+Since our signal is assymetric the baseband signal is not analytic and therefor
+quadrature sampling is used. \\
+
+
 
 \begin{itemize}
 \item Band filter: very difficult to make ajastuble -> filter whole band
