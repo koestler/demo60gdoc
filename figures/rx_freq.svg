@@ -25,14 +25,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.1359031"
-     inkscape:cx="238.27137"
-     inkscape:cy="496.65616"
+     inkscape:zoom="0.80320478"
+     inkscape:cx="1247.8495"
+     inkscape:cy="409.43976"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
-     inkscape:window-width="1680"
-     inkscape:window-height="1003"
+     inkscape:window-width="2560"
+     inkscape:window-height="1393"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
@@ -54,7 +54,7 @@
        empcolor="#ff0000"
        empopacity="0.25098039"
        originx="185.28222mm"
-       originy="-44.575605mm" />
+       originy="-44.575623mm" />
     <inkscape:grid
        type="xygrid"
        id="grid3806"
@@ -66,7 +66,7 @@
        spacingx="1mm"
        spacingy="1mm"
        originx="185.28222mm"
-       originy="-44.575605mm" />
+       originy="-44.575623mm" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -3130,40 +3130,5 @@
          x="-322.44101"
          y="751.37799"
          id="tspan6109-4">Bandwidth</tspan></text>
-    <use
-       x="0"
-       y="0"
-       xlink:href="#use4946-7"
-       id="use6138"
-       transform="translate(127.55906,4.1823328e-6)"
-       width="656.74408"
-       height="985.01709" />
-    <use
-       x="0"
-       y="0"
-       xlink:href="#use6138"
-       id="use6140"
-       transform="translate(-255.11812,-4.330708e-7)"
-       width="656.74408"
-       height="985.01709" />
-    <text
-       xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="-563.3858"
-       y="839.76379"
-       id="text6023-6"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan6025-2"
-         x="-563.3858"
-         y="839.76379">...</tspan></text>
-    <use
-       x="0"
-       y="0"
-       xlink:href="#text6023-6"
-       id="use6163"
-       transform="translate(439.37008,0)"
-       width="656.74408"
-       height="985.01709" />
   </g>
 </svg>

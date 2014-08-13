@@ -19,10 +19,10 @@ It consists of two channel \gls{DAC} converting the 1.8 GHz wide
 version. \\
 
 This two signals are than up-converter to
-\gls{RF} and a $90^\circ$ coupler is used to suppress the \gls{LSB}
+\gls{RF} and a $90^\circ$ coupler is used to suppress the \gls{LSBand}
 as good as possible.
-Therefor the \gls{USB} considered the desired signal and the
-not redidual \gls{LSB} an interferer. \\
+Therefor the \gls{USBand} considered the desired signal and the
+not redidual \gls{LSBand} an interferer. \\
 
 It was measured that in our setup the \gls{TX} \gls{LO} leackage
 to the output \gls{RF} signal has similar power than the desired
@@ -33,8 +33,11 @@ such that this leackage can be well enough suppressed.
 
 \section{Receiver Architecture}
 \subsection{Quadrature Baseband Sampling Receiver}
-The Quadrature Baseband Sampling Receiver drawn in \figref{fig:rx_quad_base_bd}
-starts with a band filter which is the same for all three architecurs.
+\label{sec:rx_0}
+
+The Quadrature Baseband Sampling Receiver drawn in \figref{fig:rx_0_bd}
+starts with a band filter which is the same for all three architecurs
+(see \figref{fig:rx_0_rf}).
 It is used to minimize the total power supplied to a \gls{LNA}
 which has the main influence of the total noise figure of the receiver
 and limits the maximum bandwidth which is downmixed.
@@ -43,51 +46,76 @@ the band filter is fixed to the whole band of interest. \\
 
 Then a first mixer uses a \gls{LO} $f_{\text{RX LO}} = 55 \text{GHz}$
 to mix the signal at $f_{\text{c}} = 60.9 \text{GHz}$
-to an \gls{IF} of $f_{\text{RX IF}} = f_{\text{c}} - f_{\text{RX LO}}$.
+to an \gls{IF} of $f_{\text{RX IF}} = f_{\text{c}} - f_{\text{RX LO}}$
+(see \figref{fig:rx_0_freq_rx_if1}).
 The two signals $\pm (f_{\text{c}} + f_{\text{RX LO}})$ are not relevant
 since their frequency is above 100 GHz and well beyond what the
 mixer output can drive. $f_{\text{RX IF}}$ has to be high enough such
 that $-f_{\text{c}} + f_{\text{RX LO}}$ does not convolve with the
 desired signal which give a lower bound
-$f_{\text{RX IF}} \beq \text{BW}_{\text{band filter}}$ for the \gls{RX}
-\gls{IF} frequency. \\
+$f_{\text{RX IF}} \geq \text{BW}_{\text{band filter}}$ for the \gls{RX}
+\gls{IF} frequency\footnote{%
+  Infact $f_{\text{RX IF}} \geq \frac{\text{BW}_{\text{band filter}}}{2}$
+  is sufficient if later stages of the receiver can switch
+  between \gls{USBand} and \gls{LSBand}.}. \\
 
-A fixed channel filter is than used to suppress any signal
-comming from neighbouring channels including the \gls{TX} \gls{LO}
-leackage witch was also mixed down. \\
+A fixed channel filter is than used to suppress neighbouring channels
+including the \gls{TX} \gls{LO} leackage witch was also mixed down. \\
 
-After all energy ex
+Since our signal is assymetric the baseband signal is not analytic
+and therefor quadrature sampling is used.
+Hence two mixers using a \gls{LO} at $f_{\text{LO}_2} = 0.9 \text{GHz}$ are
+used to downmix the signal to a quadrature baseband which than can
+be sampled by two \glspl{ADC} as shown in \figref{fig:rx_0_freq_rx_if2}. \\
 
-Since our signal is assymetric the baseband signal is not analytic and therefor
-quadrature sampling is used. \\
-
-
-
-\begin{itemize}
-\item Band filter: very difficult to make ajastuble -> filter whole band
-\item First IF has to be high enough such that the undesired side band lies
-  outside the band filter.
-\item high enough is > rf bandwidth / 2 (when USB / LSB  can be switched later)
-\item since $\omega_{\text{LO}_1}$ for the 60 GHz case is high enough, the mirror
-  of the desired signal at $f_{\text{RF}} + \omega_{\text{LO}_1}$ is filtered
-  by the implementation of the filter.
-\item channel filter: suppressed signal from nabourigh channels
-\item use quadrature sampling because of assymetric signal
-\item Low-Pass filter to avoid aliasing
-\item Con: Self-Missing of $\omega_{\text{LO}_2}$ leads to DC-Offset that has to be blocked using a
-  High-Pass-Filter also removes a small part of the signal
-\item erste Mixer -> hoch, LSB aus Band
-\item zweiter Mixer -> tief, besserer Mixer, wenig Carrier leakage
-\end{itemize}
+Self-mixing of the \gls{LO} of these mixers lead to a \gls{DC}-offset
+which has to be blocked in order for the \glspl{ADC} to work at full range.
+Therefor all \glspl{ADC} are always used with \gls{DC}-blocks as described in
+\secref{sec:sec:comp_dc_block}. This high-pass filters unfortunately
+not only remove \gls{DC} but also a small portion of the signal
+resulting in some \gls{ISI}. \\
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=\textwidth]{figures/quad_base_rx_block_diagram}
+  \includegraphics[width=\textwidth]{figures/rx_0_bd}
   \caption{Block Diagram of Quadrature Baseband Sampling Receiver}
-  \label{fig:rx_quad_base_bd}
+  \label{fig:rx_0_bd}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/rx_0_freq_tx_if}
+    \caption{\gls{TX} \gls{IF}}
+    \label{fig:rx_0_frq_tx_if}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/rx_0_freq_rf}
+    \caption{\gls{RF}}
+    \label{fig:rx_0_freq_rf}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/rx_0_freq_rx_if1}
+    \caption{\gls{RX} high \gls{IF}}
+    \label{fig:rx_0_freq_rx_if1}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/rx_0_freq_rx_if2}
+    \caption{\gls{RX} low \gls{IF}}
+    \label{fig:rx_0_freq_rx_if2}
+  \end{subfigure}
+  \caption{Quadrature Baseband Sampling Receiver in Frequency Domain}
+  \label{fig:rx_0_freq}
 \end{figure}
 
 \subsection{Intermediate Frequency Sampling Receiver}
+\label{sec:rx_1}
 \begin{itemize}
 \item Two mixer paths and $90^\circ$ couplers can be used to optain a
   single sided donmixed signal
@@ -101,43 +129,47 @@ quadrature sampling is used. \\
 \item Presentation: show theory of 90 deg cancelation
 \end{itemize}
 
+A second mixer is than used to mix the desired signal to first Nyquist-zone
+of the ADC and sampled at twice the bandwidth
+(3.6 GHz for the 1.8 GHz wide signal). Self-mixing of the
+
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=\textwidth]{figures/if_rx_block_diagram}
+  \includegraphics[width=\textwidth]{figures/rx_1_bd}
   \caption{Block Diagram of Intermediate Frequency Sampling Receiver}
-  \label{fig:rx_if_bd}
+  \label{fig:rx_1_bd}
 \end{figure}
 
 \begin{figure}[ht]
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/if_rx_freq_tx_if}
+    \includegraphics[width=0.8\textwidth]{figures/rx_1_freq_tx_if}
     \caption{\gls{TX} \gls{IF}}
-    \label{fig:rx_if_freq_tx_if}
+    \label{fig:rx_1_frq_tx_if}
   \end{subfigure}
-  \vspace{8ex} \\
+  \vspace{4ex} \\
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/if_rx_freq_rf}
+    \includegraphics[width=0.8\textwidth]{figures/rx_1_freq_rf}
     \caption{\gls{RF}}
-    \label{fig:rx_if_freq_rf}
+    \label{fig:rx_1_freq_rf}
   \end{subfigure}
-  \vspace{8ex} \\
+  \vspace{4ex} \\
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/if_rx_freq_rx_if1}
+    \includegraphics[width=0.8\textwidth]{figures/rx_1_freq_rx_if1}
     \caption{\gls{RX} high \gls{IF}}
-    \label{fig:rx_if_freq_rx_if1}
+    \label{fig:rx_1_freq_rx_if1}
   \end{subfigure}
-  \vspace{8ex} \\
+  \vspace{4ex} \\
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/if_rx_freq_rx_if2}
+    \includegraphics[width=0.8\textwidth]{figures/rx_1_freq_rx_if2}
     \caption{\gls{RX} low \gls{IF}}
-    \label{fig:rx_if_freq_rx_if2}
+    \label{fig:rx_1_freq_rx_if2}
   \end{subfigure}
-  \caption{Intermediate Frequency Sampling Receiver in Frequency Domain}
-  \label{fig:rx_if_freq}
+  \caption{Intermediate Frequency Sampling Receive in Frequency Domain}
+  \label{fig:rx_1_freq}
 \end{figure}
 
 \subsection{Quadrate Intermediate Frequency Sub-Nyquist Sampling Receiver}
@@ -149,13 +181,48 @@ quadrature sampling is used. \\
 \item Use sub-nyquist sampling to avoid DC-offset problem and low-frequency
   limitation of components (carrier leakage)
 \item Only very few components needed -> less non-idealities
+\item since mixer works at much high frequencies than the second mixer of
+  previous architectures, much bigger LO-leackage -> cannot work down to DC
 \end{itemize}
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\textwidth]{figures/quad_if_rx_block_diagram}
   \caption{Block Diagram of Quadrate Intermediate Frequency Sub-Nyquist Sampling Receiver}
-  \label{fig:rx_quad_if_bd}
+  \label{fig:rx_2_bd}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/rx_2_freq_tx_if}
+    \caption{\gls{TX} \gls{IF}}
+    \label{fig:rx_2_frq_tx_if}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/rx_2_freq_rf}
+    \caption{\gls{RF}}
+    \label{fig:rx_2_freq_rf}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/rx_2_freq_rx_if}
+    \caption{\gls{RX} \gls{IF}}
+    \label{fig:rx_2_freq_rx_if1}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/rx_2_freq_rx_adc}
+    \caption{Sampled Signal}
+    \label{fig:rx_2_freq_rx_if2}
+  \end{subfigure}
+  \caption{Quadrate Intermediate Frequency Sub-Nyquist Sampling Receiver
+    in Frequency Domain}
+  \label{fig:rx_2_freq}
 \end{figure}
 
 \section{Generation of Analytic Signal In Analog Domain}
