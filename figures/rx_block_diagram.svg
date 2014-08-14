@@ -14,8 +14,8 @@
    inkscape:version="0.48.4 r9939"
    version="1.1"
    id="svg2"
-   height="122.48462"
-   width="250.44855">
+   height="148.61906"
+   width="301.67371">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="-563.92422"
-     inkscape:cy="-216.61755"
+     inkscape:zoom="1.4"
+     inkscape:cx="-482.86732"
+     inkscape:cy="-142.83388"
      inkscape:document-units="px"
      inkscape:current-layer="svg2"
      showgrid="true"
@@ -51,8 +51,8 @@
        empspacing="5"
        id="grid3004"
        type="xygrid"
-       originx="-300.45486mm"
-       originy="-217.85638mm" />
+       originx="-285.00319mm"
+       originy="-162.48066mm" />
   </sodipodi:namedview>
   <defs
      id="defs4" />
@@ -72,7 +72,7 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1"
-     transform="translate(-1064.6038,-157.94547)">
+     transform="translate(-1009.8538,-328.0242)">
     <flowRoot
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
        id="flowRoot14368"
@@ -395,14 +395,14 @@
              d="m 490.59,420.92 0,0.04 0,0.04 0,0.05 0,0.04 0,0.03 0,0.04 0,0.04 0,0.03 0,0.04 0,0.03 -0.01,0.03 0,0.03 0,0.03 0,0.03 -0.01,0.03 0,0.02 -0.01,0.03 0,0.02 -0.01,0.03 0,0.02 -0.01,0.04 -0.02,0.04 -0.01,0.03 -0.02,0.03 -0.03,0.03 -0.02,0.03 -0.03,0.02 -0.03,0.02 -0.03,0.02 -0.04,0.01 -0.04,0.01 -0.04,0.02 -0.03,0 -0.02,0 -0.03,0.01 -0.02,0 -0.03,0.01 -0.03,0 -0.03,0 -0.03,0 -0.03,0 -0.04,0.01 -0.03,0 -0.04,0 -0.03,0 -0.04,0 -0.04,0 -0.04,0 -0.04,0 -0.04,0 -0.05,0 -0.04,0 c -2.24,-2.2 -5.39,-2.23 -6.83,-2.23 v -1.25 c 0.84,0 3.14,0 5.05,0.97 v -17.77 c 0,-1.16 0,-1.61 -3.49,-1.61 h -1.31 v -1.25 c 0.62,0.03 4.91,0.14 6.2,0.14 1.08,0 5.47,-0.11 6.24,-0.14 v 1.25 h -1.33 c -3.49,0 -3.49,0.45 -3.49,1.61 z" /><polygon
              style="fill:#000000;stroke-width:0"
              id="polygon4045-0"
-             points="513.94,441.57 513.94,443.56 507.11,443.56 507.11,393.75 513.94,393.75 513.94,395.73 509.11,395.73 509.11,441.57 " /><path
+             points="507.11,393.75 513.94,393.75 513.94,395.73 509.11,395.73 509.11,441.57 513.94,441.57 513.94,443.56 507.11,443.56 " /><path
              style="fill:#000000;stroke-width:0"
              inkscape:connector-curvature="0"
              id="path4047-5"
              d="m 525.3,426.12 h 4.69 c 0.98,0 1.48,0 1.48,1 0,0.55 -0.5,0.55 -1.39,0.55 h -4.39 c 1.8,7.08 2.05,8.08 2.05,8.37 0,0.85 -0.59,1.35 -1.44,1.35 -0.15,0 -1.55,-0.05 -2,-1.8 l -1.94,-7.92 h -4.68 c -1,0 -1.5,0 -1.5,-0.94 0,-0.61 0.4,-0.61 1.4,-0.61 h 4.38 c -3.58,-14.14 -3.78,-14.98 -3.78,-15.89 0,-2.69 1.89,-4.58 4.57,-4.58 5.08,0 7.93,7.27 7.93,7.67 0,0.5 -0.4,0.5 -0.6,0.5 -0.45,0 -0.5,-0.15 -0.75,-0.7 -2.14,-5.17 -4.78,-6.37 -6.47,-6.37 -1.04,0 -1.54,0.65 -1.54,2.29 0,1.19 0.09,1.55 0.29,2.39 z" /><polygon
              style="fill:#000000;stroke-width:0"
              id="polygon4049-1"
-             points="538.96,395.73 534.13,395.73 534.13,393.75 540.96,393.75 540.96,443.56 534.13,443.56 534.13,441.57 538.96,441.57 " /></g>      </g>
+             points="540.96,393.75 540.96,443.56 534.13,443.56 534.13,441.57 538.96,441.57 538.96,395.73 534.13,395.73 534.13,393.75 " /></g>      </g>
       <g
          transform="matrix(0.3,0,0,0.3,412.39133,842.78956)"
          id="g4127-5">
@@ -428,14 +428,14 @@
              d="m 496.52,405.11 h -1.19 c -0.1,-0.77 -0.45,-2.83 -0.91,-3.18 -0.26,-0.2 -2.95,-0.2 -3.44,-0.2 h -6.42 c 3.66,3.23 4.88,4.2 6.97,5.84 2.58,2.07 4.99,4.22 4.99,7.54 0,4.21 -3.69,6.79 -8.16,6.79 -4.31,0 -7.25,-3.03 -7.25,-6.23 0,-1.78 1.5,-1.96 1.86,-1.96 0.83,0 1.84,0.6 1.84,1.85 0,0.62 -0.25,1.84 -2.06,1.84 1.08,2.47 3.45,3.24 5.09,3.24 3.49,0 5.3,-2.71 5.3,-5.53 0,-3.04 -2.16,-5.44 -3.28,-6.69 l -8.39,-8.3 c -0.36,-0.31 -0.36,-0.39 -0.36,-1.36 h 14.36 z"
              id="path4133-7" /><polygon
              style="fill:#000000;stroke-width:0"
-             points="509.11,395.73 509.11,441.57 513.94,441.57 513.94,443.56 507.11,443.56 507.11,393.75 513.94,393.75 513.94,395.73 "
+             points="513.94,443.56 507.11,443.56 507.11,393.75 513.94,393.75 513.94,395.73 509.11,395.73 509.11,441.57 513.94,441.57 "
              id="polygon4135-2" /><path
              style="fill:#000000;stroke-width:0"
              inkscape:connector-curvature="0"
              d="m 525.3,426.12 h 4.69 c 0.98,0 1.48,0 1.48,1 0,0.55 -0.5,0.55 -1.39,0.55 h -4.39 c 1.8,7.08 2.05,8.08 2.05,8.37 0,0.85 -0.59,1.35 -1.44,1.35 -0.15,0 -1.55,-0.05 -2,-1.8 l -1.94,-7.92 h -4.68 c -1,0 -1.5,0 -1.5,-0.94 0,-0.61 0.4,-0.61 1.4,-0.61 h 4.38 c -3.58,-14.14 -3.78,-14.98 -3.78,-15.89 0,-2.69 1.89,-4.58 4.57,-4.58 5.08,0 7.93,7.27 7.93,7.67 0,0.5 -0.4,0.5 -0.6,0.5 -0.45,0 -0.5,-0.15 -0.75,-0.7 -2.14,-5.17 -4.78,-6.37 -6.47,-6.37 -1.04,0 -1.54,0.65 -1.54,2.29 0,1.19 0.09,1.55 0.29,2.39 z"
              id="path4137-0" /><polygon
              style="fill:#000000;stroke-width:0"
-             points="534.13,441.57 538.96,441.57 538.96,395.73 534.13,395.73 534.13,393.75 540.96,393.75 540.96,443.56 534.13,443.56 "
+             points="534.13,395.73 534.13,393.75 540.96,393.75 540.96,443.56 534.13,443.56 534.13,441.57 538.96,441.57 538.96,395.73 "
              id="polygon4139-3" /></g>      </g>
       <path
          sodipodi:nodetypes="cc"
@@ -1292,14 +1292,14 @@
              d="m 475,424.84 -0.13,-0.01 -0.12,-0.01 -0.13,-0.02 -0.12,-0.03 -0.12,-0.03 -0.12,-0.04 -0.11,-0.04 -0.11,-0.04 -0.11,-0.05 -0.1,-0.06 -0.1,-0.06 -0.1,-0.06 -0.09,-0.07 -0.09,-0.07 -0.09,-0.07 -0.08,-0.08 -0.08,-0.08 -0.07,-0.08 -0.07,-0.09 -0.06,-0.08 -0.06,-0.09 -0.06,-0.1 -0.05,-0.09 -0.04,-0.1 -0.04,-0.09 -0.04,-0.1 -0.03,-0.1 -0.02,-0.1 -0.02,-0.1 -0.02,-0.11 0,-0.1 -0.01,-0.1 c 0,-0.7 0.44,-1.44 1.55,-1.44 1.09,0 2.28,0.85 2.28,2.78 0,2.25 -2.14,4.28 -5.92,4.28 -6.58,0 -8.42,-5.07 -8.42,-7.26 0,-3.89 3.69,-4.64 5.12,-4.94 2.6,-0.5 5.19,-1.05 5.19,-3.78 0,-1.3 -1.14,-5.48 -7.12,-5.48 -0.71,0 -4.54,0 -5.69,2.64 1.9,-0.25 3.14,1.25 3.14,2.64 0,1.14 -0.8,1.75 -1.85,1.75 -1.29,0 -2.78,-1.05 -2.78,-3.3 0,-2.84 2.85,-4.83 7.13,-4.83 8.06,0 10.01,6.03 10.01,8.27 0,1.79 -0.95,3.04 -1.54,3.64 -1.35,1.39 -2.8,1.64 -4.99,2.09 -1.79,0.39 -3.78,0.75 -3.78,2.99 0,1.45 1.19,4.48 5.58,4.48 1.23,0 3.73,-0.34 4.48,-2.28 z"
              id="path8383" /><polygon
              style="fill:#000000;stroke-width:0"
-             points="484.79,393.75 491.62,393.75 491.62,395.73 486.79,395.73 486.79,441.57 491.62,441.57 491.62,443.56 484.79,443.56 "
+             points="486.79,395.73 486.79,441.57 491.62,441.57 491.62,443.56 484.79,443.56 484.79,393.75 491.62,393.75 491.62,395.73 "
              id="polygon8385" /><path
              style="fill:#000000;stroke-width:0"
              inkscape:connector-curvature="0"
              d="m 502.98,426.12 h 4.69 c 0.98,0 1.48,0 1.48,1 0,0.55 -0.5,0.55 -1.39,0.55 h -4.39 c 1.8,7.08 2.05,8.08 2.05,8.37 0,0.85 -0.6,1.35 -1.44,1.35 -0.16,0 -1.55,-0.05 -2,-1.8 l -1.94,-7.92 h -4.68 c -1,0 -1.5,0 -1.5,-0.94 0,-0.61 0.4,-0.61 1.4,-0.61 h 4.38 c -3.58,-14.14 -3.78,-14.98 -3.78,-15.89 0,-2.69 1.89,-4.58 4.57,-4.58 5.08,0 7.93,7.27 7.93,7.67 0,0.5 -0.4,0.5 -0.6,0.5 -0.45,0 -0.5,-0.15 -0.75,-0.7 -2.14,-5.17 -4.78,-6.37 -6.47,-6.37 -1.04,0 -1.54,0.65 -1.54,2.29 0,1.19 0.09,1.55 0.29,2.39 z"
              id="path8387" /><polygon
              style="fill:#000000;stroke-width:0"
-             points="518.64,393.75 518.64,443.56 511.81,443.56 511.81,441.57 516.64,441.57 516.64,395.73 511.81,395.73 511.81,393.75 "
+             points="511.81,441.57 516.64,441.57 516.64,395.73 511.81,395.73 511.81,393.75 518.64,393.75 518.64,443.56 511.81,443.56 "
              id="polygon8389" /></g>      </g>
       <g
          transform="translate(389.76378,-265.74812)"
@@ -1647,10 +1647,10 @@
     </g>
   </g>
   <g
-     id="g10554">
+     id="g13043">
     <g
        id="g3948-8"
-       transform="translate(-231.92665,-317.39437)">
+       transform="translate(-177.17665,-487.4731)">
       <g
          id="g3801-7"
          transform="matrix(0.8,0,0,0.8,10.731962,245.47465)">
@@ -1683,7 +1683,7 @@
     </g>
     <g
        id="g3948-4"
-       transform="translate(-231.92665,-246.52823)">
+       transform="translate(-177.17665,-416.60696)">
       <g
          id="g3801-1"
          transform="matrix(0.8,0,0,0.8,10.731962,245.47465)">
@@ -1715,7 +1715,7 @@
          d="m 283.46455,520.86615 c 0,9.78457 -7.93196,17.71654 -17.71653,17.71654 -9.78458,0 -17.71654,-7.93197 -17.71654,-17.71654 0,-9.78457 7.93196,-17.71654 17.71654,-17.71654 9.78457,0 17.71653,7.93197 17.71653,17.71654 z" />
     </g>
     <g
-       transform="translate(-231.92666,-246.52819)"
+       transform="translate(-177.17666,-416.60692)"
        id="g4852-4">
       <path
          inkscape:connector-curvature="0"
@@ -1729,7 +1729,7 @@
          style="fill:#000000;fill-opacity:1;stroke:none" />
     </g>
     <g
-       transform="translate(-231.92666,-317.39433)"
+       transform="translate(-177.17666,-487.47306)"
        id="g4852-1">
       <path
          inkscape:connector-curvature="0"
@@ -1744,16 +1744,16 @@
     </g>
     <path
        style="fill:#000000;fill-opacity:1;stroke:none"
-       d="m 16.1049,274.33793 -7.0866,-3.54331 0,7.08662 7.0866,-3.54331"
+       d="m 70.8549,104.2592 -7.0866,-3.54331 0,7.08662 7.0866,-3.54331"
        id="path4901-9"
        inkscape:connector-curvature="0" />
     <path
        style="fill:#000000;fill-opacity:1;stroke:none"
-       d="m 16.1049,203.47179 -7.0866,-3.54331 0,7.08662 7.0866,-3.54331"
+       d="m 70.8549,33.39306 -7.0866,-3.54331 0,7.08662 7.0866,-3.54331"
        id="path4901-7"
        inkscape:connector-curvature="0" />
     <path
-       transform="translate(-426.80855,-281.96127)"
+       transform="translate(-372.05855,-452.04)"
        sodipodi:type="arc"
        style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="path4946"
@@ -1764,7 +1764,7 @@
        d="m 411.02362,520.86615 a 3.5433071,3.5433071 0 1 1 -7.08661,0 3.5433071,3.5433071 0 1 1 7.08661,0 z" />
     <g
        id="g9470-0"
-       transform="translate(-267.35974,-671.7251)">
+       transform="translate(-212.60974,-841.80383)">
       <path
          inkscape:connector-curvature="0"
          id="path7989-4-4"
@@ -1779,7 +1779,7 @@
     </g>
     <g
        id="g9466-9"
-       transform="translate(-267.35974,-671.7251)">
+       transform="translate(-212.60974,-841.80383)">
       <path
          inkscape:connector-curvature="0"
          id="path4901-1-2-4-1-3"
@@ -1792,7 +1792,7 @@
          inkscape:connector-curvature="0" />
     </g>
     <g
-       transform="translate(-285.07628,-671.7251)"
+       transform="translate(-230.32628,-841.80383)"
        id="g9337-4">
       <rect
          style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
@@ -1825,14 +1825,14 @@
              id="path4043-7-1"
              inkscape:connector-curvature="0"
              style="fill:#000000;stroke-width:0" /><polygon
-             points="513.94,395.73 509.11,395.73 509.11,441.57 513.94,441.57 513.94,443.56 507.11,443.56 507.11,393.75 513.94,393.75 "
+             points="507.11,443.56 507.11,393.75 513.94,393.75 513.94,395.73 509.11,395.73 509.11,441.57 513.94,441.57 513.94,443.56 "
              id="polygon4045-0-3"
              style="fill:#000000;stroke-width:0" /><path
              d="m 525.3,426.12 h 4.69 c 0.98,0 1.48,0 1.48,1 0,0.55 -0.5,0.55 -1.39,0.55 h -4.39 c 1.8,7.08 2.05,8.08 2.05,8.37 0,0.85 -0.59,1.35 -1.44,1.35 -0.15,0 -1.55,-0.05 -2,-1.8 l -1.94,-7.92 h -4.68 c -1,0 -1.5,0 -1.5,-0.94 0,-0.61 0.4,-0.61 1.4,-0.61 h 4.38 c -3.58,-14.14 -3.78,-14.98 -3.78,-15.89 0,-2.69 1.89,-4.58 4.57,-4.58 5.08,0 7.93,7.27 7.93,7.67 0,0.5 -0.4,0.5 -0.6,0.5 -0.45,0 -0.5,-0.15 -0.75,-0.7 -2.14,-5.17 -4.78,-6.37 -6.47,-6.37 -1.04,0 -1.54,0.65 -1.54,2.29 0,1.19 0.09,1.55 0.29,2.39 z"
              id="path4047-5-3"
              inkscape:connector-curvature="0"
              style="fill:#000000;stroke-width:0" /><polygon
-             points="534.13,443.56 534.13,441.57 538.96,441.57 538.96,395.73 534.13,395.73 534.13,393.75 540.96,393.75 540.96,443.56 "
+             points="534.13,393.75 540.96,393.75 540.96,443.56 534.13,443.56 534.13,441.57 538.96,441.57 538.96,395.73 534.13,395.73 "
              id="polygon4049-1-6"
              style="fill:#000000;stroke-width:0" /></g>      </g>
       <g
@@ -1860,14 +1860,14 @@
              inkscape:connector-curvature="0"
              style="fill:#000000;stroke-width:0" /><polygon
              id="polygon4135-2-3"
-             points="507.11,393.75 513.94,393.75 513.94,395.73 509.11,395.73 509.11,441.57 513.94,441.57 513.94,443.56 507.11,443.56 "
+             points="513.94,441.57 513.94,443.56 507.11,443.56 507.11,393.75 513.94,393.75 513.94,395.73 509.11,395.73 509.11,441.57 "
              style="fill:#000000;stroke-width:0" /><path
              id="path4137-0-2"
              d="m 525.3,426.12 h 4.69 c 0.98,0 1.48,0 1.48,1 0,0.55 -0.5,0.55 -1.39,0.55 h -4.39 c 1.8,7.08 2.05,8.08 2.05,8.37 0,0.85 -0.59,1.35 -1.44,1.35 -0.15,0 -1.55,-0.05 -2,-1.8 l -1.94,-7.92 h -4.68 c -1,0 -1.5,0 -1.5,-0.94 0,-0.61 0.4,-0.61 1.4,-0.61 h 4.38 c -3.58,-14.14 -3.78,-14.98 -3.78,-15.89 0,-2.69 1.89,-4.58 4.57,-4.58 5.08,0 7.93,7.27 7.93,7.67 0,0.5 -0.4,0.5 -0.6,0.5 -0.45,0 -0.5,-0.15 -0.75,-0.7 -2.14,-5.17 -4.78,-6.37 -6.47,-6.37 -1.04,0 -1.54,0.65 -1.54,2.29 0,1.19 0.09,1.55 0.29,2.39 z"
              inkscape:connector-curvature="0"
              style="fill:#000000;stroke-width:0" /><polygon
              id="polygon4139-3-4"
-             points="540.96,393.75 540.96,443.56 534.13,443.56 534.13,441.57 538.96,441.57 538.96,395.73 534.13,395.73 534.13,393.75 "
+             points="538.96,395.73 534.13,395.73 534.13,393.75 540.96,393.75 540.96,443.56 534.13,443.56 534.13,441.57 538.96,441.57 "
              style="fill:#000000;stroke-width:0" /></g>      </g>
       <path
          style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1936,7 +1936,7 @@
     </g>
     <g
        id="g9248-4-1"
-       transform="translate(-497.67473,-529.99283)">
+       transform="translate(-442.92473,-700.07156)">
       <rect
          style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
          id="rect3884-2-9-2-3"
@@ -1952,7 +1952,7 @@
     </g>
     <g
        id="g9248-1-4"
-       transform="translate(-497.67473,-459.12669)">
+       transform="translate(-442.92473,-629.20542)">
       <rect
          style="color:#000000;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
          id="rect3884-2-9-8-4"
@@ -1969,17 +1969,17 @@
     <text
        sodipodi:linespacing="125%"
        id="text9287-9-6-3"
-       y="178.66855"
-       x="72.037964"
+       y="8.589819"
+       x="126.78796"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
        xml:space="preserve"><tspan
          id="tspan9312-1-5"
          style="font-size:12px"
-         y="178.66855"
-         x="72.037964"
+         y="8.589819"
+         x="126.78796"
          sodipodi:role="line">Low-Pass Filter</tspan></text>
     <g
-       transform="matrix(0.3,0,0,0.3,-96.915314,207.45234)"
+       transform="matrix(0.3,0,0,0.3,-40.366378,-33.492536)"
        id="g10799-8">
       <g
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;stroke:#000000;stroke-width:3.33333325;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -2052,7 +2052,7 @@
            id="path10829-2" /></g>    </g>
     <g
        id="g12671-0"
-       transform="matrix(0.3,0,0,0.3,-96.899428,136.5862)">
+       transform="matrix(0.3,0,0,0.3,-40.350433,37.373605)">
       <g
          word-spacing="normal"
          letter-spacing="normal"
@@ -2129,20 +2129,69 @@
     <path
        inkscape:connector-curvature="0"
        id="path10552"
-       d="m 12.56152,274.33793 -31.889764,0 0,-70.86614 31.889764,0"
+       d="m 67.31152,104.2592 -31.889764,0 0,-70.86614 31.889764,0"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
   </g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m -620.09006,192.84188 17.71654,0"
+     id="path10651"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 35.421756,68.826127 -35.433071,0"
+     id="path10653"
+     inkscape:connector-curvature="0" />
+  <text
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+     x="-221.72849"
+     y="36.49213"
+     id="text10674"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan10676"
+       x="-221.72849"
+       y="36.49213">rx adc 1</tspan></text>
   <use
      x="0"
      y="0"
-     xlink:href="#g10554"
-     id="use10649"
-     transform="translate(-637.79529,124.01573)"
-     width="250.44855"
-     height="122.48462" />
-  <path
-     style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     d="m -674.84006,362.92061 17.71654,0"
-     id="path10651"
-     inkscape:connector-curvature="0" />
+     xlink:href="#g13043"
+     id="use13138"
+     transform="translate(-641.33858,124.01573)"
+     width="301.67371"
+     height="148.61906" />
+  <text
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+     x="-1199.2856"
+     y="212.90479"
+     id="text13159"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan13161"
+       x="-1199.2856"
+       y="212.90479">rx 0</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+     x="-1211.4286"
+     y="372.90479"
+     id="text13163"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan13165"
+       x="-1211.4286"
+       y="372.90479">rx 1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+     x="-1177.8571"
+     y="559.33337"
+     id="text13167"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan13169"
+       x="-1177.8571"
+       y="559.33337">rx 2</tspan></text>
 </svg>
