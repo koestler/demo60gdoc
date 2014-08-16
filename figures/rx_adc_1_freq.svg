@@ -10,8 +10,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="744.09448819"
-   height="1052.3622047"
+   width="655.73743"
+   height="248.03496"
    id="svg10721"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="330.15043"
-     inkscape:cy="176.01647"
+     inkscape:zoom="1.4"
+     inkscape:cx="365.74666"
+     inkscape:cy="941.13283"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -37,7 +37,11 @@
      inkscape:window-height="1418"
      inkscape:window-x="1680"
      inkscape:window-y="0"
-     inkscape:window-maximized="1">
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
     <inkscape:grid
        id="grid10729"
        type="axonomgrid"
@@ -45,7 +49,9 @@
        enabled="true"
        visible="true"
        empspacing="5"
-       units="mm" />
+       units="mm"
+       originx="-9.5947979mm"
+       originy="87.500984mm" />
   </sodipodi:namedview>
   <defs
      id="defs10723" />
@@ -57,14 +63,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
      id="layer1"
      inkscape:groupmode="layer"
-     inkscape:label="Layer 1">
+     inkscape:label="Layer 1"
+     transform="translate(-33.997318,-1114.37)">
     <use
        x="0"
        y="0"
@@ -307,7 +314,7 @@
            inkscape:connector-curvature="0"
            id="path11708"
            d="m 383.57424,235.6299 0,-14.17323"
-           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+           style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
         <use
            height="1052.3622"
            width="744.09448"
