@@ -3,16 +3,17 @@
 
 A wide variety of different receiver designs exists each with it's advantages
 and drawbacks. To come up with an optimal design, different receiver designs
-were investigated using theoretical considerations and some were simulated to
-further understand them. Thereby the focal point was on architectures we could
+were investigated using theoretical considerations. Some were simulated to
+get an even deeper understanding.
+Thereby the focal point was on architectures we could
 build in hardware using the Sivers IMA 58-63 GHz converter described in
-\secref{sec:comp_sives}. \\
+\secref{sec:comp_sivers}. \\
 
 In the following chapters the terms \gls{TX} \gls{USBand} and \gls{TX}
 \gls{LSBand} refere to the fact that the up-mixer used for transmitting
 produces two signals at $f_{\text{TX LO}} \pm f_{\text{TX IF}}$ where
-$f_{\text{TX LO}}$ is the frequency of the transmitters local oscillator
-used for the mixer mixing to \gls{RF}. $f_{\text{TX IF}}$ is the central
+$f_{\text{TX LO}}$ is the frequency of the transmitter's \gls{LO}
+used by the mixer mixing up to \gls{RF}. $f_{\text{TX IF}}$ is the central
 frequency of the transmitters \gls{IF} signal. During all experiments
 \gls{TX} \gls{USBand} was considered the desired signal and \gls{TX}
 \gls{LSBand} a residual signal. \\
@@ -23,22 +24,22 @@ to the same receiver \gls{IF} $f_{\text{RX IF}}$. \\
 
 \section{Transmitter Architecture}
 During this report always the same transmitter architecture was used.
-It consists of two channel \gls{DAC} converting the $B = 1.8 \text{GHz}$ wide
-\gls{TX} \gls{IF} signal at $f_{\text{TX IF}}$ and a $90^\circ$ phase shifted
-version. \\
+It consists of a two channel \gls{DAC} generating the real and imaginary
+part of an analytic signal width a bandwidth $B = 1.8 \text{GHz}$
+on an \gls{IF} $f_{\text{TX IF}}$. \\
 
 This two signals are than up-converter to
 \gls{RF} and a $90^\circ$ coupler is used to suppress the \gls{LSBand}
-as good as possible.
+as good as possible as described in \secref{sec:rx_rf_1}.
 Therefor the \gls{USBand} considered the desired signal and the
-not redidual \gls{LSBand} an interferer. \\
+residual \gls{LSBand} an interferer. \\
 
 It was measured that in our setup the \gls{TX} \gls{LO} leackage
 to the output \gls{RF} signal has similar power than the desired
-signal it self. Therefor this leackage has to be considered and is
-shown in all of the following spectrum drawing.
-$f_{\text{TX IF}} = f_{\text{c}} - f_{\text{TX LO}}$ can be chosen accordingly
-such that this leackage can be well enough suppressed. \\
+signal it self. Therefor this leackage has to be considered.
+By choosing $f_{\text{TX IF}} = f_{\text{c}} - f_{\text{TX LO}}$ accordingly,
+this strong signal can be placed such that it is well suppress by the channel
+filter. \\
 
 Eventhough this would solve the problem of the the suppression of the
 undesired \gls{TX} \gls{LO} leackage, in all receivers
@@ -50,6 +51,11 @@ down-mixing. A perfekt alignment could result in an even better
 alongside the desired \gls{TX} \gls{USBand} signal. \\
 
 \section{RF Architecture}
+When building a receiver, one faces the problem of isolating the channel of
+interest from all others signals receviced by the antenna. Therefor 
+two ways of building channel selection filters are discussed in the following
+chapters. \\
+
 All receivers have a band filter directely after the antenna simply by the
 fact that all components (antenna, amplifiers, mixers etc.) have a frequency
 selectivity which is often optimized only for the band of interest.
@@ -63,88 +69,36 @@ $f_c$ and a bandwidth $B$. \\
 Since it is hard to build ajastable filters on \gls{RF} to select one specific
 channel, this selection is typically done on an \gls{IF}. In our case of a
 carrier frequency of $f_c \approx 60 \text{GHz}$ this \gls{IF} $f_{\text{IF}}$
-is always lower than the carrier frequency $f_s$ due to component restrictions. \\
+is always lower than the carrier frequency $f_c$ due to component restrictions. \\
 
-In the following two chapters two ways of building channel selection filters
-are discussed. \\
-
-\subsection{Image Rejection using high Intermediate Frequency}
+\subsection{Image Rejection using High Intermediate Frequency}
 \label{sec:rx_rf_0}
-The mixer uses a \gls{LO} at $f_{\text{RX LO}}$ to mix the signal centered around
-$f_{c}$ to an \gls{IF} of $f_{\text{RX IF}} = f_{c} - f_{\text{RX LO}}$. \\
+First we look at the architecture shown in \figref{fig:rx_rf_0_bd} where
+the mixer uses a \gls{LO} at $f_{\text{RX LO}}$ to mix the signal $s(t)$
+centered around $f_{c}$ to an \gls{IF} signal $i(t)$ at
+$f_{\text{RX IF}} = f_{c} - f_{\text{RX LO}}$ as shown in \figref{fig:rx_rf_0_freq_s}
+and \figref{fig:rx_rf_0_freq_i}. \\
 
 The two signals $\pm (f_{c} + f_{\text{RX LO}})$ are not relevant since their
 frequency is above 100 GHz and well beyond what the mixer output can drive. \\
 
-$f_{\text{RX IF}}$ has to be high enough though such that the undesired
+$f_{\text{RX IF}}$ has to be high enough such that the undesired
 \gls{RX} \gls{LSBand} signal at $-f_{\text{c}} + f_{\text{RX LO}}$
-does not convolve with the desired \gls{RX} \gls{USBand} signal.
-This leads to a lower bound
+lies outside the band filter and does not convolve with the desired
+\gls{RX} \gls{USBand} signal. This leads to a lower bound
 $f_{\text{RX IF}} \geq B$ for the \gls{RX} \gls{IF} frequency
 \footnote{%
   Infact $f_{\text{RX IF}} \geq \frac{B}{2}$
   is sufficient if later stages of the receiver can switch
-  between \gls{USBand} and \gls{LSBand}.}. \\
+  between \gls{USBand} and \gls{LSBand} reception.}. \\
 
 A fixed channel filter is than used to suppress neighbouring channels
-including the \gls{TX} \gls{LO} leackage witch was also mixed down. \\
+including the \gls{TX} \gls{LO} leackage which was also mixed down. \\
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\textwidth]{figures/rx_rf_0_bd}
   \caption{Block Diagram of Image Rejection using high \gls{IF}}
-  \label{fig:rx_rf_0_bd}
-\end{figure}
-
-\subsection{Image Rejection using $90^\circ$ Couplers}
-A second way to implement the suppression of the undesired \gls{RX}
-\gls{LSBand} signal is to use $90^\circ$ couplers as described in
-\secref{sec:comp_90deg}. \\
-
-Lets assume we have the real \gls{RF} signal $s(t)$ shown in
-\figref{fig:rx_rf_0_freq_s}.
-The blue round signal centered around the carrier frequency $+f_c$ is our
-desired signal and the spiky signal an undesired neighbouring channel.
-Since it is a real signal, the negative frequencies consist of the mirrored,
-complex conjugate signals which is painted in green. \\
-
-By spliting it using a $90^\circ$ coupler we optain the two signals
-$s(t)$ and $\mathcal{H}\{s(t)\}$ (drawn in \figref{fig:rx_rf_0_freq_Hs}).
-$\mathcal{H}^{-1}$ denots the negative Hilbert transform which rotats the phase
-of a signal by $-j$ for prositive and $j$ for negative frequencies
-as shown in \figref{fig:hilbert}. \\
-
-Next both signals are mixed by $f_{\text{RX LO}}$ resulting in two new signals
-$a(t)$ and $b(t)$ as shown in \figref{fig:rx_rf_0_freq_a} and
-\figref{fig:rx_rf_0_freq_b}.
-The mirrors at $\pm (f_c + f_{\text{RX LO}})$ are already ignored. \\
-
-By now using another $90^\circ$ coupler that applies the Hilbert transform
-to $b(t)$ (drawn in \figref{fig:rx_rf_0_freq_Hb})
-and adds $a(t)$ we end up with the real signal
-$c(t) = a(t) + \mathcal{H}\{b(t)\}$
-which is shown in \figref{fig:rx_rf_0_freq_c}. \\
-
-One should note that the difference between $\mathcal{H}$ and $\mathcal{H}^{-1}$
-is simply a swap of the two output plugs of a $90^\circ$ coupler since
-the absolute phase reference is lost anyway. In fact both outputs are delayed
-in time corresponding to negative phase rotation for positive frequencies
-and a positive phase rotation for negative frequencies. \\
-
-Finally a fixed channel selection filter can be used to at an arbitrary \gls{IF}
-which is a clear advantage over the method discussed in \secref{sec:rx_rf_0}. \\
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.3\textwidth]{figures/hilbert}
-  \caption{Transfer Function of Hilbert Transform}
-  \label{fig:hilbert}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=\textwidth]{figures/rx_rf_1_bd}
-  \caption{Block Diagram of Image Rejection using $90^\circ$ Couplers}
   \label{fig:rx_rf_0_bd}
 \end{figure}
 
@@ -159,40 +113,121 @@ which is a clear advantage over the method discussed in \secref{sec:rx_rf_0}. \\
   ~
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figures/rx_rf_0_freq_Hs}
+    \includegraphics[width=\textwidth]{figures/rx_rf_0_freq_i}
+    \caption{$i(t)$}
+    \label{fig:rx_rf_0_freq_i}
+  \end{subfigure}
+  \caption{Image Rejection using High Intermediate Frequency}
+  \label{fig:rx_rf_0_freq}
+\end{figure}
+
+\subsection{Image Rejection using $90^\circ$ Couplers}
+\label{sec:rx_rf_1}
+The use uf a high \gls{IF} as described in the last section might
+by very favorable for short wave receivers where the band filters
+are very narrow (a few MHz) the \gls{IF} can be a few MHz.
+For 60 GHz applications where band filters are approximately 5GHz wide,
+\gls{IF} of a few GHz are required.
+Therefor a more suitable way is described in this section. \\
+
+The suppression of the undesired \gls{RX} \gls{LSBand} signal can also be done
+using a $90^\circ$ couplers as described in \secref{sec:comp_90deg}: \\
+
+Let us assume we have the real \gls{RF} signal $s(t)$ shown in
+\figref{fig:rx_rf_1_freq_s}.
+The blue round signal centered around the carrier frequency $+f_c$ is our
+desired signal laying in the \gls{USBand} of the \gls{RX} mixer. 
+The spiky signal is a neighbouring channel laying exactely 
+where the \gls{LSBand} of the \gls{RX} mixer is and therefor has to
+be supressed.
+Since it is a real signal, the negative frequencies consist of the mirrored,
+complex conjugate signals which is painted in green. \\
+
+By spliting it using a $90^\circ$ coupler we optain the two signals
+$s(t)$ and $\mathcal{H}^{-1}\{s(t)\}$ (drawn in \figref{fig:rx_rf_1_freq_Hs}).
+$\mathcal{H}^{-1}$ denots the negative Hilbert transform which rotats the phase
+of a signal by $j$ for prositive and $-j$ for negative frequencies
+as shown in \figref{fig:hilbert}. \\
+
+Next both signals are mixed by $f_{\text{RX LO}}$ resulting in two new signals
+$a(t)$ and $b(t)$ as shown in \figref{fig:rx_rf_1_freq_a} and
+\figref{fig:rx_rf_1_freq_b}.
+The mirrors at $\pm (f_c + f_{\text{RX LO}})$ are already ignored. \\
+
+By using a second $90^\circ$ coupler that applies the Hilbert transform
+to $b(t)$ (drawn in \figref{fig:rx_rf_1_freq_Hb})
+and adds $a(t)$ we end up with the real signal
+$c(t) = a(t) + \mathcal{H}\{b(t)\}$
+which is shown in \figref{fig:rx_rf_1_freq_c}. \\
+
+One should note that the difference between $\mathcal{H}$ and $\mathcal{H}^{-1}$
+is simply a swap of the two output plugs of a $90^\circ$ coupler since
+the absolute phase reference is lost anyway. In fact both outputs are delayed
+in time corresponding to negative phase rotation for positive frequencies
+and a positive phase rotation for negative frequencies. \\
+
+Finally a fixed channel selection filter can be used to at an arbitrary \gls{IF}
+which is a clear advantage over the method discussed in \secref{sec:rx_rf_1}. \\
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.3\textwidth]{figures/hilbert}
+  \caption{Transfer Function of Hilbert Transform}
+  \label{fig:hilbert}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{figures/rx_rf_1_bd}
+  \caption{Block Diagram of Image Rejection using $90^\circ$ Couplers}
+  \label{fig:rx_rf_1_bd}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_s}
+    \caption{$s(t)$}
+    \label{fig:rx_rf_1_freq_s}
+  \end{subfigure}
+  ~
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_Hs}
     \caption{$\mathcal{H}^{-1}\{s(t)\}$}
-    \label{fig:rx_rf_0_freq_Hs}
+    \label{fig:rx_rf_1_freq_Hs}
   \end{subfigure}
   \vspace{4ex} \\
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figures/rx_rf_0_freq_a}
+    \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_a}
     \caption{$a(t)$}
-    \label{fig:rx_rf_0_freq_a}
+    \label{fig:rx_rf_1_freq_a}
   \end{subfigure}
   ~
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figures/rx_rf_0_freq_b}
+    \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_b}
     \caption{$b(t)$}
-    \label{fig:rx_rf_0_freq_b}
+    \label{fig:rx_rf_1_freq_b}
   \end{subfigure}
   \vspace{4ex} \\
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figures/rx_rf_0_freq_Hb}
-    \caption{$\mathcal{H}^{-1}\{s(t)\}$}
-    \label{fig:rx_rf_0_freq_Hb}
+    \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_Hb}
+    \caption{$\mathcal{H}\{b(t)\}$}
+    \label{fig:rx_rf_1_freq_Hb}
   \end{subfigure}
   ~
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figures/rx_rf_0_freq_c}
+    \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_c}
     \caption{$c(t)$}
-    \label{fig:rx_rf_0_freq_c}
+    \label{fig:rx_rf_1_freq_c}
   \end{subfigure}
   \caption{Image Rejection using $90^\circ$ Couplers}
-  \label{fig:rx_rf_0_freq}
+  \label{fig:rx_rf_1_freq}
 \end{figure}
 
 \section{IF Architecture}
@@ -207,7 +242,7 @@ The first \gls{IF} can be directly converted to baseband by
 setting $f_{\text{LO}_2} = f_{\text{IF}}$.
 Since our signal is assymetric the baseband signal is not analytic
 and therefor quadrature sampling, which uses two mixers as shown in
-\figref{fig:rx_adc_1_bd} is used. \\
+\figref{fig:rx_adc_1_bd}, can be used. \\
 
 Considering a \gls{IF} signal $i(t)$ (\figref{fig:rx_adc_1_freq_s})
 with a center frequency of $f_{\text{IF}}$
@@ -231,12 +266,12 @@ $\sin(2\pi \cdot f_{\text{IF}} \cdot t)$ as shown in
   \left[\delta(\omega - \omega_0) + \delta(\omega + \omega_0) \right]
 \end{align}
 
-$a(t)$ and $b(t)$ are than low pass sampled to suppress the mirror image
+$a(t)$ and $b(t)$ are than low pass filtered to suppress the mirror image
 at $2 f_{\text{IF}}$ and sampled by a two channel \gls{ADC} running with a
 sample rate $f_s \geq B$. \\
 
 Next the analytic signal $c(t)$ is constructed without any calculations
-by simply interpreting the both \gls{ADC} channels as
+by simply interpreting the \gls{ADC} channels as
 $c(t) = a(t) + j \cdot b(t)$. To show that this works $j \cdot b(t)$
 is plotted in \figref{fig:rx_adc_1_freq_jb} and
 $c(t)$ in \figref{fig:rx_adc_1_freq_c}.
@@ -268,7 +303,7 @@ $c(t)$ in \figref{fig:rx_adc_1_freq_c}.
     \centering
     \includegraphics[width=\textwidth]{figures/rx_adc_1_freq_jb}
     \caption{$j \cdot \text{LP}\{b(t)\}$}
-    \label{fig:rx_adc_1_freq_Hb}
+    \label{fig:rx_adc_1_freq_jb}
   \end{subfigure}
   ~
   \begin{subfigure}{0.45\textwidth}
@@ -283,11 +318,11 @@ $c(t)$ in \figref{fig:rx_adc_1_freq_c}.
 
 
 Self-mixing of the \gls{LO} at $f_{\text{LO}_2}$ of these mixers lead
-to a \gls{DC}-offset which has to be blocked in order for the
+to a \acrshort{DC}-offset which has to be blocked in order for the
 \glspl{ADC} to work at full range.
-Therefor all \glspl{ADC} are always used with \gls{DC}-blocks as described in
-\secref{sec:sec:comp_dc_block}. This high-pass filters unfortunately
-not only remove \gls{DC} but also a small portion of the signal
+Therefor all \glspl{ADC} are always used with \acrshort{DC}-blocks as described
+in \secref{sec:comp_dc_block}. This high-pass filters unfortunately
+not only remove \acrshort{DC} but also a small portion of the signal
 resulting in some \gls{ISI}. \\
 
 \begin{figure}[ht]
@@ -299,26 +334,22 @@ resulting in some \gls{ISI}. \\
 
 \subsection{First Nyquist-Zone Sampling}
 \label{sec:rx_adc_0}
-One of the simplest approach is to mix the desired signal to the first
-Nyquist-zone $[0 \frac{f_s}{2}]$ of the \gls{ADC} and sample it there. \\
+Instead of using two \gls{ADC} channels the signal can also be mixed
+to the first Nyquist-zone $[0 \frac{f_s}{2}]$ and sampled by just one
+channel. \\
 
 This results in a second \gls{IF} of $f_{\text{LO}_2} = \frac{B}{2}$ where
-the sampling speed $f_s$ has to be double the bandwidth $B$.
+the sampling speed $f_s$ has to be at least double the bandwidth $B$:
 \[f_s \geq 2 \cdot B\]
 
-the 1.8 GHz wide signal fully falls into the first Nyquist-zone of
-a single \gls{ADC} sampling at 3.6 GHz. Again a \gls{DC}-block
+Therefor the 1.8 GHz wide signal fully falls into the first Nyquist-zone of
+a single \gls{ADC} sampling at 3.6 GHz. Again a \acrshort{DC}-block
 is used in front of the \gls{ADC}. Compared to the Quadrature Baseband
 Sampling Receiver only half of the signal is lost this time since
-the \gls{DC}-block now deletes the lowest frequency part of the signal
+the \acrshort{DC}-block now deletes the lowest frequency part of the signal
 and not the central part symetrically around zero. Also this error
-can be completely avoided by using a symbol rate of slighlty less
-than 1.8 Ghz. \\
-
-
-Hence two mixers using a \gls{LO} at $f_{\text{LO}_2} = 0.9 \text{GHz}$ are
-used to downmix the signal to a quadrature baseband which than can
-be sampled by two \glspl{ADC} as shown in \figref{fig:rx_0_freq_rx_if2}. \\
+can be completely avoided by using a bandwidth $B$ slightly lower than
+$\frac{f_s}{2}$. \\
 
 \begin{figure}[ht]
   \centering
@@ -327,8 +358,34 @@ be sampled by two \glspl{ADC} as shown in \figref{fig:rx_0_freq_rx_if2}. \\
   \label{fig:rx_adc_0_bd}
 \end{figure}
 
-\subsection{Sub-Nyquist Sampling}
+\subsection{Quadrature Sub-Nyquist Sampling}
 \label{sec:rx_adc_2}
+
+In order to completely circumvent the loss of any signal by the
+a \acrshort{DC}-block the signal can also be sampled above $\frac{f_s}{2}$. \\
+
+This is possible up to the limitation of the analog bandwidth of the
+\gls{ADC} which is typically determined by it's input connections
+and it's sample and hold circuit. \\
+
+The \gls{ADC} 12d1800 by TI as described in \secref{sec:comp_adc} has an
+analog bandwidth of typically 2.8 GHz.
+
+% HERE
+
+At the full sapmle speed
+$f_s = 1.8 \text{GHz}$ it is therefor not possible to 
+It is therefor not possible to
+
+
+Instead of mixing into the first Nyquist-Zone also higher 
+
+\begin{figure}[ht]
+  \centering
+  %\includegraphics[width=\textwidth]{figures/rx_adc_2_bg}
+  \caption{Block Diagram of First Nyquist-Zone Sampling Receiver}
+  \label{fig:rx_adc_2_freq}
+\end{figure}
 
 \section{Examples of Receiver Architectures}
 The following secions cover three different architectures. There are example
