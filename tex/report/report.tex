@@ -43,7 +43,10 @@
 \usepackage{dirtree}
 \usepackage{tikz}
 \usepackage{pgfplots}
-\usepackage{todonotes}
+\usepackage[
+  textsize=tiny,
+  textwidth=2cm
+]{todonotes}
 \usepackage{subcaption}
 \usepackage{trfsigns}
 
@@ -81,10 +84,16 @@
 
 \tableofcontents
 
+\listoftodos
+
+\todo{check placement and size of all figures}
+\todo{spell checking all paragraphs}
+\todo{check capital / non capital words in all titels}
+\todo{appendix: tables missing?}
+
 \mainmatter
 
 \input{chapters/introduction}
-\input{chapters/theory}
 \input{chapters/rf}
 \input{chapters/system}
 \input{chapters/fpga}

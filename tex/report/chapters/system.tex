@@ -70,8 +70,10 @@ of the preamble overhead, the data is split into data blocks each having
 it's own phase noise estimation. \\
 
 The used frame structure is shown in \figref{fig:sys_frame_struct}.
-All the different fields, their properties and how they are used
-are explained in the following sections. \\
+The \gls{FES} field is described in \secref{sec:sys_fes},
+the \gls{CES} field in \secref{sec:sys_ces},
+the Data fields in \secref{sec:sys_data} and the
+\gls{PES} field in \secref{sec:sys_pes}.
 
 \begin{figure}[ht]
   \centering
@@ -80,16 +82,24 @@ are explained in the following sections. \\
   \label{fig:sys_frame_struct}
 \end{figure}
 
-\begin{itemize}
-\item 802.11ad oriented
-\item ZEROS FES CES FIRST\_PES DATA PES DATA PES ... ZEROS
-\item Explain reason of all fields
-\item Explain cyclic properties
-\end{itemize}
+\section{Modulation and Pulse Shaping Scheme}
+A constant symbol rate $f_s$ was used in for the whole frame. \\
 
-\subsection{\acrfull{FES}}
-The first field is used to do a simple, non standard complient frequency offset
-estimation. It consists of $L$ copies of the same random data block $d$
+For the data fields \gls{BPSK}, \gls{QPSK} and arbitrary, even
+\gls{QAM} modulations were implemented. Therby the datarate
+can be maximized depending on the \gls{SNR}. \\
+
+Because the training and estimation fields are not used to
+transmitt any information but only to synchronize in time
+and frequency and to measure channel properties they were all
+modulated using \gls{BPSK}. \\
+
+A \gls{RRC}-filter was used for pulse shaping. It has the big advantage that
+the same filter can be used for transmission and reception. \\
+
+\section{Frequency Offset Estimation and Correction}
+The \gls{FES} field is used to do a simple, non standard complient frequency
+offset estimation. It consists of $L$ copies of the same random data block $d$
 of length $l$.
 The frequency offset is than estimated by calculating the average phase
 difference $a$ of each block $k$ with block the previous block $k - 1$
@@ -107,56 +117,61 @@ where $f_s$ is the sample rate. \\
   \end{alignat}
 \end{subequations}
 
-\subsection{\acrfull{CES}}
+\section{Time Synchronization \& Channel Estimation and Correction}
+\todo{add time sync explanation}
+The \gls{CES} field consists of Golay complementary sequences which
+have very specific autocorrelation properties as described in
+\todo{cite goaly paper} and can be used to build an very elegant
+channel estimator as described in \todo{cite to goaly estimation paper}. \\
 
+In our case a total of $2 \cdot 512 + 128 = 1152$ symbols plus
+a cyclic prefix of $128$ symbols are used resulting in a \gls{CES} field
+length of 1280.
 
+\section{Data Blocks and Data Fields}
+As described earlier, the data is split up in multiple data blocks
+each having it's own \gls{PES} field after the data block.
+Together with the \gls{PES} field at the end of the preamble, this forms
+a cyclic structure which allows each data block to be transformed
+from time to frequency domain by an \gls{FFT} and back to time domain
+by an \gls{IFFT} without any error due to the block boundries.
+This is very usefull when channel correction is performend in frequency domain.
 
-\subsection{\acrfull{PES}}
+\section{Phase Estimation and Correction}
+The \gls{PES} field at the end of each data block is used to update
+the current phase offset estimation which is than used for the correction
+of the next data block. The field consists of a $l=64$ symbol long Golay
+sequence eventhough the estimation would also work on random data. \\
 
-\section{Modulation and Pulse Shaping Scheme}
-A constant symbol rate $f_s$ was used in
+The phase noise correction works as follows. For each data block
+the following steps are performed:
 
-For the data fields \gls{BPSK}, \gls{QPSK} and arbitrary, even
-\gls{QAM} modulations were implemented. Therby the datarate
-can be maximized depending on the \gls{SNR}. \\
+\begin{enumerate}
+\item The \gls{PES} field of the current block is corrected
+  using the newst $\varphi_{\text{offset est.}}$.
+  The correction is a complex multiplication \eqref{eq:sys_pes_correct}
+  where $s[i] = p[i]$ are the uncorrected and
+  $s_{\text{corr}}[i] = p_{\text{corr}}[i]$ are the corrected \gls{PES} symbols.
+  $\varphi_{\text{offset est.}}$ is zero for the first block.
+\item The current \gls{PES} field $p_{\text{corr}}[i] $
+  $\forall i \in {0, 1, \dots, l-1}$
+  is correlated with the first \gls{PES} field $p_{\text{first}}$
+  to get the mean angle $m$ \eqref{eq:sys_pes_angle}.
+\item The phase estimation is updated:
+  $\varphi_{\text{offset est.}} := \varphi_{\text{offset est.}} + m$
+\item The current data block is corrected using \eqref{eq:sys_pes_correct}
+  where $s[i] = d[i]$ are the uncorrected and
+  $s_{\text{corr}}[i] = d_{\text{corr}}[i]$ are the corrected data symbols.
+\end{enumerate}
 
-Because the training and estimation fields are not used to
-transmitt any information but only to synchronize in time
-and frequency and to measure channel properties they were all
-modulated using \gls{BPSK}. \\
+\begin{align}
+  \label{eq:sys_pes_correct}
+  s_{\text{corr}}[i] = s[i] \cdot \exp(-j \cdot \varphi_{\text{offset est.}})
+  \;\;\; \forall i \in
+\end{align}
 
-A \gls{RRC}-filter was used for pulse shaping. It has the big advantage that
-the same filter can be used for transmission and reception. \\
-
-
-\section{Frequency offset estimation and correction}
-
-\section{Phase noise estimation and correction}
-\begin{itemize}
-\item Cite phase noise measurements of Radoslav
-\item Explain how to estimate and correct it
-\item reference to own results in later chapter
-\end{itemize}
-
-\section{Simulation}
-\begin{itemize}
-\item General simulation flow using Matlab
-\item Simulated scenarios:
-  \begin{itemize}
-  \item Baseband receiver
-  \item Simulated 90 deg coupler using hilbert transform
-  \item hardware baseband QI receiver
-  \item hardware intermediate frequency QI receiver
-  \end{itemize}
-\item Interface to AWG
-\item Interface to Oscilloscope
-\item Interface to FPGA
-\item Replace more and more by hardware
-\end{itemize}
-
-
-\section{Transmitter}
-Since the implementation of the \gls{RF} part of the
-transmitter was of minor intreset for this work,
-an \gls{AWG} described in \secref{osec:comp_awg}
-and a Sivers 58-63 GHz converter were used. \\
+\begin{align}
+  \label{eq:sys_pes_angle}
+  m = \frac{1}{l}
+  \sum_{i=0}^{l-1} \angle(p_{\text{corr}}[i] \cdot p_{\text{first}}[i])
+\end{align}
