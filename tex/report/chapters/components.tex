@@ -1,18 +1,18 @@
 \chapter{Characterization of Components and Equipment}
-\todo{add references to all datasheets of which specifiactions were taken}
+\todo{add references to all datasheets of which specifications were taken}
 \todo{add pictures}
 
 \section{R\&S Vector Network Analyzer ZNB8}
-In order to gain a deeper unserstanding of the non-idealities of the
+In order to gain a deeper understanding of the non-idealities of the
 components which were later used for the different test setups
 were characterized using a Rohde \& Schwarz Vector Network Analyzer. \\
 
 Besides the results of the measurements of which a few a presented
 in the next few sections, also important lessons about measuring were
-learned. It took me about one week to be able to performe meaningfull
+learned. It took me about one week to be able to perform meaningful
 measurements on the ZNB4 and to understand it's features.
 While performing different measurements it soon became very clear then
-non optimal torque while connection plugs or overbend cables
+non optimal torque while connection plugs or overbended cables
 can produce notches of dozens of dBs even when using highest quality
 equipment. \\
 
@@ -47,7 +47,7 @@ as well as the data acquisition process on the \gls{FPGA}.
     Number of analog channels & 2, 1 interleaved \\ \hline
     Analog bandwidth & 5.6 GHz \\ \hline
     Number of digital maker channels & $2 \times 2$ \\ \hline
-    Vertical resoluation & 8 Bit, 10 Bit when markers are disabled \\ \hline
+    Vertical resolution & 8 Bit, 10 Bit when markers are disabled \\ \hline
     Maximal waveform length & $\approx 130$ MS  \\ \hline
   \end{tabular}
   \caption{Key properties of Tektronix AWG 7122C}
@@ -56,32 +56,32 @@ as well as the data acquisition process on the \gls{FPGA}.
 
 \section{Sivers IMA 58-63 GHz Converter FC1005V/00}
 \label{sec:comp_sivers}
-The most important is componant in the transmission chain is the
-up- and downconverter from an \acrfull{IF} to the \acrfull{RF}.
+The most important is component in the transmission chain is the
+up- and down-converter from an \acrfull{IF} to the \acrfull{RF}.
 For this purpose the Sivers IMA FC1005V/00 module was used.
-It consists of an independent transmitt and receive path including
-a horn antenna assembly, amplifiers, up-/downmixers and a pll
-for frequency synthesis. It is able up-/downmix an \gls{IF}
+It consists of an independent transmit and receive path including
+a horn antenna assembly, amplifiers, up-/down-mixers and a \gls{PLL}
+for frequency synthesis. It is able up-/down-mix an \gls{IF}
 of between 1 and 5 GHz to the \gls{RF} of 58 to 63 GHz. \\
 
-As shown in \figref{fig:sivers} both the transmitt and receive path
+As shown in \figref{fig:sivers} both the transmit and receive path
 use two inputs (I- and Q-channel) which are then both mixed to
 \gls{RF} and than fed to a $90^\circ$ hybrid coupler. \\
 This results in one of the two mirror frequency to be completely canceled
-iff it of the two channel is shifted by $-90^\circ$ relative to the other.
+if one channel is shifted by $-90^\circ$ relative to the other.
 This can be done by using another $90^\circ$ hybrid coupler working on
 \gls{IF} as described in \secref{sec:comp_90deg} or by using die Hilbert
-transform as shown in \todo{referenc to theory}. \\
-The Sivers module is build such that it transmitts on the \gls{USBand}
+transform as shown in \todo{reference to theory}. \\
+The Sivers module is build such that it transmits on the \gls{USBand}
 (canceling the \gls{LSBand}) when the Q-channel is connected to the signal
 $x(t)$ and the I-channel to $\mathcal{H}\{x(t)\}$.
 \todo{describe how receiver has to be connected for LSB and double check it} \\
 
-There are two inpepentend \gls{LO} for transmission and reception both using
+There are two independent \gls{LO} for transmission and reception both using
 the reference. There is an internal 10 MHz reference on the board. During
 most measurements the reference was locked to same external reference as the
 \gls{AWG} and \gls{ADC} to not have any frequency offsets when different
-transmitt and receive frequencies were used.
+transmit and receive frequencies were used.
 
 \begin{figure}
   \centering
@@ -89,7 +89,7 @@ transmitt and receive frequencies were used.
   \caption{Block diagram of Sivers IMA FC1005V/00 Converter}
   \label{fig:sivers}
 \end{figure}
-\todo{add reference to siversima}
+\todo{add reference to sivers ima}
 
 \begin{table}[h]
   \centering
@@ -112,21 +112,21 @@ transmitt and receive frequencies were used.
 
 A Hybrid coupler has typically 4 ports as shown on
 \figref{fig:90deg_coupler_symbol}.
-One port is often 50 $\Omega$ determinated and therefor might not be connected
+One port is often 50 $\Omega$ terminated and therefor might not be connected
 to a plug. \\
 
-It is when neglacting production imperfections a fully symetric component
+It is, when neglecting production imperfections, a fully symmetric component
 (inputs $x_i(t)$ with outputs $y_i(t)$ as well as indices 1 and 2
 can be exchanged) and has the following relations:
 
 \begin{align}
-y_1(t) = \frac{1}{\sqrt{2}} \left[x_1(t) \angle -\frac{\pi}{2} + x_2(t) \angle -\pi \right] \\
-y_2(t) = \frac{1}{\sqrt{2}} \left[x_1(t) \angle -\pi + x_2(t) \angle -\frac{\pi}{2} \right] 
+  y_1(t) = \frac{1}{\sqrt{2}} \left[x_1(t) \angle -\frac{\pi}{2} + x_2(t) \angle -\pi \right] \\
+  y_2(t) = \frac{1}{\sqrt{2}} \left[x_1(t) \angle -\pi + x_2(t) \angle -\frac{\pi}{2} \right]
 \end{align}
 
 As shown in \figref{fig:90deg_coupler_measurement} the power of
-$x_1$ is not perfect equally splitted to $y_1$ and $y_2$. The power difference
-is smaller than 1 db in the band from 1.8 Ghz to 4 GHz.
+$x_1$ is not perfect equally split to $y_1$ and $y_2$. The power difference
+is smaller than 1 db in the band from 1.8 GHz to 4 GHz.
 Also there is a little power ($\leq -20 db$) leaking from $x_1$ to $x_2$ and from
 $y_1$ to $y_2$. \\
 
@@ -157,7 +157,7 @@ All measured numbers matched the specifications.
     Frequency Sensitivity & $\pm$ 0.4 dB \\ \hline
     Coupling variation & 3.1 dB $\pm$ 0.6 db \\ \hline
     Typical Isolation & 22 dB \\ \hline
-    max VSWR & 1.2 : 1 \\ \hline
+    max \gls{VSWR} & 1.2 : 1 \\ \hline
     Phase rotation & $90^\circ \pm 2.0^\circ$ \\ \hline
   \end{tabular}
   \caption{Key properties of Meca 3 dB Hybrid Coupler 705S-3.000}
@@ -182,7 +182,7 @@ All measured numbers matched the specifications.
 \section{Mini-Circuits DC Block MCL BLK-89-S+}
 \label{sec:comp_dc_block}
 To prevent \acrshort{DC} from driving amplifier inputs into saturation
-a \acrshort{DC} block was used. A significatly higher insertion loss was
+a \acrshort{DC} block was used. A significantly higher insertion loss was
 measured than specified in the data sheet as shown in
 \figref{fig:comp_dc_block_insertion_loss}.
 
@@ -216,14 +216,15 @@ than the one of the used oscilloscope (\secref{sec:comp_osci}) and in most scena
 not the \gls{SNR} limiting factor even when the signal is 6 db below full-scale.
 The huge analog bandwidth of about 100 kHz
 (limited by the \gls{DC} block described in \secref{sec:comp_dc_block}) to about
-2.8 GHz allows to not only sample the first Nyquist zone but also allows
+2.8 GHz allows to not only sample the first Nyquist-zone but also allows
 for sub-sampling which was particular interest. \\
 
 The ADC12D1800 Reference Board was used which has a very well optimized board
-layout, supports SMA plugs for all important signals, includes a \gls{FPGA}
-and \gls{USB} interface for configuration and a power supply. The reference
-board has an onboard \gls{PLL} but was often clocked by a marker output of the
-\gls{AWG}. An \gls{FMC} connector exposes the full interface of the \gls{ADC} to
+layout, supports \acrshort{SMA} plugs for all important signals, includes a
+\gls{FPGA} and \gls{USB} interface for configuration and a power supply.
+The reference board has an on-board \gls{PLL} but was often clocked by a marker
+output of the \gls{AWG}.
+An \gls{FMC} connector exposes the full interface of the \gls{ADC} to
 the on board \gls{FPGA} and is used by the Virtex-7 board to capture the data
 as described in \chapref{chap:fpga}. \\
 
@@ -238,11 +239,11 @@ as described in \chapref{chap:fpga}. \\
     Noise Floor Density & $\approx$ -150 $\text{dB}/\text{Hz}$ \\ \hline
     Power Consumption & 4.7 W \\ \hline
   \end{tabular}
-  \caption{Key properties of Texes-Instruments ADC 12d1800}
+  \caption{Key properties of Texas-Instruments ADC 12d1800}
   \label{tab:awg}
 \end{table}
 
-\section{Xilinix Virtex 7 Board VC707}
+\section{Xilinx Virtex 7 Board VC707}
 \label{sec:comp_virtex7}
 \begin{itemize}
 \item Table with most important features
@@ -251,17 +252,17 @@ as described in \chapref{chap:fpga}. \\
 \section{R\&S Oscilloscope RTO 1044}
 \label{sec:comp_osci}
 High frequency measurements were made on a Rohde \& Schwarz Digital
-Oscolloscope RTO 1044. With the optional reference input it could be locked
+Oscilloscope RTO 1044. With the optional reference input it could be locked
 to the \gls{AWG} as well used to have a very precise ($\pm 0.02 \text{ppm}$),
 oven controlled 10 MHz reference. \\
 
 During many experiments the real time \gls{FFT} display of the oscilloscope was
-proven very usefull to check power levels and signal shapes. \\
+proven very useful to check power levels and signal shapes. \\
 
-Since the VISA standard for instrument control is painfull to install under
-Redhat 6 a small programm based on the VXI-11 library written by
+Since the VISA standard for instrument control is painful to install under
+Redhat 6 a small program based on the VXI-11 library written by
 Steve D. Sharples \todo{reference: http://optics.eee.nottingham.ac.uk/vxi11/}
-was written to convert sinmple telnet commands send by Matlab
+was written to convert simple telnet commands send by Matlab
 to remote procedure calls. This allowed to setup and readout the oscilloscope
 directly in the Matlab simulation framework. This was used to do first experiments
 on the actual \gls{RF} hardware before the \gls{FPGA} (\chapref{chap:fpga}) was
@@ -273,9 +274,15 @@ completely implemented. \\
     \hline
     Number of channels & 4, 2 interleaved \\ \hline
     Sample Rate & 10 $\text{GS}/\text{s}$, 20 $\text{GS}/\text{s}$ interleaved \\ \hline
-    Analog Bandwidth at 50 $\Omega$ & $\geq 4$ Ghz \\ \hline
+    Analog Bandwidth at 50 $\Omega$ & $\geq 4$ GHz \\ \hline
     Vertical Resolution & 8 bit \\ \hline
   \end{tabular}
   \caption{Key properties of R\&S Oscilloscope RTO 1044}
   \label{tab:awg}
 \end{table}
+
+%%  LocalWords:  datasheets ZNB idealities Rohde Schwarz overbended
+%%  LocalWords:  dBs Tektronix AWG Matlab baseband FPGA Sivers IMA FC
+%%  LocalWords:  PLL sivers coupler USBand LSBand LSB ima dBm Meca WB
+%%  LocalWords:  VSWR Balun MCL BLK osci SNR Nyquist SMA FMC Virtex
+%%  LocalWords:  fpga Xilinx VC RTO FFT Redhat VXI Sharples
