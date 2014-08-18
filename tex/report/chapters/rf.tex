@@ -317,7 +317,7 @@ $c(t)$ in \figref{fig:rx_adc_1_freq_c}.
     \centering
     \includegraphics[width=\textwidth]{figures/rx_adc_1_freq_ja}
     \caption{$j \cdot a(t)$}
-    \label{fig:rx_adc_1_freq_jb}
+    \label{fig:rx_adc_1_freq_ja}
   \end{subfigure}
   ~
   \begin{subfigure}{0.45\textwidth}
@@ -348,10 +348,10 @@ the sampling speed $f_s$ has to be at least double the bandwidth $B$:
 \[f_s \geq 2 \cdot B\]
 
 Therefor the 1.8 GHz wide signal fully falls into the first Nyquist-zone of
-a single \gls{ADC} sampling at 3.6 GHz. Again a \acrshort{DC}-block
+a single \gls{ADC} sampling at 3.6 GHz. Again a \gls{DC}-block
 is used in front of the \gls{ADC}. Compared to the Quadrature Baseband
 Sampling Receiver only half of the signal is lost this time since
-the \acrshort{DC}-block now deletes the lowest frequency part of the signal
+the \gls{DC}-block now deletes the lowest frequency part of the signal
 and not the central part symmetrically around zero. Also this error
 can be completely avoided by using a bandwidth $B$ slightly lower than
 $\frac{f_s}{2}$. \\
@@ -374,7 +374,7 @@ However, an \gls{ADC} can have a bigger analog bandwidth. This means that
 even faster signals are correctly captures by the sample and hold circuit
 at the input of the \gls{ADC}. The frequency space between 0 and
 $\frac{f_s}{2}$ is often referred to as first Nyquist-zone as shown in
-\figref{fig:rx_adc_2_freq}. \\
+\figref{fig:rx_adc_2_nyquist_zones}. \\
 The frequency space between $\frac{f_s}{2}$ and $f_s$ is referred to as
 second Nyquist-zone. After sampling a signal, all energy captured in the
 second Nyquist-zone wraps at $\frac{f_s}{2}$ and adds up with the energy
@@ -400,7 +400,7 @@ at $f_s$ each. \\
   \centering
   \includegraphics[width=0.7\textwidth]{figures/rx_adc_2_nyquist_zones}
   \caption{Nyquist-Zones}
-  \label{fig:rx_adc_2_bd}
+  \label{fig:rx_adc_2_nyquist_zones}
 \end{figure}
 
 \section{Complete Receiver Architectures}
@@ -427,11 +427,11 @@ as well which is out of the more or less linear range of the
 Meca 3 dB Hybrid Coupler 705S-3.000 described in \secref{sec:comp_90deg}. \\
 
 Self-mixing of the \gls{LO} at $f_{\text{LO}_2}$ of these mixers lead
-to a \acrshort{DC}-offset which has to be blocked in order for the
+to a \gls{DC}-offset which has to be blocked in order for the
 \glspl{ADC} to work at full range.
-Therefor all \glspl{ADC} are always used with \acrshort{DC}-blocks as described
+Therefor all \glspl{ADC} are always used with \gls{DC}-blocks as described
 in \secref{sec:comp_dc_block}. This high-pass filters unfortunately
-not only remove \acrshort{DC} but also a small portion of the signal
+not only remove \gls{DC} but also a small portion of the signal
 resulting in some \gls{ISI}. \\
 
 \begin{table}[h]

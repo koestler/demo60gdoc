@@ -18,7 +18,7 @@ because of it's widespread use in communication systems research. \\
 
 To optimally contribute to existing work, many parameters including
 the important parts of the frame structure as well as modulation
-schemes were done according to the proposed \acrshort{IEEE} 802.11ad standard.
+schemes were done according to the proposed \gls{IEEE} 802.11ad standard.
 Since this system is solely for research and to avoid spending any
 time on unnecessary features, the used system is not compliant to the
 proposed standard though. \\
@@ -98,6 +98,7 @@ A \gls{RRC}-filter was used for pulse shaping. It has the big advantage that
 the same filter can be used for transmission and reception. \\
 
 \section{Frequency Offset Estimation and Correction}
+\label{sec:sys_fes}
 The \gls{FES} field is used to do a simple, non standard compliant frequency
 offset estimation. It consists of $L$ copies of the same random data block $d$
 of length $l$.
@@ -118,6 +119,8 @@ where $f_s$ is the sample rate. \\
 \end{subequations}
 
 \section{Time Synchronization \& Channel Estimation and Correction}
+\label{sec:sys_ces}
+
 \todo{add time sync explanation}
 The \gls{CES} field consists of Golay complementary sequences which
 have very specific autocorrelation properties as described in
@@ -129,6 +132,8 @@ a cyclic prefix of $128$ symbols are used resulting in a \gls{CES} field
 length of 1280.
 
 \section{Data Blocks and Data Fields}
+\label{sec:sys_data}
+
 As described earlier, the data is split up in multiple data blocks
 each having it's own \gls{PES} field after the data block.
 Together with the \gls{PES} field at the end of the preamble, this forms
@@ -138,6 +143,8 @@ by an \gls{IFFT} without any error due to the block boundaries.
 This is very useful when channel correction is performed in frequency domain.
 
 \section{Phase Estimation and Correction}
+\label{sec:sys_pes}
+
 The \gls{PES} field at the end of each data block is used to update
 the current phase offset estimation which is than used for the correction
 of the next data block. The field consists of a $l=64$ symbol long Golay

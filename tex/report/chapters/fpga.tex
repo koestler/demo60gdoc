@@ -26,7 +26,7 @@ and Microblaze, a soft-core processor, which controls the
 to connect the \gls{ADC} directly to the \gls{RAM}. Later the receiver logic,
 starting with frame synchronization could be implemented
 at this place. AxiSlave implements an interface between the
-\acrshort{AXI}-Bus used by the Microblaze processor and the custom
+\gls{AXI}-Bus used by the Microblaze processor and the custom
 Ram module. \\
 
 In the following sections each of this modules is shortly described followed
@@ -65,10 +65,10 @@ register into the data path. This results in one cycle delay but makes the
 This has also the advantage that long routing distances can be separated by
 inserting registers into the data and control path. \\
 
-\section{Data Acquisition: Adc12d1800}
+\section{Data Acquisition}
 \label{sec:fpga_adc}
 
-The \gls{ADC} Reference Board (see \secref{Adc12d1800rf}) is connected
+The \gls{ADC} Reference Board (see \secref{sec:comp_adc}) is connected
 to the Virtex-7 evaluation board (see \secref{sec:comp_virtex7})
 using one of the two \gls{FMC} plugs.
 A listing of all connections can be found in \secref{sec:app_adc_fpga_con}. \\
@@ -120,7 +120,7 @@ one single data stream. \\
 Each of the 12 bits and the clock of the 4 streams arrive at at the input bank
 of the \gls{FPGA} at two neighbouring pads forming a \gls{LVDS} pair.
 First this differential signal is converted to a single ended signal using
-{\em Differential Signaling Input Buffer} (IBUFDS) primitives located next
+\gls{IBUFDS} primitives located next
 to the pads. \\
 
 This results in $4 \times 12$ bits of single ended double data rate
@@ -131,7 +131,7 @@ signals plus 4 single ended clocks at up to 450 MHz. \\
 Next the first parallelisation step is performed by outputting two new
 bits on every positive clock edge instead of one on positive and one on negative
 clock edges. The Virtex-7 \gls{FPGA} have a dedicated hardware primitive
-called {\em Input Dual Data-Rate Register} (IDDR) for this.
+called \gls{IDDR} for this.
 This primitives are placed next to the differential input buffers
 and are automatically mapped correctly by the Xilinx tools. \\
 
@@ -141,31 +141,31 @@ signals plus 4 single ended clocks at up to 450 MHz. \\
 \subsection{Stage 2: Input FIFO}
 Since 450 MHz is still beyond what can be routed through the general
 routing resources and captured by registers, Xilinx added a special
-{\em Input First-In, First-Out} primitive (IN\_FIFO)
-directly into the IO-bank which can parallelise the data by a factor of two.
+\gls{INFIFO} primitive directly into the IO-bank which can parallelise the data
+by a factor of two.
 This primitive has a total of ten 4 bit wide input buses.
 The primitive can be configured to concatenate two consecutive input words
 to one 8 bit wide output word and therefore provides a total of
 ten 8 bit wide output words. \\
 
-Four such IN\_FIFO are available for each
+Four such \gls{INFIFO} are available for each
 input/output bank consisting of a total of 50 pads aligned in a single row.
 In our design each of the four 24-bit input streams is located at a separate
-input/output bank and is routed to the inputs of one IN\_FIFO primitive.
-Since the timing only holds if the IN\_FIFO instance in the middle of the bank
+input/output bank and is routed to the inputs of one \gls{INFIFO} primitive.
+Since the timing only holds if the \gls{INFIFO} instance in the middle of the bank
 is used. Because mapping tools prefer other locations depending on the
-routing of the outputs, all those IN\_FIFO primitives where manually constrained
+routing of the outputs, all those \gls{INFIFO} primitives where manually constrained
 to the correct location. \\
 
-These IN\_FIFO also support an independent input and output clock.
+These \gls{INFIFO} also support an independent input and output clock.
 As input clock the clock signals provided by the \gls{ADC} are each fed
-into a so called {\em Advanced Mixed Mode Clock Manager} (MMCME2\_ADV).
+into a so called \gls{MMCME2ADV}.
 This allows to arbitrarily shift the phases of the clocks to ensure
 correct data capturing. The same clock was also used for the
-IDDR-registers described in \secref{sec:fpga_adc_s1}. \\
+\gls{IDDR}-registers described in \secref{sec:fpga_adc_s1}. \\
 
 For each input bank one such clock manager exists. To ensure that
-always the one next to the input clock pads and the IN\_FIFO is
+always the one next to the input clock pads and the \gls{INFIFO} is
 used, the four MMCME2\_ADV instances are also manually constrained to
 one specific location. \\
 
@@ -275,13 +275,13 @@ Since it's maximal baud rate is limited to $1 \text{Mbit}/\text{s}$
 a complete download of 1 GiB would take about 18 minutes which was
 considered to be too slow. \\
 
-Next the Tri-Speed Ethernet \acrshort{PHY} device was considered.
+Next the Tri-Speed Ethernet \gls{PHY} device was considered.
 The high data rates of up to $1 \text{Gbit}/\text{s}$ and the versatility
 of being able to connect it to existing network infrastructure made
 it look perfect for the job. The lack of a good reference design and
 availability of open cores to connected to the \gls{PHY} via
-\acrshort{SGMII} as well as the effort needed to implement
-the network and transport (\acrshort{INetP}/\acrshort{UDP}) layer
+\gls{SGMII} as well as the effort needed to implement
+the network and transport (\gls{INetP}/\gls{UDP}) layer
 led to the third solution. \\
 
 The VC707 also includes a USB3320 USB 2.0 ULPI device and Xilinx provides
@@ -364,14 +364,14 @@ and written to a binary file which can be read very fast in Matlab. \\
 
 As a result of the different clocking constraints of the externals interfaces,
 a relatively complex clocking scheme had to be applied as drawn in
-\figref{fig:fpga_clock_domains}. Except for parts of the \acrshort{IO} interfaces,
+\figref{fig:fpga_clock_domains}. Except for parts of the \gls{IO} interfaces,
 synchronous positive edge triggered registers were used. For the synchronization
 of the data paths crossing clock boundaries the numerous FIFO36E1 primitives
 were used. Those configure the block \gls{RAM} cells to act as a \gls{FIFO}
 memory. A wrapper is used to use many of those primitives to allow for the
 wide vectors of up to 540 bits.
 An exception are the \gls{ADC} and \gls{RAM} blocks which use
-specialized IN\_FIFO and OUT\_FIFO and can do a 1:2 de-/multiplexing
+specialized \gls{INFIFO} and OUT\_FIFO and can do a 1:2 de-/multiplexing
 using two independent input and output clocks. \\
 
 \figref{fig:fpga_clock_generation} shows all the \glspl{PLL} used to derive the
@@ -398,7 +398,7 @@ Each differential \gls{ADC} clock clock is first converted to a single ended
 clock and than fed into a \gls{PLL} located next to the corresponding input
 bank. This \gls{PLL} outputs a new clock in a local clock region
 with the same frequency but an arbitrary phase shift
-to clock the IDDR and IN\_FIFO as described in \secref{sec:fpga_adc}.
+to clock the \gls{IDDR} and \gls{INFIFO} as described in \secref{sec:fpga_adc}.
 Since the edges of the \gls{ADC} clocks and the corresponding data lines
 are aligned, a phase shift of $90^\circ$ was found to work well and captures
 the data during the stable period. \\
@@ -410,7 +410,7 @@ to do the bus conversion and finally to put the data into a \gls{FIFO}
 traversing to the clock region of the \gls{RAM} \gls{UI} described
 in \secref{sec:fpga_storage}. This clock has to be strictly greater than
 $\frac{900\;\text{MHz}}{4} = 225\;\text{MHz}$ to avoid the
-IN\_FIFO from filling up. Also there needs to be a minimal
+\gls{INFIFO} from filling up. Also there needs to be a minimal
 distance between an edge of the \gls{ADC} \gls{UI} and the
 \gls{RAM} \gls{UI} clock in order for the FIFO36E1 to work correctly.
 Hence a clock rate of 250 MHz was chosen. \\
@@ -490,13 +490,13 @@ away by logic optimization and has no output buffer.
 This additional reset synchronizers are reset by the second global reset network
 which releases the reset two 5 MHz clock periods earlier.  \\
 
-Another challenge was to correctly reset the IN\_FIFO used in the
+Another challenge was to correctly reset the \gls{INFIFO} used in the
 \gls{ADC} module as described in \secref{sec:fpga_adc}. These \glspl{FIFO}
 cross the boundary between the clock regions provided by the \gls{ADC} and
 the internal 250 MHz clock. The 4 clocks of the 4 channels might
 have a slightly different phase, are derived from the same clock, the
 \gls{ADC} sampling clock, though. It is crucial to release the reset
-of all IN\_FIFO during the same \gls{ADC} sampling clock period to avoid
+of all \gls{INFIFO} during the same \gls{ADC} sampling clock period to avoid
 misalignment of the data. For that purpose, the global 5 MHz
 reset is first synchronized to a phase shifted version of I0's clock and
 than synchronized to the four \gls{ADC} clocks. \\
@@ -550,7 +550,7 @@ took between 20 minutes and 2 hours depending on how tight the timing was
 and on how big the memory of the ChipScope instruments was chosen.
 Since especially the debugging of the \gls{RAM} module and the implementation of
 a correct reset behaviour (see \secref{sec:fpga_reset}) included a lot of
-trial \& error, dozens of \acrshort{CPU} and man hours were spent on the
+trial \& error, dozens of \gls{CPU} and man hours were spent on the
 compiling the design.
 
 %%  LocalWords:  FPGA Virtex VC Matlab DDR fpga Adc Microblaze AXI rf

@@ -95,12 +95,12 @@ transmit and receive frequencies were used.
   \centering
   \begin{tabular}{|l|l|}
     \hline
-    \acrshort{TX} and \acrshort{RX} \gls{RF} range & 58 - 63 GHz \\ \hline
-    \acrshort{TX} and \acrshort{RX} \gls{IF} range & 1 - 5 GHz \\ \hline
+    \gls{TX} and \gls{RX} \gls{RF} range & 58 - 63 GHz \\ \hline
+    \gls{TX} and \gls{RX} \gls{IF} range & 1 - 5 GHz \\ \hline
     Saturated output power & min 16 dBm \\ \hline
     \gls{LO} leakage & typical 10 dBm, max 15 dBm \\ \hline
-    \acrshort{TX} Image rejection & min 10 dB, typical 20 dB \\ \hline
-    \acrshort{RX} Image rejection & min 10 dB, typical 14 dB \\ \hline
+    \gls{TX} Image rejection & min 10 dB, typical 20 dB \\ \hline
+    \gls{RX} Image rejection & min 10 dB, typical 14 dB \\ \hline
     Total Power Consumption & 9.5 W \\ \hline
   \end{tabular}
   \caption{Key properties of 58-63 GHz V-band Converter Sivers IMA FC1005V/00}
@@ -181,8 +181,8 @@ All measured numbers matched the specifications.
 
 \section{Mini-Circuits DC Block MCL BLK-89-S+}
 \label{sec:comp_dc_block}
-To prevent \acrshort{DC} from driving amplifier inputs into saturation
-a \acrshort{DC} block was used. A significantly higher insertion loss was
+To prevent \gls{DC} from driving amplifier inputs into saturation
+a \gls{DC}-block was used. A significantly higher insertion loss was
 measured than specified in the data sheet as shown in
 \figref{fig:comp_dc_block_insertion_loss}.
 
@@ -220,7 +220,7 @@ The huge analog bandwidth of about 100 kHz
 for sub-sampling which was particular interest. \\
 
 The ADC12D1800 Reference Board was used which has a very well optimized board
-layout, supports \acrshort{SMA} plugs for all important signals, includes a
+layout, supports \gls{SMA} plugs for all important signals, includes a
 \gls{FPGA} and \gls{USB} interface for configuration and a power supply.
 The reference board has an on-board \gls{PLL} but was often clocked by a marker
 output of the \gls{AWG}.
