@@ -244,15 +244,15 @@ Since our signal is assymetric the baseband signal is not analytic
 and therefor quadrature sampling, which uses two mixers as shown in
 \figref{fig:rx_adc_1_bd}, can be used. \\
 
-Considering a \gls{IF} signal $i(t)$ (\figref{fig:rx_adc_1_freq_s})
-with a center frequency of $f_{\text{IF}}$
-and using the transformation \eqref{eq:four_cos} we can plot
-$i(t)$ mixed with $\cos(2\pi \cdot f_{\text{IF}} \cdot t)$ as shown in
-\figref{fig:rx_adc_1_freq_a}. \\
+Considering a \gls{IF} signal $i(t)$ with a center frequency of $f_{\text{IF}}$
+and using the transformation \eqref{eq:four_cos}
+we can plot $i(t)$ mixed with $\cos(2\pi \cdot f_{\text{IF}} \cdot t)$.
+See \figref{fig:rx_adc_1_freq_s}, \figref{fig:rx_adc_1_freq_cos})
+and \figref{fig:rx_adc_1_freq_a}. \\
 
 Analogous using \eqref{eq:four_sin} can be used to draw $i(t)$ mixed with
-$\sin(2\pi \cdot f_{\text{IF}} \cdot t)$ as shown in
-\figref{fig:rx_adc_1_freq_b}. \\
+$\sin(2\pi \cdot f_{\text{IF}} \cdot t)$.
+See \figref{fig:rx_adc_1_freq_sin}) and \figref{fig:rx_adc_1_freq_b}. \\
 
 \begin{align}
   \label{eq:four_cos}
@@ -272,8 +272,8 @@ sample rate $f_s \geq B$. \\
 
 Next the analytic signal $c(t)$ is constructed without any calculations
 by simply interpreting the \gls{ADC} channels as
-$c(t) = a(t) + j \cdot b(t)$. To show that this works $j \cdot b(t)$
-is plotted in \figref{fig:rx_adc_1_freq_jb} and
+$c(t) = b(t) + j \cdot a(t)$. To show that this works $j \cdot a(t)$
+is plotted in \figref{fig:rx_adc_1_freq_ja} and
 $c(t)$ in \figref{fig:rx_adc_1_freq_c}.
 
 \begin{figure}[h!]
@@ -283,6 +283,20 @@ $c(t)$ in \figref{fig:rx_adc_1_freq_c}.
     \includegraphics[width=\textwidth]{figures/rx_adc_1_freq_i}
     \caption{$i(t)$}
     \label{fig:rx_adc_1_freq_s}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/rx_adc_1_freq_cos}
+    \caption{$\cos(2\pi \cdot f_{\text{IF}} \cdot t)$}
+    \label{fig:rx_adc_1_freq_cos}
+  \end{subfigure}
+  ~
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/rx_adc_1_freq_sin}
+    \caption{$\sin(2\pi \cdot f_{\text{IF}} \cdot t)$}
+    \label{fig:rx_adc_1_freq_sin}
   \end{subfigure}
   \vspace{4ex} \\
   \begin{subfigure}{0.45\textwidth}
@@ -301,15 +315,15 @@ $c(t)$ in \figref{fig:rx_adc_1_freq_c}.
   \vspace{4ex} \\
   \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figures/rx_adc_1_freq_jb}
-    \caption{$j \cdot \text{LP}\{b(t)\}$}
+    \includegraphics[width=\textwidth]{figures/rx_adc_1_freq_ja}
+    \caption{$j \cdot a(t)$}
     \label{fig:rx_adc_1_freq_jb}
   \end{subfigure}
   ~
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figures/rx_adc_1_freq_c}
-    \caption{$c(t) = a(t) + j \cdot b(t)$}
+    \caption{$c(t) = \text{LP}\{b(t)\} + j \text{LP}\{\cdot a(t)\}$}
     \label{fig:rx_adc_1_freq_c}
   \end{subfigure}
   \caption{Quadrature Baseband Mixing}
