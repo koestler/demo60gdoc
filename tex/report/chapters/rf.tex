@@ -443,6 +443,7 @@ resulting in some \gls{ISI}. \\
     $f_{\text{RX LO}}$              & 55 GHz \\ \hline
     $f_{\text{RX IF}}$              & 5.9 GHz \\ \hline
     $f_{\text{LO}_2}$               & 5.9 GHz \\ \hline
+    $f_c$                         & 60.9 GHz \\ \hline
     Signal Bandwidth B           & 1.8 GHz \\ \hline
     Number of \gls{ADC} channels & 2 \\ \hline
     Sample Rate $f_s$ & 1.8 GHz \\ \hline
@@ -450,6 +451,7 @@ resulting in some \gls{ISI}. \\
   \caption{Properties of Quadrature Baseband Sampling Receiver}
   \label{tab:rx_0}
 \end{table}
+\todo{align second col on .}
 
 \begin{figure}[h!]
   \centering
@@ -536,6 +538,7 @@ component at $f_{s}$. \\
     $f_{\text{RX LO}}$ & 57 GHz \\ \hline
     $f_{\text{RX IF}}$ & 2.9 GHz \\ \hline
     $f_{\text{LO}_2} $ & 2 GHz \\ \hline
+    $f_c$           & 59.9 GHz \\ \hline
     Signal Bandwidth B & 1.8 GHz \\ \hline
     Number of \gls{ADC} channels & 1 \\ \hline
     Sample Rate $f_s$ & 3.6 GHz \\ \hline
@@ -587,15 +590,13 @@ component at $f_{s}$. \\
 \subsection{Quadrate Intermediate Frequency Sub-Nyquist Sampling Receiver}
 \label{sec:rx_2}
 The third receiver architecture, which was used for most measurements,
-was motivated by only having very few components that can add noise
+was motivated by having only very few components that can add noise
 and errors due to non-linear terms. \\
 
-It is, howerver, based on the assumption that no other channels of the
+It is, however, based on the assumption that no other channels of the
 60 GHz spectrum are used except those, where we send residuals our self.
 Therefor the very strong \gls{TX} \gls{LO} leakage and
-the residual \gls{TX} \gls{LSBand} leackage are shown in all plots
-which actually can be suppressed very good and only cuases problems
-for 256 \gls{QAM}. \todo{reference to results here?} \\
+the residual \gls{TX} \gls{LSBand} leackage are shown in all plots. \\
 
 As shown in the block diagram in \figref{fig:rx_2_bd}, it only uses one
 \gls{IF} where it performs Quadrature Sub-Nyquist Sampling as described
@@ -604,59 +605,109 @@ in \secref{sec:rx_adc_2}. \\
 Since the to mixers of the 58-63 GHz converter work at much
 higher frequencies than those used in the other architectures the
 \gls{LO}-leackage and it's self-mixing is even more pronounced.
-Because of that and probably because of further component restrictions,
+Because of that and probably also due to further component restrictions,
 the converter is specified for an \gls{IF} of 1-5 GHz as noted in
 \secref{sec:comp_sivers}.
-Since the desired signal with the full bandwidth of 1.8 GHZ results
-in an \gls{RX} \gls{IF} between 1.0 and 2.8 GHz, this mostly just meets
+Since the desired signal with has a full bandwidth of 1.8 GHz results
+in an \gls{RX} \gls{IF} between 1.0 and 2.8 GHz, this just meets
 this specifications. \\
 
-The \gls{ADC} 12d1800 by TI has an analog bandwidth of typically 2.8 GHz
+The \gls{ADC} 12d1800 has an analog bandwidth of typically 2.8 GHz
 as described in \secref{sec:comp_adc}.
 Therefor the upper limit of the 2.8 GHz of \gls{RX} \gls{IF} meets this
 requieremnt as well. \\
 
 After the $f_{\text{RX IF}}$ is fully defined by this constraints, the
 $f_{\text{TX LO}}$ and $f_{\text{RX LO}}$ have to be looked at.
-As we can see in \figref{fig:rx_2_freq_rx_if1_cos} the \gls{TX} \gls{LO}
-leackage will be at $d = f_{\text{RX LO}} - f_{\text{TX LO}}$. Te be optimally
+As we can see in \figref{fig:rx_2_freq_a_0} the \gls{TX} \gls{LO}
+leackage will be at $q = f_{\text{RX LO}} - f_{\text{TX LO}}$. Te be optimally
 suppressed by the channel filter, this difference should be as small
 as possible. On the other hand, the residual \gls{TX} \gls{LSBand} signal
-we be separated from the desired \gls{TX} \gls{USBand} signal by $2 \cdot d$
-which demands the difference to be $\geq \frac{f_s}{2}$.
+we be separated from the desired \gls{TX} \gls{USBand} signal by $2 \cdot q$
+which demands for $q \geq \frac{f_s}{2}$. \\
 Unfortunately only one of this constraints can be meet. Since the \gls{TX}
 \gls{LO} leackage is much stronger then the residual \gls{TX} \gls{LSBand}
-leackage, the difference was chosen to be $d = 0.7 GHz$ resulting in the
+leackage, the difference was chosen to be $q = 0.7 GHz$ resulting in the
 \gls{TX} \gls{LO} leackage to be well supressed by the channel filter while
 the residual \gls{TX} \gls{LSBand} signal overlaps only 0.6 GHz. \\
 
-As one might notice, $d$ could also be chosen
+The absolut value of $f_{\text{RX LO}}$ was then chosen such that the
+carrier frequency $f_c = 60.1 \text{GHz}$ is in the middle of the
+converts \gls{RF} specifiaction and the residual \gls{TX} \gls{LSBand}
+54.9 GHZ well outside. \\
 
+Consequently $f_{\text{TX IF}} = f_c - f_{\text{TX LO}} = 2.6 \text GHz$ which
+meets the \gls{IF} specification of the converter as well. \\
 
-See \figref{fig:rx_adc_1_freq_sin} and \figref{fig:rx_adc_1_freq_cos}
-for the plots of $\cos(2\pi \cdot f_{\text{IF}} \cdot t)$
-and $\sin(2\pi \cdot f_{\text{IF}} \cdot t)$ in complex frequency space. \\
+The receiver first mixes \gls{RF} signal $r(t)$ with a the local oscillator
+at $f_{\text{RX LO}}$ and a $90^\circ$ shifted version of this oscillator
+as shown in \figref{fig:rx_adc_1_freq_cos} and \figref{fig:rx_adc_1_freq_sin}.
+Again the frequency components at $\pm (f_c + f_{\text{RX LO}})$ are
+automatically filtered and noted as a low-pass filter LP.
+See: \eqref{eq:rx_2_a_0}, \eqref{eq:rx_2_a_1},
+\figref{fig:rx_2_freq_a_0} and \figref{fig:rx_2_freq_a_1} \\
 
-\begin{itemize}
-\item USB / LSB problem similar to IF-Mixer image suppression
-\item Problem can be solved by using only one mixer and quadrature sampling.
-\item Needs double the bandwidth to sample both channels with the full
-  signal bandwidth
-\item Use sub-nyquist sampling to avoid DC-offset problem and low-frequency
-  limitation of components (carrier leakage)
-\item Only very few components needed -> less non-idealities
-\item since mixer works at much high frequencies than the second mixer of
-  previous architectures, much bigger LO-leackage -> cannot work down to DC
-\end{itemize}
+\begin{subequations}
+  \begin{alignat}{2}
+    a_0(t) &= \text{LP}\{r(t) \cdot \cos(2\pi \cdot f_{\text{RX LO}} \cdot t)\}
+    \label{eq:rx_2_a_0} \\
+    a_1(t) &= \text{LP}\{r(t) \cdot \sin(2\pi \cdot f_{\text{RX LO}} \cdot t)\}
+    \label{eq:rx_2_a_1}
+  \end{alignat}
+\end{subequations}
+
+Next the channel filter implemented as a band pass filter is applied.
+The resulting signals $b_0(t) = \text{BP}\{a_0(t)\}$ and
+$b_1(t) = \text{BP}\{a_1(t)\}$ are shon in \figref{fig:rx_2_freq_b_0}
+and \figref{fig:rx_2_freq_b_1}. \\
+
+Then the two analog signals $b_0(t)$ and $b_1(t)$ are sampled by two
+seperate \gls{ADC} channels as noted in \eqref{eq:rx_2_c_0} and
+\eqref{eq:rx_2_c_1} and drawn in \figref{fig:rx_2_freq_c_0}
+and \figref{fig:rx_2_freq_c_1}. \\
+
+\begin{subequations}
+  \begin{alignat}{2}
+    c_0[k] &= \int_{-\infty}^{\infty}
+    b_0(t) \cdot \delta\left(t - \frac{k}{f_s}\right) \; \text{d}t
+    \;\; \forall k \in \mathbb{Z}
+    \label{eq:rx_2_c_0} \\
+    c_1[k] &= \int_{-\infty}^{\infty}
+    b_1(t) \cdot \delta\left(t - \frac{k}{f_s}\right) \; \text{d}t
+    \;\; \forall k \in \mathbb{Z}
+    \label{eq:rx_2_c_1}
+  \end{alignat}
+\end{subequations}
+
+Next the two digital signals $c_0[k]$ and $c_1[k]$ are interpreted as one
+complex discrete signal $d[k] = c_1[k] + j \cdot c_0[k]$ as shown in
+\figref{fig:rx_2_freq_d}. \\
+
+To get a better picture of how the resulting signal looks like,
+\figref{fig:rx_2_freq_e} shows $e[k] = -j \cdot d[k]$. Also the signal
+originating from the \gls{TX} \gls{LSBand} residual is colerd yellow
+while to desired signal stays blue.
+As notced before, this architecture does not fully suppress neighbouring
+channls. \\
+
+The get the correct baseband signal $f[k]$, $e[k]$ has to be shifted by
+$f_{\text{RX IF}} - f_s = 100 \; \text{MHz}$:
+
+\begin{align}
+  f[k] = e[k] \cdot \exp\left(-2\pi \cdot j \cdot
+  \frac{f_{\text{RX IF}} - f_s}{f_s} \cdot k \right)
+  \;\; \forall k \in \mathbb{Z}
+\end{align}
 
 \begin{table}[h]
   \centering
   \begin{tabular}{|l|l|}
     \hline
-    $f_{\text{TX IF}}$ & 2.5 GHz \\ \hline
-    $f_{\text{TX LO}}$ & 57.2 GHz \\ \hline
+    $f_{\text{TX IF}}$ & 2.6 GHz \\ \hline
+    $f_{\text{TX LO}}$ & 57.5 GHz \\ \hline
     $f_{\text{RX LO}}$ & 58.2 GHz \\ \hline
     $f_{\text{RX IF}}$ & 1.9 GHz \\ \hline
+    $f_c$            & 60.1 GHz \\ \hline
     Signal Bandwidth B & 1.8 GHz \\ \hline
     Number of \gls{ADC} channels & 2 \\ \hline
     Sample Rate $f_s$ & 1.8 GHz \\ \hline
@@ -675,39 +726,81 @@ and $\sin(2\pi \cdot f_{\text{IF}} \cdot t)$ in complex frequency space. \\
 
 \begin{figure}[h!]
   \centering
-  \begin{subfigure}{\textwidth}
+  \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/rx_2_freq_tx_if}
+    \includegraphics[width=\textwidth]{figures/rx_2_freq_tx_if}
     \caption{\gls{TX} \gls{IF}}
-    \label{fig:rx_2_frq_tx_if}
+    \label{fig:rx_2_freq_tx_if}
   \end{subfigure}
-  \vspace{4ex} \\
-  \begin{subfigure}{\textwidth}
+  ~
+  \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/rx_2_freq_rf}
-    \caption{\gls{RF}}
+    \includegraphics[width=\textwidth]{figures/rx_2_freq_rf}
+    \caption{$r(t)$ : \gls{RF}}
     \label{fig:rx_2_freq_rf}
   \end{subfigure}
   \vspace{4ex} \\
-  \begin{subfigure}{\textwidth}
+  \begin{subfigure}{0.45\textwidth}
     \centering
-    %\includegraphics[width=0.45\textwidth]{figures/rx_2_freq_rx_if1_cos}
-    \caption{\gls{RX} \gls{IF} downmixed with $\cos(2\pi \cdot f_{\text{RX LO}} \ cdot t)$}
-    \label{fig:rx_2_freq_rx_if1_cos}
+    \includegraphics[width=\textwidth]{figures/rx_2_freq_a_0}
+    \caption{$a_0(t) = \text{LP}\{r(t) \cdot \cos(2\pi \cdot f_{\text{RX LO}} \cdot t)\}$}
+    \label{fig:rx_2_freq_a_0}
   \end{subfigure}
   ~
-  \begin{subfigure}{\textwidth}
+  \begin{subfigure}{0.45\textwidth}
     \centering
-    %\includegraphics[width=0.45\textwidth]{figures/rx_2_freq_rx_if1_sin}
-    \caption{\gls{RX} \gls{IF} downmixed with $\sin(2\pi \cdot f_{\text{RX LO}} \ cdot t)$}
-    \label{fig:rx_2_freq_rx_if1_sin}
+    \includegraphics[width=\textwidth]{figures/rx_2_freq_a_1}
+    \caption{$a_1(t) = \text{LP}\{r(t) \cdot \sin(2\pi \cdot f_{\text{RX LO}} \cdot t)\}$}
+    \label{fig:rx_2_freq_a_1}
   \end{subfigure}
   \vspace{4ex} \\
-  \begin{subfigure}{\textwidth}
+  \begin{subfigure}{0.45\textwidth}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/rx_2_freq_rx_adc}
-    \caption{Sampled Signal}
-    \label{fig:rx_2_freq_rx_if2}
+    \includegraphics[width=\textwidth]{figures/rx_2_freq_b_0}
+    \caption{$b_0(t) = \text{BP}\{a_0(t)\}$}
+    \label{fig:rx_2_freq_b_0}
+  \end{subfigure}
+  ~
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/rx_2_freq_b_1}
+    \caption{$b_1(t) = \text{BP}\{a_1(t)\}$}
+    \label{fig:rx_2_freq_b_1}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/rx_2_freq_c_0}
+    \caption{$c_0[k] = b_0(k/f_x)$}
+    \label{fig:rx_2_freq_c_0}
+  \end{subfigure}
+  ~
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/rx_2_freq_c_1}
+    \caption{$c_1[k] = b_1(k / f_x)$}
+    \label{fig:rx_2_freq_c_1}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/rx_2_freq_jc0}
+    \caption{$j \cdot c_0[k]$}
+    \label{fig:rx_2_freq_jc0}
+  \end{subfigure}
+  ~
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/rx_2_freq_d}
+    \caption{$d[k] = c_1[k] + j \cdot c_0[k]$}
+    \label{fig:rx_2_freq_d}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/rx_2_freq_e}
+    \caption{$e[k] = -j \cdot d[k]$}
+    \label{fig:rx_2_freq_e}
   \end{subfigure}
   \caption{Quadrate Intermediate Frequency Sub-Nyquist Sampling Receiver
     in Frequency Domain}

@@ -153,8 +153,7 @@ the following steps are performed:
   where $s[i] = p[i]$ are the uncorrected and
   $s_{\text{corr}}[i] = p_{\text{corr}}[i]$ are the corrected \gls{PES} symbols.
   $\varphi_{\text{offset est.}}$ is zero for the first block.
-\item The current \gls{PES} field $p_{\text{corr}}[i] $
-  $\forall i \in {0, 1, \dots, l-1}$
+\item The current \gls{PES} field $p_{\text{corr}}[i]$
   is correlated with the first \gls{PES} field $p_{\text{first}}$
   to get the mean angle $m$ \eqref{eq:sys_pes_angle}.
 \item The phase estimation is updated:
@@ -167,7 +166,7 @@ the following steps are performed:
 \begin{align}
   \label{eq:sys_pes_correct}
   s_{\text{corr}}[i] = s[i] \cdot \exp(-j \cdot \varphi_{\text{offset est.}})
-  \;\;\; \forall i \in
+  \;\;\; \forall i \in {0, 1, \dots, l-1}
 \end{align}
 
 \begin{align}
