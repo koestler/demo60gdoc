@@ -52,7 +52,7 @@ alongside the desired \gls{TX} \gls{USBand} signal. \\
 
 \section{RF Architecture}
 When building a receiver, one faces the problem of isolating the channel of
-interest from all others signals receviced by the antenna. Therefor 
+interest from all others signals receviced by the antenna. Therefor
 two ways of building channel selection filters are discussed in the following
 chapters. \\
 
@@ -95,14 +95,14 @@ $f_{\text{RX IF}} \geq B$ for the \gls{RX} \gls{IF} frequency
 A fixed channel filter is than used to suppress neighbouring channels
 including the \gls{TX} \gls{LO} leackage which was also mixed down. \\
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{figures/rx_rf_0_bd}
   \caption{Block Diagram of Image Rejection using high \gls{IF}}
   \label{fig:rx_rf_0_bd}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}{0.45\textwidth}
     \centering
@@ -136,8 +136,8 @@ using a $90^\circ$ couplers as described in \secref{sec:comp_90deg}: \\
 Let us assume we have the real \gls{RF} signal $s(t)$ shown in
 \figref{fig:rx_rf_1_freq_s}.
 The blue round signal centered around the carrier frequency $+f_c$ is our
-desired signal laying in the \gls{USBand} of the \gls{RX} mixer. 
-The spiky signal is a neighbouring channel laying exactely 
+desired signal laying in the \gls{USBand} of the \gls{RX} mixer.
+The spiky signal is a neighbouring channel laying exactely
 where the \gls{LSBand} of the \gls{RX} mixer is and therefor has to
 be supressed.
 Since it is a real signal, the negative frequencies consist of the mirrored,
@@ -169,21 +169,21 @@ and a positive phase rotation for negative frequencies. \\
 Finally a fixed channel selection filter can be used to at an arbitrary \gls{IF}
 which is a clear advantage over the method discussed in \secref{sec:rx_rf_1}. \\
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=0.3\textwidth]{figures/hilbert}
   \caption{Transfer Function of Hilbert Transform}
   \label{fig:hilbert}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{figures/rx_rf_1_bd}
   \caption{Block Diagram of Image Rejection using $90^\circ$ Couplers}
   \label{fig:rx_rf_1_bd}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}{0.45\textwidth}
     \centering
@@ -257,13 +257,13 @@ $\sin(2\pi \cdot f_{\text{IF}} \cdot t)$ as shown in
 \begin{align}
   \label{eq:four_cos}
   \cos(\omega_0 \cdot t) \laplace \pi
-  \left[\delta(\omega - \omega_0) - \delta(\omega + \omega_0) \right]
+  \left[\delta(\omega - \omega_0) + \delta(\omega + \omega_0) \right]
 \end{align}
 
 \begin{align}
   \label{eq:four_sin}
-  \sin(\omega_0 \cdot t) \laplace \frac{\pi}{2}
-  \left[\delta(\omega - \omega_0) + \delta(\omega + \omega_0) \right]
+  \sin(\omega_0 \cdot t) \laplace \frac{\pi j}{2}
+  \left[\delta(\omega + \omega_0) - \delta(\omega - \omega_0) \right]
 \end{align}
 
 $a(t)$ and $b(t)$ are than low pass filtered to suppress the mirror image
@@ -276,7 +276,7 @@ $c(t) = a(t) + j \cdot b(t)$. To show that this works $j \cdot b(t)$
 is plotted in \figref{fig:rx_adc_1_freq_jb} and
 $c(t)$ in \figref{fig:rx_adc_1_freq_c}.
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}{0.45\textwidth}
     \centering
@@ -316,16 +316,7 @@ $c(t)$ in \figref{fig:rx_adc_1_freq_c}.
   \label{fig:rx_adc_1_freq}
 \end{figure}
 
-
-Self-mixing of the \gls{LO} at $f_{\text{LO}_2}$ of these mixers lead
-to a \acrshort{DC}-offset which has to be blocked in order for the
-\glspl{ADC} to work at full range.
-Therefor all \glspl{ADC} are always used with \acrshort{DC}-blocks as described
-in \secref{sec:comp_dc_block}. This high-pass filters unfortunately
-not only remove \acrshort{DC} but also a small portion of the signal
-resulting in some \gls{ISI}. \\
-
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{figures/rx_adc_1_bd}
   \caption{Block Diagram of Quadrature Baseband Sampling Receiver}
@@ -351,7 +342,7 @@ and not the central part symetrically around zero. Also this error
 can be completely avoided by using a bandwidth $B$ slightly lower than
 $\frac{f_s}{2}$. \\
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{figures/rx_adc_0_bd}
   \caption{Block Diagram of First Nyquist-Zone Sampling Receiver}
@@ -360,57 +351,100 @@ $\frac{f_s}{2}$. \\
 
 \subsection{Quadrature Sub-Nyquist Sampling}
 \label{sec:rx_adc_2}
+Typically low-pass filter befor the \gls{ADC} makes sure, that only
+signals below $\frac{f_s}{2}$ are supplied to the sample and hold circuit
+of the \gls{ADC} in order to make sure that no aliasing occurs.
+$\max \frac{f_s}{2}$ is therefor the digital bandwidth of an \gls{ADC}. \\
 
-In order to completely circumvent the loss of any signal by the
-a \acrshort{DC}-block the signal can also be sampled above $\frac{f_s}{2}$. \\
+However, an \gls{ADC} can have a bigger analog bandwidth. This means that
+even faster signals are correctly caputres by the sample and hold circuit
+at the input of the \gls{ADC}. The frequency space between 0 and
+$\frac{f_s}{2}$ is often refered to as first Nyquist zone as shown in
+\figref{fig:rx_adc_2_freq}. \\
+The frequency space between $\frac{f_s}{2}$ and $f_s$ is refered to as
+second Nyquist zone. After sampling a signal, all energy captured in the
+second Nyquist zone wraps at $\frac{f_s}{2}$ and adds up with the energy
+in the first nyquist zone. By making sure, that all signifiacnt energy
+comes from only one frequency
+$f \in n \cdot \frac{f_s}{2} \; \forall n \in \{1, 2, \dots\}$
+no information\footnote{Except the information in which
+  Nyquist-zone the signal was before sampling} is lost. \\
 
-This is possible up to the limitation of the analog bandwidth of the
-\gls{ADC} which is typically determined by it's input connections
-and it's sample and hold circuit. \\
+This trick can be combined with the Quadrature Baseband Sampling described
+in \secref{sec:rx_adc_1} to capture a total bandwidth of
+$B = 2 \cdot \frac{f_s}{2}$ with two channels sampling a $90^\circ$ shifted
+at $f_s$ each. \\
 
-The \gls{ADC} 12d1800 by TI as described in \secref{sec:comp_adc} has an
-analog bandwidth of typically 2.8 GHz.
-
-% HERE
-
-At the full sapmle speed
-$f_s = 1.8 \text{GHz}$ it is therefor not possible to 
-It is therefor not possible to
-
-
-Instead of mixing into the first Nyquist-Zone also higher 
-
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
-  %\includegraphics[width=\textwidth]{figures/rx_adc_2_bg}
-  \caption{Block Diagram of First Nyquist-Zone Sampling Receiver}
-  \label{fig:rx_adc_2_freq}
+  \includegraphics[width=0.7\textwidth]{figures/rx_adc_2_bd}
+  \caption{Block Diagram of Quadrature Sub-Nyquist Sampling Receiver}
+  \label{fig:rx_adc_2_bd}
 \end{figure}
 
-\section{Examples of Receiver Architectures}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/rx_adc_2_nyquist_zones}
+  \caption{Nyquist-Zones}
+  \label{fig:rx_adc_2_bd}
+\end{figure}
+
+\section{Complete Receiver Architectures}
 The following secions cover three different architectures. There are example
 frequencies given that are supported by the hardware available. Also their
 advantages and drawbacks are disscussed. \\
 
 \subsection{Quadrature Baseband Sampling Receiver}
 \label{sec:rx_0}
-
 The Quadrature Baseband Sampling Receiver drawn in \figref{fig:rx_0_bd}
-starts with a band filter which is the same for all three architecurs
-(see \figref{fig:rx_0_rf}).
-It is used to minimize the total power supplied to a \gls{LNA}
-Unfortenutely ajastable \gls{RF} filters are very hard to build. Therefor
-the band filter is fixed to the whole band of interest. \\
+is based on the image rejection by a high enough \gls{IF} frequency as
+described in \secref{sec:rx_rf_0} and than uses quadrate baseband sampling
+as described in \secref{sec:rx_adc_1}.
+The used frequencies are listed in \tblref{tab:rx_0} and the spectra are drawn
+in \figref{fig:rx_0_freq}. \\
 
+To do the Quadrature Baseband Sampling the
+$\cos(2\pi \cdot f_{\text{LO}_2} \ cdot t)$ as well as a $90^\circ$
+phase shifted version $\sin(2\pi \cdot f_{\text{LO}_2} \ cdot t)$ has to be
+generated.
+The high \gls{IF} of the receiver ($f_{\text{RX IF}} = 5.9 GHz$) requires
+the \gls{LO} for the second mixing stage to run at $f_{\text{LO}_2} = 5.9 GHz$
+as well which is out of the more or less linear range of the
+Meca 3 dB Hybrid Coupler 705S-3.000 described in \secref{sec:comp_90deg}. \\
 
-\begin{figure}[ht]
+Self-mixing of the \gls{LO} at $f_{\text{LO}_2}$ of these mixers lead
+to a \acrshort{DC}-offset which has to be blocked in order for the
+\glspl{ADC} to work at full range.
+Therefor all \glspl{ADC} are always used with \acrshort{DC}-blocks as described
+in \secref{sec:comp_dc_block}. This high-pass filters unfortunately
+not only remove \acrshort{DC} but also a small portion of the signal
+resulting in some \gls{ISI}. \\
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    $f_{\text{TX IF}}$              & 1.7 GHz \\ \hline
+    $f_{\text{TX LO}}$              & 59.2 GHz \\ \hline
+    $f_{\text{RX LO}}$              & 55 GHz \\ \hline
+    $f_{\text{RX IF}}$              & 5.9 GHz \\ \hline
+    $f_{\text{LO}_2}$               & 5.9 GHz \\ \hline
+    Signal Bandwidth B           & 1.8 GHz \\ \hline
+    Number of \gls{ADC} channels & 2 \\ \hline
+    Sample Rate $f_s$ & 1.8 GHz \\ \hline
+  \end{tabular}
+  \caption{Properties of Quadrature Baseband Sampling Receiver}
+  \label{tab:rx_0}
+\end{table}
+
+\begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{figures/rx_0_bd}
   \caption{Block Diagram of Quadrature Baseband Sampling Receiver}
   \label{fig:rx_0_bd}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}{\textwidth}
     \centering
@@ -446,19 +480,12 @@ the band filter is fixed to the whole band of interest. \\
 \subsection{Intermediate Frequency Sampling Receiver}
 \label{sec:rx_1}
 Next a different receiver architecture was considered which uses
-two mixer paths to mix the signal and it's $90^\circ$ shifted version
-from \gls{RF} to the first \gls{IF} and are than combined using
-a second $90^\circ$ coupler resulting in the \gls{RX} \gls{LSBand}
-to be suppressed.
-This allows for a lower \gls{IF} (see \figref{fig:rx_1_bd}).
-As decribed in \secref{sec:rx_0} the \gls{IF} of the
-Quadrature Baseband Sampling Receiver had a lower bound due to the needed
-separation of the \gls{RX} side bands. \\
+$90^\circ$ couplers of image rejection as described in \secref{sec:rx_rf_1}
+and than samples at an \gls{IF} aligned to the first Nyquist-zone as described
+in \secref{sec:rx_adc_0}. \\
 
-The channel selection was than done by a high-pass filter before
-the second mixer removing all signals between $f_{\text{RX LO}}$ and
-$f_{\text{c}} - \frac{B}/{2}$ including the strong \gls{TX} \gls{LO}
-leackage. \\
+The block diagramm is shown in \figref{fig:rx_1_bd}, the spectra in
+\figref{fig:rx_1_freq} and the used frequencies in \tblref{tab:rx_1}. \\
 
 The second \gls{IF} of $f_{\text{LO}_2} = 0.9$ was assigned such that
 the 1.8 GHz wide signal fully falls into the first Nyquist-zone of
@@ -470,6 +497,14 @@ and not the central part symetrically around zero. Also this error
 can be completely avoided by using a symbol rate of slighlty less
 than 1.8 Ghz. \\
 
+The channel selection was than by a combination of two filter. First
+a  high-pass filter (\figref{fig:rx_1_freq_rx_if1}) before
+the second mixer removes signals between $f_{\text{RX LO}}$ and
+$f_{\text{c}} - \frac{B}/{2}$ including the strong \gls{TX} \gls{LO}
+leackage. The low-pass filter on the lower \gls{IF}
+(\figref{fig:rx_1_freq_rx_if2}) is the second part of the channel
+selection filter by preventing aliasing. \\
+
 A drawback of this architecture is, that it requires a single \gls{ADC}
 at the symbol speed $f_{s}$ instead of two \gls{ADC} channels at
 $f_{s} / s$ used by the two other architectures. Such \gls{ADC} can,
@@ -478,14 +513,31 @@ in interleaved mode. This may introduce many new errors as the not
 perfect balancing of both channels and a high clock jitter frequency
 component at $f_{s}$. \\
 
-\begin{figure}[ht]
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    $f_{\text{TX IF}}$ & 1.7 GHz \\ \hline
+    $f_{\text{TX LO}}$ & 58.2 GHz \\ \hline
+    $f_{\text{RX LO}}$ & 57 GHz \\ \hline
+    $f_{\text{RX IF}}$ & 2.9 GHz \\ \hline
+    $f_{\text{LO}_2} $ & 2 GHz \\ \hline
+    Signal Bandwidth B & 1.8 GHz \\ \hline
+    Number of \gls{ADC} channels & 1 \\ \hline
+    Sample Rate $f_s$ & 3.6 GHz \\ \hline
+  \end{tabular}
+  \caption{Properties of Intermediate Frequency Sampling Receiver}
+  \label{tab:rx_1}
+\end{table}
+
+\begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{figures/rx_1_bd}
   \caption{Block Diagram of Intermediate Frequency Sampling Receiver}
   \label{fig:rx_1_bd}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}{\textwidth}
     \centering
@@ -519,17 +571,53 @@ component at $f_{s}$. \\
 \end{figure}
 
 \subsection{Quadrate Intermediate Frequency Sub-Nyquist Sampling Receiver}
-Assumption that no signal on neighbouring channels. \\
+\label{sec:rx_2}
+The third receiver architecture, which was used for most measurements,
+was motivated by only having very few components that can add noise
+and errors due to non-linear terms. \\
 
-Finally we came up with a third receiver architecture only using very
-few components which add non-linearities. \\
+It is, howerver, based on the assumption that no other channels of the
+60 GHz spectrum are used except those, where we send residuals our self.
+Therefor the very strong \gls{TX} \gls{LO} leakage and
+the residual \gls{TX} \gls{LSBand} leackage are shown in all plots
+which actually can be suppressed very good and only cuases problems
+for 256 \gls{QAM}. \todo{reference to results here?} \\
 
-The basic idea
+As shown in the block diagram in \figref{fig:rx_2_bd}, it only uses one
+\gls{IF} where it performs Quadrature Sub-Nyquist Sampling as described
+in \secref{sec:rx_adc_2}. \\
 
-Since the to mixers located in front of the \gls{ADC} work at much
+Since the to mixers of the 58-63 GHz converter work at much
 higher frequencies than those used in the other architectures the
 \gls{LO}-leackage and it's self-mixing is even more pronounced.
-Therefor used
+Because of that and probably because of further component restrictions,
+the converter is specified for an \gls{IF} of 1-5 GHz as noted in
+\secref{sec:comp_sivers}.
+Since the desired signal with the full bandwidth of 1.8 GHZ results
+in an \gls{RX} \gls{IF} between 1.0 and 2.8 GHz, this mostly just meets
+this specifications. \\
+
+The \gls{ADC} 12d1800 by TI has an analog bandwidth of typically 2.8 GHz
+as described in \secref{sec:comp_adc}.
+Therefor the upper limit of the 2.8 GHz of \gls{RX} \gls{IF} meets this
+requieremnt as well. \\
+
+After the $f_{\text{RX IF}}$ is fully defined by this constraints, the
+$f_{\text{TX LO}}$ and $f_{\text{RX LO}}$ have to be looked at.
+As we can see in \figref{fig:rx_2_freq_rx_if1_cos} the \gls{TX} \gls{LO}
+leackage will be at $d = f_{\text{RX LO}} - f_{\text{TX LO}}$. Te be optimally
+suppressed by the channel filter, this difference should be as small
+as possible. On the other hand, the residual \gls{TX} \gls{LSBand} signal
+we be separated from the desired \gls{TX} \gls{USBand} signal by $2 \cdot d$
+which demands the difference to be $\geq \frac{f_s}{2}$.
+Unfortunately only one of this constraints can be meet. Since the \gls{TX}
+\gls{LO} leackage is much stronger then the residual \gls{TX} \gls{LSBand}
+leackage, the difference was chosen to be $d = 0.7 GHz$ resulting in the
+\gls{TX} \gls{LO} leackage to be well supressed by the channel filter while
+the residual \gls{TX} \gls{LSBand} signal overlaps only 0.6 GHz. \\
+
+As one might notice, $d$ could also be chosen
+
 
 
 \begin{itemize}
@@ -544,14 +632,31 @@ Therefor used
   previous architectures, much bigger LO-leackage -> cannot work down to DC
 \end{itemize}
 
-\begin{figure}[ht]
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    $f_{\text{TX IF}}$ & 2.5 GHz \\ \hline
+    $f_{\text{TX LO}}$ & 57.2 GHz \\ \hline
+    $f_{\text{RX LO}}$ & 58.2 GHz \\ \hline
+    $f_{\text{RX IF}}$ & 1.9 GHz \\ \hline
+    Signal Bandwidth B & 1.8 GHz \\ \hline
+    Number of \gls{ADC} channels & 2 \\ \hline
+    Sample Rate $f_s$ & 1.8 GHz \\ \hline
+  \end{tabular}
+  \caption{Properties of Quadrate Intermediate Frequency
+    Sub-Nyquist Sampling Receiver}
+  \label{tab:rx_2}
+\end{table}
+
+\begin{figure}[h!]
   \centering
   \includegraphics[width=\textwidth]{figures/quad_if_rx_block_diagram}
   \caption{Block Diagram of Quadrate Intermediate Frequency Sub-Nyquist Sampling Receiver}
   \label{fig:rx_2_bd}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[h!]
   \centering
   \begin{subfigure}{\textwidth}
     \centering
@@ -569,9 +674,16 @@ Therefor used
   \vspace{4ex} \\
   \begin{subfigure}{\textwidth}
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/rx_2_freq_rx_if}
-    \caption{\gls{RX} \gls{IF}}
-    \label{fig:rx_2_freq_rx_if1}
+    %\includegraphics[width=0.45\textwidth]{figures/rx_2_freq_rx_if1_cos}
+    \caption{\gls{RX} \gls{IF} downmixed with $\cos(2\pi \cdot f_{\text{RX LO}} \ cdot t)$}
+    \label{fig:rx_2_freq_rx_if1_cos}
+  \end{subfigure}
+  ~
+  \begin{subfigure}{\textwidth}
+    \centering
+    %\includegraphics[width=0.45\textwidth]{figures/rx_2_freq_rx_if1_sin}
+    \caption{\gls{RX} \gls{IF} downmixed with $\sin(2\pi \cdot f_{\text{RX LO}} \ cdot t)$}
+    \label{fig:rx_2_freq_rx_if1_sin}
   \end{subfigure}
   \vspace{4ex} \\
   \begin{subfigure}{\textwidth}
