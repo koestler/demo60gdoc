@@ -39,7 +39,7 @@ by some insights how clocking and reset is implemented. \\
   \label{fig:fpga_architecture_overview}
 \end{figure}
 
-\section{Req/Ack Protocol}
+\section{Data Flow Model}
 \label{sec:fpga_reqack}
 Between most modules a simple communication protocol is used that allows
 one way communication whenever the sender and the receiver are both
@@ -201,12 +201,12 @@ All the words are formatted with \gls{MSB} first. \\
 
 This results in $1 \times 192$ bits of single ended single data rate signals. \\
 
-\subsection{Test pattern generator}
+\subsection{Test Pattern Generator}
 For debugging purposes the \gls{ADC} interface has a built in test pattern
 generator which outputs 16 words of 12 bit numbers in parallel such that
 when lining them up to 192 bit vectors this results in a continuous count.
 
-\section{Storage}
+\section{High Speed Data Storage}
 \label{sec:fpga_storage}
 Whenever a positive edge is detected on the trigger input or the trigger
 button is pressed, the \gls{RAM} is completely overwritten with a new run of
@@ -319,7 +319,7 @@ by the \gls{MB} processor and then written to \gls{USB} peripheral.
 This allows for data transfer rates of about $16 \text{MB} / \text{s}$
 which is already fast enough. \\
 
-\subsection{Protocol}
+\subsection{Communication Protocol}
 To manage the communication between the host computer and the \gls{USB} device
 implemented by the \gls{MB} a simple protocol was defined.
 It involves 5 endpoints as they are defined by the \gls{USB}2 standard.
@@ -359,7 +359,7 @@ and written to a binary file which can be read very fast in Matlab. \\
   \label{fig:fpga_download}
 \end{figure}
 
-\section{Clock domains}
+\section{Clock Domains}
 \label{sec:fpga_clocks}
 
 As a result of the different clocking constraints of the externals interfaces,
@@ -449,7 +449,7 @@ slightly increases the download speed by faster copying data from the
   \label{fig:fpga_clock_domains}
 \end{figure}
 
-\section{Resets}
+\section{Reset Distribution}
 \label{sec:fpga_reset}
 
 In consequence of the many clocking regions, implementing a correct
@@ -560,4 +560,4 @@ compiling the design.
 %%  LocalWords:  GiB MiB IP UI CP UART IC Mbit Tri PHY Gbit SGMII UDP
 %%  LocalWords:  INetP ULPI FSM DMA middleware libusb de PLL SiT Clk
 %%  LocalWords:  synchronizer rst jitter debounced synchronizers ISE
-%%  LocalWords:  ChipScope EDK
+%%  LocalWords:  ChipScope EDK INFIFO
