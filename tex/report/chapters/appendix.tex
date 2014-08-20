@@ -1,6 +1,6 @@
 \begin{appendix}
   \chapter{ADC to FPGA connections}
-\label{sec:app_adc_fpga_con}
+\label{app:app_adc_fpga_con}
 \begin{verbatim}
 NET "ID1ClkPxCI"   LOC = "L31" |IOSTANDARD = LVDS; # bank=34, byte_group=1
 NET "ID1ClkNxCI"   LOC = "K32" |IOSTANDARD = LVDS; # bank=34, byte_group=1
@@ -111,4 +111,111 @@ NET "QD0NxDI[11]"  LOC = "B38" |IOSTANDARD = LVDS; # bank=35, byte_group=0
 NET "QOrPxSI"      LOC = "P25" |IOSTANDARD = LVDS; # bank=36, byte_group=3
 NET "QOrNxSI"      LOC = "P26" |IOSTANDARD = LVDS; # bank=36, byte_group=3
 \end{verbatim}
+
+\chapter{Narrom Band Transmission Matlab Configuration File}
+\label{app:res_450_cnf}
+\begin{verbatim}
+% 1: convert to baseband, 2: undersample, 3: 90deg coupler,
+% 4: HwBasebandQI, 5: HwIfQI,
+cnf.Rx.Type = 5;
+
+cnf.ModulationRate = 8; % #bits / symbol
+
+% needs to be longer than: L + sync error
+cnf.DataFieldCount = 2^4;
+
+cnf.SymbolRate        = 1.8E9/4;
+cnf.Tx.SimulationRate = 10.8E9;
+cnf.Rx.SimulationRate = 1.8E9;
+cnf.Rx.CarrierFreq    = 2.2E9;
+cnf.Tx.CarrierFreq    = cnf.Rx.CarrierFreq + 0.7E9;
+
+%cnf.TxOffset = 1E5;
+
+% one frame should be
+cnf.TimePerFrame = 448 / 1.76E9;
+cnf.DataFieldLength = ceil(cnf.TimePerFrame * cnf.SymbolRate) * ...
+    cnf.ModulationRate;
+
+cnf.CodingRate = 1;
+
+if cnf.ModulationRate == 1
+    cnf.Modulation = 'bpsk';
+else
+    cnf.Modulation = 'qam';
+end
+
+cnf.Tx.ZeroPaddingLength = 10;
+
+cnf.Tx.Shaping.RolloffFactor = 0.11;
+cnf.Tx.Shaping.FilterLength = 200 * ceil(cnf.Tx.SimulationRate / ...
+                                        cnf.SymbolRate);
+
+cnf.Rx.Shaping.RolloffFactor = 0.11;
+cnf.Rx.Shaping.FilterLength = 200 * ceil(cnf.Rx.SimulationRate / ...
+                                        cnf.SymbolRate);
+
+%cnf.Tx.Imb.Amp = 1.0;
+%cnf.Tx.Imb.Rot = 0.0/180*pi;
+
+
+%cnf.Tx.RandHLength = 10;
+
+% 1: simulation
+% 2: oscilloscope
+% 3: ADC-file
+% 4: FPGA
+cnf.Channel.Type = 4;
+
+% waveform amplitude; clock signal amplitude
+cnf.HwAwg.ZeroPrefix = 1000;
+cnf.HwAwg.ZeroPostfix = 50001;
+cnf.HwAwg.Amplitude = [1; 1];
+cnf.HwAwg.MarkerAmplitude = [0 0.7; 0 1.4];
+
+%cnf.HwRx.TCorr.Delay = 7;
+%cnf.HwRx.FCorr.a = 0.032;
+%cnf.HwRx.FCorr.b = 0.004;
+
+cnf.Rx.SampleRate = cnf.Rx.SimulationRate;
+
+%cnf.Rx.Imb.Amp = 0.0;
+%cnf.Rx.Imb.Rot = 0.0/180*pi;
+
+cnf.Sync.Xcorr = 1;
+cnf.Sync.TooEarly = 16;
+
+cnf.Sync.CesSync = 1;
+
+cnf.Fes.Length = 32;
+cnf.Fes.Count = 8;
+cnf.Fes.Skip = cnf.Fes.Length;
+%cnf.Fes.Correct = 1;
+
+%cnf.Ces.Length = 256;
+%cnf.Ces.Toeplitz = 1;
+cnf.Ces.Length = 1152;
+cnf.Ces.Golay = 1;
+
+cnf.Pes.Correct = 1;
+cnf.Pes.Length = 32;
+cnf.Pes.Skip = 16; % max expected delay spread
+\end{verbatim}
+
+\chapter{Narrom Band Transmission Sivers Configuration Script}
+\label{app:res_450_sivers_on}
+\begin{verbatim}
+SYNT:REFE EXT
+SYNT:TXFR 03 82 70
+SYNT:TXFR?
+CONV:TXPS 80
+SYNT:TXON ON
+CONV:TXON ON
+
+SYNT:RXFR 03 8D 60
+SYNT:RXFR?
+SYNT:RXON ON
+CONV:RXON ON
+\end{verbatim}
+
 \end{appendix}
