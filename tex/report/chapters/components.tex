@@ -85,7 +85,14 @@ most measurements the reference was locked to same external reference as the
 \gls{AWG} and \gls{ADC} to not have any frequency offsets when different
 transmit and receive frequencies were used.
 
-\begin{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{pictures/sivers}
+  \caption{Picture of Sivers IMA FC1005V/00 Converter}
+  \label{fig:sivers}
+\end{figure}
+
+\begin{figure}[p]
   \centering
   \includegraphics[width=\textwidth]{figures/sivers_block_diagram}
   \caption{Block diagram of Sivers IMA FC1005V/00 Converter}
@@ -93,7 +100,7 @@ transmit and receive frequencies were used.
 \end{figure}
 \todo{add reference to sivers ima}
 
-\begin{table}[h]
+\begin{table}
   \centering
   \begin{tabular}{|l|l|}
     \hline
@@ -210,6 +217,24 @@ measured than specified in the data sheet as shown in
   \label{fig:comp_dc_block_insertion_loss}
 \end{figure}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{pictures/BHP-1000+}
+  \caption{Bandpass Filter BHP-1000+}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{pictures/attenuator}
+  \caption{\gls{MC} attenuators}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.4\textwidth]{pictures/ZX60-V63+}
+  \caption{\gls{MC} Amplifier ZX60-V63+}
+\end{figure}
+
 \section{Texas Instruments ADC 12d1800}
 \label{sec:comp_adc}
 The receiver was build using the Ultra High-Speed ADC12D1800 by Texas Instruments.
@@ -253,6 +278,12 @@ as described in \chapref{chap:fpga}. \\
 \begin{itemize}
 \item Table with most important features
 \end{itemize}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/vc707}
+  \caption{Xilinx Virtex 7 Board VC707}
+\end{figure}
 
 \section{R\&S Oscilloscope RTO 1044}
 \label{sec:comp_osci}

@@ -42,7 +42,7 @@ used for all following measurements, can be found in \figref{fig:res_450_bd}. \\
 
 \begin{figure}[p]
   \centering
-  %\includegraphics[width=\textwidth]{pictures/res_450_setup}
+  \includegraphics[width=\textwidth]{pictures/res_450_setup}
   \caption{Picture of the Narrow Band Transmission Setup}
   \label{fig:res_450_pic}
 \end{figure}
@@ -173,17 +173,110 @@ The channel filter shown in \figref{fig:rx_2_bd} is therefor build using
 the BHP-1000+ high-pass filter and the \gls{ADC} analog input bandwidth which
 cuts of at about 2.8 GHz. \\
 
-\section{Error Vector Magnitude Measurements}
-Random Mean Error Vector Magnitude
-Deteministic Mean Error Vector Magnitude
-
 \subsection{Channel impulse response}
-\begin{itemize}
-\item Show typical channel impulse response of one reflector setup.
-\item Show delay spread.
-\end{itemize}
+\label{sec:res_450_h}
+First we should have a short look at the channel response of the simple
+reflector. The estimated channel response using the Goaly estimator and a
+1152 long \gls{CES} field is shown in \figref{fig:res_450_h}.
+As we can see, there is one very distinctive peak confirming one single,
+more or less flat, reflector. \\
 
-\subsection{Phase Noise measurements}
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/matlab/res_450_h}
+  \caption{Channel response in Time Domain}
+  \label{fig:res_450_h}
+\end{figure}
+
+\subsubsection{Root Mean Square Delay Spread}
+\begin{align}
+  \overline{\tau} &=\frac{\int_0^\infty\tau A_c(\tau)d\tau}{\int_0^\infty A_c(\tau)d\tau} \\
+  \tau_{\text{rms}} &=\sqrt{\frac{\int_0^\infty(\tau-\overline{\tau})^2
+      A_c(\tau)d\tau}{\int_0^\infty A_c(\tau)d\tau}}
+\end{align}
+
+\subsubsection{Delay Spread}
+Root Mean Square Delay Spread is a nice statistical property of a channel.
+When designing a receiver, it is more relevant though, that we now how many
+samples have to be considered to capture enough energy of a symbol. \\
+
+How much energy is significant, can be estimated depending on the \gls{SNR}
+we want to achiev. The \gls{SNR} we want to reach depends on the modulation rate
+we want to achiev. Therefor we first calculate the needed \gls{SNR} for
+\gls{QAM}-256. \\
+
+\todo{do SNR calculation and calc delay spread}
+The delay spread $\approx $ 5 ps, which corresponds to about 7 symbols
+at 450 MS/s and about 15 symbols at 1.8 GS/s. \\
+
+\subsection{Error Vector Magnitude Measurements}
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/matlab/res_450_cp_synced}
+  \caption{Received Data Points after Synchronization but before any Correction}
+  \label{fig:res_450_cp_synced}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/matlab/res_450_cp_corrected}
+  \caption{Received Data Points after Correction (one color per data packet)}
+  \label{fig:res_450_cp_corrected}
+\end{figure}
+
+As we can see in \figref{fig:res_450_cp_corrected} the pattern looks quite good,
+after the channel and phase noise correction.
+The whole pattern is rotated though, which leads to a bit error rate of
+about 0.25. \\
+
+Two different calculation schemes for the \acrfull{EVM} are used:
+
+\subsubsection{\acrfull{DEVM}}
+The \gls{DEVM} is calculated as stated in \eqref{eq:devm} \cite{razavi2011rf}.
+
+\begin{align}
+  \text{EVM}_\text{D} &= \frac{1}{P_{\text{avg}}} \cdot \frac{1}{N}
+  \sum_{j=0}^{N-1} |i_j - s_j|^2
+  \label{eq:devm} \\
+  \text{EVM}_\text{D}\text{dB} &= 10 \cdot \log_{10} (\text{EVM}_\text{D})
+\end{align}
+
+Where $N$ is the total number of symbols, $s_j$ the complex value of the
+received symobol $j$ and $i_j$ the ideal position of the symbol. \\
+
+\subsubsection{\acrfull{REVM}}
+As we can see, the very bad \gls{DEVM} measured for the constellation in
+\figref{fig:res_450_cp_corrected} is due to a deterministic error wihch will
+be discuessed further in \secref{sec:res_450_phase}.
+
+In order to get an figure of merit, which is not influenced, by those deterministic
+errors, a slight adaption of the classical \gls{DEVM} definition was made. \\
+
+The proposed \acrfull{REVM} builds one subset of the set of received points for
+each available data symbol. The error vector $e_j$ is than calculated as the
+difference of the received point and the mean of all received points of that
+set. Therefor it does not matter, if all points corresponding to one sent symbol
+are off. Instead we have a figure of merit telling, how far one sent symbol gets
+spread. \\
+
+The set of all received symbols is called $R$, the subsets are called $S_i$
+where $i \in \{0, 1, \dots, N-1\}$ and $N$ is the number of different symbols.
+
+
+\begin{align}
+  \text{EVM}_\text{R} &= \frac{1}{P_{\text{avg}}} \cdot \frac{1}{N}
+  \sum_{j=0}^{N-1} |i_j - m_j|^2
+  %= \frac{\text{var}(R)}{P_{\text{avg}}}
+  \label{eq:devm} \\
+  m_j &= \frac{1}{N} \sum_{s \in S_j} s \\
+  \text{EVM}_\text{R}\text{dB} &= 10 \cdot \log_{10} (\text{EVM}_\text{R})
+\end{align}
+
+
+
+\subsection{Phase Noise}
+\label{sec:res_450_phase}
+
 \begin{itemize}
 \item Phase-Noise plot measured using many short frames, show that correction algorithm works
 \end{itemize}
