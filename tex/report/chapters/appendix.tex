@@ -119,7 +119,7 @@ NET "QOrNxSI"      LOC = "P26" |IOSTANDARD = LVDS; # bank=36, byte_group=3
 % 4: HwBasebandQI, 5: HwIfQI,
 cnf.Rx.Type = 5;
 
-cnf.ModulationRate = 8; % #bits / symbol
+cnf.ModulationRate = 2; % #bits / symbol
 
 % needs to be longer than: L + sync error
 cnf.DataFieldCount = 2^13;
@@ -198,6 +198,7 @@ cnf.Ces.Length = 1152;
 cnf.Ces.Golay = 1;
 
 cnf.Pes.Correct = 1;
+cnf.Pes.CorrectInitial = 1;
 cnf.Pes.Length = 32;
 cnf.Pes.Skip = 16; % max expected delay spread
 \end{verbatim}
