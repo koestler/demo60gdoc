@@ -184,7 +184,8 @@ more or less flat, reflector. \\
 \begin{figure}[p]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/matlab/res_450_h}
-  \caption{Channel response in Time Domain}
+  \caption{One realization of a measured channel impulse response in Time Domain
+    with Narrow Band Transmission Setup}
   \label{fig:res_450_h}
 \end{figure}
 
@@ -209,6 +210,14 @@ we want to achiev. Therefor we first calculate the needed \gls{SNR} for
 The delay spread $\approx $ 5 ps, which corresponds to about 7 symbols
 at 450 MS/s and about 15 symbols at 1.8 GS/s. \\
 
+% EVM_D measurement 1 frame
+% EVM_R measurement 1 frame
+% -> inital rotation
+% EVM_D rotation, increasing frame window
+% -> worse, worse
+% phase noise correction
+% -> steady at EVM_R?
+
 \subsection{Error Vector Magnitude Measurements}
 \begin{figure}[p]
   \centering
@@ -229,7 +238,20 @@ after the channel and phase noise correction.
 The whole pattern is rotated though, which leads to a bit error rate of
 about 0.25. \\
 
-Two different calculation schemes for the \acrfull{EVM} are used:
+Two different calculation schemes for the \acrfull{EVM} are used as described in
+the following sections. \tblref{tab:res_450_evm} shown an overview of the
+\gls{EVM} values.
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    $\text{EVM}_\text{D}$                           & ? \\ \hline
+    $\text{EVM}_\text{R}$                           & ? \\ \hline
+  \end{tabular}
+  \caption{Measured \gls{EVM} values of the Narrow Band Transmission Experiment}
+  \label{tab:res_450_evm}
+\end{table}
 
 \subsubsection{\acrfull{DEVM}}
 The \gls{DEVM} is calculated as stated in \eqref{eq:devm} \cite{razavi2011rf}.
@@ -259,23 +281,10 @@ set. Therefor it does not matter, if all points corresponding to one sent symbol
 are off. Instead we have a figure of merit telling, how far one sent symbol gets
 spread. \\
 
-The set of all received symbols is called $R$, the subsets are called $S_i$
-where $i \in \{0, 1, \dots, N-1\}$ and $N$ is the number of different symbols.
-
-
-\begin{align}
-  \text{EVM}_\text{R} &= \frac{1}{P_{\text{avg}}} \cdot \frac{1}{N}
-  \sum_{j=0}^{N-1} |i_j - m_j|^2
-  %= \frac{\text{var}(R)}{P_{\text{avg}}}
-  \label{eq:devm} \\
-  m_j &= \frac{1}{N} \sum_{s \in S_j} s \\
-  \text{EVM}_\text{R}\text{dB} &= 10 \cdot \log_{10} (\text{EVM}_\text{R})
-\end{align}
-
-
-
 \subsection{Phase Noise}
 \label{sec:res_450_phase}
+
+As we can see in \figref{}, where the phase of
 
 \begin{itemize}
 \item Phase-Noise plot measured using many short frames, show that correction algorithm works
