@@ -1,9 +1,6 @@
 \chapter{Characterization of Components and Equipment}
 \label{chap:comp}
 
-\todo{add references to all datasheets of which specifications were taken}
-\todo{add pictures}
-
 \section{R\&S Vector Network Analyzer ZNB8}
 In order to gain a deeper understanding of the non-idealities of the
 components which were later used for the different test setups
@@ -17,7 +14,6 @@ While performing different measurements it soon became very clear then
 non optimal torque while connection plugs or overbended cables
 can produce notches of dozens of dBs even when using highest quality
 equipment. \\
-
 \begin{table}[h]
   \centering
   \begin{tabular}{|l|l|}
@@ -33,7 +29,6 @@ equipment. \\
 
 \section{Arbitrary waveform generator: Tektronix AWG 7122C}
 \label{sec:comp_awg}
-
 An \acrfull{AWG} was used instead of a real transmitter.
 Not only because there is no transmitter available but also because of
 it's flexibility. The same Matlab script used for simulations could
@@ -73,11 +68,10 @@ This results in one of the two mirror frequency to be completely canceled
 if one channel is shifted by $-90^\circ$ relative to the other.
 This can be done by using another $90^\circ$ hybrid coupler working on
 \gls{IF} as described in \secref{sec:comp_90deg} or by using die Hilbert
-transform as shown in \todo{reference to theory}. \\
+transform as shown in \secref{sec:rx_rf_1}. \\
 The Sivers module is build such that it transmits on the \gls{USBand}
 (canceling the \gls{LSBand}) when the Q-channel is connected to the signal
-$x(t)$ and the I-channel to $\mathcal{H}\{x(t)\}$.
-\todo{describe how receiver has to be connected for LSB and double check it} \\
+$x(t)$ and the I-channel to $\mathcal{H}\{x(t)\}$. \\
 
 There are two independent \gls{LO} for transmission and reception both using
 the reference. There is an internal 10 MHz reference on the board. During
@@ -85,7 +79,7 @@ most measurements the reference was locked to same external reference as the
 \gls{AWG} and \gls{ADC} to not have any frequency offsets when different
 transmit and receive frequencies were used.
 
-\begin{figure}[h]
+\begin{figure}[p]
   \centering
   \includegraphics[width=\textwidth]{pictures/sivers}
   \caption{Picture of Sivers IMA FC1005V/00 Converter}
@@ -95,10 +89,9 @@ transmit and receive frequencies were used.
 \begin{figure}[p]
   \centering
   \includegraphics[width=\textwidth]{figures/sivers_block_diagram}
-  \caption{Block diagram of Sivers IMA FC1005V/00 Converter}
+  \caption{Block diagram of Sivers IMA FC1005V/00 Converter \cite{sivers_fc1005v}}
   \label{fig:sivers}
 \end{figure}
-\todo{add reference to sivers ima}
 
 \begin{table}
   \centering
@@ -114,7 +107,8 @@ transmit and receive frequencies were used.
     1-dB output compression point & 10 dBm \\ \hline
     Nominal gain \gls{IF} to \gls{RF} & 25 - 40 db \\ \hline
   \end{tabular}
-  \caption{Key properties of 58-63 GHz V-band Converter Sivers IMA FC1005V/00}
+  \caption{Key properties of 58-63 GHz V-band Converter Sivers IMA FC1005V/00
+    \cite{sivers_fc1005v}}
   \label{tab:awg}
 \end{table}
 
@@ -144,16 +138,16 @@ $y_1$ to $y_2$. \\
 Due to missing calibration equipment the phase rotation could not be measured.
 All measured numbers matched the specifications.
 
-\begin{figure}
+\begin{figure}[p]
   \centering
   \includegraphics{figures/90deg_coupler_symbol}
   \caption{Symbol of a $90^\circ$ Coupler}
   \label{fig:90deg_coupler_symbol}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[p]
   \centering
-  \includegraphics[width=\textwidth]{figures/Meca_705S-3_coupler_id1}
+  \includegraphics[width=\textwidth]{figures/network_analyzer/Meca_705S-3_coupler_id1}
   \caption{Measurements of Meca 3 dB Hybrid Coupler 705S-3.000,
     $x_1 \triangleq $ port 1, $y_1 \triangleq $ = port 2,
     $x_2 \triangleq $ port 3, $y_2 \triangleq $ = port 4}
@@ -171,68 +165,180 @@ All measured numbers matched the specifications.
     max \gls{VSWR} & 1.2 : 1 \\ \hline
     Phase rotation & $90^\circ \pm 2.0^\circ$ \\ \hline
   \end{tabular}
-  \caption{Key properties of Meca 3 dB Hybrid Coupler 705S-3.000}
+  \caption{Key properties of Meca 3 dB Hybrid Coupler 705S-3.000 \cite{meca_705s}}
   \label{tab:awg}
 \end{table}
 
-\todo{add reference}
-% http://e-meca.com/rf-directional-coupler/specs_hybrid.php?ID=23&SpecsID=22#
+\section{Mini-Circuits Amplifier ZX60-V63+}
+Whenever additional gain was needed to drive a mixer input or the \gls{ADC}
+with the proper power level, power amplifiers made by Mini-Circuits were used. \\
 
-\section{Mini-Circuits: High-Pass Filter, Amplifiers}
-\begin{itemize}
-\item Table with most important features
-\item Show measurements done with Network Analyzer
-\end{itemize}
+It's key properties are shown in \tblref{tab:comp_zx60}, a picture is shown in
+\figref{fig:comp_zx60_pic} and my own gain and \gls{VSWR} measurements are shown in
+\figref{fig:comp_zx60_meas}. \\
 
-\section{Texas-Instruments Balun ADC-WB-BB}
-\label{sec:comp_balun}
-\begin{itemize}
-\item Table with most important features
-\item Show measurements done with Network Analyzer
-\end{itemize}
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    Operation range & 0.05 - 6 GHz \\ \hline
+    Gain & 21.9 dB typ. at 0.05 GHz, 15.4 dB typ. at 6 GHz \\ \hline
+    Flatness & $\pm$ 1.7 dB from 50 to 3000 MHz \\ \hline
+    1 dB compression point (out. power) & min. 17 dBm \\ \hline
+  \end{tabular}
+  \caption{Key properties of Mini-Circuits Amplifier ZX60-V63+ \cite{mc_zx60}}
+  \label{tab:comp_zx60}
+\end{table}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.4\textwidth]{pictures/ZX60-V63+}
+  \caption{\gls{MC} Amplifier ZX60-V63+}
+  \label{fig:comp_zx60_pic}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/network_analyzer/MCL_ZX60-V63+_Amplifier_S11_id1}
+    \caption{\gls{VSWR} of the input}
+  \end{subfigure}
+  ~
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/network_analyzer/MCL_ZX60-V63+_Amplifier_S21_id1}
+    \caption{Gain vs. Frequency}
+  \end{subfigure}
+  \caption{Measurements of Mini-Circuits Amplifier ZX60-V63+,
+    input $\triangleq$ port 1, output $\triangleq$ port 2}
+  \label{fig:comp_zx60_meas}
+\end{figure}
+
+\section{Mini-Circuits High-pass Filter BHP-1000+}
+For the setup described in \chapref{chap:res_450}, a high-pass filter
+by Mini-Circuits was as the lower bound for the channel selection filter.
+It's properties are listed in \tblref{tab:comp_bhp1000} and a picture is given in
+\figref{fig:comp_bhp1000_pic}.
+
+\begin{table}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    Stop Band ($\geq$3dB) & $<$ 0.9 GHz \\ \hline
+    Pass Band ($<$ 1dB) & 1 - 3 GHz \\ \hline
+  \end{tabular}
+  \caption{Key properties of High-pass Filter BHP-1000+ \cite{mc_bhp1000}}
+  \label{tab:comp_zx60}
+\end{table}
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.4\textwidth]{pictures/BHP-1000+}
+  \caption{High-pass Filter BHP-1000+}
+  \label{fig:comp_bhp1000_pic}
+\end{figure}
 
 \section{Mini-Circuits DC Block MCL BLK-89-S+}
 \label{sec:comp_dc_block}
 To prevent \gls{DC} from driving amplifier inputs into saturation
 a \gls{DC}-block was used. A significantly higher insertion loss was
 measured than specified in the data sheet as shown in
-\figref{fig:comp_dc_block_insertion_loss}.
+\tblref{tab:comp_dc_block} and \figref{fig:comp_dc_block_insertion_loss}.
 
 \begin{table}[h]
   \centering
   \begin{tabular}{|l|l|}
     \hline
     Pass Band & 0.1 MHz to 8 GHz \\ \hline
-    Specified Insertion loss up to 4 GHz & < 0.8 dB \\ \hline
-    Measured Insertion loss up to 4 GHz & < 0.8 dB \\ \hline
+    Specified Insertion loss up to 4 GHz & $<$ 0.8 dB \\ \hline
+    Measured Insertion loss up to 4 GHz & $<$ 0.8 dB \\ \hline
   \end{tabular}
-  \caption{Key properties of Mini-Circuits DC Block MCL BLK-89-S+}
-  \label{tab:awg}
+  \caption{Key properties of Mini-Circuits DC Block MCL BLK-89-S+ \cite{mc_blk89}}
+  \label{tab:comp_dc_block}
 \end{table}
 
-\begin{figure}
+\begin{figure}[p]
   \centering
-  \includegraphics[width=\textwidth]{figures/MCL_BLK-89-S+_DC-Block_insertion_loss}
+  \includegraphics[width=\textwidth]{figures/network_analyzer/MCL_BLK-89-S+_DC-Block_insertion_loss}
   \caption{Measured Insertion Loss of Mini-Circuits DC Block MCL BLK-89-S+}
   \label{fig:comp_dc_block_insertion_loss}
 \end{figure}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.4\textwidth]{pictures/BHP-1000+}
-  \caption{High-pass Filter BHP-1000+}
-\end{figure}
+\section{Mini-Circuits Attenuators VAT+}
+\label{sec:comp_vat}
+To adjust all the power levels across the \gls{RF} part, fixed
+attenuators were used. The 1 dB version is shown in
+\figref{fig:comp_vat_pic}. \tblref{tab:comp_vat} shown the key properties
+of these attenuators.
 
-\begin{figure}
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    Operation range & DC - 6 GHz \\ \hline
+  \end{tabular}
+  \caption{Key property of Mini-Circuits Attenuators VAT+ \cite{mc_vat1}}
+  \label{tab:comp_dc_block}
+\end{table}
+
+\begin{figure}[p]
   \centering
   \includegraphics[width=0.4\textwidth]{pictures/attenuator}
   \caption{\gls{MC} attenuators}
+  \label{fig:comp_vat_pic}
 \end{figure}
 
-\begin{figure}
+\section{Texas-Instruments Baluns ADC-WB-BB and ADC-LB-BB}
+\label{sec:comp_balun}
+The received \gls{IF} signals are single ended and the impedance of all
+components and cables is 50 $\Omega$. The \gls{ADC} on the other hand, uses
+differential inputs with an impedance of 100 $\Omega$. Therefor baluns are used
+for conversion. The \gls{VSWR} and insertion loss measurements of the used
+ADC-WB-BB are shown in \figref{fig:comp_wbbb}. The ADC-LB-BB, which was also
+available was not used due to it's high insertion loss at low frequencies. \\
+
+\begin{figure}[p]
   \centering
-  \includegraphics[width=0.4\textwidth]{pictures/ZX60-V63+}
-  \caption{\gls{MC} Amplifier ZX60-V63+}
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/network_analyzer/TI_ADC-WB-BB_Balun_swr_id1}
+    \caption{\gls{VSWR} of the input}
+  \end{subfigure}
+  ~
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/network_analyzer/TI_ADC-WB-BB_Balun_insertion_loss_id1}
+    \caption{Insertion Loss}
+  \end{subfigure}
+  \caption{Measurements of Texas-Instruments Balun ADC-WB-BB,
+    input $\triangleq$ port 1, output $\triangleq$ port 2}
+  \label{fig:comp_wbbb}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/network_analyzer/TI_ADC-LB-BB_Balun_swr_id1}
+    \caption{\gls{VSWR} of the input}
+  \end{subfigure}
+  ~
+  \begin{subfigure}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/network_analyzer/TI_ADC-LB-BB_Balun_insertion_loss_id1}
+    \caption{Insertion Loss}
+  \end{subfigure}
+  \caption{Measurements of Texas-Instruments Balun ADC-LB-BB,
+    input $\triangleq$ port 1, output $\triangleq$ port 2}
+  \label{fig:comp_lbbb}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  %\includegraphics[width=0.4\textwidth]{pictures/}
+  \caption{Picture of Texas-Instruments Balun ADC-WB-BB}
+  \label{fig:comp_balun_pic}
 \end{figure}
 
 \section{Texas Instruments ADC 12d1800}
@@ -269,20 +375,40 @@ as described in \chapref{chap:fpga}. \\
     Noise Floor Density & $\approx$ -150 $\text{dB}/\text{Hz}$ \\ \hline
     Power Consumption & 4.7 W \\ \hline
   \end{tabular}
-  \caption{Key properties of Texas-Instruments ADC 12d1800}
-  \label{tab:awg}
+  \caption{Key properties of Texas-Instruments ADC 12d1800 \cite{ti_adc12d1800}}
+  \label{tab:comp_adc}
 \end{table}
 
 \section{Xilinx Virtex 7 Board VC707}
-\label{sec:comp_virtex7}
-\begin{itemize}
-\item Table with most important features
-\end{itemize}
+\label{sec:comp_vc707}
+For the data acquisition and storage the VC707 Virtex-7 evaluation board
+was used. It's key features are listed in \tblref{tab:comp_vc707} and a
+picture is shown in \figref{fig:comp_vc707_pic}.
 
-\begin{figure}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    Bit-File Storage & 128 MB Linear byte peripheral interface (BPI) Flash memory \\ \hline
+    Download-Interface & USB 2.0 ULPI Transceiver \\ \hline
+    Program \& Debug Interface & USB JTAG through Digilent module \\ \hline
+    User I/O & 5 Push-Buttons, 4 GPIO SMA plugs \\ \hline
+    Connection to \gls{ADC} board & VITA 57.1 FMC1 HPC Connector \\ \hline
+    Logic Cells & 85'760 \\ \hline
+    Block RAM Size &  37'080 kB \\ \hline
+    Total I/O Banks & 14 \\ \hline
+  \end{tabular}
+  \caption{Relevant properties of Xilinx Virtex 7 Evaluation Board VC707
+    \cite{xilinx_virtex7_overview, xilinx_vc707}}
+  \label{tab:comp_vc707}
+\end{table}
+
+\begin{figure}[p]
   \centering
   \includegraphics[width=\textwidth]{pictures/vc707}
-  \caption{Xilinx Virtex 7 Board VC707}
+  \caption{Picture of Xilinx Virtex 7 Evaluation Board VC707}
+  \label{fig:comp_vc707_pic}
 \end{figure}
 
 \section{R\&S Oscilloscope RTO 1044}
@@ -297,7 +423,7 @@ proven very useful to check power levels and signal shapes. \\
 
 Since the VISA standard for instrument control is painful to install under
 Redhat 6 a small program based on the VXI-11 library written by
-Steve D. Sharples \todo{reference: http://optics.eee.nottingham.ac.uk/vxi11/}
+Steve D. Sharples\footnote{see: http://optics.eee.nottingham.ac.uk/vxi11/}
 was written to convert simple telnet commands send by Matlab
 to remote procedure calls. This allowed to setup and readout the oscilloscope
 directly in the Matlab simulation framework. This was used to do first experiments
@@ -321,4 +447,6 @@ completely implemented. \\
 %%  LocalWords:  dBs Tektronix AWG Matlab baseband FPGA Sivers IMA FC
 %%  LocalWords:  PLL sivers coupler USBand LSBand LSB ima dBm Meca WB
 %%  LocalWords:  VSWR Balun MCL BLK osci SNR Nyquist SMA FMC Virtex
-%%  LocalWords:  fpga Xilinx VC RTO FFT Redhat VXI Sharples
+%%  LocalWords:  fpga Xilinx VC RTO FFT Redhat VXI Sharples rx rf ZX
+%%  LocalWords:  zx typ BHP bhp Attenuators attenuators Baluns baluns
+%%  LocalWords:  wbbb vc BPI ULPI JTAG Digilent GPIO HPC kB

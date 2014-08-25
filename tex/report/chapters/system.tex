@@ -1,4 +1,6 @@
 \chapter{Communication and Measurement System}
+\label{chap:sys}
+
 In order to analyze the different receiver designs described in
 \chapref{chap:rx} and to experiment with different channels
 and system parameters, a versatile communication system
@@ -127,7 +129,27 @@ channel estimator as described in \todo{cite to Golay estimation paper}. \\
 
 In our case a total of $2 \cdot 512 + 128 = 1152$ symbols plus
 a cyclic prefix of $128$ symbols are used resulting in a \gls{CES} field
-length of 1280.
+length of 1280. \\
+
+As described in \secref{sec:sys_frame_struct}, the data blocks form a cyclic
+structure by always having a \gls{CES} field before and after the data field.
+Therefor the data blocks (data field \& \gls{CES} field) can be transformed
+to frequency domain using the \gls{FFT} and back using the \gls{IFFT}. \\
+
+This was used to implement a Zero Forcing Equalizer
+\todo{find reference for this. Book?}
+by transforming
+the estimated channel reponse $h$ and the received symbols $y$
+to the frequency domains signals $H$ and $Y$, then correct the channel
+by forcing the frequency spectrum to be flat any finally transform
+the received symbols back to time domain: \\
+
+\begin{align}
+  h \;\;&\laplace\;\; H \\
+  y \;\;&\laplace\;\; Y \\
+  Y_{\text{corr}} &= Y \cdot \frac{1}{H} \\
+  Y_{\text{corr}} \;\;&\Laplace\;\; y_{\text{corr}}
+\end{align}
 
 \section{Data Blocks and Data Fields}
 \label{sec:sys_data}

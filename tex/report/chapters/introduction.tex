@@ -1,33 +1,83 @@
 \chapter{Introduction}
 \label{ch:introduction}
 
-\section{Motivation}
-\todo{write motivation}
+\section{Importance of continuous Development in
+  Mobile Communication Technologies}
 
-\begin{itemize}
-\item Importance of mobile communication
-\item Need for bigger data-rates
-\item Need for miniaturization
-\item Access to big data storage
-\item Video streaming
-\end{itemize}
+Mobile communication systems became so ubiquitous that most of our daily
+use of information technology simply would not work without them.
+In many first world countries, one has to almost search for places without
+mobile cell network coverage and in third world countries the availability of
+mobile communication is often better then the one of fresh water. \\
 
-\section{60 GHz}
-\todo{write 60 GHz section}
+Because of their high availability, computer networks became so closely
+incorporated in many applications, that their performance highly depend
+on a low latency and high bandwidth link to a server providing data or
+even doing the actual task. Therefor it is of essential importance that
+the performance of computer networks continuous \cite{web_content_delivery}
+to grow exponentially at least as fast as other key factors like
+\gls{CPU} speeds and memory capacities. \\
 
-\begin{itemize}
-\item huge bandwidth possible
-\item Big delay spread
-\item Phase noise
-\item Big free-space attenuation
-\item Possibility of small antenna arrays with many antennas
-\item Almost no interferer at the moment (and later due to high attenuation)
-\end{itemize}
+\acrshort{CMOS} technology and thereby digital signal processing capabilities
+develops according to Moore's Law, while this is very unclear for analog
+circuits in near future as stated in \cite{belgium}.
+Therefor a trend to move processing steps from analog to digital
+domain exists. \\
 
-In order to analyze the different receiver designs described in
-\chapref{chap:rx}, to get measurements about the different channels
-and to quantify phase noise figures, a versatile communication system
-including a simulation framework and interfaces to the hardware
-was needed. \\
+\section{Role of 60 GHz}
+Since it won't be possible to increase the throughput of digital communication
+systems forever by improving the \gls{SNR} as well as coding, channel allocation
+and modulation schemes, the only way will be to increase the channel bandwidth.
+While \gls{VHF} and \gls{UHF} bands are heavily used by many different
+applications and because implementation constraints require the channel
+bandwidth to be small compared to the absolute carrier frequency,
+the only way to much higher carrier frequencies. \\
 
-%%  LocalWords:  interferer rx
+Therefor this work experiments with the possibilities of the 60 GHz
+\gls{ISM} band where the available setup allows for bandwidth of up to
+1.8 GHz and therefor data rates up to 7.2 Gbit/s. \\
+
+Such high data rats allow for new applications which simply were not possible
+using existing wireless standards. Network storage devices can be accessed
+at close distance with their full hard disk speed to allow for fast file
+up- and download. \gls{HD} video can be streamed lossless and uncompressed
+over the air possibly replacing existing cable connections to video
+projectors. \\
+
+60 GHz confronts engineers with many new design constraints though. The very
+high free-space path loss requires for advanced beam forming methods
+for distances above a few meters.
+This is possible, since the low wave length allow to integrate
+big antenna arrays directly on an \gls{IC}. \\
+
+On the other hand, the high attenuation allows to reuse the same channel
+in a relatively close cell and at the current time results in an almost
+always completely silent band. \\
+
+While the object sizes and distances in an indoor environment stay the same,
+the symbol rates on 60 GHz get much higher. Therefor the resulting
+delay spread is wider and correct channel estimation and correction
+gains importance.  \\
+
+\section{This Thesis}
+In order to analyze the different receiver designs,
+to get measurements of channel characteristics,
+to quantify phase noise figures and finally to find
+performance limiting impairments on 60 GHz communication
+systems, a versatile communication system was needed. \\
+
+Therefor different receiver architectures were analyzed as described in
+\chapref{chap:rx} and a communication system including time and frequency
+synchronization, channel and phase noise estimation and correction was
+implemented in software as described in \chapref{chap:sys}.
+\chapref{chap:fpga} described the \gls{FPGA} design, which was developed
+to interface a very high speed 3.6 GS/s \gls{ADC},
+store it's data in real time and provide a fast download interface
+and thereby allows to reproduce the simulation results on real hardware.
+All the used \gls{RF} components were measured using a state of the art
+vector network analyzer as noted in \chapref{chap:comp}.
+Finally \chapref{chap:res_450} and \chapref{chap:res_1800} contain information
+about the exact test setup and the achieved performance of the system. \\
+
+%%  LocalWords:  interferer rx CMOS SNR Gbit HD lossless IC sys fpga
+%%  LocalWords:  FPGA

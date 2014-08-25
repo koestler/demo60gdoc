@@ -1,0 +1,2071 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="594.07202"
+   height="442.36801"
+   version="1.2"
+   id="svg2"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="TI_ADC-WB-BB_Balun_swr_id1.svg">
+  <metadata
+     id="metadata576">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Qt Svg Document</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1033"
+     id="namedview574"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.390645"
+     inkscape:cx="347.36469"
+     inkscape:cy="239.31653"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <title
+     id="title4">Qt Svg Document</title>
+  <desc
+     id="desc6">Generated with Qt</desc>
+  <defs
+     id="defs8" />
+  <g
+     vector-effect="non-scaling-stroke"
+     id="g10"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel"
+     transform="translate(3.96,0)">
+    <g
+       transform="scale(0.576,0.576)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g12"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 0,0 1024,0 0,768 L 0,768 0,0"
+         id="path14"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="scale(0.576,0.576)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g16"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <image
+         x="3"
+         y="0"
+         width="30"
+         height="30"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAABM5AAATOQGPwlYBAAAD40lEQVRIibXWXUxbZRjA8f/b9rBBW2iB6UaG++ArRD6dZH5cLEsYMWpC4uKFMYbhojHR6IUxY+KG28Blid6oN2YxZXFLjF6MaOLmdNElpnOyUQEX3cZHIGYo2FKwg9aecx4vyIBS+kGN5/K853l/fZ73ec6pIpPrzJhbRfVLAtWIxU3rtuBat7BkiH4rUA2glH4Bz6jr/4WX0AcO17ppr3EhWBoywdOHl6EdtW6O1Lk5Vp+fMa4yQd+ucy8uCXDIF6BrIIjC7BWxNaVz5qnhJOh/wZPDaaCZ4onhZWhrqZPny5wAOGwWqtwaNhUfKsAL3kk+vhVKia8OL0NbShycGg7FPfLNnk00FmXHoCcGg7zlC6AhhEUlxeO7ekV595U6sSrYu8XOYPNmzjVuZL1Vsd87FRP2xlU/B/sCOIhytrEoZbfHwknOdKvDRolTY4tDw6pAF1lc8wz9zXvXZ3ARwfdUCY8VZaccNZUK/f6PeXZ/PRFXmA8fKuDlijxuzxlUnB1nTjfxPrGZnYXrYsqfqOEsqTIFsCooz9XwPLqBtuqFtcuTEQAOXPMT0oXXq9wx6N2sEmVuSXdknt5qZ1+pk856NzlWRa8/wqU/w5weCVFst9FRu3pcItym/tEviqL+cBLUEIgYS9nbbRZuzkR58ssh0HJoLXVwyDeNU1Ps3WKnxp21Ki4C7wwGGxTGeRvK1MGCIYIQP19luRof7CyMKeOuTevpGZ0lpOVQbLdxtH9pWo72T/PRw4W8WJ67agILv0TpCs+oSyn9gmBpaK9xcaw+P+Fb5cZMlLa+AD3jd7AoeK0yj/d/nWVPUTZfNW4kEDEo/HQMAGnZvhgnwMFrAU78EkSJXBGb2bRgpMBNgeODQY70TxM1hco8jZOPbOB+VxZFn40zb5jsL3PSXGznjm5iCDy73ZEQ5bny2aX9E+CmQMsPk5weCZGFQdeD9/BqZS5ZloVQXyDCK1f8eCfDi1sd35FPW5UrIRpfS8+oS3Xf+onuYWnv84spIh2+gNA9LAUn++S3YESWXxdvz0ndF79L719h0U0R7+S8FH8+JtZTwzIWisqBq36he1iUZ+hHPrkZc+ixb67WbUERW5PC7O0aCPLS5Sk6B6ZxGvP0P1NNRV5st85ETX4ORHj3ehBDhB0F6yh1apgCnf3BpJmu3kfLyg7Qs/temu+zxz2mi7Dr3ATeqXDM/Yo8jRsz0aTlTfxZTLPbBfhuYh7vVBhhofPPjIRSnGmqPwJrGLX0GykdOE18rWh6cAo8EzR9OAFOhuja4BX4m9UuDCEjdO3wChzICM0MvotjnEcpXazG42tFAf4F8wuwgnx1xIYAAAAASUVORK5CYII="
+         id="image18" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="scale(0.576,0.576)"
+       font-size="11"
+       font-weight="700"
+       font-style="normal"
+       id="g20"
+       style="font-size:11px;font-style:normal;font-weight:700;fill:none;stroke:#808080;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="38"
+         y="14"
+         font-size="11"
+         font-weight="700"
+         font-style="normal"
+         id="text22"
+         style="font-size:11px;font-style:normal;font-weight:700;fill:#808080;fill-opacity:1;stroke:none;font-family:Verdana">4/4/2014 4:00:31 PM</text>
+      <text
+         xml:space="preserve"
+         x="38"
+         y="27"
+         font-size="11"
+         font-weight="700"
+         font-style="normal"
+         id="text24"
+         style="font-size:11px;font-style:normal;font-weight:700;fill:#808080;fill-opacity:1;stroke:none;font-family:Verdana">1311.6010K44-101902-NC</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,20.736)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g26"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 0,0 1024,0 0,7 L 0,7 0,0"
+         id="path28"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,20.736)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g30"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,7 7,7 7,26 0,26 0,7"
+         id="path32"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,20.736)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g34"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 344,7 647,0 0,19 -647,0 0,-19"
+         id="path36"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,20.736)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g38"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 1017,7 7,0 0,19 -7,0 0,-19"
+         id="path40"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,20.736)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g42"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 0,26 1024,0 0,7 L 0,33 0,26"
+         id="path44"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,4.032,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g46"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 37,0 37,19 0,19 0,0"
+         id="path48"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,4.032,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g50"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text52"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">Trc4</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,25.344,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g54"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 50,0 50,19 0,19 0,0"
+         id="path56"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,25.344,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g58"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:2;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <polyline
+         points="4,9 42,9 "
+         id="polyline60"
+         style="fill:none" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,54.144,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g62"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 52,0 52,19 0,19 0,0"
+         id="path64"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,54.144,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g66"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text68"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">Sss11</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,84.096,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g70"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 43,0 43,19 0,19 0,0"
+         id="path72"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,84.096,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g74"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text76"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">SWR</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,108.864,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g78"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 126,0 126,19 0,19 0,0"
+         id="path80"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,108.864,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g82"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text84"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">500 mU/ Ref 1 U</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,181.44,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g86"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 29,0 29,19 0,19 0,0"
+         id="path88"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,181.44,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g90"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text92"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">Cal</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,570.816,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g94"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 26,0 26,19 0,19 0,0"
+         id="path96"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,570.816,24.768)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g98"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="8.5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text100"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">1</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,423.36)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g102"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 0,0 1024,0 0,7 L 0,7 0,0"
+         id="path104"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,423.36)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g106"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,7 7,7 7,26 0,26 0,7"
+         id="path108"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,423.36)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g110"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 153,7 198,0 0,19 -198,0 0,-19"
+         id="path112"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,423.36)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g114"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 540,7 370,0 0,19 -370,0 0,-19"
+         id="path116"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,423.36)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g118"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 1017,7 7,0 0,19 -7,0 0,-19"
+         id="path120"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,423.36)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g122"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 0,26 1024,0 0,7 L 0,33 0,26"
+         id="path124"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,4.032,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g126"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 36,0 36,19 0,19 0,0"
+         id="path128"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,4.032,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g130"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text132"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">Ch1</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,24.768,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g134"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 44,0 44,19 0,19 0,0"
+         id="path136"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,24.768,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g138"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text140"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">Start</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,50.112,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g142"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 66,0 66,19 0,19 0,0"
+         id="path144"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,50.112,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g146"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text148"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">100 kHz</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,202.176,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g150"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 33,0 33,19 0,19 0,0"
+         id="path152"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,202.176,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g154"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text156"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">Pwr</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,221.184,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g158"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 70,0 70,19 0,19 0,0"
+         id="path160"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,221.184,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g162"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text164"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">-10 dBm</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,261.504,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g166"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 29,0 29,19 0,19 0,0"
+         id="path168"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,261.504,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g170"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text172"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">Bw</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,278.208,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g174"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 57,0 57,19 0,19 0,0"
+         id="path176"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,278.208,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g178"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text180"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">10 kHz</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,524.16,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g182"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 42,0 42,19 0,19 0,0"
+         id="path184"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,524.16,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g186"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text188"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">Stop</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,548.352,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g190"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 65,0 65,19 0,19 0,0"
+         id="path192"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,548.352,427.392)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g194"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="5"
+         y="15"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text196"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana">8.5 GHz</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g198"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 0,0 1024,0 0,666 L 0,666 0,0"
+         id="path200"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g202"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="m 0,0 1024,0 0,666 L 0,666 0,0"
+         id="path204"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g206"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#909090;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:0.50196084;font-family:Verdana">
+      <path
+         d="m 0,0 1023,0 0,665 L 0,665 0,0"
+         id="path208"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g210"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#909090;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:0.50196084;font-family:Verdana" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g212"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#909090;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Verdana">
+      <polyline
+         points="102,0 102,665 "
+         id="polyline214"
+         style="fill:none" />
+      <polyline
+         points="205,0 205,665 "
+         id="polyline216"
+         style="fill:none" />
+      <polyline
+         points="307,0 307,665 "
+         id="polyline218"
+         style="fill:none" />
+      <polyline
+         points="409,0 409,665 "
+         id="polyline220"
+         style="fill:none" />
+      <polyline
+         points="512,0 512,665 "
+         id="polyline222"
+         style="fill:none" />
+      <polyline
+         points="614,0 614,665 "
+         id="polyline224"
+         style="fill:none" />
+      <polyline
+         points="716,0 716,665 "
+         id="polyline226"
+         style="fill:none" />
+      <polyline
+         points="818,0 818,665 "
+         id="polyline228"
+         style="fill:none" />
+      <polyline
+         points="921,0 921,665 "
+         id="polyline230"
+         style="fill:none" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g232"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#909090;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Verdana" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g234"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#909090;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Verdana">
+      <polyline
+         points="0,599 1023,599 "
+         id="polyline236"
+         style="fill:none" />
+      <polyline
+         points="0,532 1023,532 "
+         id="polyline238"
+         style="fill:none" />
+      <polyline
+         points="0,466 1023,466 "
+         id="polyline240"
+         style="fill:none" />
+      <polyline
+         points="0,399 1023,399 "
+         id="polyline242"
+         style="fill:none" />
+      <polyline
+         points="0,333 1023,333 "
+         id="polyline244"
+         style="fill:none" />
+      <polyline
+         points="0,266 1023,266 "
+         id="polyline246"
+         style="fill:none" />
+      <polyline
+         points="0,200 1023,200 "
+         id="polyline248"
+         style="fill:none" />
+      <polyline
+         points="0,133 1023,133 "
+         id="polyline250"
+         style="fill:none" />
+      <polyline
+         points="0,67 1023,67 "
+         id="polyline252"
+         style="fill:none" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g254"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#909090;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Verdana" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g256"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#909090;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Verdana" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g258"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#909090;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Verdana">
+      <polyline
+         points="0,599 6,599 "
+         id="polyline260"
+         style="fill:none" />
+      <polyline
+         points="0,532 6,532 "
+         id="polyline262"
+         style="fill:none" />
+      <polyline
+         points="0,466 6,466 "
+         id="polyline264"
+         style="fill:none" />
+      <polyline
+         points="0,399 6,399 "
+         id="polyline266"
+         style="fill:none" />
+      <polyline
+         points="0,333 6,333 "
+         id="polyline268"
+         style="fill:none" />
+      <polyline
+         points="0,266 6,266 "
+         id="polyline270"
+         style="fill:none" />
+      <polyline
+         points="0,200 6,200 "
+         id="polyline272"
+         style="fill:none" />
+      <polyline
+         points="0,133 6,133 "
+         id="polyline274"
+         style="fill:none" />
+      <polyline
+         points="0,67 6,67 "
+         id="polyline276"
+         style="fill:none" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g278"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#909090;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Verdana" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g280"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#909090;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Verdana" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g282"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#909090;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Verdana" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g284"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:#000000;fill-opacity:0;stroke:none;font-family:Verdana">
+      <path
+         d="m 7,592 7,0 0,15 -7,0 0,-15"
+         id="path286"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g288"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g290"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial">
+      <text
+         xml:space="preserve"
+         x="8"
+         y="604"
+         font-size="12"
+         font-weight="400"
+         font-style="normal"
+         id="text292"
+         style="font-size:12px;font-style:normal;font-weight:400;fill:#909090;fill-opacity:0.50196084;stroke:none;font-family:Arial">1</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g294"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g296"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g298"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g300"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g302"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g304"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Arial">
+      <path
+         d="m 7,525 19,0 0,15 -19,0 0,-15"
+         id="path306"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g308"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial">
+      <text
+         xml:space="preserve"
+         x="8"
+         y="537"
+         font-size="12"
+         font-weight="400"
+         font-style="normal"
+         id="text310"
+         style="font-size:12px;font-style:normal;font-weight:400;fill:#909090;fill-opacity:0.50196084;stroke:none;font-family:Arial">1.5</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g312"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g314"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g316"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Arial">
+      <path
+         d="m 7,459 9,0 0,15 -9,0 0,-15"
+         id="path318"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g320"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial">
+      <text
+         xml:space="preserve"
+         x="8"
+         y="471"
+         font-size="12"
+         font-weight="400"
+         font-style="normal"
+         id="text322"
+         style="font-size:12px;font-style:normal;font-weight:400;fill:#909090;fill-opacity:0.50196084;stroke:none;font-family:Arial">2</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g324"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g326"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g328"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Arial">
+      <path
+         d="m 7,392 19,0 0,15 -19,0 0,-15"
+         id="path330"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g332"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial">
+      <text
+         xml:space="preserve"
+         x="8"
+         y="404"
+         font-size="12"
+         font-weight="400"
+         font-style="normal"
+         id="text334"
+         style="font-size:12px;font-style:normal;font-weight:400;fill:#909090;fill-opacity:0.50196084;stroke:none;font-family:Arial">2.5</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g336"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g338"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g340"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Arial">
+      <path
+         d="m 7,326 9,0 0,15 -9,0 0,-15"
+         id="path342"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g344"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial">
+      <text
+         xml:space="preserve"
+         x="8"
+         y="338"
+         font-size="12"
+         font-weight="400"
+         font-style="normal"
+         id="text346"
+         style="font-size:12px;font-style:normal;font-weight:400;fill:#909090;fill-opacity:0.50196084;stroke:none;font-family:Arial">3</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g348"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g350"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g352"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Arial">
+      <path
+         d="m 7,259 19,0 0,15 -19,0 0,-15"
+         id="path354"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g356"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial">
+      <text
+         xml:space="preserve"
+         x="8"
+         y="271"
+         font-size="12"
+         font-weight="400"
+         font-style="normal"
+         id="text358"
+         style="font-size:12px;font-style:normal;font-weight:400;fill:#909090;fill-opacity:0.50196084;stroke:none;font-family:Arial">3.5</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g360"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g362"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g364"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Arial">
+      <path
+         d="m 7,193 9,0 0,15 -9,0 0,-15"
+         id="path366"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g368"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial">
+      <text
+         xml:space="preserve"
+         x="8"
+         y="205"
+         font-size="12"
+         font-weight="400"
+         font-style="normal"
+         id="text370"
+         style="font-size:12px;font-style:normal;font-weight:400;fill:#909090;fill-opacity:0.50196084;stroke:none;font-family:Arial">4</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g372"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g374"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g376"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Arial">
+      <path
+         d="m 7,126 19,0 0,15 -19,0 0,-15"
+         id="path378"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g380"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial">
+      <text
+         xml:space="preserve"
+         x="8"
+         y="138"
+         font-size="12"
+         font-weight="400"
+         font-style="normal"
+         id="text382"
+         style="font-size:12px;font-style:normal;font-weight:400;fill:#909090;fill-opacity:0.50196084;stroke:none;font-family:Arial">4.5</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g384"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g386"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g388"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Arial">
+      <path
+         d="m 7,60 9,0 0,15 -9,0 0,-15"
+         id="path390"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g392"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial">
+      <text
+         xml:space="preserve"
+         x="8"
+         y="72"
+         font-size="12"
+         font-weight="400"
+         font-style="normal"
+         id="text394"
+         style="font-size:12px;font-style:normal;font-weight:400;fill:#909090;fill-opacity:0.50196084;stroke:none;font-family:Arial">5</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g396"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g398"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g400"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Arial">
+      <path
+         d="m 7,651 19,0 0,15 -19,0 0,-15"
+         id="path402"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g404"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial">
+      <text
+         xml:space="preserve"
+         x="8"
+         y="663"
+         font-size="12"
+         font-weight="400"
+         font-style="normal"
+         id="text406"
+         style="font-size:12px;font-style:normal;font-weight:400;fill:#909090;fill-opacity:0.50196084;stroke:none;font-family:Arial">0.5</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g408"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g410"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g412"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Arial">
+      <path
+         d="M 7,0 26,0 26,15 7,15 7,0"
+         id="path414"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g416"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial">
+      <text
+         xml:space="preserve"
+         x="8"
+         y="12"
+         font-size="12"
+         font-weight="400"
+         font-style="normal"
+         id="text418"
+         style="font-size:12px;font-style:normal;font-weight:400;fill:#909090;fill-opacity:0.50196084;stroke:none;font-family:Arial">5.5</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g420"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g422"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g424"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g426"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g428"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g430"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:#909090;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:0.50196084;font-family:Arial" />
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0.576,381.888)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g432"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Arial">
+      <path
+         d="M 0,0 -4,-9 4,-9 0,0"
+         id="path434"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g436"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Arial" />
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g438"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Arial" />
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="12"
+       font-weight="400"
+       font-style="normal"
+       id="g440"
+       style="font-size:12px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Arial" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="15"
+       font-weight="400"
+       font-style="normal"
+       id="g442"
+       style="font-size:15px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica">
+      <text
+         xml:space="preserve"
+         x="-8"
+         y="582"
+         font-size="15"
+         font-weight="400"
+         font-style="normal"
+         id="text444"
+         style="font-size:15px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Helvetica">M1</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="15"
+       font-weight="400"
+       font-style="normal"
+       id="g446"
+       style="font-size:15px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,207.936,221.76)"
+       font-size="15"
+       font-weight="400"
+       font-style="normal"
+       id="g448"
+       style="font-size:15px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
+      <path
+         d="M 0,0 -7,-14 7,-14 0,0"
+         id="path450"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="15"
+       font-weight="400"
+       font-style="normal"
+       id="g452"
+       style="font-size:15px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica" />
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="15"
+       font-weight="400"
+       font-style="normal"
+       id="g454"
+       style="font-size:15px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica" />
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="15"
+       font-weight="400"
+       font-style="normal"
+       id="g456"
+       style="font-size:15px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="20"
+       font-weight="400"
+       font-style="normal"
+       id="g458"
+       style="font-size:20px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica">
+      <text
+         xml:space="preserve"
+         x="348"
+         y="298"
+         font-size="20"
+         font-weight="400"
+         font-style="normal"
+         id="text460"
+         style="font-size:20px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Helvetica">M2</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="20"
+       font-weight="400"
+       font-style="normal"
+       id="g462"
+       style="font-size:20px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="20"
+       font-weight="400"
+       font-style="normal"
+       id="g464"
+       style="font-size:20px;font-style:normal;font-weight:400;fill:none;stroke:#ffffff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:0.31372501;font-family:Helvetica">
+      <path
+         d="m 0,599 1024,0"
+         id="path466"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="20"
+       font-weight="400"
+       font-style="normal"
+       id="g468"
+       style="font-size:20px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-dasharray:1, 2;stroke-dashoffset:0;font-family:Helvetica">
+      <path
+         d="m 0,599 1024,0"
+         id="path470"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="20"
+       font-weight="400"
+       font-style="normal"
+       id="g472"
+       style="font-size:20px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;stroke-dasharray:1, 2;stroke-dashoffset:0;font-family:Helvetica" />
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,578.304,384.768)"
+       font-size="20"
+       font-weight="400"
+       font-style="normal"
+       id="g474"
+       style="font-size:20px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
+      <path
+         d="M 0,0 19,-9 19,9 0,0"
+         id="path476"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="20"
+       font-weight="400"
+       font-style="normal"
+       id="g478"
+       style="font-size:20px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica" />
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="20"
+       font-weight="400"
+       font-style="normal"
+       id="g480"
+       style="font-size:20px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica" />
+    <g
+       stroke-miterlimit="2"
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="20"
+       font-weight="400"
+       font-style="normal"
+       id="g482"
+       style="font-size:20px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="15"
+       font-weight="400"
+       font-style="normal"
+       id="g484"
+       style="font-size:15px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Helvetica">
+      <path
+         d="m 0,591 22,0 0,17 -22,0 0,-17"
+         id="path486"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="15"
+       font-weight="400"
+       font-style="normal"
+       id="g488"
+       style="font-size:15px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica">
+      <text
+         xml:space="preserve"
+         x="0"
+         y="605"
+         font-size="15"
+         font-weight="400"
+         font-style="normal"
+         id="text490"
+         style="font-size:15px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica">1 U</text>
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="15"
+       font-weight="400"
+       font-style="normal"
+       id="g492"
+       style="font-size:15px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="15"
+       font-weight="400"
+       font-style="normal"
+       id="g494"
+       style="font-size:15px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica">
+      <polyline
+         points="0,569.468 0,593.587 1,594.276 1,594.236 2,594.153 2,593.983 3,593.804 3,593.674 4,592.577 4,592.138 5,591.572 5,591.174 6,590.534 6,590.174 7,589.652 7,589.192 8,588.674 8,588.015 9,587.603 9,587.04 10,586.52 10,586.094 11,585.462 11,584.986 12,584.351 12,583.873 13,583.437 13,582.853 14,582.314 14,581.685 15,581.23 15,580.569 16,580.184 16,579.75 17,579.072 17,578.694 18,578.127 18,577.52 19,577.155 19,576.529 20,576.102 20,575.485 21,575.056 21,574.518 22,574.182 22,573.549 23,573.078 23,572.554 24,572.028 24,571.471 25,571.012 25,570.474 26,569.975 26,569.522 27,569.069 27,568.515 28,567.993 28,567.518 29,567.04 29,566.427 30,566.059 30,565.301 31,565.099 31,564.453 32,563.921 32,563.381 33,562.714 33,562.331 34,561.808 34,561.27 35,560.803 35,560.265 36,559.818 36,559.162 37,558.808 37,558.287 38,557.719 38,557.239 39,556.629 39,556.271 40,555.794 40,555.446 41,554.795 41,554.276 42,553.736 42,553.48 43,552.781 43,552.317 44,551.779 44,551.387 45,551.271 45,550.484 46,550.001 46,549.405 47,548.866 47,548.489 48,547.96 48,547.263 49,546.756 49,546.298 50,545.587 50,545.298 51,544.877 51,544.36 52,543.792 52,543.341 53,542.787 53,542.247 54,541.776 54,541.284 55,540.744 55,540.284 56,539.693 56,539.163 57,538.672 57,538.164 58,537.444 58,537.163 59,536.646 59,536.279 60,535.653 60,535.286 61,534.756 61,534.334 62,533.757 62,533.103 63,532.737 63,532.2 64,531.728 64,531.363 65,530.748 65,530.276 66,529.928 66,529.563 67,528.959 67,528.575 68,528.227 68,527.672 69,527.311 69,526.817 70,526.435 70,525.865 71,525.488 71,525.157 72,524.679 72,524.385 73,523.755 73,523.513 74,523.002 74,522.624 75,522.209 75,521.838 76,521.292 76,521.175 77,520.719 77,520.231 78,519.956 78,519.359 79,519.039 79,518.825 80,518.69 80,518.077 81,517.858 81,517.553 82,517.444 82,516.94 83,516.657 83,516.274 84,516.006 84,515.891 85,515.491 85,515.251 86,515.167 86,514.951 87,514.649 87,514.625 88,514.181 88,514.065 89,513.643 89,513.552 90,513.397 90,513.174 91,512.882 91,512.711 92,512.425 92,512.506 93,512.301 93,512.232 94,512.016 94,511.796 95,511.743 95,511.666 96,511.383 96,511.325 97,511.261 97,511.032 98,511.216 98,510.94 99,510.777 99,510.554 100,510.579 100,510.498 101,510.437 101,510.336 102,510.258 102,510.273 103,510.317 103,510.488 104,509.93 104,510.094 105,510.17 105,510.046 106,510.207 106,509.944 107,510.064 107,510.111 108,510.252 108,510.176 109,510.069 109,510.106 110,510.005 110,510.348 111,510.361 111,510.207 112,510.233 112,510.141 113,510.244 113,510.348 114,510.274 114,510.318 115,510.339 115,510.602 116,510.362 116,510.634 117,510.448 117,510.59 118,510.817 118,510.748 119,510.856 119,510.705 120,510.809 120,510.791 121,511.007 121,511.274 122,510.993 122,510.933 123,511.352 123,511.253 124,511.435 124,511.244 125,511.535 125,511.639 126,511.619 126,511.764 127,511.86 127,512.169 128,511.952 128,512.383 129,512.245 129,512.38 130,512.274 130,512.445 131,512.486 131,512.71 132,512.766 132,512.849 133,512.979 133,513.209 134,513.245 134,513.201 135,513.604 135,513.456 136,513.691 136,513.541 137,513.764 137,513.845 138,514.032 138,514.119 139,514.152 139,514.217 140,514.438 140,514.442 141,514.521 141,514.609 142,514.643 142,514.926 143,515.112 143,515.054 144,515.407 144,515.22 145,515.358 145,515.55 146,515.667 146,515.807 147,516.002 147,516.284 148,516.291 148,516.593 149,516.624 149,516.587 150,516.961 150,517.144 151,517.196 151,517.434 152,517.721 152,517.965 153,518.071 153,518.447 154,518.618 154,518.832 155,518.901 155,519.192 156,519.615 156,519.692 157,519.704 157,520.054 158,520.348 158,520.492 159,520.61 159,520.922 160,521.306 160,521.491 161,521.717 161,522.029 162,522.221 162,522.45 163,522.77 163,523.047 164,523.261 164,523.702 165,523.77 165,524.146 166,524.312 166,524.818 167,525.03 167,525.329 168,525.802 168,525.988 169,526.419 169,526.812 170,527.063 170,527.161 171,527.711 171,528.014 172,528.404 172,528.748 173,529.067 173,529.524 174,530.024 174,530.168 175,530.604 175,530.881 176,531.389 176,531.757 177,532.315 177,532.683 178,533.08 178,533.315 179,533.843 179,534.262 180,534.764 180,535.207 181,535.723 181,536.133 182,536.527 182,536.94 183,537.367 183,537.84 184,538.382 184,538.689 185,539.261 185,539.636 186,540.069 186,540.505 187,541.009 187,541.534 188,541.875 188,542.333 189,542.844 189,543.331 190,543.769 190,544.278 191,544.694 191,545.074 192,545.707 192,546.142 193,546.701 193,547.099 194,547.694 194,548.092 195,548.728 195,549.16 196,549.466 196,550.113 197,550.519 197,550.989 198,551.615 198,551.943 199,552.584 199,553.071 200,553.551 200,553.94 201,554.542 201,554.878 202,555.174 202,555.793 203,556.217 203,556.678 204,557.08 204,557.518 205,557.938 205,558.438 206,558.839 206,559.354 207,559.654 207,560.023 208,560.427 208,560.882 209,561.2 209,561.542 210,561.906 210,562.243 211,562.629 211,562.894 212,563.286 212,563.725 213,563.978 213,564.285 214,564.544 214,564.683 215,565.174 215,565.388 216,565.599 216,565.757 217,566.044 217,566.393 218,566.396 218,566.592 219,566.643 219,566.838 220,566.893 220,567.069 221,567.169 221,567.221 222,567.242 222,567.274 223,567.273 223,567.232 224,567.25 224,567.156 225,566.952 225,566.877 226,566.755 226,566.503 227,566.565 227,566.149 228,566.099 228,565.85 229,565.559 229,565.203 230,565.016 230,564.771 231,564.15 231,564.052 232,563.656 232,563.257 233,562.895 233,562.416 234,562.045 234,561.624 235,561.001 235,560.578 236,560.17 236,559.431 237,559.024 237,558.489 238,557.901 238,557.316 239,556.788 239,556.108 240,555.564 240,554.956 241,554.224 241,553.615 242,552.913 242,552.202 243,551.544 243,550.86 244,550.007 244,549.29 245,548.643 245,547.91 246,547.174 246,546.385 247,545.536 247,544.991 248,543.895 248,543.302 249,542.613 249,541.556 250,540.971 250,540.065 251,539.168 251,538.402 252,537.688 252,536.84 253,535.733 253,534.879 254,533.999 254,533.377 255,532.376 255,531.522 256,530.679 256,529.707 257,528.669 257,527.906 258,526.872 258,526.036 259,525.173 259,524.264 260,523.165 260,522.329 261,521.377 261,520.566 262,519.521 262,518.677 263,517.568 263,516.576 264,515.796 264,515.074 265,513.765 265,513.012 266,511.935 266,510.917 267,510.053 267,509.081 268,508.168 268,507.028 269,506.024 269,504.945 270,504.024 270,503.13 271,502.152 271,501.057 272,500.126 272,499.008 273,497.994 273,496.926 274,496.038 274,494.63 275,493.902 275,492.792 276,491.495 276,490.476 277,489.65 277,488.566 278,487.443 278,486.289 279,485.068 279,484.115 280,483.058 280,481.979 281,480.791 281,479.744 282,478.497 282,477.467 283,476.498 283,475.101 284,473.9 284,472.745 285,471.608 285,470.37 286,469.042 286,468.218 287,466.834 287,465.905 288,464.37 288,463.633 289,462.067 289,460.927 290,459.616 290,457.965 291,457.215 291,455.872 292,454.955 292,453.376 293,452.254 293,450.756 294,449.714 294,448.382 295,447.067 295,445.822 296,444.541 296,443.379 297,442.002 297,440.504 298,439.297 298,438.23 299,436.883 299,435.34 300,434.221 300,432.601 301,431.514 301,430.037 302,428.576 302,427.329 303,426.082 303,424.667 304,423.666 304,422.081 305,421.006 305,419.289 306,418.068 306,416.681 307,415.43 307,413.97 308,412.988 308,411.274 309,409.872 309,408.842 310,407.506 310,406.585 311,405.165 311,403.716 312,402.537 312,401.151 313,399.827 313,399.012 314,397.761 314,396.746 315,395.7 315,394.285 316,392.803 316,391.483 317,390.309 317,389.054 318,388.301 318,387.178 319,386.119 319,384.913 320,384.088 320,382.551 321,381.591 321,380.759 322,379.777 322,378.808 323,377.761 323,376.738 324,375.931 324,374.37 325,373.725 325,372.443 326,371.523 326,370.306 327,369.516 327,368.934 328,367.075 328,366.72 329,365.926 329,364.909 330,364.214 330,363.634 331,363.116 331,361.547 332,360.826 332,360.244 333,358.943 333,358.708 334,358.226 334,356.497 335,356.233 335,355.453 336,354.598 336,354.074 337,353.088 337,352.396 338,351.519 338,351.098 339,350.778 339,349.583 340,349.012 340,348.5 341,347.673 341,346.661 342,346.424 342,345.975 343,344.831 343,344.498 344,343.634 344,343.405 345,342.622 345,342.109 346,341.384 346,339.876 347,339.198 347,339.507 348,338.348 348,337.578 349,336.499 349,335.936 350,335.556 350,334.294 351,334.208 351,333.356 352,332.762 352,331.405 353,330.789 353,330.149 354,329.511 354,328.314 355,327.366 355,326.599 356,325.582 356,325.052 357,324.14 357,323.096 358,321.992 358,321.209 359,320.213 359,319.442 360,318.571 360,317.439 361,316.416 361,315.193 362,314.376 362,313.339 363,311.812 363,310.568 364,309.696 364,308.792 365,307.726 365,305.7 366,305.015 366,303.583 367,302.594 367,300.593 368,298.719 368,297.671 369,295.972 369,294.809 370,294.032 370,291.503 371,290.121 371,288.44 372,286.756 372,285.241 373,284.229 373,281.572 374,279.96 374,278.211 375,277.1 375,275.709 376,273.298 376,272.143 377,269.339 377,267.97 378,265.893 378,264.045 379,261.966 379,259.753 380,257.971 380,256.083 381,253.963 381,252.486 382,249.8 382,248.008 383,244.944 383,243.982 384,241.49 384,239.237 385,237.008 385,234.914 386,233.175 386,231.472 387,228.025 387,226.645 388,224.592 388,222.547 389,219.967 389,217.128 390,215.604 390,213.401 391,209.996 391,209.205 392,204.941 392,203.028 393,200.594 393,199.13 394,197.685 394,194.987 395,191.977 395,190.17 396,187.797 396,186.432 397,184.132 397,181.444 398,180.004 398,178.129 399,175.74 399,172.038 400,171.853 400,169.291 401,166.504 401,164.278 402,163.061 402,161.617 403,159.52 403,157.663 404,156.544 404,153.334 405,151.537 405,149.092 406,148.051 406,147.518 407,145.227 407,143.29 408,141.203 408,139.89 409,137.484 409,136.325 410,135.429 410,132.779 411,131.156 411,129.451 412,128.269 412,126.369 413,125.186 413,123.932 414,123.146 414,121.612 415,119.951 415,118.548 416,116.929 416,117.087 417,116.363 417,113.582 418,112.661 418,111.05 419,110.314 419,109.26 420,107.477 420,106.503 421,106.121 421,106.332 422,104.784 422,103.738 423,104.592 423,102.851 424,101.684 424,101.041 425,100.447 425,99.2383 426,99.7924 426,98.7873 427,96.9652 427,97.8323 428,96.6034 428,95.5556 429,95.6714 429,94.5535 430,92.0724 430,93.8261 431,91.9152 431,91.3333 432,90.439 432,91.4279 433,90.6254 433,90.7921 434,89.2456 434,88.6533 435,86.9206 435,86.9839 436,86.3141 436,86.0988 437,86.7493 437,85.8627 438,85.4297 438,84.7501 439,84.7075 439,84.6223 440,83.1018 440,83.3164 441,83.6881 441,82.367 442,82.0288 442,81.6245 443,80.1702 443,80.3624 444,79.5222 444,80.2035 445,79.8237 445,78.157 446,77.6471 446,77.2978 447,77.5395 447,75.6923 448,76.0143 448,74.9915 449,72.7903 449,75.4552 450,72.9921 450,73.4763 451,71.9308 451,71.3172 452,71.5145 452,68.4517 453,66.9889 453,66.772 454,66.4825 454,66.4097 455,64.1361 455,63.2208 456,61.5148 456,63.0006 457,59.9745 457,58.8446 458,58.587 458,57.1386 459,56.3662 459,54.18 460,53.4968 460,52.293 461,50.9942 461,50.5138 462,48.118 462,48.1639 463,46.3608 463,44.5505 464,44.626 464,43.2115 465,41.977 465,39.8415 466,39.826 466,39.6959 467,37.0232 467,34.5272 468,35.0415 468,32.9468 469,31.5676 469,32.8916 470,31.2858 470,28.6679 471,28.2537 471,26.3287 472,25.3856 472,24.7138 473,22.1605 473,21.9617 474,22.5206 474,22.3908 475,20.531 475,19.3577 476,19.1988 476,18.3537 477,17.2636 477,16.6468 478,15.4603 478,17.326 479,16.0526 479,15.6751 480,15.0398 480,13.3248 481,14.2454 481,14.3023 482,12.5758 482,14.5648 483,12.8243 483,14.2529 484,13.9224 484,12.5727 485,13.7465 485,14.5728 486,15.7842 486,16.3436 487,16.3107 487,17.3512 488,17.0004 488,19.6399 489,19.9641 489,21.8606 490,23.8371 490,22.2875 491,24.0625 491,27.1785 492,27.8413 492,28.6785 493,29.0306 493,31.7785 494,33.3145 494,35.4351 495,37.2779 495,38.7815 496,41.3012 496,41.9154 497,44.4514 497,47.2207 498,49.0601 498,50.2431 499,53.325 499,55.5524 500,60.049 500,61.6854 501,61.7052 501,66.4739 502,67.8893 502,70.4211 503,73.6945 503,75.4331 504,79.6934 504,81.7195 505,85.0933 505,87.611 506,90.2556 506,92.108 507,94.7737 507,97.9523 508,101.863 508,104.8 509,108.222 509,111.385 510,114.45 510,118.859 511,121.13 511,124.751 512,127.697 512,130.876 513,132.903 513,138.305 514,140.93 514,144.521 515,148.611 515,152.321 516,154.347 516,157.282 517,161.239 517,165.527 518,168.228 518,171.621 519,174.623 519,178.879 520,182.081 520,185.407 521,188.577 521,191.834 522,195.07 522,199.387 523,202.161 523,206.162 524,209.375 524,212.492 525,215.966 525,218.527 526,222.715 526,224.677 527,229.673 527,232.425 528,235.204 528,237.984 529,241.24 529,244.557 530,247.598 530,249.672 531,253.923 531,257.143 532,259.026 532,262.486 533,265.705 533,268.019 534,271.243 534,274.199 535,276.516 535,279.019 536,282.149 536,284.924 537,288.163 537,289.878 538,292.767 538,294.601 539,297.526 539,300.121 540,302.158 540,304.765 541,306.422 541,309.188 542,310.79 542,313.471 543,315.895 543,317.366 544,319.833 544,321.304 545,323.938 545,324.568 546,327.945 546,329.163 547,331.908 547,333.356 548,334.872 548,336.751 549,338.668 549,340.462 550,341.735 550,343.84 551,345.297 551,347.01 552,348.681 552,350.46 553,351.928 553,353.072 554,355.177 554,356.467 555,358.361 555,359.719 556,361.861 556,362.96 557,364.272 557,365.948 558,367.591 558,368.854 559,369.784 559,371.639 560,372.556 560,374.309 561,375.893 561,377.069 562,378.812 562,379.816 563,381.114 563,382.55 564,383.89 564,385.577 565,386.765 565,388.152 566,389.184 566,390.656 567,391.788 567,393.175 568,394.598 568,396.056 569,397.269 569,398.908 570,400.605 570,401.759 571,403.05 571,404.196 572,405.394 572,406.763 573,408.378 573,410.061 574,411.133 574,412.378 575,413.877 575,415.255 576,416.226 576,417.782 577,419.396 577,420.741 578,421.795 578,423.158 579,424.476 579,425.791 580,426.74 580,428.002 581,429.843 581,430.338 582,431.918 582,433 583,434.275 583,435.832 584,436.991 584,437.979 585,438.783 585,440.195 586,441.392 586,442.874 587,444.019 587,444.713 588,445.373 588,446.939 589,447.891 589,449.041 590,449.818 590,451.222 591,451.964 591,453.513 592,453.961 592,454.764 593,456.235 593,456.706 594,457.592 594,458.621 595,459.589 595,460.485 596,460.979 596,462.582 597,463.021 597,464.082 598,464.868 598,465.63 599,466.357 599,467.374 600,468.103 600,468.62 601,469.432 601,470.469 602,471.273 602,471.949 603,472.649 603,473.214 604,474.347 604,475.031 605,475.344 605,476.347 606,476.754 606,477.37 607,478.295 607,479.062 608,479.284 608,480.035 609,480.656 609,481.121 610,481.832 610,482.577 611,483.122 611,483.919 612,484.331 612,484.924 613,485.441 613,485.586 614,486.251 614,486.894 615,487.235 615,487.921 616,488.097 616,488.875 617,488.904 617,489.585 618,490.1 618,490.317 619,490.972 619,491.249 620,491.42 620,491.955 621,492.018 621,492.694 622,492.746 622,493.241 623,493.691 623,493.48 624,493.825 624,494.204 625,494.227 625,494.444 626,494.732 626,494.678 627,494.942 627,494.924 628,495.149 628,495.518 629,495.479 629,495.189 630,495.223 630,495.828 631,495.179 631,495.131 632,495.232 632,495.2 633,495.393 633,495.397 634,495.086 634,494.978 635,495.259 635,494.873 636,494.804 636,494.668 637,494.357 637,494.379 638,493.971 638,493.836 639,493.554 639,493.501 640,493.211 640,492.798 641,492.681 641,492.429 642,492.124 642,492.118 643,491.737 643,491.661 644,491.096 644,491.055 645,490.714 645,490.389 646,490.126 646,489.94 647,489.539 647,489.197 648,488.889 648,488.537 649,488.437 649,488.108 650,487.924 650,487.725 651,487.496 651,487.09 652,486.956 652,487.091 653,486.864 653,486.72 654,486.24 654,486.268 655,486.455 655,486.429 656,486.158 656,486.227 657,486.4 657,486.415 658,486.581 658,486.498 659,486.618 659,487.027 660,487.236 660,487.357 661,487.511 661,487.789 662,488.484 662,488.515 663,489.232 663,489.535 664,489.78 664,490.34 665,490.848 665,491.574 666,492.126 666,492.535 667,493.414 667,494.105 668,494.694 668,495.575 669,496.627 669,497.296 670,498.275 670,498.929 671,500.219 671,500.922 672,502.037 672,503.077 673,503.989 673,505.264 674,506.317 674,507.638 675,509.044 675,510.291 676,511.534 676,513.045 677,514.048 677,515.679 678,517.148 678,518.58 679,519.89 679,521.502 680,523.096 680,524.769 681,526.42 681,527.819 682,529.837 682,530.905 683,532.673 683,534.573 684,536.117 684,537.786 685,539.216 685,540.999 686,542.777 686,544.369 687,546.056 687,547.726 688,549.45 688,550.997 689,552.755 689,554.268 690,555.977 690,557.725 691,559.119 691,560.697 692,562.335 692,563.93 693,565.485 693,567.017 694,568.533 694,570.062 695,571.589 695,572.901 696,574.403 696,575.951 697,577.139 697,578.578 698,579.949 698,581.28 699,582.503 699,583.675 700,584.917 700,586.157 701,587.258 701,588.291 702,589.286 702,590.023 703,590.862 703,591.411 704,591.743 704,592.122 705,592.166 705,591.97 706,591.491 706,591.104 707,590.477 707,589.711 708,588.999 708,588.338 709,587.446 709,586.582 710,585.54 710,584.726 711,583.773 711,582.937 712,582.019 712,581.3 713,580.185 713,579.471 714,578.412 714,577.621 715,576.99 715,575.941 716,574.997 716,574.082 717,573.167 717,572.656 718,571.616 718,570.627 719,570.038 719,568.922 720,568.204 720,567.465 721,566.619 721,565.744 722,565.001 722,564.051 723,563.222 723,562.457 724,561.543 724,560.715 725,559.988 725,559.188 726,558.097 726,557.342 727,556.43 727,555.612 728,554.592 728,553.715 729,552.786 729,552.014 730,551.229 730,550.142 731,548.964 731,548.258 732,547.04 732,546.154 733,544.992 733,544.008 734,543.087 734,541.839 735,540.892 735,539.459 736,538.412 736,537.082 737,535.963 737,534.801 738,533.313 738,532.32 739,530.722 739,529.34 740,528.185 740,526.567 741,524.992 741,523.762 742,522.042 742,520.646 743,518.918 743,517.255 744,515.848 744,514.13 745,512.312 745,510.95 746,508.992 746,507.131 747,505.299 747,503.6 748,501.646 748,499.542 749,497.824 749,495.686 750,494 750,491.995 751,490.609 751,488.672 752,486.463 752,484.745 753,482.722 753,480.678 754,479.055 754,477.095 755,475.37 755,473.409 756,471.814 756,469.994 757,468.771 757,466.461 758,464.943 758,462.972 759,461.709 759,460.208 760,458.6 760,457.167 761,455.56 761,453.644 762,452.818 762,451.427 763,450.216 763,448.96 764,446.843 764,445.935 765,445.503 765,443.717 766,442.752 766,441.597 767,440.122 767,438.558 768,437.535 768,436.983 769,435.749 769,435.297 770,434.384 770,433.357 771,432.517 771,431.891 772,430.921 772,430.775 773,429.919 773,428.652 774,428.402 774,427.862 775,427.83 775,427.332 776,426.743 776,426.673 777,425.911 777,425.625 778,425.177 778,424.979 779,424.552 779,424.492 780,423.624 780,424.275 781,424.369 781,423.535 782,423.932 782,423.654 783,423.732 783,423.255 784,423.872 784,423.17 785,423.23 785,423.525 786,423.165 786,423.602 787,423.181 787,422.997 788,423.586 788,423.316 789,423.322 789,423.84 790,423.373 790,423.364 791,422.964 791,423.487 792,423.506 792,423.114 793,422.979 793,423.795 794,423.309 794,423.612 795,423.09 795,422.798 796,423.135 796,423.251 797,422.455 797,422.887 798,423.072 798,422.902 799,422.377 799,422.296 800,422.468 800,422.054 801,421.875 801,422.403 802,422.298 802,421.644 803,422.318 803,421.949 804,421.867 804,422.073 805,422.883 805,421.615 806,421.592 806,421.882 807,421.206 807,421.929 808,421.613 808,421.723 809,421.754 809,421.104 810,420.781 810,420.7 811,420.944 811,420.522 812,420.499 812,420.696 813,420.212 813,419.812 814,419.798 814,419.633 815,419.564 815,418.941 816,419.338 816,418.45 817,418.517 817,418.728 818,418.508 818,418.005 819,417.401 819,417.595 820,417.534 820,417.754 821,416.95 821,416.584 822,416.622 822,416.725 823,416.24 823,416.269 824,415.519 824,415.222 825,415.436 825,415.549 826,415.353 826,415.98 827,415.286 827,415.328 828,415.497 828,414.897 829,414.746 829,414.469 830,414.405 830,414.342 831,414.317 831,413.631 832,413.786 832,414.595 833,413.674 833,413.048 834,413.783 834,413.663 835,413.321 835,413.123 836,413.097 836,412.684 837,413.702 837,412.581 838,413.025 838,412.137 839,412.331 839,412.305 840,412.258 840,412.033 841,412.459 841,411.687 842,411.419 842,411.744 843,411.393 843,411.19 844,411.905 844,411.347 845,411.851 845,412.108 846,412.086 846,410.852 847,410.674 847,411.22 848,411.142 848,411.316 849,410.337 849,411.331 850,411.418 850,410.749 851,410.884 851,410.761 852,411.443 852,410.977 853,410.199 853,411.483 854,410.85 854,411.385 855,410.881 855,411.418 856,411.539 856,411.369 857,411.068 857,411.239 858,410.741 858,411.362 859,411.004 859,411.134 860,410.465 860,410.671 861,411.611 861,411.726 862,411.432 862,411.139 863,411.148 863,411.353 864,411.247 864,411.245 865,411.342 865,411.271 866,411.266 866,411.535 867,411.224 867,411.948 868,410.948 868,412.344 869,411.703 869,412.163 870,412.418 870,411.959 871,411.489 871,412.923 872,412.261 872,413.129 873,413.021 873,413.074 874,413.141 874,413.767 875,414.438 875,414.36 876,415.11 876,414.777 877,414.641 877,415.218 878,414.979 878,416.408 879,416.032 879,416.372 880,416.434 880,416.918 881,416.765 881,416.473 882,417.692 882,417.996 883,417.377 883,418.247 884,419.205 884,419.127 885,418.66 885,419.483 886,420.024 886,420.841 887,420.42 887,420.522 888,420.902 888,421.441 889,422.025 889,422.574 890,422.18 890,423.141 891,424.05 891,423.422 892,424.783 892,424.333 893,424.41 893,425.182 894,424.565 894,425.776 895,426.81 895,426.267 896,427.215 896,427.304 897,427.615 897,428.712 898,429.457 898,429.418 899,430.015 899,430.874 900,430.628 900,430.339 901,431.934 901,431.884 902,432.292 902,432.872 903,433.351 903,432.894 904,433.988 904,434.692 905,434.893 905,434.738 906,435.037 906,436.279 907,435.431 907,436.334 908,436.835 908,436.232 909,436.683 909,436.676 910,437.132 910,436.552 911,437.887 911,437.428 912,438.654 912,438.473 913,438.031 913,439.332 914,438.594 914,438.838 915,438.872 915,438.85 916,439.556 916,440.252 917,440.939 917,440.256 918,440 918,440.702 919,440.24 919,440.804 920,439.774 920,441.165 921,441.227 921,441.162 922,440.239 922,441.716 923,441.184 923,440.203 924,440.368 924,440.564 925,440.364 925,439.165 926,440.018 926,439.241 927,439.465 927,439.022 928,439.298 928,438.312 929,438.562 929,438.574 930,437.574 930,437.799 931,437.381 931,435.891 932,436.037 932,434.383 933,434.757 933,434.22 934,433.699 934,434.179 935,432.862 935,432.224 936,431.671 936,430.05 937,431.149 937,430.269 938,429.737 938,428.462 939,428.643 939,427.004 940,426.053 940,425.577 941,426.003 941,424.925 942,424.737 942,423.391 943,423.623 943,423.201 944,421.147 944,421.552 945,420.588 945,420.157 946,419.328 946,418.518 947,417.768 947,415.975 948,416.749 948,414.777 949,413.866 949,414.686 950,412.191 950,412.383 951,410.35 951,409.316 952,409.227 952,408.144 953,407.321 953,405.06 954,404.119 954,404.323 955,403.443 955,402.116 956,400.644 956,400.57 957,399.182 957,399.346 958,397.33 958,396.827 959,395.571 959,395.272 960,393.428 960,393.749 961,393.299 961,391.213 962,391.474 962,391.537 963,390.326 963,390.129 964,388.478 964,388.55 965,387.809 965,386.093 966,387.011 966,384.571 967,385.774 967,385.357 968,385.132 968,385.927 969,383.032 969,383.366 970,383.068 970,381.239 971,381.64 971,380.867 972,380.54 972,381.227 973,380.489 973,379.393 974,379.266 974,377.906 975,378.42 975,378.96 976,378.847 976,377.599 977,377.14 977,377.11 978,377.223 978,377.513 979,377.566 979,376.556 980,377.37 980,377.297 981,376.959 981,376.767 982,376.628 982,377.021 983,376.45 983,376.77 984,376.851 984,378.094 985,377.933 985,377.458 986,378.942 986,379.006 987,378.989 987,379.94 988,381.214 988,380.576 989,380.901 989,382.211 990,381.017 990,382.362 991,382.664 991,383.039 992,382.451 992,382.566 993,383.681 993,383.019 994,382.145 994,383.745 995,383.529 995,383.507 996,385.377 996,384.774 997,385.403 997,383.05 998,383.968 998,383.99 999,384.194 999,384.958 "
+         id="polyline496"
+         style="fill:none" />
+      <polyline
+         points="999,384.958 1000,384.597 1000,383.14 1001,384.951 1001,384.316 1002,384.568 1002,384.548 1003,382.577 1003,383.963 1004,384.949 1004,384.645 1005,383.532 1005,384.267 1006,385.292 1006,383.945 1007,384.847 1007,383.638 1008,383.89 1008,384.154 1009,384.732 1009,382.465 1010,382.694 1010,383.276 1011,381.789 1011,381.734 1012,381.573 1012,381.544 1013,380.865 1013,380.849 1014,381.092 1014,381.514 1015,378.401 1015,377.361 1016,377.76 1016,378.498 1017,376.775 1017,375.838 1018,375.203 1018,374.758 1019,373.096 1019,370.797 1020,371.742 1020,371.742 1021,370.005 1021,367.265 1022,366.162 1022,365.605 1023,365.299 1023,363.832 "
+         id="polyline498"
+         style="fill:none" />
+    </g>
+    <g
+       transform="matrix(0.576,0,0,0.576,0,39.744)"
+       font-size="15"
+       font-weight="400"
+       font-style="normal"
+       id="g500"
+       style="font-size:15px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="scale(0.576,0.576)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g502"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="scale(0.576,0.576)"
+       font-size="14"
+       font-weight="700"
+       font-style="normal"
+       id="g504"
+       style="font-size:14px;font-style:normal;font-weight:700;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+    <g
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g506"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Verdana">
+      <path
+         d="M 0,0 210,0 210,36 0,36 0,0"
+         id="path508"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g510"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="10"
+         y="14"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text512"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Verdana">M1</text>
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g514"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g516"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="38"
+         y="14"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text518"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Verdana">4.500000</text>
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g520"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g522"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="112"
+         y="14"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text524"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Verdana">MHz</text>
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g526"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g528"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="149"
+         y="14"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text530"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Verdana">1.037</text>
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g532"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g534"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="196"
+         y="14"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text536"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Verdana">U</text>
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g538"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+    <g
+       transform="matrix(5.76,0,0,5.76,467.136,52.992)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g540"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Verdana">
+      <path
+         d="M 0.3,0.5 0.5,0.3 0.7,0.5 0.5,0.7 0.3,0.5"
+         id="path542"
+         inkscape:connector-curvature="0"
+         style="fill-rule:evenodd" />
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g544"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="10"
+         y="31"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text546"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Verdana">M2</text>
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g548"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g550"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="38"
+         y="31"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text552"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Verdana">3.000000</text>
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g554"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g556"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="112"
+         y="31"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text558"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Verdana">GHz</text>
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g560"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g562"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="149"
+         y="31"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text564"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Verdana">3.125</text>
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g566"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g568"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana">
+      <text
+         xml:space="preserve"
+         x="196"
+         y="31"
+         font-size="14"
+         font-weight="400"
+         font-style="normal"
+         id="text570"
+         style="font-size:14px;font-style:normal;font-weight:400;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Verdana">U</text>
+    </g>
+    <g
+       vector-effect="non-scaling-stroke"
+       transform="matrix(0.576,0,0,0.576,467.136,41.472)"
+       font-size="14"
+       font-weight="400"
+       font-style="normal"
+       id="g572"
+       style="font-size:14px;font-style:normal;font-weight:400;fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Verdana" />
+  </g>
+</svg>
