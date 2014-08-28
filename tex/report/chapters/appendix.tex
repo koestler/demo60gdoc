@@ -119,53 +119,67 @@ NET "QOrNxSI"      LOC = "P26" |IOSTANDARD = LVDS; # bank=36, byte_group=3
 % 4: HwBasebandQI, 5: HwIfQI,
 cnf.Rx.Type = 5;
 
-cnf.ModulationRate = 8; % #bits / symbol
-
-% needs to be longer than: L + sync error
-cnf.DataFieldCount = 2^13;
-
-cnf.SymbolRate        = 1.8E9/4;
-cnf.Tx.SimulationRate = 10.8E9;
-cnf.Rx.SimulationRate = 1.8E9;
-cnf.Rx.CarrierFreq    = 2.2E9;
-cnf.Tx.CarrierFreq    = cnf.Rx.CarrierFreq + 0.7E9;
-
-%cnf.TxOffset = 1E5;
-
-% one frame should be
-cnf.TimePerFrame = 448 / 1.76E9;
-cnf.DataFieldLength = ceil(cnf.TimePerFrame * cnf.SymbolRate) * ...
-    cnf.ModulationRate;
-
-cnf.CodingRate = 1;
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modulation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cnf.ModulationRate = 2; % #bits / symbol
 if cnf.ModulationRate == 1
     cnf.Modulation = 'bpsk';
 else
     cnf.Modulation = 'qam';
 end
+cnf.CodingRate = 1;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frequencies
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cnf.SymbolRate        = 1.8E9/4;
+cnf.Tx.SimulationRate = 10.8E9;
+cnf.Rx.SimulationRate = 1.8E9;
+cnf.Rx.CarrierFreq    = 2.2E9;
+cnf.Tx.CarrierFreq    = cnf.Rx.CarrierFreq + 0.7E9;
+%cnf.TxOffset = 1E5;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Data Length
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cnf.DataFieldCount = 2^13;
+
+% calc time per frame according to 802.11ad
+cnf.TimePerFrame = 448 / 1.76E9;
+cnf.DataFieldLength = ceil(cnf.TimePerFrame * cnf.SymbolRate) * ...
+    cnf.ModulationRate;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zero Padding and Pulse Shaping
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 cnf.Tx.ZeroPaddingLength = 10;
 
 cnf.Tx.Shaping.RolloffFactor = 0.11;
 cnf.Tx.Shaping.FilterLength = 200 * ceil(cnf.Tx.SimulationRate / ...
-                                        cnf.SymbolRate);
+                                         cnf.SymbolRate);
 
 cnf.Rx.Shaping.RolloffFactor = 0.11;
 cnf.Rx.Shaping.FilterLength = 200 * ceil(cnf.Rx.SimulationRate / ...
-                                        cnf.SymbolRate);
+                                         cnf.SymbolRate);
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Transmitt Port Imbalance Simulation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %cnf.Tx.Imb.Amp = 1.0;
 %cnf.Tx.Imb.Rot = 0.0/180*pi;
 
-
-%cnf.Tx.RandHLength = 10;
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Channel
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 1: simulation
 % 2: oscilloscope
 % 3: ADC-file
 % 4: FPGA
 cnf.Channel.Type = 4;
+
+%cnf.Tx.RandHLength = 10;
 
 % waveform amplitude; clock signal amplitude
 cnf.HwAwg.ZeroPrefix = 1000;
@@ -182,29 +196,171 @@ cnf.Rx.SampleRate = cnf.Rx.SimulationRate;
 %cnf.Rx.Imb.Amp = 0.0;
 %cnf.Rx.Imb.Rot = 0.0/180*pi;
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Time Synchronization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 cnf.Sync.Xcorr = 1;
 cnf.Sync.TooEarly = 16;
 
+% enables truncation of estimated channel response
 cnf.Sync.CesSync = 1;
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frequency Offset Estimation and Correction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 cnf.Fes.Length = 32;
 cnf.Fes.Count = 8;
 cnf.Fes.Skip = cnf.Fes.Length;
 %cnf.Fes.Correct = 1;
 
-%cnf.Ces.Length = 256;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Channel Impulse Response Estimation and Correction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %cnf.Ces.Toeplitz = 1;
-cnf.Ces.Length = 1152;
+%cnf.Ces.Length = 256;
 cnf.Ces.Golay = 1;
+cnf.Ces.Length = 1152;
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Phase Estimation and Correction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 cnf.Pes.Correct = 1;
 cnf.Pes.CorrectInitial = 1;
 cnf.Pes.Length = 32;
-cnf.Pes.Skip = 16; % max expected delay spread
+cnf.Pes.Skip = 16; % max expected delay spread + sync error
+\end{verbatim}
+
+
+\section{Setup using 90deg coupler on IF}
+\begin{verbatim}
+% 1: convert to baseband, 2: undersample, 3: 90deg coupler,
+% 4: HwBasebandQI, 5: HwIfQI,
+cnf.Rx.Type = 5;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modulation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cnf.ModulationRate = 2; % #bits / symbol
+if cnf.ModulationRate == 1
+    cnf.Modulation = 'bpsk';
+else
+    cnf.Modulation = 'qam';
+end
+cnf.CodingRate = 1;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frequencies
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cnf.SymbolRate        = 1.8E9;
+cnf.Tx.SimulationRate = 10.8E9;
+cnf.Rx.SimulationRate = 1.8E9;
+cnf.Rx.CarrierFreq    = 1.9E9;
+cnf.Tx.CarrierFreq    = cnf.Rx.CarrierFreq + 0.7E9;
+%cnf.TxOffset = 1E5;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Data Length
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cnf.DataFieldCount = 2^13;
+
+% calc time per frame according to 802.11ad
+cnf.TimePerFrame = 448 / 1.76E9;
+cnf.DataFieldLength = ceil(cnf.TimePerFrame * cnf.SymbolRate) * ...
+    cnf.ModulationRate;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zero Padding and Pulse Shaping
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+cnf.Tx.ZeroPaddingLength = 10;
+
+cnf.Tx.Shaping.RolloffFactor = 0.011;
+cnf.Tx.Shaping.FilterLength = 200 * ceil(cnf.Tx.SimulationRate / ...
+                                         cnf.SymbolRate);
+
+cnf.Rx.Shaping.Disable = 1;
+
+cnf.Rx.Shaping.RolloffFactor = 0.011;
+cnf.Rx.Shaping.FilterLength = 200 * ceil(cnf.Rx.SimulationRate / ...
+                                         cnf.SymbolRate);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Transmitt Port Imbalance Simulation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf.Tx.Imb.Amp = 1.0;
+%cnf.Tx.Imb.Rot = 0.0/180*pi;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Channel
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 1: simulation
+% 2: oscilloscope
+% 3: ADC-file
+% 4: FPGA
+cnf.Channel.Type = 4;
+
+%cnf.Tx.RandHLength = 10;
+
+% waveform amplitude; clock signal amplitude
+cnf.HwAwg.ZeroPrefix = 1000;
+cnf.HwAwg.ZeroPostfix = 50001;
+cnf.HwAwg.Amplitude = [1; 1];
+cnf.HwAwg.MarkerAmplitude = [0 0.7; 0 1.4];
+
+%cnf.HwRx.TCorr.Delay = 7;
+%cnf.HwRx.FCorr.a = -0.08;
+%cnf.HwRx.FCorr.b = 0.096;
+
+%cnf.HwRx.FCorr.a = 0.14;
+%cnf.HwRx.FCorr.b = 0;
+
+cnf.Rx.SampleRate = cnf.Rx.SimulationRate;
+
+%cnf.Rx.Imb.Amp = 0.0;
+%cnf.Rx.Imb.Rot = 0.0/180*pi;
+
+%cnf.Rx.LsbResC = 0.0552 + 0.3746i;
+
+%cnf.Rx.LsbResC = -0.0035 + 0.0092i;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Time Synchronization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cnf.Sync.Xcorr = 1;
+cnf.Sync.TooEarly = 16;
+
+% enables truncation of estimated channel response
+cnf.Sync.CesSync = 1;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Frequency Offset Estimation and Correction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cnf.Fes.Length = 32;
+cnf.Fes.Count = 8;
+cnf.Fes.Skip = cnf.Fes.Length;
+%cnf.Fes.Correct = 1;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Channel Impulse Response Estimation and Correction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%cnf.Ces.Toeplitz = 1;
+%cnf.Ces.Length = 256;
+cnf.Ces.Golay = 1;
+cnf.Ces.Length = 1152;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Phase Estimation and Correction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+cnf.Pes.Correct = 1;
+cnf.Pes.CorrectInitial = 1;
+cnf.Pes.Length = 32;
+cnf.Pes.Skip = 16; % max expected delay spread + sync error
 \end{verbatim}
 
 \chapter{Narrom Band Transmission Sivers Configuration Script}
 \label{app:res_450_sivers_on}
+Turn module on:
+
 \begin{verbatim}
 SYNT:REFE EXT
 SYNT:TXFR 03 82 70
@@ -217,6 +373,15 @@ SYNT:RXFR 03 8D 60
 SYNT:RXFR?
 SYNT:RXON ON
 CONV:RXON ON
+\end{verbatim}
+
+Turn module off:
+\begin{verbatim}
+CONV:RXON OFF
+SYNT:RXON OFF
+
+CONV:TXON OFF
+SYNT:TXON OFF
 \end{verbatim}
 
 \end{appendix}

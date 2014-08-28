@@ -1,9 +1,8 @@
 \chapter{Narrow Band Transmission}
 \label{chap:res_450}
-First a relatively narrow signal transmitting at only a quarter
-of the maximal symbol rate was build and analyzed to show some basic
-properties of the system and to show what the best achievable
-\gls{EVM} values are. \\
+First, a system transmitting at only a quarter of the maximal symbol rate
+was build and analyzed to show some basic properties of the system and
+to show what the best achievable \gls{EVM} values are. \\
 
 As receiver architecture, the Quadrature Intermediate Frequency Sub-Nyquist
 Sampling Receiver as described in \secref{sec:rx_2} is used with the difference
@@ -27,6 +26,8 @@ in \tblref{tab:res_450}. \\
 \end{table}
 
 \section{Measurement Setup and RF System Analysis}
+\secref{sec:res_450_setup}
+
 A block diagram providing an overview of the test setup,
 used for all following measurements, can be found in \figref{fig:res_450_bd}. \\
 
@@ -36,7 +37,6 @@ used for all following measurements, can be found in \figref{fig:res_450_bd}. \\
   \caption{Block Diagram of the Narrow Band Transmission Setup}
   \label{fig:res_450_bd}
 \end{figure}
-\todo{draw block diagram}
 
 \begin{figure}[p]
   \centering
@@ -59,18 +59,18 @@ The configuration file used for these tests can be found in
 
 \begin{table}[h]
   \centering
-  \begin{tabular}{|l|l|l|}
+  \begin{tabular}{|c|c|c|}
     \hline
     Modulation of Data Fiels & \gls{QAM}-4 & \gls{QAM}-256 \\ \hline
-    Modulation of Estimation Fields & \multicolumn{2}{c|}{\gls{BPSK}} \\ \hline
-    Length of \gls{FES} field & & \\ \hline
-    Length of \gls{CES} field & & \\ \hline
-    Length of \gls{PES} field & & \\ \hline
-    Length of Data Block & & \\ \hline
-    Length of Data Field & & \\ \hline
+    Modulation of Estimation Fields & \mc{2}{\gls{BPSK}} \\ \hline
+    Length of \gls{FES} field & \mc{2}{256 symbols} \\ \hline
+    Length of \gls{CES} field & \mc{2}{1152 symbols} \\ \hline
+    Length of \gls{PES} field & \mc{2}{32 symbols} \\ \hline
+    Length of Data Block & \mc{2}{147 symbols} \\ \hline
+    Length of Data Field & 115 symbols, 230 bits & 115 symbols, 920 bits \\ \hline
   \end{tabular}
   \caption{Properties of the Matlab Configuration used in the
-    Narrow Band Transmission Setup}
+    Narrow Band Transmission Setup (all lengths are in symbols)}
   \label{tab:res_450_cnf}
 \end{table}
 
@@ -507,7 +507,233 @@ estimation. \\
 \end{figure}
 
 \chapter{Full Bandwidth Transmission}
-\label{chap:res_1800}
+\label{chap:res_1350}
+
+To achieve even higher throughput than those using 450 MS/s with \gls{QAM}-8,
+higher symbols rates were analyzed using the exact same hardware as described
+in \secref{sec:res_450_setup} and drawn in \figref{fig:res_450_bd}. Only a
+few software parameters had to be changed. \\
+
+\subsection{Receiver Image Recjection}
+Since this receiver uses quadrature sub-nyquist sampling as described in
+\secref{sec:rx_adc_2}, we will first have a look at the \gls{RX} \gls{LSBand}
+suppression performance of the current setup. \\
+
+Therefor we will first stick to the parameters used for the narrow band
+transmission, especially the symbol rate of 450 MS/s. These parameters have the
+big advantage, that the desired \gls{RX} \gls{USBand} and the undesired
+\gls{RX} \gls{LSBand} signal are seperated in frequency as shown in
+\figref{fig:res_450_freq_uncorr}. This allows to measure the \gls{RDR}
+as expressed in \eqref{eq:res_1350_rdr}. \\
+
+\begin{align}
+  \text{RDR} &= 10 \cdot \log_{10}\left(
+  \frac{E_{\text{RX LSB}}}{E_{\text{RX LSB}}}
+  \right) \\
+  E_{\text{RX LSB}} &= \text{rms}(d_{\text{RX LSB}})^2 \\
+  E_{\text{RX USB}} &= \text{rms}(d_{\text{RX USB}})^2 \\
+  \label{eq:res_1350_rdr}
+\end{align}
+
+Where $d_{\text{RX LSB}}$ is the vector all received symbols after
+the \gls{RX} \gls{LSBand} has been filtered using the receiving pulse shape
+filter and $d_{\text{RX LSB}}$ is the same for the \gls{RX} \gls{USBand} signal. \\
+
+Without any correction, the received spectra looks like
+\figref{fig:res_450_freq_uncorr_rx_rf} before being interpreted as a complex
+signal and like \figref{fig:res_450_freq_uncorr_rx_rf_sup} afterwards.
+This results in an \gls{RDR} of -8.16 dB. \\
+
+In order to improve the \gls{RDR}, two correction coefficients, $\alpha$ and
+$\beta$ were introduced which are applied on the second \gls{ADC} channel
+before combining both channels to one complex signal \eqref{eq:res_1350_a_hat}.
+$\alpha$ allows to correct time and $\beta$ phase differences between
+the two  channels. \\
+
+\begin{align}
+  c[k] &= b[k] + j \cdot \hat a[k] \\
+  \hat a[k] &= a[k]  \cdot \exp\left(
+  \frac{-j}{2 \pi} \cdot \left(\frac{\alpha \cdot k}{N} + \beta\right)
+  \right) \;\forall\; k \in \{0, 1, \dots,  N-1\}
+  \label{eq:res_1350_a_hat}
+\end{align}
+
+Do find the optimal correction coefficients, a coarse sweep was done to approximately
+find the correct values followed by a more fine grained sweep over both parameters
+which is shown in \figref{res_1350_ab_sweep}.
+The absolute minimum is for reach for $\alpha = -0.08$ and $\beta = 0.096$ witn an
+a \gls{RDR} of -23.24 dB. \\
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/matlab/res_1350_ab_sweep}
+  \caption{\gls{RDR} [dB] when sweeping over $\beta \in [0.07 \; 0.12]$
+    (outer loop) and $\alpha \in [-0.17 \; 0.0]$ (inner loop)}
+  \label{fig:res_1800_ab_sweep}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/matlab/res_450_freq_uncorr_tx_rf}
+    \caption{Transmitted \gls{IF} Signal}
+    \label{fig:res_450_freq_uncorr_tx_rf}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/matlab/res_450_freq_uncorr_rx_rf}
+    \caption{Received \gls{IF} Signal after Sampling}
+    \label{fig:res_450_freq_uncorr_rx_rf}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/matlab/res_450_freq_uncorr_rx_rf_sup}
+    \caption{Received \gls{IF} Signal $Re(Rx.Rf) + j \cdot Im(Rx.Rf)$}
+    \label{fig:res_450_freq_uncorr_rx_rf_sup}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/matlab/res_450_freq_uncorr_rx_usb}
+    \caption{Received \gls{USBand} Signal}
+    \label{fig:res_450_freq_uncorr_rx_usb}
+  \end{subfigure}
+  \vspace{4ex} \\
+  \begin{subfigure}{\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/matlab/res_450_freq_uncorr_rx_lsb}
+    \caption{Received \gls{LSBand} Signal}
+    \label{fig:res_450_freq_uncorr_rx_lsb}
+  \end{subfigure}
+  \caption{Spectrum Plots of Narrow Band Signal without any Correction}
+  \label{fig:res_450_freq_uncorr}
+\end{figure}
+
+\subsection{\gls{QAM}-4 Transmission}
+To see how well the system performs, when the \gls{RX} \gls{LSBand} overlaps
+with the \gls{RX} \gls{USBand}, a higher symbol rate of 1350 MS / s was chosen
+as shown in \tblref{tab:res_1350_freq}. The phase noise and initial phase
+rotation compensation is done us in the narrow band case. \\
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|l|r@{}l@{~}l|}
+    \hline
+    $f_{\text{TX IF}}$ & 2&.6&GHz \\ \hline
+    $f_{\text{TX LO}}$ & 57&.5&GHz \\ \hline
+    $f_{\text{RX LO}}$ & 58&.2&GHz \\ \hline
+    $f_{\text{RX IF}}$ & 1&.9&GHz \\ \hline
+    $f_c$            & 60&.6&GHz \\ \hline
+    Signal Bandwidth B & 1&.35&GHz \\ \hline
+    Sample Rate $f_s$ & 1&.8&GHz \\ \hline
+  \end{tabular}
+  \caption{Properties of Wide Band Transmission System}
+  \label{tab:res_1350_freq}
+\end{table}
+
+This result in the EVM values as shown in \tblref{tab:res_1350_evm}:
+
+without correction:
+evm r : -7.04
+evm d : -6.99
+
+with alpha/beta correction:
+evm r : -17.82
+evm d : -17.78
+
+
+\subsection{\gls{QAM}-4 Transmission at 1800 GS/s}
+cnf.SymbolRate        = 1.8E9/4;
+cnf.Tx.SimulationRate = 10.8E9;
+cnf.Rx.SimulationRate = 1.8E9;
+cnf.Rx.CarrierFreq    = 2.2E9;
+cnf.Tx.CarrierFreq    = cnf.Rx.CarrierFreq + 0.7E9;
+%/home/lk/demo60gData/res_450_ab_sweep2/*.[bin|mat]
+
+without correction:
+evmRandAll: -7.8247
+evmDeteAll: -7.7295
+
+with alpha/beta correction:
+evmRandAll: -16.3462
+evmDeteAll: -16.0498
+cnf.HwRx.FCorr.a = -0.08;
+cnf.HwRx.FCorr.b = 0.096;
+
+with lsb res correction:
+evmRandAll: -17.4470
+evmDeteAll: -17.4186
+cnf.Rx.LsbResC = 0.0552 + 0.3746i;
+
+\subsection{Setup using 90deg coupler on IF}
+%/home/lk/demo60gData/res_s2_450_qam4
+
+cnf.SymbolRate        = 1.8E9/4;
+cnf.Tx.SimulationRate = 10.8E9;
+cnf.Rx.SimulationRate = 1.8E9;
+cnf.Rx.CarrierFreq    = 2.2E9;
+cnf.Tx.CarrierFreq    = cnf.Rx.CarrierFreq + 0.7E9;
+
+without correction:
+evmRandAll: -27.2776
+evmDeteAll: -26.5677
+RdrDb: -34.3493
+
+analyzeLsbResidualHilbert:
+sigPwr = 0.0210
+sigE =  2.5308e+04
+errPwr =  1.3555e-05
+errE =  16.3206
+C = -0.0035 + 0.0092i
+corPwr =  1.5897e-05
+corE = 19.1400
+supDb =  0.6921
+RdrDb = -31.2131
+
+with C = -0.0035 + 0.0092i correction:
+    evmRandAll: -27.2635
+    evmDeteAll: -26.5561
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%/home/lk/demo60gData/res_s2_1800_qam4
+cnf.SymbolRate        = 1.8E9;
+cnf.Tx.SimulationRate = 10.8E9;
+cnf.Rx.SimulationRate = 1.8E9;
+cnf.Rx.CarrierFreq    = 1.9E9;
+cnf.Tx.CarrierFreq    = cnf.Rx.CarrierFreq + 0.7E9;
+cnf.Rx.Shaping.Disable = 1;
+
+without correction:
+    evmRandAll: -16.9579
+    evmDeteAll: -16.9430
+
+with C = -0.0035 + 0.0092i correction:
+    evmRandAll: -16.8526
+    evmDeteAll: -16.8379
+
+\subsection{Setup using 90deg coupler on IF and Oscilloscope}
+
+
+
+% old
+450 MS/s TX IF 2.6 GHz:
+    evmRandAll: -26.6974
+    evmDeteAll: -26.0090
+
+450 MS/s TX IF 2.2 GHz:
+    evmRandAll: -25.8382
+    evmDeteAll: -24.0677
+    RdrDb: -27.7770
+
+1800 MS/s TX IF 1.9 GHz:
+    evmRandAll: -17.3894
+    evmDeteAll: -17.3511
+
+
+
 
 \subsection{Transmitter Channel Imbalance}
 \begin{itemize}
