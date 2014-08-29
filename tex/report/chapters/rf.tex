@@ -235,14 +235,14 @@ which is a clear advantage over the method discussed in \secref{sec:rx_rf_0}. \\
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_Hb}
-    \caption{$\mathcal{H}\{b(t)\}$}
+    \caption{$\mathcal{H}^{-1}\{b(t)\}$}
     \label{fig:rx_rf_1_freq_Hb}
   \end{subfigure}
   ~
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_c}
-    \caption{$c(t)$}
+    \caption{$c(t) = a(t) + \mathcal{H}^{-1}\{b(t)\}$}
     \label{fig:rx_rf_1_freq_c}
   \end{subfigure}
   \caption{Image Rejection using $90^\circ$ Couplers}
@@ -785,14 +785,14 @@ $f_{\text{RX IF}} - f_s = 100 \; \text{MHz}$:
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figures/rx_2_freq_c_0}
-    \caption{$c_0[k] = b_0(k/f_x)$}
+    \caption{$c_0[k] = b_0(k/f_s)$}
     \label{fig:rx_2_freq_c_0}
   \end{subfigure}
   ~
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\textwidth]{figures/rx_2_freq_c_1}
-    \caption{$c_1[k] = b_1(k / f_x)$}
+    \caption{$c_1[k] = b_1(k / f_s)$}
     \label{fig:rx_2_freq_c_1}
   \end{subfigure}
   \vspace{4ex} \\

@@ -273,12 +273,12 @@ to a computer were considered: \\
 
 The simplest implementation would be to use the CP2103GM
 \acrshort{USB}-to-\acrshort{UART} bridge \gls{IC} soldered on the VC707.
-Since it's baud rate is limited to $1 \text{Mbit}/\text{s}$
+Since it's baud rate is limited to $1 \;\text{Mbit}/\text{s}$
 a complete download of 1 GiB would take about 18 minutes which was
 considered to be too slow. \\
 
 Next the Tri-Speed Ethernet \gls{PHY} device was considered.
-The high data rates of up to $1 \text{Gbit}/\text{s}$ and the versatility
+The high data rates of up to $1 \;\text{Gbit}/\text{s}$ and the versatility
 of being able to connect it to existing network infrastructure made
 it look perfect for the job. The lack of a good reference design and
 availability of open cores to connect to the \gls{PHY} via
@@ -288,7 +288,7 @@ led to the third solution. \\
 
 The VC707 also includes a USB3320 USB 2.0 ULPI device and Xilinx provides
 a \gls{IP} core to connect to it. The theoretical maximal
-raw bandwidth of $60 \text{MB}/\text{s}$ would allow for a relatively fast
+raw bandwidth of $60 \;\text{MiB}/\text{s}$ would allow for a relatively fast
 download. Also \gls{USB} is very common way to connect to modern laboratory
 equipment.
 

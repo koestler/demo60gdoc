@@ -10,7 +10,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="549.71259"
-   height="231.31499"
+   height="266.74805"
    id="svg3639"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -24,15 +24,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.3299963"
-     inkscape:cx="377.61909"
-     inkscape:cy="91.632829"
+     inkscape:zoom="1.6475562"
+     inkscape:cx="355.78884"
+     inkscape:cy="154.72415"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:object-nodes="true"
-     inkscape:window-width="2560"
-     inkscape:window-height="1393"
+     inkscape:window-width="1920"
+     inkscape:window-height="1033"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
@@ -51,7 +51,7 @@
        spacingx="1mm"
        spacingy="1mm"
        originx="-14.858887mm"
-       originy="-159.85888mm" />
+       originy="-149.85889mm" />
   </sodipodi:namedview>
   <metadata
      id="metadata3644">
@@ -61,7 +61,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -684,16 +684,16 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       x="166.53542"
-       y="478.34644"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+       x="138.18898"
+       y="488.97635"
        id="text3804-5"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3806-6"
-         x="166.53542"
-         y="478.34644"
-         style="font-size:12px">Main Reset</tspan></text>
+         x="138.18898"
+         y="488.97635"
+         style="font-size:20px;fill:#ff0000">Main Reset</tspan></text>
     <g
        id="g4462"
        transform="translate(141.73229,-1.1685686e-6)">
@@ -815,7 +815,70 @@
        sodipodi:cy="124.51574"
        sodipodi:rx="3.5433071"
        sodipodi:ry="3.5433071"
-       d="m 411.52362,124.51574 a 3.5433071,3.5433071 0 1 1 -7.08661,0 3.5433071,3.5433071 0 1 1 7.08661,0 z"
+       d="m 411.52362,124.51574 c 0,1.95691 -1.58639,3.54331 -3.5433,3.54331 -1.95692,0 -3.54331,-1.5864 -3.54331,-3.54331 0,-1.95692 1.58639,-3.54331 3.54331,-3.54331 1.95691,0 3.5433,1.58639 3.5433,3.54331 z"
        transform="translate(52.6496,254.61809)" />
+    <g
+       id="g4462-6-9"
+       transform="translate(-4.3307086e-6,177.16535)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4402-0-6"
+         d="m 248.0315,343.70077 53.1496,0 0,-31.88977"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text6776-39-3-3-9"
+         y="340.15747"
+         x="248.03149"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+         xml:space="preserve"><tspan
+           style="font-size:12px"
+           y="340.15747"
+           x="248.03149"
+           id="tspan6778-71-1-9-2"
+           sodipodi:role="line">5 MHz</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4443-6-2"
+         d="m 301.1811,308.26769 -3.5433,7.08662 7.08661,0 -3.54331,-7.08662"
+         style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    </g>
+    <g
+       id="g4462-6-3"
+       transform="translate(194.88189,177.16535)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4402-0-1"
+         d="m 248.0315,343.70077 53.1496,0 0,-31.88977"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text6776-39-3-3-2"
+         y="340.15747"
+         x="248.03149"
+         style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+         xml:space="preserve"><tspan
+           style="font-size:12px"
+           y="340.15747"
+           x="248.03149"
+           id="tspan6778-71-1-9-22"
+           sodipodi:role="line">5 MHz</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4443-6-5"
+         d="m 301.1811,308.26769 -3.5433,7.08662 7.08661,0 -3.54331,-7.08662"
+         style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+       x="265.74805"
+       y="294.09445"
+       id="text11847"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan11849"
+         x="265.74805"
+         y="294.09445">init. complete</tspan></text>
   </g>
 </svg>
