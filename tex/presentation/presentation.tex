@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[10pt]{beamer}
 \usepackage[ngerman]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath, amsfonts, amssymb}
@@ -6,6 +6,9 @@
 \usepackage{pgfplots}
 \usepackage{xcolor}
 \usepackage{subcaption}
+\usepackage{trfsigns}
+
+% todo: bold
 
 \usetheme{Luebeck}
 \useinnertheme{rounded}
@@ -13,7 +16,8 @@
 \setbeamercovered{transparent}
 \beamertemplatenavigationsymbolsempty
 \setbeamertemplate{footline}{%
-  \begin{beamercolorbox}[wd = 0.5\textwidth, ht = 3ex, dp = 1.5ex, leftskip = .5em, rig htskip = .5em]{author in head/foot}%
+  \begin{beamercolorbox}[wd = 0.5\textwidth, ht = 3ex, dp = 1.5ex, leftskip = .5em,
+      rig htskip = .5em]{author in head/foot}%
     \usebeamerfont{author in head/foot}%
     \insertframenumber/\inserttotalframenumber\hfill\insertshortauthor%
   \end{beamercolorbox}%
@@ -34,37 +38,51 @@
 
 \begin{document}
 
-\begin{frame}
-  \titlepage
+{
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{pictures/back}}
+  \begin{frame}
+    \titlepage
 
-  Advisors: \\
-  Nicholas Preyss $ < $\href{mailto:nicholas.preyss@epfl.ch}{nicholas.preyss@epfl.ch}$ > $ \\
-\end{frame}
+    Advisors: \\
+    Nicholas Preyss $ < $\href{mailto:nicholas.preyss@epfl.ch}{nicholas.preyss@epfl.ch}$ > $ \\
+  \end{frame}
+}
 
 \begin{frame}{Introduction}
   \begin{itemize}
   \item Mobile communication systems became ubiquitous
   \item Essential importance that network throughput increases
-    logarithmically
+    exponentially
   \item Higher spectral efficiency (channel allocation, MIMO etc.) is possible
-  \item Use new frequency bands
-  \item 60 GHz ISM band, which defines 1.76 GHz wide channels
+  \item Move to new frequency bands to increase bandwidth
+  \item 60 GHz band offers two orders of magnitude higher bandwidth
   \item Possibility for big antenna arrays on small surface
-  \item High free space path loss allows reusage of channel
-  \item New Applications: lossless, uncompressed HD video streams,
-    high density cell networks (5G)
+  \item High spatial selectivity allows reusage of channel
   \end{itemize}
+  \begin{block}{New Applications:}
+    \begin{itemize}
+    \item lossless, uncompressed HD video streams
+    \item high density cell networks (5G)
+    \item multiplication of WiFi troughput
+    \end{itemize}
+  \end{block}
 \end{frame}
 
-\begin{frame}{Goal}
-  \begin{itemize}
-  \item Analyze different receiver designs
-  \item Implement a versatile simulation and test setup to analyze designs
-  \item Measure channel characteristics like delay spread, phase noise etc.
-  \item Make a demo setup to show that high data rates using high QAM modulation
-    are possible
-  \item Find performance limiting impairments for 60 GHz communication systems
-  \end{itemize}
+\begin{frame}{Objectives}
+  \begin{columns}[T]
+    \begin{column}{.6\textwidth}
+      \begin{itemize}
+      \item Analyze suitable receiver designs
+      \item Setup of a versatile simulation and measurement framework
+      \item Characterize communication parameters
+      \item Show that high modulation rates are possible
+      \item Find performance limiting impairments for 60 GHz communication systems
+      \end{itemize}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \includegraphics[width=\textwidth]{pictures/sivers_ant}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Receiver Designs}
@@ -77,16 +95,18 @@
         \item Suppress influence of other channels
         \end{itemize}
       \end{block}
+      \includegraphics[width=\textwidth]{pictures/filter}
     \end{column}
     \begin{column}{.5\textwidth}
       \begin{block}{Challenge}
         \begin{itemize}
-        \item Channel width is as high as the available ADC sampling
-          speeds -> Oversampling is not easily possible
-        \item
-          Channel width can be bigger of IF frequency
-          (1.8 GHz wide channel on IF center frequency of 1 GHz)
         \item Many component restrictions exist
+        \item Channel width is as high as the available ADC sampling
+          speeds $\rightarrow$ Oversampling is not easily possible
+        \item Channel bandwidth covers most of the usable frequency
+          range of components
+          (eg. 1.8 GHz wide channel on IF center frequency of 1 GHz)
+        \item[$\Rightarrow$] {\bf Frequency planning is more complicated}
         \end{itemize}
       \end{block}
     \end{column}
@@ -94,33 +114,21 @@
 \end{frame}
 
 \begin{frame}{Direction Conversion / High IF Receiver}
-  \only<1>{
-    \begin{columns}[T]
-      \begin{column}{.6\textwidth}
-        \includegraphics[width=\textwidth]{figures/rx_4_bd}
-      \end{column}
-      \begin{column}{.4\textwidth}
-        \begin{block}{Direction Conversion}
-          \begin{itemize}
-          \item Most popular RX Architecture for SDRs
-          \item 60 GHz RF frontend does not go below 1 GHz
-          \end{itemize}
-        \end{block}
-      \end{column}
-    \end{columns}
-    \vspace{4ex}
-  }
-  \only<2>{
-    \begin{columns}[T]
-      \begin{column}{.5\textwidth}
-        \includegraphics[width=\textwidth]{figures/rx_rf_0_freq_s}
-      \end{column}
-      \begin{column}{.5\textwidth}
-        \includegraphics[width=\textwidth]{figures/rx_rf_0_freq_i}
-      \end{column}
-    \end{columns}
-    \vspace{11ex}
-  }
+  \begin{columns}[T]
+    \begin{column}{.6\textwidth}
+      \includegraphics[width=\textwidth]{figures/rx_4_bd}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \begin{block}{Direction Conversion}
+        \begin{itemize}
+        \item Most common digital RX architecture
+          % todo: brueli rot
+        \item 60 GHz RF frontend does not go below 1~GHz
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{4ex}
   \begin{columns}[T]
     \begin{column}{.6\textwidth}
       \includegraphics[width=\textwidth]{figures/rx_0_bd}
@@ -128,23 +136,48 @@
     \begin{column}{.4\textwidth}
       \begin{block}{High IF Receiver}
         \begin{itemize}
-        \item Second mixer must run at 5 GHz
         \item DC-Block blocks part of signal
+          % smily
+        \item Second IF would have to be at 8~GHz
         \end{itemize}
       \end{block}
     \end{column}
   \end{columns}
 \end{frame}
 
+\begin{frame}{High IF Receiver}
+  \begin{columns}[T]
+    \begin{column}{.6\textwidth}
+      \includegraphics[width=\textwidth]{figures/rx_0_bd}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \begin{block}{High IF Receiver}
+        \begin{itemize}
+        \item DC-Block blocks part of signal
+          % smily
+        \item Second IF would have to be at 8~GHz
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \includegraphics[width=\textwidth]{figures/rx_rf_0_freq_s}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \includegraphics[width=\textwidth]{figures/rx_rf_0_freq_i}
+    \end{column}
+  \end{columns}
+  \vspace{11ex}
+\end{frame}
 
-\begin{frame}{Quadrature Intermediate Frequency Sub-Nyquist Sampling Receiver}
+\begin{frame}{Chosen Design: \newline Quadrature IF Sub-Nyquist Sampling Receiver}
   \includegraphics[width=\textwidth]{figures/rx_3_bd} \\
 
-  \begin{block}{xxx}
+  \begin{block}{Advantages}
     \begin{itemize}
-    \item Uses only one mixer stage
-    \item Higher analog than digital bandwidht of ADC allows for Sub-Nyquist Sampling
-    \item Channel-dependent, Frequency selectivity leads to non linear error
+    \item Image rejection relaxes requirements on preselection
+    \item Quadrature sub-Nyquist sampling allows for low IF
     \end{itemize}
   \end{block}
 \end{frame}
@@ -158,22 +191,32 @@
     \end{column}
     \begin{column}{.5\textwidth}
       \begin{block}{Frequency Domain}
-        \includegraphics[width=\textwidth]{figures/hilbert}
+        \centering
+        \includegraphics[width=0.7\textwidth]{figures/hilbert}
       \end{block}
+      \centering
+      \includegraphics[width=0.8\textwidth]{pictures/90deg}
     \end{column}
   \end{columns}
 \end{frame}
 
 \begin{frame}{Image Rejection using $90^\circ$ Couplers}
+  \only<1>{
+    \includegraphics[width=\textwidth]{figures/rx_rf_1_bd}
+    \vspace{1.5cm}
+  }
+
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
       \only<1-2>{
+        {\color{blue} Step 1:}
         \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_s}
         \vspace{-5mm}
         \[r(t)\]
       }
 
       \only<2-3>{
+        {\color{blue} Step 2:}
         \vspace{5mm}
         \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_a}
         \vspace{-5mm}
@@ -181,10 +224,12 @@
       }
 
       \only<3>{
+        {\color{blue} Step 3:}
         \vspace{5mm}
+        %todo: ev. border (prio 99)
         \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_Hb}
         \vspace{-5mm}
-        \[\mathcal{H}^{-1}\{b\}(t)\]
+        \[\mathcal{H}\{b\}(t)\]
       }
     \end{column}
     \begin{column}{.5\textwidth}
@@ -198,28 +243,30 @@
         \vspace{5mm}
         \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_b}
         \vspace{-5mm}
-        \[b(t) = \text{LP}\{r(t) \cdot \sin(2\pi \cdot f_{\text{RX LO}} \cdot t)\}\]
+        \[b(t) = \text{LP}\{\mathcal{H}^{-1}\{r\}(t) \cdot \cos(2\pi \cdot f_{\text{RX LO}} \cdot t)\}\]
       }
 
       \only<3>{
         \vspace{5mm}
         \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_c}
         \vspace{-5mm}
-        \[c(t) = a(t) + \mathcal{H}^{-1}\{b\}(t)\]
+        \[c(t) = a(t) + \mathcal{H}\{b\}(t)\]
       }
     \end{column}
   \end{columns}
-
-  \only<1>{
-    \vspace{1.5cm}
-    \includegraphics[width=\textwidth]{figures/rx_rf_1_bd}
-  }
 \end{frame}
 
 \begin{frame}{Quadrature Intermediate Frequency Sub-Nyquist Sampling}
+  \only<1>{
+    \vspace{1.5cm}
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/rx_adc_3_bd}
+  }
+
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
       \only<1-2>{
+        %todo: steps
         \includegraphics[width=\textwidth]{figures/rx_adc_3_c}
         \vspace{-5mm}
         \[c(t)\]
@@ -261,11 +308,6 @@
       }
     \end{column}
   \end{columns}
-  \only<1>{
-    \vspace{1.5cm}
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/rx_adc_3_bd}
-  }
 
   \only<4>{
     \centering
@@ -274,31 +316,33 @@
   }
 \end{frame}
 
-\begin{frame}{FPGA - Design}
+\begin{frame}{Digital Acquisition Platform}
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
       \begin{block}{Tasks}
-        \begin{itemize}
-        \item Acquire Data from ADC
-        \item Store Data in real-time
+        \begin{enumerate}
+        \item Read high resolution samples from ADC
+        \item Store data in real-time
         \item Provide download to PC
-        \end{itemize}
+        \end{enumerate}
       \end{block}
-      TODO: add pic of FPGA board
+      \vspace{5mm}
+      \includegraphics[width=\textwidth]{pictures/fpga}
     \end{column}
     \begin{column}{.5\textwidth}
+      %todo: optimize color layout
       \begin{block}{Data Storage Speed}
         \begin{itemize}
         \item ADC delivers one 12-bit channel at 3.6 GHz or
           two 12-bit channels at 1.8 GHz $\rightarrow 5.4 \;\text{GB}/\text{s}$.
-        \item DDR3 Ram 64 bits at 500 MHz DDR $\rightarrow 8 \;\text{GB}/\text{s}$.
+        \item DDR3 RAM 64 bits at 500 MHz DDR $\rightarrow 8 \;\text{GB}/\text{s}$.
           (P\&R difficult at 800 MHz)
         \end{itemize}
       \end{block}
       \begin{block}{Download Speed}
         \begin{itemize}
         \item USB-to-UART bridge is limited to $1 \text{Mbit}/\text{s}$
-        \item Download of 1 GiB takes approx. 18 minutes
+          $\rightarrow$ 18 minutes
         \item USB 2.0 can to up to $480 \;\text{Mbit}/\text{s}$, reached speed
           about $140 \;\text{Mbit}/\text{s}$ $\rightarrow$ download in about 1 minute
         \end{itemize}
@@ -308,6 +352,9 @@
 \end{frame}
 
 \begin{frame}{FPGA - Architecture}
+  % todo: low prio: rename entities
+  % ram interface
+  % 0-450 MHz
   \only<1>{\includegraphics[width=\textwidth]{figures/fpga_architecture_overview}}
   \only<2>{\includegraphics[width=\textwidth]{figures/fpga_clock_domains_overview}}
 \end{frame}
@@ -347,9 +394,13 @@
 
       \begin{block}{Solution}
         \begin{itemize}
-        \item Reset Synchronizers
-        \item Global 5 MHz reset distribution clock
         \item Two global reset trees
+        \item Global asynchronous reset
+        \item Distributed synchronous deassert
+          \begin{itemize}
+          \item Local reset Synchronizers
+          \item Global 5 MHz reset distribution clock
+          \end{itemize}
         \end{itemize}
       \end{block}
     \end{column}
@@ -369,26 +420,269 @@
   \includegraphics[width=\textwidth]{pictures/res_450_setup}
 \end{frame}
 
-\begin{frame}{Phase Noise, First Results at 450 MS / s}
+\begin{frame}{First Results at 450 MS/s, Phase noise, Delay spread}
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
-      \includegraphics[width=\textwidth]{figures/matlab/res_450_qam4_cp_corr} \\
-      \includegraphics[width=\textwidth]{figures/matlab/res_450_qam256_cp_corr}
+      \centering
+      \includegraphics[width=\textwidth]{figures/matlab/res_450_qam4_phase_est} \\
+      \includegraphics[width=0.6\textwidth]{figures/matlab/res_450_qam4_pnoise} \\
     \end{column}
     \begin{column}{.5\textwidth}
       \centering
-      \includegraphics[width=0.8\textwidth]{figures/matlab/res_450_qam4_phase_est}
       \begin{block}{Time Comparison}
         \begin{description}
-        \item[@1.8 GS/s] 1800 symbols per 1 $\mu \text{s}$
-        \item[CIFS] 2 $\mu \text{s}$
+        \item[$1 \mu \text{s}$] 1800 symbols @1.8 GS/s
+        \item[$2 \mu \text{s}$] CIFS
+        \end{description}
+      \end{block}
+
+      \begin{block}{Delay Spread}
+        98\% of energy
+        \begin{description}
+        \item[$3$ symobls] @ 450 MS/s
+        \item[$10$ symbols] @ 1.8 GS/s
         \end{description}
       \end{block}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Frame Structure}
+\begin{frame}{Nyquist-Sampling}
+  \includegraphics[width=\textwidth]{figures/rx_3_bd} \\
+
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \begin{block}{Setup}
+        \begin{tabular}{|l|r@{}l@{~}l|}
+          \hline
+          $f_{\text{TX IF}}$ & 2&.9&GHz \\ \hline
+          $f_{\text{TX LO}}$ & 57&.5&GHz \\ \hline
+          $f_{\text{RX LO}}$ & 58&.2&GHz \\ \hline
+          $f_{\text{RX IF}}$ & 2&.2&GHz \\ \hline
+          Signal Bandwidth B & 0&.45&GHz \\ \hline
+          Sample Rate $f_s$ & 1&.8&GHz \\ \hline
+        \end{tabular}
+      \end{block}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{block}{Key Points}
+        \begin{itemize}
+        \item up to 900 MS/s fits into Nyquist-zone
+        \item Performance of $90^\circ$ coupler does not matter
+        \end{itemize}
+      \end{block}
+      \begin{block}{Raw Data Speed @ 450 MS / s}
+        QAM-4: $0.838 \;\frac{\text{GiBit}}{\text{s}}$ \\
+        QAM-256: $3.353 \;\frac{\text{GiBit}}{\text{s}}$
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{450 MS/s Results}
+  %todo: db
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \only<1>{\includegraphics[width=\textwidth]{figures/matlab/res_450_qam4_nice}}
+      \only<2>{\includegraphics[width=\textwidth]{figures/matlab/res_450_qam256_nice}}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{block}{Error Vector Magnitude}
+        \begin{tabular}{|l|r@{}l|}
+          \hline
+          Sample rate, system             & \mc{2}{$\text{EVM}_\text{D}$} \\ \hline
+          450 MS/s full                   & -26&.57      \\ \hline
+        \end{tabular}
+      \end{block}
+      \begin{block}{450 MS/s full}
+        \begin{itemize}
+        \item System works
+        \item Works up to QAM-256
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{1.8 GS/s Results}
+  % not full table
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \includegraphics[width=0.6\textwidth]{figures/matlab/res_450_qam256_cp_corr_pcorr_initial}
+      \begin{block}{Setup}
+        \begin{tabular}{|l|r@{}l@{~}l|}
+          \hline
+          $f_{\text{TX IF}}$ & 2&.6&GHz \\ \hline
+          $f_{\text{TX LO}}$ & 57&.5&GHz \\ \hline
+          $f_{\text{RX LO}}$ & 58&.2&GHz \\ \hline
+          $f_{\text{RX IF}}$ & 1&.9&GHz \\ \hline
+          Signal Bandwidth B & 1&.8&GHz \\ \hline
+          Sample Rate $f_s$ & 1&.8&GHz \\ \hline
+        \end{tabular}
+      \end{block}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{block}{Error Vector Magnitude}
+        \begin{tabular}{|l|r@{}l|}
+          \hline
+          Sample rate, system             & \mc{2}{$\text{EVM}_\text{D}$} \\ \hline
+          450 MS/s full                   & -26&.57      \\ \hline
+          1.8 GS/s full                   & -16&.94      \\ \hline
+          450 MS/s minimal                & {\bf-30}&.29 \\ \hline
+          1.8 GS/s minimal                & -7&.73       \\ \hline
+          1.8 GS/s minimal, $\alpha\beta$ & -16&.04      \\ \hline
+          1.8 GS/s minimal, xcorr         & -17&.42      \\ \hline
+        \end{tabular}
+      \end{block}
+      \begin{block}{1.8 GS/s full}
+        \begin{itemize}
+        \item Quadrature-Sampling required
+        \item EVM drops significately
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Minimalistic Setup}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/rx_2_bd}
+  \end{figure}
+
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \begin{block}{New Test-Setup}
+        \begin{itemize}
+        \item Reduce number of components possibly introducing errors
+        \item Does not fully suppress other channels
+        \item Decreases EVM for 450 MS/s case
+        \item Increases EVM for 1.8 GS/s case dramatically
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{block}{Error Vector Magnitude}
+        \begin{tabular}{|l|r@{}l|}
+          \hline
+          Sample rate, system             & \mc{2}{$\text{EVM}_\text{D}$} \\ \hline
+          450 MS/s full                   & -26&.57      \\ \hline
+          1.8 GS/s full                   & -16&.94      \\ \hline
+          450 MS/s minimal                & {\bf-30}&.29 \\ \hline
+          1.8 GS/s minimal                & -7&.73       \\ \hline
+        \end{tabular}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Quadrature Sampling Correction}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \begin{block}{Simple Approach}
+        \[c[k] = b[k] + j \cdot \hat a[k]\]
+        \[\hat a[k] \;\laplace\; \hat A[k] \]
+        \[\hat A[k] = A[k]  \cdot \exp\left(
+        \frac{-j}{2 \pi} \cdot \left(\frac{\alpha \cdot k}{N} + \beta\right)
+        \right)\]
+      \end{block}
+
+      \only<1>{
+        %todo: remove coupler
+        \includegraphics[width=\textwidth]{pictures/filter}
+      }
+
+      \only<2>{
+        \begin{block}{Error Vector Magnitude}
+          \begin{tabular}{|l|r@{}l|}
+            \hline
+            Sample rate, system             & \mc{2}{$\text{EVM}_\text{D}$} \\ \hline
+            450 MS/s minimal                & {\bf-30}&.29 \\ \hline
+            1.8 GS/s minimal                & -7&.73       \\ \hline
+            1.8 GS/s minimal, $\alpha\beta$ & -16&.04      \\ \hline
+          \end{tabular}
+        \end{block}
+      }
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \includegraphics[width=\textwidth]{figures/matlab/res_450_rx_freq}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Quadrature Sampling Correction}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \begin{block}{Signal Theory Approach}
+        \[s_{\text{sig}}[k] = (s[k] + j \mathcal{H}\{s\}[k])/2 \]
+        \[s_{\text{err}}[k] = (s[k] - j \mathcal{H}\{s\}[k])/2 \]
+        \[s_{\text{sig, mirr}}[k] = s_{\text{sig}}^*[k]\]
+        \[c[m] = \sum_k s_{\text{sig, mirr}}[k+m] \cdot s_{\text{Err}}[k] \]
+        \[C = \frac{\sup_m c[m]}{\sum_k |s_{\text{sig}}[k]|^2}\]
+
+        \[s_{\text{corr}}[k] = s[k] - (s^*[k] .* C^*)\]
+      \end{block}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \only<1>{
+        \includegraphics[width=\textwidth]{figures/matlab/analyzeLsb}
+      }
+      \only<2>{
+        \begin{block}{Error Vector Magnitude}
+          \begin{tabular}{|l|r@{}l|}
+            \hline
+            Sample rate, system             & \mc{2}{$\text{EVM}_\text{D}$} \\ \hline
+            450 MS/s full                   & -26&.57      \\ \hline
+            1.8 GS/s full                   & -16&.94      \\ \hline
+            450 MS/s minimal                & {\bf-30}&.29 \\ \hline
+            1.8 GS/s minimal                & -7&.73       \\ \hline
+            1.8 GS/s minimal, $\alpha\beta$ & -16&.04      \\ \hline
+            1.8 GS/s minimal, xcorr         & -17&.42      \\ \hline
+          \end{tabular}
+        \end{block}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Conclusion for 60 GHz}
+  \begin{columns}[T]
+    \begin{column}{.6\textwidth}
+      \begin{itemize}
+      \item FPGA prototyping is possible
+      \item Hardware impairment correction is crucial
+      \item High Modulation orders are possible
+      \item Sub-Nyquist Sampling reduces analog receiver complexity
+      \item Quadrature Sub-Nyquist Sampling gives even more flexibility
+      \end{itemize}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \includegraphics[width=\textwidth]{pictures/adc}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Outlook}
+
+  \begin{columns}[T]
+    \begin{column}{.6\textwidth}
+      \begin{itemize}
+      \item Use high analog bandwidth of Oscilloscope to Nyquist-sample at 1.8 GS/s
+      \item Independent I/Q channel measurement using multiple sine waves
+      \item Independent I/Q channel correction
+      \item Framework can be used for further simulations
+      \item FPGA can be extended
+      \end{itemize}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \includegraphics[width=\textwidth]{pictures/sivers}
+    \end{column}
+  \end{columns}
+
+  \includegraphics[width=0.7\textwidth]{figures/rx_2_bd} \\
+\end{frame}
+
+\begin{frame}[noframenumbering]{Frame Structure}
   \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{figures/frame_struct}
@@ -408,50 +702,6 @@
       Length of Data Field & 230 bits & 920 bits \\ \hline
     \end{tabular}
   \end{figure}
-\end{frame}
-
-\begin{frame}{Result at Symbol Rate of 450 MS / s}
-  \begin{columns}[T]
-    \begin{column}{.4\textwidth}
-      \includegraphics[width=\textwidth]{figures/matlab/res_450_qam4_cp_corr_pcorr_initial} \\
-      \includegraphics[width=\textwidth]{figures/matlab/res_450_qam256_cp_corr_pcorr_initial}
-    \end{column}
-    \begin{column}{.6\textwidth}
-      \begin{block}{Error Vector Magnitude}
-        \begin{tabular}{|l|r@{}l|r@{}l|r@{}l|}
-          \hline
-          & \mc{2}{$\text{EVM}_\text{D}$} \\ \hline
-          channel correction &   1&.52 \\ \hline
-          + phase noise      & -23&.88 \\ \hline
-          + initial phase    & {\bf-30}&.29 \\ \hline
-        \end{tabular}
-      \end{block}
-      \begin{block}{Raw Data Speed}
-        QAM-4: $0.838 \;\frac{\text{GiBit}}{\text{s}}$ \\
-        QAM-256: $3.353 \;\frac{\text{GiBit}}{\text{s}}$
-      \end{block}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-
-
-\begin{frame}{Summary}
-\end{frame}
-
-\begin{frame}{Conclusion}
-  \begin{itemize}
-  \item Multi-Gigabit Throughput is possible
-  \item Sub-Nyquist Sampling works well
-  \item Phase Noise correction is essential
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Outlook}
-  \begin{itemize}
-  \item Framework can be used for further simulations
-  \item FPGA is ready to be extended
-  \end{itemize}
 \end{frame}
 
 \end{document}
