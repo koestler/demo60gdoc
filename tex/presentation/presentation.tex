@@ -56,7 +56,7 @@
     \titlepage
 
     {\color{white}
-      Advisors: \\
+      Advisor: \\
       Nicholas Preyss $ < $\href{mailto:nicholas.preyss@epfl.ch}{nicholas.preyss@epfl.ch}$ > $ \\
     }
   \end{frame}
@@ -71,13 +71,13 @@
   \item Move to new frequency bands to increase bandwidth
   \item 60 GHz band offers two orders of magnitude higher bandwidth
   \item Possibility for big antenna arrays on small surface
-  \item High spatial selectivity allows reusage of channel
+  \item High spatial selectivity allows reuse of channel
   \end{itemize}
   \begin{block}{New Applications:}
     \begin{itemize}
     \item Lossless, uncompressed HD video streams
     \item High density cell networks (5G)
-    \item Multiplication of WiFi troughput
+    \item Multiplication of WiFi throughput
     \end{itemize}
   \end{block}
 \end{frame}
@@ -153,7 +153,7 @@
       \begin{block}{Direction Conversion}
         \begin{itemize}
         \item Most common digital RX architecture
-        \item[\frownie] 60 GHz RF frontend does not go below 1~GHz
+        \item[\frownie] 60 GHz RF front-end does not go below 1~GHz
         \end{itemize}
       \end{block}
     \end{column}
@@ -451,8 +451,8 @@
   \begin{columns}[T]
     \begin{column}{.4\textwidth}
       \begin{block}{Challenge}
-        Release asynchronous reset accross multiple
-        clock domains in same cylce on whole FPGA die
+        Release asynchronous reset across multiple
+        clock domains in same cycle on whole FPGA die
       \end{block}
 
       \begin{block}{Solution}
@@ -461,7 +461,7 @@
         \item Global asynchronous reset
         \item Distributed synchronous deassert
           \begin{itemize}
-          \item Local reset Synchronizers
+          \item Local reset synchronizers
           \item Global 5 MHz reset distribution clock
           \end{itemize}
         \end{itemize}
@@ -607,14 +607,14 @@
       \begin{block}{1.8 GS/s full}
         \begin{itemize}
         \item Quadrature-Sampling required
-        \item EVM drops significately
+        \item EVM drops significantly
         \end{itemize}
       \end{block}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Minimalistic Setup}
+\begin{frame}{Setup using Minimal Number of Components}
   \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{figures/rx_2_bd}
@@ -794,7 +794,7 @@
     \centering
     \begin{tabular}{|c|c|c|}
       \hline
-      Modulation of Data Fiels & QAM-4 & QAM-256 \\ \hline
+      Modulation of Data Fields & QAM-4 & QAM-256 \\ \hline
       Modulation of Estimation Fields & \mc{2}{BPSK} \\ \hline
       Length of FES field & \mc{2}{256 symbols} \\ \hline
       Length of CES field & \mc{2}{1152 symbols} \\ \hline
@@ -807,3 +807,8 @@
 \end{frame}
 
 \end{document}
+
+%%  LocalWords:  Preyss MIMO Lossless HD WiFi sep Nyquist Coupler DDR
+%%  LocalWords:  preselection Couplers UART Mbit FPGA LVDS deassert
+%%  LocalWords:  synchronizers coupler CIFS symobls EVM QAM GiBit sig
+%%  LocalWords:  mirr xcorr BPSK FES CES PES
