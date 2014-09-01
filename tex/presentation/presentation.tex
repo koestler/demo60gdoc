@@ -7,6 +7,7 @@
 \usepackage{xcolor}
 \usepackage{subcaption}
 \usepackage{trfsigns}
+\usepackage{wasysym}
 
 % todo: bold
 
@@ -27,12 +28,23 @@
     \insertshorttitle%
 \end{beamercolorbox}}
 
+\newcommand*{\ClipSep}{0.3cm}%
+
 \renewcommand{\arraystretch}{1.3}
 
 \title{Multi-Gigabit Complex Sub-Nyquist Sampling SDR for 60 GHz}
 \subtitle{Master Thesis at the Telecommunications Circuits Lab, EPFL}
 \author{Lorenz Koestler $ < $lorenzk@ee.ethz.ch$ > $}
 \date[1.9..2013]{1. September 2014}
+
+
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+
+
+\addtobeamertemplate{title page}{%
+  \vspace{-1.5cm}
+}{}
 
 \newcommand{\mc}[2]{\multicolumn{#1}{c|}{#2}}
 
@@ -43,8 +55,10 @@
   \begin{frame}
     \titlepage
 
-    Advisors: \\
-    Nicholas Preyss $ < $\href{mailto:nicholas.preyss@epfl.ch}{nicholas.preyss@epfl.ch}$ > $ \\
+    {\color{white}
+      Advisors: \\
+      Nicholas Preyss $ < $\href{mailto:nicholas.preyss@epfl.ch}{nicholas.preyss@epfl.ch}$ > $ \\
+    }
   \end{frame}
 }
 
@@ -61,9 +75,9 @@
   \end{itemize}
   \begin{block}{New Applications:}
     \begin{itemize}
-    \item lossless, uncompressed HD video streams
-    \item high density cell networks (5G)
-    \item multiplication of WiFi troughput
+    \item Lossless, uncompressed HD video streams
+    \item High density cell networks (5G)
+    \item Multiplication of WiFi troughput
     \end{itemize}
   \end{block}
 \end{frame}
@@ -80,7 +94,15 @@
       \end{itemize}
     \end{column}
     \begin{column}{.4\textwidth}
-      \includegraphics[width=\textwidth]{pictures/sivers_ant}
+      \begin{tikzpicture}
+        \node [inner sep=0pt] at (0,0) {\includegraphics[width=\textwidth]{pictures/sivers_ant}};
+        \draw [white, rounded corners=\ClipSep, line width=\ClipSep]
+        (current bounding box.north west) --
+        (current bounding box.north east) --
+        (current bounding box.south east) --
+        (current bounding box.south west) -- cycle
+        ;
+      \end{tikzpicture}
     \end{column}
   \end{columns}
 \end{frame}
@@ -95,7 +117,15 @@
         \item Suppress influence of other channels
         \end{itemize}
       \end{block}
-      \includegraphics[width=\textwidth]{pictures/filter}
+      \begin{tikzpicture}
+        \node [inner sep=0pt] at (0,0)
+              {\includegraphics[width=\textwidth]{pictures/adc}};
+              \draw [white, rounded corners=\ClipSep, line
+                width=\ClipSep] (current bounding box.north west) --
+              (current bounding box.north east) -- (current bounding
+              box.south east) -- (current bounding box.south west) --
+              cycle ;
+      \end{tikzpicture}
     \end{column}
     \begin{column}{.5\textwidth}
       \begin{block}{Challenge}
@@ -116,14 +146,14 @@
 \begin{frame}{Direction Conversion / High IF Receiver}
   \begin{columns}[T]
     \begin{column}{.6\textwidth}
+      \vspace{5mm}
       \includegraphics[width=\textwidth]{figures/rx_4_bd}
     \end{column}
     \begin{column}{.4\textwidth}
       \begin{block}{Direction Conversion}
         \begin{itemize}
         \item Most common digital RX architecture
-          % todo: brueli rot
-        \item 60 GHz RF frontend does not go below 1~GHz
+        \item[\frownie] 60 GHz RF frontend does not go below 1~GHz
         \end{itemize}
       \end{block}
     \end{column}
@@ -131,14 +161,14 @@
   \vspace{4ex}
   \begin{columns}[T]
     \begin{column}{.6\textwidth}
+      \vspace{5mm}
       \includegraphics[width=\textwidth]{figures/rx_0_bd}
     \end{column}
     \begin{column}{.4\textwidth}
       \begin{block}{High IF Receiver}
         \begin{itemize}
         \item DC-Block blocks part of signal
-          % smily
-        \item Second IF would have to be at 8~GHz
+        \item[\frownie] Second IF would have to be at 8~GHz
         \end{itemize}
       \end{block}
     \end{column}
@@ -148,18 +178,19 @@
 \begin{frame}{High IF Receiver}
   \begin{columns}[T]
     \begin{column}{.6\textwidth}
+      \vspace{5mm}
       \includegraphics[width=\textwidth]{figures/rx_0_bd}
     \end{column}
     \begin{column}{.4\textwidth}
       \begin{block}{High IF Receiver}
         \begin{itemize}
         \item DC-Block blocks part of signal
-          % smily
-        \item Second IF would have to be at 8~GHz
+        \item[\frownie] Second IF would have to be at 8~GHz
         \end{itemize}
       \end{block}
     \end{column}
   \end{columns}
+  \vspace{1cm}
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
       \includegraphics[width=\textwidth]{figures/rx_rf_0_freq_s}
@@ -173,7 +204,7 @@
 
 \begin{frame}{Chosen Design: \newline Quadrature IF Sub-Nyquist Sampling Receiver}
   \includegraphics[width=\textwidth]{figures/rx_3_bd} \\
-
+  \vspace{5mm}
   \begin{block}{Advantages}
     \begin{itemize}
     \item Image rejection relaxes requirements on preselection
@@ -195,7 +226,15 @@
         \includegraphics[width=0.7\textwidth]{figures/hilbert}
       \end{block}
       \centering
-      \includegraphics[width=0.8\textwidth]{pictures/90deg}
+      \begin{tikzpicture}
+        \node [inner sep=0pt] at (0,0) {\includegraphics[width=0.9\textwidth]{pictures/90deg}};
+        \draw [white, rounded corners=\ClipSep, line width=\ClipSep]
+        (current bounding box.north west) --
+        (current bounding box.north east) --
+        (current bounding box.south east) --
+        (current bounding box.south west) -- cycle
+        ;
+      \end{tikzpicture}
     \end{column}
   \end{columns}
 \end{frame}
@@ -203,115 +242,133 @@
 \begin{frame}{Image Rejection using $90^\circ$ Couplers}
   \only<1>{
     \includegraphics[width=\textwidth]{figures/rx_rf_1_bd}
-    \vspace{1.5cm}
+    \vspace{4mm}
   }
 
-  \begin{columns}[T]
-    \begin{column}{.5\textwidth}
-      \only<1-2>{
+  \only<1-2>{
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
         {\color{blue} Step 1:}
         \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_s}
-        \vspace{-5mm}
+        \vspace{-3mm}
         \[r(t)\]
-      }
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \vspace{1eM}
+        \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_Hs}
+        \vspace{-3mm}
+        \[\mathcal{H}^{-1}\{r\}(t)\]
+      \end{column}
+    \end{columns}
+  }
 
-      \only<2-3>{
+  \only<2-3>{
+    \vspace{5mm}
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
         {\color{blue} Step 2:}
         \vspace{5mm}
         \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_a}
-        \vspace{-5mm}
+        \vspace{-8mm}
         \[a(t) = \text{LP}\{r(t) \cdot \cos(2\pi \cdot f_{\text{RX LO}} \cdot t)\}\]
-      }
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \vspace{1eM}
+        \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_b}
+        \vspace{-3mm}
+        \[b(t) = \text{LP}\{\mathcal{H}^{-1}\{r\}(t) \cdot \cos(2\pi \cdot f_{\text{RX LO}} \cdot t)\}\]
+      \end{column}
+    \end{columns}
+  }
 
-      \only<3>{
+  \only<3>{
+    \vspace{5mm}
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
         {\color{blue} Step 3:}
         \vspace{5mm}
         %todo: ev. border (prio 99)
         \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_Hb}
-        \vspace{-5mm}
+        \vspace{-8mm}
         \[\mathcal{H}\{b\}(t)\]
-      }
-    \end{column}
-    \begin{column}{.5\textwidth}
-      \only<1-2>{
-        \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_Hs}
-        \vspace{-5mm}
-        \[\mathcal{H}^{-1}\{r\}(t)\]
-      }
-
-      \only<2-3>{
-        \vspace{5mm}
-        \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_b}
-        \vspace{-5mm}
-        \[b(t) = \text{LP}\{\mathcal{H}^{-1}\{r\}(t) \cdot \cos(2\pi \cdot f_{\text{RX LO}} \cdot t)\}\]
-      }
-
-      \only<3>{
-        \vspace{5mm}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \vspace{1eM}
         \includegraphics[width=\textwidth]{figures/rx_rf_1_freq_c}
-        \vspace{-5mm}
+        \vspace{-3mm}
         \[c(t) = a(t) + \mathcal{H}\{b\}(t)\]
-      }
-    \end{column}
-  \end{columns}
+      \end{column}
+    \end{columns}
+  }
 \end{frame}
 
 \begin{frame}{Quadrature Intermediate Frequency Sub-Nyquist Sampling}
   \only<1>{
-    \vspace{1.5cm}
     \centering
     \includegraphics[width=0.6\textwidth]{figures/rx_adc_3_bd}
+    \vspace{4mm}
   }
 
-  \begin{columns}[T]
-    \begin{column}{.5\textwidth}
-      \only<1-2>{
-        %todo: steps
+  \only<1-2>{
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        {\color{blue} Step 1:}
         \includegraphics[width=\textwidth]{figures/rx_adc_3_c}
-        \vspace{-5mm}
+        \vspace{-3mm}
         \[c(t)\]
-      }
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \vspace{1eM}
+        \includegraphics[width=\textwidth]{figures/rx_adc_3_Hc}
+        \vspace{-3mm}
+        \[\mathcal{H}^{-1}\{c\}(t)\]
+      \end{column}
+    \end{columns}
+  }
 
-      \only<2-3>{
+  \only<2-3>{
+    \vspace{5mm}
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        {\color{blue} Step 2:}
         \vspace{5mm}
         \includegraphics[width=\textwidth]{figures/rx_adc_3_d0}
-        \vspace{-5mm}
+        \vspace{-8mm}
         \[d_0[k] = c(k/f_s) \]
-      }
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \vspace{1eM}
+        \includegraphics[width=\textwidth]{figures/rx_adc_3_d1}
+        \vspace{-3mm}
+        \[d_1[k] = \mathcal{H}^{-1}\{c\}(k/f_s)\]
+      \end{column}
+    \end{columns}
+  }
 
-      \only<3-4>{
+  \only<3-4>{
+    \vspace{5mm}
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        {\color{blue} Step 3:}
         \vspace{5mm}
         \includegraphics[width=\textwidth]{figures/rx_adc_3_jd0}
-        \vspace{-5mm}
+        \vspace{-8mm}
         \[j \cdot d_0[k]\]
-      }
-    \end{column}
-    \begin{column}{.5\textwidth}
-      \only<1-2>{
-        \includegraphics[width=\textwidth]{figures/rx_adc_3_Hc}
-        \vspace{-5mm}
-        \[\mathcal{H}^{-1}\{c\}(t)\]
-      }
-
-      \only<2-3>{
-        \vspace{5mm}
-        \includegraphics[width=\textwidth]{figures/rx_adc_3_d1}
-        \vspace{-5mm}
-        \[d_1[k] = \mathcal{H}^{-1}\{c\}(k/f_s)\]
-      }
-
-      \only<3-4>{
-        \vspace{5mm}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \vspace{1eM}
+        \vspace{1mm}
         \includegraphics[width=\textwidth]{figures/rx_adc_3_e}
-        \vspace{-5mm}
+        \vspace{-3mm}
         \[e[k] = d_1[k] + j \cdot d_0[k] \]
-      }
-    \end{column}
-  \end{columns}
+      \end{column}
+    \end{columns}
+  }
 
   \only<4>{
     \centering
     \includegraphics[width=0.5\textwidth]{figures/rx_adc_3_f}
+    \vspace{-3mm}
     \[-j \cdot e[k]\]
   }
 \end{frame}
@@ -327,14 +384,22 @@
         \end{enumerate}
       \end{block}
       \vspace{5mm}
-      \includegraphics[width=\textwidth]{pictures/fpga}
+      \begin{tikzpicture}
+        \node [inner sep=0pt] at (0,0) {\includegraphics[width=\textwidth]{pictures/fpga}};
+        \draw [white, rounded corners=\ClipSep, line width=\ClipSep]
+        (current bounding box.north west) --
+        (current bounding box.north east) --
+        (current bounding box.south east) --
+        (current bounding box.south west) -- cycle
+        ;
+      \end{tikzpicture}
     \end{column}
     \begin{column}{.5\textwidth}
       %todo: optimize color layout
       \begin{block}{Data Storage Speed}
         \begin{itemize}
-        \item ADC delivers one 12-bit channel at 3.6 GHz or
-          two 12-bit channels at 1.8 GHz $\rightarrow 5.4 \;\text{GB}/\text{s}$.
+        \item ADC delivers two 12-bit channels at 1.8 GHz
+          $\rightarrow 5.4 \;\text{GB}/\text{s}$.
         \item DDR3 RAM 64 bits at 500 MHz DDR $\rightarrow 8 \;\text{GB}/\text{s}$.
           (P\&R difficult at 800 MHz)
         \end{itemize}
@@ -362,10 +427,8 @@
 \begin{frame}{FPGA - ADC Interface}
   \begin{columns}[T]
     \begin{column}{.7\textwidth}
-      \begin{figure}
-        \centering
-        \includegraphics[width=\textwidth]{figures/fpga_adc}
-      \end{figure}
+      \centering
+      \includegraphics[width=\textwidth]{figures/fpga_adc}
     \end{column}
     \begin{column}{.3\textwidth}
       \begin{block}{Stage 0}
@@ -405,22 +468,59 @@
       \end{block}
     \end{column}
     \begin{column}{.6\textwidth}
+      \vspace{6mm}
       \includegraphics[width=\textwidth]{figures/RstSync} \\
-      \vspace{4ex}
+      \vspace{10mm}
       \includegraphics[width=\textwidth]{figures/rst_generation}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Test-Setup Block Diagram}
+\begin{frame}{Test-Setup}
   \includegraphics[width=\textwidth]{figures/res_450_setup}
 \end{frame}
 
-\begin{frame}{Test-Setup Picture}
-  \includegraphics[width=\textwidth]{pictures/res_450_setup}
+\begin{frame}{Test-Setup}
+  \begin{tikzpicture}
+    \node [inner sep=0pt] at (0,0) {\includegraphics[width=\textwidth]{pictures/res_450_setup}};
+    \draw [white, rounded corners=\ClipSep, line width=\ClipSep]
+    (current bounding box.north west) --
+    (current bounding box.north east) --
+    (current bounding box.south east) --
+    (current bounding box.south west) -- cycle
+    ;
+  \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{First Results at 450 MS/s, Phase noise, Delay spread}
+\begin{frame}{Nyquist-Sampling}
+  \includegraphics[width=\textwidth]{figures/rx_3_bd} \\
+
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \begin{block}{Setup}
+        \begin{tabular}{|l|r@{}l@{~}l|}
+          \hline
+          $f_{\text{TX IF}}$ & 2&.9&GHz \\ \hline
+          $f_{\text{TX LO}}$ & 57&.5&GHz \\ \hline
+          $f_{\text{RX LO}}$ & 58&.2&GHz \\ \hline
+          $f_{\text{RX IF}}$ & 2&.2&GHz \\ \hline
+          Signal Bandwidth B & 0&.45&GHz \\ \hline
+          Sample Rate $f_s$ & 1&.8&GHz \\ \hline
+        \end{tabular}
+      \end{block}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{block}{Key Points}
+        \begin{itemize}
+        \item Up to 900 MS/s fits into Nyquist-zone
+        \item Performance of $90^\circ$ coupler does not matter
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{First Results at 450 MS/s, Phase Noise, Delay Spread}
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
       \centering
@@ -447,38 +547,6 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Nyquist-Sampling}
-  \includegraphics[width=\textwidth]{figures/rx_3_bd} \\
-
-  \begin{columns}[T]
-    \begin{column}{.5\textwidth}
-      \begin{block}{Setup}
-        \begin{tabular}{|l|r@{}l@{~}l|}
-          \hline
-          $f_{\text{TX IF}}$ & 2&.9&GHz \\ \hline
-          $f_{\text{TX LO}}$ & 57&.5&GHz \\ \hline
-          $f_{\text{RX LO}}$ & 58&.2&GHz \\ \hline
-          $f_{\text{RX IF}}$ & 2&.2&GHz \\ \hline
-          Signal Bandwidth B & 0&.45&GHz \\ \hline
-          Sample Rate $f_s$ & 1&.8&GHz \\ \hline
-        \end{tabular}
-      \end{block}
-    \end{column}
-    \begin{column}{.5\textwidth}
-      \begin{block}{Key Points}
-        \begin{itemize}
-        \item up to 900 MS/s fits into Nyquist-zone
-        \item Performance of $90^\circ$ coupler does not matter
-        \end{itemize}
-      \end{block}
-      \begin{block}{Raw Data Speed @ 450 MS / s}
-        QAM-4: $0.838 \;\frac{\text{GiBit}}{\text{s}}$ \\
-        QAM-256: $3.353 \;\frac{\text{GiBit}}{\text{s}}$
-      \end{block}
-    \end{column}
-  \end{columns}
-\end{frame}
-
 \begin{frame}{450 MS/s Results}
   %todo: db
   \begin{columns}[T]
@@ -500,6 +568,12 @@
         \item Works up to QAM-256
         \end{itemize}
       \end{block}
+      \begin{block}{Raw Data Speed @ 450 MS / s}
+        \begin{itemize}
+        \item QAM-4: $0.838 \;\frac{\text{GiBit}}{\text{s}}$ \\
+        \item QAM-256: $3.353 \;\frac{\text{GiBit}}{\text{s}}$
+        \end{itemize}
+      \end{block}
     \end{column}
   \end{columns}
 \end{frame}
@@ -508,7 +582,6 @@
   % not full table
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
-      \includegraphics[width=0.6\textwidth]{figures/matlab/res_450_qam256_cp_corr_pcorr_initial}
       \begin{block}{Setup}
         \begin{tabular}{|l|r@{}l@{~}l|}
           \hline
@@ -520,6 +593,7 @@
           Sample Rate $f_s$ & 1&.8&GHz \\ \hline
         \end{tabular}
       \end{block}
+      \includegraphics[width=0.6\textwidth]{figures/matlab/res_450_qam256_cp_corr_pcorr_initial}
     \end{column}
     \begin{column}{.5\textwidth}
       \begin{block}{Error Vector Magnitude}
@@ -528,10 +602,6 @@
           Sample rate, system             & \mc{2}{$\text{EVM}_\text{D}$} \\ \hline
           450 MS/s full                   & -26&.57      \\ \hline
           1.8 GS/s full                   & -16&.94      \\ \hline
-          450 MS/s minimal                & {\bf-30}&.29 \\ \hline
-          1.8 GS/s minimal                & -7&.73       \\ \hline
-          1.8 GS/s minimal, $\alpha\beta$ & -16&.04      \\ \hline
-          1.8 GS/s minimal, xcorr         & -17&.42      \\ \hline
         \end{tabular}
       \end{block}
       \begin{block}{1.8 GS/s full}
@@ -583,15 +653,21 @@
         \[c[k] = b[k] + j \cdot \hat a[k]\]
         \[\hat a[k] \;\laplace\; \hat A[k] \]
         \[\hat A[k] = A[k]  \cdot \exp\left(
-        \frac{-j}{2 \pi} \cdot \left(\frac{\alpha \cdot k}{N} + \beta\right)
+        \frac{-j}{2 \pi} \left(\frac{\alpha \cdot k}{N} + \beta\right)
         \right)\]
       \end{block}
 
       \only<1>{
-        %todo: remove coupler
-        \includegraphics[width=\textwidth]{pictures/filter}
+        \begin{tikzpicture}
+          \node [inner sep=0pt] at (0,0) {\includegraphics[width=\textwidth]{pictures/filter}};
+          \draw [white, rounded corners=\ClipSep, line width=\ClipSep]
+          (current bounding box.north west) --
+          (current bounding box.north east) --
+          (current bounding box.south east) --
+          (current bounding box.south west) -- cycle
+          ;
+        \end{tikzpicture}
       }
-
       \only<2>{
         \begin{block}{Error Vector Magnitude}
           \begin{tabular}{|l|r@{}l|}
@@ -657,7 +733,24 @@
       \end{itemize}
     \end{column}
     \begin{column}{.4\textwidth}
-      \includegraphics[width=\textwidth]{pictures/adc}
+      \begin{tikzpicture}
+        \node [inner sep=0pt] at (0,0)
+              {\includegraphics[width=\textwidth]{pictures/BHP-1000+}};
+              \draw [white, rounded corners=\ClipSep, line
+                width=\ClipSep] (current bounding box.north west) --
+              (current bounding box.north east) -- (current bounding
+              box.south east) -- (current bounding box.south west) --
+              cycle ;
+      \end{tikzpicture}
+      \begin{tikzpicture}
+        \node [inner sep=0pt] at (0,0)
+              {\includegraphics[width=\textwidth]{pictures/ZX60-V63+}};
+              \draw [white, rounded corners=\ClipSep, line
+                width=\ClipSep] (current bounding box.north west) --
+              (current bounding box.north east) -- (current bounding
+              box.south east) -- (current bounding box.south west) --
+              cycle ;
+      \end{tikzpicture}
     \end{column}
   \end{columns}
 \end{frame}
@@ -675,14 +768,23 @@
       \end{itemize}
     \end{column}
     \begin{column}{.4\textwidth}
-      \includegraphics[width=\textwidth]{pictures/sivers}
+      \begin{tikzpicture}
+        \node [inner sep=0pt] at (0,0) {\includegraphics[width=\textwidth]{pictures/sivers}};
+        \draw [white, rounded corners=\ClipSep, line width=\ClipSep]
+        (current bounding box.north west) --
+        (current bounding box.north east) --
+        (current bounding box.south east) --
+        (current bounding box.south west) -- cycle
+        ;
+      \end{tikzpicture}
     \end{column}
   \end{columns}
-
+  \vspace{8mm}
+  \centering
   \includegraphics[width=0.7\textwidth]{figures/rx_2_bd} \\
 \end{frame}
 
-\begin{frame}[noframenumbering]{Frame Structure}
+\begin{frame}[noframenumbering]{Backup: Frame Structure}
   \begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{figures/frame_struct}
