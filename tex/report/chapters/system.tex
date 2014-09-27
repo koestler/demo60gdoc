@@ -12,8 +12,10 @@ throughput is possible using high modulation and wide channels.
 Also the effect of phase noise and other performance limiting impairments
 were investigated. \\
 
-To achieve all this goals, a flexible Matlab script supporting
-many different configurations was written. It is able to simulate
+To achieve all this goals, a flexible simulation framework based on Matlab
+supporting many configurations like different receiver architectures,
+configurable \gls{IF} frequencies, different channel estimation algorithms
+and modulation schems was ritten. It is able to simulate
 the different receivers designs but also interfaces to the hardware
 to replace the \gls{RF} parts by real hardware. Matlab was chosen
 because of it's widespread use in communication systems research. \\
@@ -84,7 +86,7 @@ the Data fields in \secref{sec:sys_data} and the
 \end{figure}
 
 \section{Modulation and Pulse Shaping Scheme}
-For the data fields \gls{BPSK}, \gls{QPSK} and arbitrary, even
+For the data fields \gls{BPSK}  and arbitrary, even
 \gls{QAM} modulations were implemented. Thereby the data rate
 can be maximized depending on the \gls{SNR}. \\
 
@@ -111,21 +113,20 @@ where $f_s$ is the sample rate. \\
 
 \begin{subequations}
   \begin{alignat}{2}
-    a &= \frac{1}{(L-1) * l}
-    \sum_{i=1}^{L-1} \sum_{j=0}^{l-1} \overline{d[i][k-1]} \cdot d[i][k]
+    a &= \frac{1}{(L-1) \cdot l}
+    \sum_{k=1}^{L-1} \sum_{i=0}^{l-1} \overline{d[i][k-1]} \cdot d[i][k]
     \label{eq:sys_foffset_a} \\
-    f_{\text{offset est.}} &= \frac{a}{2 \pi} * \frac{f_s}{l}
+    f_{\text{offset est.}} &= \frac{a}{2 \pi} \cdot \frac{f_s}{l}
     \label{eq:sys_foffset}
   \end{alignat}
 \end{subequations}
 
 \section{Time Synchronization \& Channel Estimation and Correction}
 \label{sec:sys_ces}
-
+For channel estimation a low complexity channel estimator for long dealy
+spreads is used.
 The \gls{CES} field consists of Golay complementary sequences which
-have very specific autocorrelation properties as described in
-\todo{cite Golay paper} and can be used to build an elegant
-channel estimator as described in \todo{cite to Golay estimation paper}. \\
+have very specific autocorrelation properties as described in \cite{golay}. \\
 
 In our case a total of $2 \cdot 512 + 128 = 1152$ symbols plus
 a cyclic prefix of $128$ symbols are used resulting in a \gls{CES} field
@@ -170,7 +171,12 @@ the current phase offset estimation which is than used for the correction
 of the data block. The field consists of a $l=64$ symbol long Golay
 sequence even though the estimation would also work on random data. \\
 
-The phase noise correction works as follows. For each data block
+The phase noise is estimated by comparing the phase of symbols
+sent on the beginning of the frame with the symbols sent in
+the current block. The block is than corrected by this phase
+rotation. \\
+
+The exact algorithm works as follows. For each data block
 the following steps are performed:
 
 \begin{enumerate}

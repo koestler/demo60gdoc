@@ -1,6 +1,6 @@
 \chapter{FPGA}
 \label{chap:fpga}
-A powerful Virtex-7 \gls{FPGA} Evaluation board VC707
+A Virtex-7 \gls{FPGA} Evaluation board VC707
 was used to for real time signal processing.
 For experiments performed in this thesis
 the data from the \gls{ADC} is acquired, stored in real time
@@ -15,14 +15,14 @@ to step by step move parts of the signal processing from Matlab to the
 \section{Architecture Overview}
 The three main tasks of the digital design are first to interface
 the \gls{ADC} and acquire its data, then to store it on a
-\gls{DDR} \gls{RAM} and finally to allow a computer to
+\gls{RAM} and finally to allow a computer to
 slowly download it. \\
 
 As shown in \figref{fig:fpga_architecture_overview} the most important
-modules of the design are the Adc12d1800 which interfaces the
-\gls{ADC}, Ram which uses a \gls{DDR}3-\gls{RAM} to store the data
+modules of the design are the \gls{ADC} interfaces,
+the \gls{DDR}3 \gls{RAM} interface to store the data
 and Microblaze, a soft-core processor, which controls the
-\gls{USB} 2 data download. Data2Ram is interface logic used
+\gls{USB} 2 data download. The Data2Ram module consists of interface logic used
 to connect the \gls{ADC} directly to the \gls{RAM}. Later the receiver logic,
 starting with frame synchronization could be implemented
 at this place. AxiSlave implements an interface between the
@@ -35,7 +35,7 @@ by some insights how clocking and reset is implemented. \\
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\textwidth]{figures/fpga_architecture_overview}
-  \caption{Overview of the architecture}
+  \caption{Overview of the \gls{FPGA} architecture}
   \label{fig:fpga_architecture_overview}
 \end{figure}
 
@@ -74,24 +74,9 @@ to the Virtex-7 evaluation board (see \secref{sec:comp_virtex7})
 using one of the two \gls{FMC} plugs.
 A listing of all connections can be found in \appref{app:app_adc_fpga_con}. \\
 
-Data acquisition is done by the module Adc12d1800. In our case the ADC is
-configured to sample two channels, an in-phase and a quadrature phase channel,
-at up to 1.8 GHz or to sample one channel at 3.6 GHz.
-The nominal resolution is 12 bits. This results in a total bandwidth of
-$5.4 \text{GB}/\text{s}$. \\
-Since 1.8 GHz and especially 3.6 GHz is far beyond what the IO-Pads of all
-\glspl{FPGA} \todo{reference needed} and most \glspl{ASIC} can handle,
-the ADC can output on 4 parallel streams of 12 bits each. \\
-
-Since this 4 streams might be routed with different wire lengths on a \gls{PCB}
-each stream has it's own clock, which is aligned to the data.
-In order to half the maximum frequency of the clock lines,
-the data change on positive and negative clock edges (\gls{DDR}). \\
-
-At full speed, this results in a switching frequency of 450 MHz for all data
-and clock lines. To support this high speed, \gls{LVDS} signaling is used,
-which reduces power consumption and the influence of noise
-compared to classical \gls{CMOS} signaling. \\
+A multi stage approach with different clock domains is required to adapt the
+high speed sample stream to the significantly lower processing speed of the
+\gls{FPGA} circuitry.  \\
 
 Since the maximum clock frequencies of the Virtex \glspl{FPGA} for logic
 including \gls{LUT} slices and medium to high fan-outs
@@ -109,6 +94,25 @@ needed to find a design that meets timing constraints. \\
 As shown in \figref{fig:fpga_adc}, the implemented design uses
 a total of 4 stages to parallelise and centralize the data to
 one single data stream. \\
+
+Data acquisition is done by the module Adc12d1800. In our case the ADC is
+configured to sample two channels, an in-phase and a quadrature phase channel,
+at up to 1.8 GHz or to sample one channel at 3.6 GHz.
+The nominal resolution is 12 bits. This results in a total bandwidth of
+$5.4 \text{GB}/\text{s}$. \\
+In order to circumvent speed limitations of \gls{IO} pads,
+the \gls{ADC} output stream is parallelized to four streams of 12 bits each. \\
+
+Since this 4 streams might be routed with different wire lengths on a \gls{PCB}
+each stream has it's own clock, which is aligned to the data.
+In order to half the maximum frequency of the clock lines,
+the data change on positive and negative clock edges (\gls{DDR}). \\
+
+At full speed, this results in a switching frequency of 450 MHz for all data
+and clock lines. To support this high speed, \gls{LVDS} signaling is used,
+which reduces power consumption and the influence of noise
+compared to classical single-ended signaling. \\
+
 
 \begin{figure}[ht]
   \centering
@@ -257,9 +261,10 @@ words until at least 512 bits are available. Behind this converter
 a \gls{FIFO} memory is added to cross the clock boundary and to be able
 to hold some samples when the \gls{MIG} user interface stalls. \\
 
-During implementation, care has to be taken to the mask bits,
-which are designed to prevent parts of the 64 bits written in parallel to be
-overwritten and therefor allow for partial writes without first performing
+During implementation, care has to be taken to correctely connect the mask bits
+even if one does not plan to use them.
+Masks bits are designed to prevent parts of the 64 bits written in parallel
+to be overwritten and therefor allow for partial writes without first performing
 a read operation. Accidentally having these pins stuck at 1 due to
 not connecting them prevents initialization and further reads from
 working. \\
@@ -332,7 +337,7 @@ Endpoint 0 is a standardized control endpoint. It's purpose is to
 enumerate the bus\footnote{give the slave a unique address} and to provide the
 host computer with information about basic parameters and the other endpoints.
 It's exact behaviour is defined by the
-``Chapter 9 USB Device Framework'' of the \gls{USB}2 standard \todo{add reference}. \\
+``Chapter 9 USB Device Framework'' of the \gls{USB}2 standard \cite{usb20}. \\
 
 Endpoint 1 is used to transfer binary raw data from the computer to the \gls{FPGA}
 while endpoint 2 does the same into the other direction. They both use the maximal

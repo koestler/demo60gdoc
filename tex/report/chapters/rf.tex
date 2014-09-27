@@ -1,10 +1,12 @@
 \chapter{Analysis of Receiver Architectures}
 \label{chap:rx}
 
-
+In our case of a \gls{SDR}, the aim of the analog receiver architecture is to
+digitze the channel of interest with as high dynamic range as possible while
+minimzing the distortion by neighbouring channels. \\
 
 A wide variety of different receiver designs exists each with it's advantages
-and drawbacks. To come up with an optimal design, different receiver designs
+and drawbacks. To come up with an good design, different receiver designs
 were investigated using theoretical considerations. Some were simulated to
 get an even deeper understanding.
 Thereby the focal point was on architectures we could
@@ -12,9 +14,12 @@ build in hardware using the Sivers IMA 58-63 GHz converter described in
 \secref{sec:comp_sivers}. \\
 
 \section{Transmitter Architecture}
-During this report always the same transmitter architecture was used.
+During this report the same transmitter architecture was used which drawn
+in \figref{fig:tx_block_diagram} and is further described in
+\secref{sec:res_450_setup}.
+
 It consists of a two channel \gls{DAC} generating the real and imaginary
-part of an analytic signal width a bandwidth $B = 1.8 \text{GHz}$
+part of an analytic signal width a bandwidth $B = 1.8 \; \text{GHz}$
 on an \gls{IF} $f_{\text{TX IF}}$. \\
 
 This two signals are than up-converter to
@@ -22,6 +27,13 @@ This two signals are than up-converter to
 as good as possible as described in \secref{sec:rx_rf_1}.
 Therefor the \gls{TX} \gls{USBand} is considered the desired signal and the
 residual \gls{TX} \gls{LSBand} an interferer. \\
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/tx_block_diagram}
+  \caption{Block Diagram of the Transmitter}
+  \label{fig:tx_block_diagram}
+\end{figure}
 
 In the following chapters the terms \gls{TX} \gls{USBand} and \gls{TX}
 \gls{LSBand} refer to the fact that the up-mixer used for transmitting
@@ -32,12 +44,8 @@ frequency of the transmitters \gls{IF} signal. During all experiments
 \gls{TX} \gls{USBand} was considered the desired signal and \gls{TX}
 \gls{LSBand} a residual signal. \\
 
-Analogous \gls{RX} \gls{USBand} and \gls{RX} \gls{LSBand} refer to
-the down-mixer converting energy from $f_{\text{RX LO}} \pm f_{\text{RX IF}}$
-to the same receiver \gls{IF} $f_{\text{RX IF}}$. \\
-
 It was measured that in our setup the \gls{TX} \gls{LO} leakage
-to the output \gls{RF} signal has similar power than the desired
+to the output \gls{RF} signal has similar power density than the desired
 signal. Therefor this leakage has to be considered as it is a very narrow band,
 but high power interferer.
 By choosing $f_{\text{TX IF}} = f_{\text{c}} - f_{\text{TX LO}}$ accordingly,
@@ -55,11 +63,11 @@ down-mixing. A perfect alignment could result in an even better
 alongside the desired \gls{TX} \gls{USBand} signal in an other channel.
 This must not be done according to relevant standards. \\
 
-\section{RF Architecture}
+\section{RX RF Architecture}
 When building a receiver, one faces the problem of isolating the channel of
 interest from all others signals received by the antenna. Therefor
-two ways of building channel selection filters are discussed in the following
-chapters. \\
+two ways of building channel selection filters are discussed in this
+chapter. \\
 
 All receivers have a band filter directly after the antenna simply by the
 fact that all components (antenna, amplifiers, mixers etc.) have a frequency
@@ -68,15 +76,13 @@ An additional band filter might be added to minimize the total power supplied
 to the \gls{LNA} which has the main influence of the total noise figure of
 the receiver. \\
 
-Inside this band there are typically multiple channels with a carrier frequency
-$f_c$ and a bandwidth $B$. \\
-
-Since it is hard to build adjustable filters on \gls{RF} to select one specific
-channel, this selection is typically done on an \acrfull{IF}. In our case of a
-carrier frequency of $f_c \approx 60 \;\text{GHz}$ this \gls{IF}
+In theory, filtering of the desired channel at the \gls{RF} stage would be desirable.
+But in general this is not possible since it is hard to build adjustable filters
+on \gls{RF}. Therefor, this selection is typically done on an \acrfull{IF}.
+In our case of a carrier frequency of $f_c \approx 60 \;\text{GHz}$ this \gls{IF}
 is always lower than the carrier frequency $f_c$ due to component restrictions. \\
 
-\subsection{Image Rejection using High Intermediate Frequency}
+\subsection{Image Rejection using Pre Selection Band Filter}
 \label{sec:rx_rf_0}
 First we look at the architecture shown in \figref{fig:rx_rf_0_bd} where
 the mixer uses a \gls{LO} at $f_{\text{RX LO}}$ to mix the signal $s(t)$
@@ -93,21 +99,38 @@ This mixer produces a total of four signal components:
 \end{align}
 
 The two signals $\pm (f_{c} + f_{\text{RX LO}})$ are not relevant since their
-frequency is above 100 GHz and well beyond what the mixer output can drive. \\
+frequency is above 100 GHz and can be easily filtered. Our results show, that
+the inherent frequency selectivity of the compontents is sufficient. \\
 
-When $f_{\text{RX IF}}$ is high enough, the undesired \gls{RX} \gls{LSBand}
-signal at $-f_{\text{c}} + f_{\text{RX LO}}$ lies outside the band filter
-and therefor is zero. Otherwise it would convolve with the desired
-\gls{RX} \gls{USBand} signal. This leads to a lower bound
-$f_{\text{RX IF}} \geq B$ for the \gls{RX} \gls{IF} frequency
+Since we are building an \gls{USBand} receiver, the \gls{RX} \gls{USBand} signal
+at $+ f_{c} + f_{\text{RX LO}}$ is the desired signal.
+
+The fourthe signal is the \gls{RX} \gls{LSBand} signal at
+$-f_{\text{c}} + f_{\text{RX LO}}$ and has to be filtered out. 
+When $f_{\text{RX IF}}$ is high enough, this signal lies outside the band filter
+and therefor is zero. Otherwise it would convolve with the desired.
+This leads to a lower bound $f_{\text{RX IF}} \geq B$ for the \gls{RX} \gls{IF}
+frequency
 \footnote{%
   In fact $f_{\text{RX IF}} \geq \frac{B}{2}$
   is sufficient if later stages of the receiver can switch
   between \gls{USBand} and \gls{LSBand} reception and
   $f_{\text{RX LO}}$ is chosen to be at the lower or upper edge of the
-  channel filter accordingly.}. \\
+  channel filter accordingly.}
+where $B$ is the bandwidth of the signal. \\
 
-A fixed channel filter is than used to suppress neighbouring channels. \\
+A channel filter is than used to suppress neighbouring channels.
+This filter is fixed in frequency even when channels at differenct carrier
+frequencies are received. Only local oscillators $f_\text{LO}$ have to be
+changed. \\
+
+The use of a high \gls{IF}, as described in the this section, might
+by very favorable for short wave receivers where the band filters
+are narrow (a few MHz) and the \gls{IF} is typically between 10 and 100 MHz.
+For 60 GHz applications, where band filters are approximately $8 \; \text{GHz}$
+wide, an \gls{IF} of a few GHz is required.
+This is difficult to realize due to components restrictions of filters
+and amplifiers. \\
 
 \begin{figure}[p]
   \centering
@@ -131,22 +154,23 @@ A fixed channel filter is than used to suppress neighbouring channels. \\
     \caption{$i(t)$}
     \label{fig:rx_rf_0_freq_i}
   \end{subfigure}
-  \caption{Image Rejection using High Intermediate Frequency}
+  \caption{Image Rejection using Pre Selection Band Filter}
   \label{fig:rx_rf_0_freq}
 \end{figure}
 
 \subsection{Image Rejection using $90^\circ$ Couplers}
 \label{sec:rx_rf_1}
-The use of a high \gls{IF}, as described in the last section, might
-by very favorable for short wave receivers where the band filters
-are narrow (a few MHz) and the \gls{IF} is typically between 10 and 100 MHz.
-For 60 GHz applications, where band filters are approximately 5GHz wide,
-an \gls{IF} of a few GHz is required.
-Therefor a more suitable way to do channel selection is described in this
-section. \\
+Due to the difficulties of the image rejection using a pre selection
+band filter, an other way using image rejection mixers to do channel selection
+is described in this section. \\
+
+An image rejection mixer mixes only one side band and not both side bands
+like normal mixers do. \\
 
 The suppression of the undesired \gls{RX} \gls{LSBand} signal can also be done
-using a $90^\circ$ couplers as described in \secref{sec:comp_90deg}: \\
+using a $90^\circ$ couplers.
+A detailed description of the used hybrid couplers can be found in
+\secref{sec:comp_90deg}: \\
 
 Let us assume, that we have the real \gls{RF} signal $r(t)$ shown in
 \figref{fig:rx_rf_1_freq_s}.
@@ -187,8 +211,9 @@ In fact both outputs are delayed in time corresponding to negative phase
 rotation for positive frequencies and a positive phase rotation for negative
 frequencies. \\
 
-Finally a fixed channel selection filter can be used at an arbitrary \gls{IF}
-which is a clear advantage over the method discussed in \secref{sec:rx_rf_0}. \\
+Finally a fixed channel selection filter can be used. This gives an additional
+degree of freedom for choosing the \gls{IF} architecture which is a
+which is an advantage over the method discussed in \secref{sec:rx_rf_0}. \\
 
 \begin{figure}[h!]
   \centering
@@ -262,9 +287,10 @@ mixing schemes of which three are shown in this section. \\
 The first \gls{IF}, which was previously used for the channel selection filter,
 can be directly converted to baseband by a second mixer with
 $f_{\text{LO}_2} = f_{\text{IF}}$.
-Since our signal is asymmetric, the baseband signal is not analytic
-and therefor quadrature sampling, which uses two mixers as shown in
-\figref{fig:rx_adc_1_bd}, can be used. \\
+Since our signal is asymmetric in frequency domain,
+the baseband signal is not analytic.
+Therefor quadrature sampling, which uses two mixers as shown in
+\figref{fig:rx_adc_1_bd}, is used. \\
 
 Considering an \gls{IF} signal $i(t)$ with a center frequency of
 $f_{\text{IF RX}}$ and using the transformation \eqref{eq:four_cos},
@@ -358,10 +384,20 @@ $c(t)$ in \figref{fig:rx_adc_1_freq_c}.
 
 \subsection{First Nyquist-Zone Sampling}
 \label{sec:rx_adc_0}
-Instead of using two \gls{ADC} channels, the signal can also be mixed
-to the first Nyquist-zone $[0 \; \frac{f_s}{2}]$ and sampled by just one
-channel. \\
+Instead of using two \gls{ADC} channels and qudrature sampling, the
+signal can also be sampled by just one channel with double the
+bandwidth. In order to prevent aliasing the signal has to be
+correctly allined with a Nyquist-zone as shown in
+\figref{fig:rx_adc_2_nyquist_zones}. \\
 
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/rx_adc_2_nyquist_zones}
+  \caption{Nyquist-Zones}
+  \label{fig:rx_adc_2_nyquist_zones}
+\end{figure}
+
+In our case, the first Nyquist-zone $[0 \; \frac{f_s}{2}]$ is used.
 This results in a second \gls{IF} of $f_{\text{LO}_2} = \frac{f_s}{2}$ where
 the sample rate $f_s$ has to be at least double the bandwidth $B$:
 \[f_s \geq 2 \cdot B\]
@@ -390,7 +426,7 @@ of the \gls{ADC} in order to avoid aliasing.
 $\frac{f_s}{2}$ is therefor the digital bandwidth of an \gls{ADC}. \\
 
 However, an \gls{ADC} can have a bigger analog bandwidth. This means that
-even faster signals are correctly captures by the sample and hold circuit
+even faster signals are correctly captured by the sample and hold circuit
 at the input of the \gls{ADC}. The frequency space between 0 and
 $\frac{f_s}{2}$ is often referred to as first Nyquist-zone as shown in
 \figref{fig:rx_adc_2_nyquist_zones}. \\
@@ -413,17 +449,9 @@ $B = 2 \cdot \frac{f_s}{2}$ with two \gls{ADC} channels sampling at $f_s$ each. 
   \label{fig:rx_adc_2_bd}
 \end{figure}
 
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=0.7\textwidth]{figures/rx_adc_2_nyquist_zones}
-  \caption{Nyquist-Zones}
-  \label{fig:rx_adc_2_nyquist_zones}
-\end{figure}
-
 \section{Evaluation of Complete Receiver Architectures}
 To implement a complete receiver, the first part of doing the channel selection,
-and the second part responsible for digitizing the signal have do be combined. \\
-
+and the second part responsible for digitizing the signal have do be combined.
 The following sections cover three different architectures. Whenever possible,
 example frequencies are given that are supported by the hardware described in
 \chapref{chap:comp}. Also their advantages and drawbacks are discussed. \\
@@ -457,7 +485,7 @@ in \secref{sec:comp_dc_block}. This high-pass filters unfortunately
 not only remove \gls{DC} but also a small portion of the signal,
 resulting in some \gls{ISI}. \\
 
-\begin{table}[h]
+\begin{table}
   \centering
   \begin{tabular}{|l|r@{}l@{~}l|}
     \hline
@@ -606,18 +634,17 @@ component at $f_{s}$. \\
 
 \subsection{Quadrature Intermediate Frequency Sub-Nyquist Sampling Receiver}
 \label{sec:rx_2}
-The third receiver architecture, which was used for most measurements,
-was motivated by having only very few components that can add noise
-and errors due to non-linear terms. \\
+A reduced component version of the architecture described in \secref{sec:rx_1}
+was used for testing and measurements in order to reduce the influence
+of non ideal components.
 
-It is, however, based on the assumption that no other channels of the
+This is, however, not a practical receiver architecture. 
+It is based on the assumption that no other channels of the
 60 GHz spectrum are used, except those, where we send residuals our self.
 Therefor the very strong \gls{TX} \gls{LO} leakage and
 the residual \gls{TX} \gls{LSBand} leakage are shown in all plots. \\
 
-As shown in the block diagram in \figref{fig:rx_2_bd}, it only uses one
-\gls{IF} and performs Quadrature Sub-Nyquist Sampling as described
-in \secref{sec:rx_adc_2}. \\
+The block diagram is shown in \figref{fig:rx_2_bd}.
 
 Since the two mixers of the 58-63 GHz converter work at much
 higher frequencies than those used in the other architectures, the
@@ -626,25 +653,20 @@ Because of that and probably also due to further component restrictions,
 the converter is specified for an \gls{IF} of 1-5 GHz as noted in
 \secref{sec:comp_sivers}.
 Since the desired signal, which has a full bandwidth of 1.8 GHz,
-results in an \gls{RX} \gls{IF} between 1.0 and 2.8 GHz, this just meets
-this specifications. \\
+results in an \gls{RX} \gls{IF} between 1.0 and 2.8 GHz,
+we meet the specification of the \gls{ADC} and coverter boards. \\
 
-The \gls{ADC} 12d1800 has an analog bandwidth of typically 2.8 GHz
+The \gls{ADC} 12d1800 has an analog bandwidth of 2.8 GHz
 as described in \secref{sec:comp_adc}.
 Therefor the upper limit of the 2.8 GHz of \gls{RX} \gls{IF} meets this
 requirement as well. \\
 
-After the $f_{\text{RX IF}}$ is fully defined by this constraints, the
-$f_{\text{TX LO}}$ and $f_{\text{RX LO}}$ have to be looked at.
-As we can see in \figref{fig:rx_2_freq_a_0} the \gls{TX} \gls{LO}
-leakage will be at $q = \pm \left(f_{\text{RX LO}} - f_{\text{TX LO}} \right)$.
-To be optimally suppressed by the channel filter, this difference should be as
-small as possible. On the other hand, the residual \gls{TX} \gls{LSBand} signal
-will be separated from the desired \gls{TX} \gls{USBand} signal by $2 \cdot q$
-which demands for $q \geq \frac{f_s}{2}$. \\
-Unfortunately only one of this constraints can be meet. Since the \gls{TX}
-\gls{LO} leakage is much stronger then the residual \gls{TX} \gls{LSBand}
-leakage, the difference was chosen to be $q = 0.7 \;\text{GHz}$ resulting in the
+A degree of freedom is left by choosing different \gls{RX} and \gls{TX}
+\gls{LO} frequencies. By smartly choosing the difference 
+$q = \pm \left(f_{\text{RX LO}} - f_{\text{TX LO}} \right)$ we can try
+to move as much unwanted interference out of the band of interest
+as possible.
+The difference was chosen to be $q = 0.7 \;\text{GHz}$ resulting in the
 \gls{TX} \gls{LO} leakage to be well suppressed by the channel filter while
 the residual \gls{TX} \gls{LSBand} signal overlaps 0.6 GHz. \\
 
@@ -656,7 +678,8 @@ at 54.9 GHZ is well outside. \\
 Consequently $f_{\text{TX IF}} = f_c - f_{\text{TX LO}} = 2.6 \;\text{GHz}$,
 which meets the \gls{IF} specification of the converter as well. \\
 
-The receiver first mixes the \gls{RF} signal $r(t)$ with a the local oscillator
+After the frequency planing is done, we can now look how the receiver
+works. The receiver first mixes the \gls{RF} signal $r(t)$ with a the local oscillator
 at $f_{\text{RX LO}}$ and a $90^\circ$ shifted version of this oscillator.
 Again the frequency components at $\pm (f_c + f_{\text{RX LO}})$ are
 automatically filtered and noted as a low-pass filter LP.
