@@ -1,7 +1,7 @@
 \chapter{Conclusion \& Outlook}
 \section{Conclusion}
 During the evaluation of different receiver architectures, it was found
-that sub-Nyquist sampling reduces the analog receiver complexity.
+that sub-Nyquist sampling significantly reduces the analog receiver complexity.
 Using quadrature sub-Nyquist sampling gives even more flexibility in frequency
 planning. \\
 
@@ -21,12 +21,13 @@ Finally it was shown, that an \gls{EVM} of -30 dB can be achieved using a channe
 bandwidth of 450 MHZ, which allows for \gls{QAM}-256 modulation.
 When using the full channel width of 1.8 GHz, the non-perfect
 reconstruction of the analytic \gls{RX} \gls{IF} signal lead to a reduction of the
-\gls{EVM} to -17 dB. 
+\gls{EVM} to -17 dB.
 
 \section{Outlook}
-This area allows for further research in improving
-the full bandwidth transmission system using the result described in
-\chapref{chap:res_450} as a starting point.
+The results suggest that the reconstruction of the analytic can be further
+improved by channel estimation and correction of both samples channels
+separately. This would allows to correct the different frequency selectivity
+of the two outputs of the $90^\circ$ coupler shown in \secref{sec:comp_90deg}. \\
 
 Also the implemented \gls{FPGA} design provides a good platform
 for further circuit development. One could immediately start to
@@ -34,4 +35,4 @@ move receiver components, which are currently implemented in Matlab,
 to programmable logic since the tricky interfaces to the \gls{ADC}
 and the \gls{USB} communication with a host computer are already implemented.
 
-%%  LocalWords:  Multi QAM Matlab FPGA Nyquist EVM
+%%  LocalWords:  Multi QAM Matlab FPGA Nyquist EVM coupler

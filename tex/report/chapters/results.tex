@@ -475,35 +475,14 @@ Since this receiver uses quadrature sub-nyquist sampling as described in
 suppression performance of the current setup. \\
 
 Therefor we will first stick to the parameters used for the narrow band
-transmission, especially the symbol rate of 450 MS/s. These parameters have the
-big advantage, that the desired \gls{RX} \gls{USBand} and the undesired
-\gls{RX} \gls{LSBand} signal are seperated in frequency as shown in
-\figref{fig:res_450_freq_uncorr}. This allows to measure the \gls{RDR}
-as expressed in \eqref{eq:res_1350_rdr}. \\
-
-\begin{align}
-  \text{RDR} &= 10 \cdot \log_{10}\left(
-  \frac{E_{\text{RX LSB}}}{E_{\text{RX LSB}}}
-  \right) \\
-  E_{\text{RX LSB}} &= \text{rms}(d_{\text{RX LSB}})^2 \\
-  E_{\text{RX USB}} &= \text{rms}(d_{\text{RX USB}})^2 \\
-  \label{eq:res_1350_rdr}
-\end{align}
-
-Where $d_{\text{RX LSB}}$ is the vector all received symbols after
-the \gls{RX} \gls{LSBand} has been filtered using the receiving pulse shape
-filter and $d_{\text{RX LSB}}$ is the same for the \gls{RX} \gls{USBand} signal. \\
-
-Without any correction, the received spectra looks like
-\figref{fig:res_450_freq_uncorr_rx_rf} before being interpreted as a complex
-signal and like \figref{fig:res_450_freq_uncorr_rx_rf_sup} afterwards.
 This results in an \gls{RDR} of -8.16 dB. \\
 
+\subsubsection{Simple Approach}
 In order to improve the \gls{RDR}, two correction coefficients, $\alpha$ and
 $\beta$ were introduced which are applied on the second \gls{ADC} channel
 before combining both channels to one complex signal \eqref{eq:res_1350_a_hat}.
 $\alpha$ allows to correct time and $\beta$ phase differences between
-the two  channels. \\
+the two channels. \\
 
 \begin{align}
   c[k] &= b[k] + j \cdot \hat a[k] \\
@@ -518,6 +497,14 @@ find the correct values followed by a more fine grained sweep over both paramete
 which is shown in \figref{fig:res_1350_ab_sweep}.
 The absolute minimum is for reach for $\alpha = -0.08$ and $\beta = 0.096$ witn an
 a \gls{RDR} of -23.24 dB. \\
+
+\subsubsection{Signal Theory Approach}
+\[s_{\text{sig}}[k] = (s[k] + j \mathcal{H}\{s\}[k])/2 \]
+\[s_{\text{err}}[k] = (s[k] - j \mathcal{H}\{s\}[k])/2 \]
+\[s_{\text{sig, mirr}}[k] = s_{\text{sig}}^*[k]\]
+\[c[m] = \sum_k s_{\text{sig, mirr}}[k+m] \cdot s_{\text{Err}}[k] \]
+\[C = \frac{\sup_m c[m]}{\sum_k |s_{\text{sig}}[k]|^2}\]
+\[s_{\text{corr}}[k] = s[k] - (s^*[k] .* C^*)\]
 
 \begin{figure}[p]
   \centering
@@ -649,8 +636,8 @@ supDb =  0.6921
 RdrDb = -31.2131
 
 with C = -0.0035 + 0.0092i correction:
-    evmRandAll: -27.2635
-    evmDeteAll: -26.5561
+evmRandAll: -27.2635
+evmDeteAll: -26.5561
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %/home/lk/demo60gData/res_s2_1800_qam4
@@ -662,12 +649,12 @@ cnf.Tx.CarrierFreq    = cnf.Rx.CarrierFreq + 0.7E9;
 cnf.Rx.Shaping.Disable = 1;
 
 without correction:
-    evmRandAll: -16.9579
-    evmDeteAll: -16.9430
+evmRandAll: -16.9579
+evmDeteAll: -16.9430
 
 with C = -0.0035 + 0.0092i correction:
-    evmRandAll: -16.8526
-    evmDeteAll: -16.8379
+evmRandAll: -16.8526
+evmDeteAll: -16.8379
 
 \subsection{Setup using 90deg coupler on IF and Oscilloscope}
 
@@ -675,17 +662,17 @@ with C = -0.0035 + 0.0092i correction:
 
 % old
 450 MS/s TX IF 2.6 GHz:
-    evmRandAll: -26.6974
-    evmDeteAll: -26.0090
+evmRandAll: -26.6974
+evmDeteAll: -26.0090
 
 450 MS/s TX IF 2.2 GHz:
-    evmRandAll: -25.8382
-    evmDeteAll: -24.0677
-    RdrDb: -27.7770
+evmRandAll: -25.8382
+evmDeteAll: -24.0677
+RdrDb: -27.7770
 
 1800 MS/s TX IF 1.9 GHz:
-    evmRandAll: -17.3894
-    evmDeteAll: -17.3511
+evmRandAll: -17.3894
+evmDeteAll: -17.3511
 
 
 

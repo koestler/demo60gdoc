@@ -20,15 +20,26 @@
     \vspace{1.5cm} {\LARGE \bfseries \mytitle}
     \rule{\textwidth}{0.8mm}
 
-    \vspace{2cm}
+    \vspace{5mm}
 
     Lorenz Koestler $ < $\href{mailto:lorenz@koestler.ch}{lorenz@koestler.ch}$ > $ \\
-
-    \vspace{4cm}
-
     \myterm
 
-    \vspace{2cm}
+    \vspace{5mm}
+
+    \begin{minipage}{0.7\textwidth}
+      \begin{tikzpicture}
+        \node [inner sep=0pt] at (0,0) {\includegraphics[width=\textwidth]{pictures/sivers_ant}};
+        \draw [white, rounded corners=1cm, line width=1cm]
+        (current bounding box.north west) --
+        (current bounding box.north east) --
+        (current bounding box.south east) --
+        (current bounding box.south west) -- cycle
+        ;
+      \end{tikzpicture}
+    \end{minipage}
+
+    \vspace{5mm}
     Advisors: \\
     Nicholas Preyss $ < $\href{mailto:nicholas.preyss@epfl.ch}{nicholas.preyss@epfl.ch}$ > $ \\
     Prof. Andreas Burg $ < $\href{mailto:andreas.burg@epfl.ch}{andreas.burg@epfl.ch}$ > $ \\
