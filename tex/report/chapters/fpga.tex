@@ -70,11 +70,11 @@ ones by inserting registers into the data and control path. \\
 \label{sec:fpga_adc}
 
 The \gls{ADC} Reference Board (see \secref{sec:comp_adc}) is connected
-to the Virtex-7 evaluation board (see \secref{sec:comp_virtex7})
+to the Virtex-7 evaluation board (see \secref{sec:comp_vc707})
 using one of the two \gls{FMC} plugs.
 A listing of all connections can be found in \appref{app:app_adc_fpga_con}. \\
 
-A multi stage approach with different clock domains is required to adapt the
+A multistage approach with different clock domains is required to adapt the
 high speed sample stream to the significantly lower processing speed of the
 \gls{FPGA} circuitry.  \\
 
@@ -101,7 +101,7 @@ at up to 1.8 GHz or to sample one channel at 3.6 GHz.
 The nominal resolution is 12 bits. This results in a total bandwidth of
 $5.4 \text{GB}/\text{s}$. \\
 In order to circumvent speed limitations of \gls{IO} pads,
-the \gls{ADC} output stream is parallelized to four streams of 12 bits each. \\
+the \gls{ADC} output stream is parallelised to four streams of 12 bits each. \\
 
 Since this 4 streams might be routed with different wire lengths on a \gls{PCB}
 each stream has it's own clock, which is aligned to the data.
@@ -112,7 +112,6 @@ At full speed, this results in a switching frequency of 450 MHz for all data
 and clock lines. To support this high speed, \gls{LVDS} signaling is used,
 which reduces power consumption and the influence of noise
 compared to classical single-ended signaling. \\
-
 
 \begin{figure}[ht]
   \centering
@@ -261,7 +260,7 @@ words until at least 512 bits are available. Behind this converter
 a \gls{FIFO} memory is added to cross the clock boundary and to be able
 to hold some samples when the \gls{MIG} user interface stalls. \\
 
-During implementation, care has to be taken to correctely connect the mask bits
+During implementation, care has to be taken to correctly connect the mask bits
 even if one does not plan to use them.
 Masks bits are designed to prevent parts of the 64 bits written in parallel
 to be overwritten and therefor allow for partial writes without first performing
@@ -297,7 +296,7 @@ raw bandwidth of $60 \;\text{MiB}/\text{s}$ would allow for a relatively fast
 download. Also \gls{USB} is very common way to connect to modern laboratory
 equipment.
 
-\subsection{Microblaze Soft-core processor}
+\subsection{Microblaze Soft-core Processor}
 Since the initialization, control logic and packet formatting
 used to implement the \gls{USB} slave device can much easier be implemented
 in software than using look-up tables and \glspl{FSM} a
@@ -354,7 +353,7 @@ about the current read / write pointers and the amount of available memory. \\
 \subsection{Computer Software}
 In order to download the samples from the \gls{FPGA} in Matlab, a small
 middleware (about 400 lines of C code) was written.
-It depends on libusb \todo{add reference} and sends the necessary commands
+It depends on libusb and sends the necessary commands
 to download all or part of the memory content.
 The data consisting of 12 bit words is then zero-padded to 16 bit words
 and written to a binary file which can be read very fast in Matlab. \\

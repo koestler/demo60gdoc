@@ -53,7 +53,7 @@ runs the receiver code and finally generets reports and figures. \\
 All measurements in this chapter are based on two measurements.
 One used \gls{QAM}-4 and the other one \gls{QAM}-256 to
 modulate the data. The important properties can be found in
-\tblref{tabl:res_450_matlab}.
+\tblref{tab:res_450_cnf}.
 The configuration file used for these tests can be found in
 \appref{app:res_450_cnf}. \\
 
@@ -104,7 +104,7 @@ the signal starts. \\
     CH 2 Marker 1 / 2 & Sync pulse before frame starts \\ \hline
   \end{tabular}
   \caption{Configuration and Port Assignment of \gls{AWG}}
-  \label{tab:res_450}
+  \label{tab:res_450_awg}
 \end{table}
 
 An osilloscope plot (see \secref{sec:comp_osci}) of the generated
@@ -515,7 +515,7 @@ the two  channels. \\
 
 Do find the optimal correction coefficients, a coarse sweep was done to approximately
 find the correct values followed by a more fine grained sweep over both parameters
-which is shown in \figref{res_1350_ab_sweep}.
+which is shown in \figref{fig:res_1350_ab_sweep}.
 The absolute minimum is for reach for $\alpha = -0.08$ and $\beta = 0.096$ witn an
 a \gls{RDR} of -23.24 dB. \\
 
@@ -524,7 +524,7 @@ a \gls{RDR} of -23.24 dB. \\
   \includegraphics[width=0.8\textwidth]{figures/matlab/res_1350_ab_sweep}
   \caption{\gls{RDR} [dB] when sweeping over $\beta \in [0.07 \; 0.12]$
     (outer loop) and $\alpha \in [-0.17 \; 0.0]$ (inner loop)}
-  \label{fig:res_1800_ab_sweep}
+  \label{fig:res_1350_ab_sweep}
 \end{figure}
 
 \begin{figure}[p]

@@ -2,8 +2,8 @@
 \label{chap:rx}
 
 In our case of a \gls{SDR}, the aim of the analog receiver architecture is to
-digitze the channel of interest with as high dynamic range as possible while
-minimzing the distortion by neighbouring channels. \\
+digitize the channel of interest with as high dynamic range as possible while
+minimizing the distortion by neighbouring channels. \\
 
 A wide variety of different receiver designs exists each with it's advantages
 and drawbacks. To come up with an good design, different receiver designs
@@ -82,7 +82,7 @@ on \gls{RF}. Therefor, this selection is typically done on an \acrfull{IF}.
 In our case of a carrier frequency of $f_c \approx 60 \;\text{GHz}$ this \gls{IF}
 is always lower than the carrier frequency $f_c$ due to component restrictions. \\
 
-\subsection{Image Rejection using Pre Selection Band Filter}
+\subsection{Image Rejection using Pre-Selection Band Filter}
 \label{sec:rx_rf_0}
 First we look at the architecture shown in \figref{fig:rx_rf_0_bd} where
 the mixer uses a \gls{LO} at $f_{\text{RX LO}}$ to mix the signal $s(t)$
@@ -100,12 +100,12 @@ This mixer produces a total of four signal components:
 
 The two signals $\pm (f_{c} + f_{\text{RX LO}})$ are not relevant since their
 frequency is above 100 GHz and can be easily filtered. Our results show, that
-the inherent frequency selectivity of the compontents is sufficient. \\
+the inherent frequency selectivity of the components is sufficient. \\
 
 Since we are building an \gls{USBand} receiver, the \gls{RX} \gls{USBand} signal
 at $+ f_{c} + f_{\text{RX LO}}$ is the desired signal.
 
-The fourthe signal is the \gls{RX} \gls{LSBand} signal at
+The fourth signal is the \gls{RX} \gls{LSBand} signal at
 $-f_{\text{c}} + f_{\text{RX LO}}$ and has to be filtered out. 
 When $f_{\text{RX IF}}$ is high enough, this signal lies outside the band filter
 and therefor is zero. Otherwise it would convolve with the desired.
@@ -120,7 +120,7 @@ frequency
 where $B$ is the bandwidth of the signal. \\
 
 A channel filter is than used to suppress neighbouring channels.
-This filter is fixed in frequency even when channels at differenct carrier
+This filter is fixed in frequency even when channels at different carrier
 frequencies are received. Only local oscillators $f_\text{LO}$ have to be
 changed. \\
 
@@ -154,13 +154,13 @@ and amplifiers. \\
     \caption{$i(t)$}
     \label{fig:rx_rf_0_freq_i}
   \end{subfigure}
-  \caption{Image Rejection using Pre Selection Band Filter}
+  \caption{Image Rejection using Pre-Selection Band Filter}
   \label{fig:rx_rf_0_freq}
 \end{figure}
 
 \subsection{Image Rejection using $90^\circ$ Couplers}
 \label{sec:rx_rf_1}
-Due to the difficulties of the image rejection using a pre selection
+Due to the difficulties of the image rejection using a pre-selection
 band filter, an other way using image rejection mixers to do channel selection
 is described in this section. \\
 
@@ -384,10 +384,10 @@ $c(t)$ in \figref{fig:rx_adc_1_freq_c}.
 
 \subsection{First Nyquist-Zone Sampling}
 \label{sec:rx_adc_0}
-Instead of using two \gls{ADC} channels and qudrature sampling, the
+Instead of using two \gls{ADC} channels and quadrature sampling, the
 signal can also be sampled by just one channel with double the
 bandwidth. In order to prevent aliasing the signal has to be
-correctly allined with a Nyquist-zone as shown in
+correctly aligned with a Nyquist-zone as shown in
 \figref{fig:rx_adc_2_nyquist_zones}. \\
 
 \begin{figure}[p]
@@ -485,7 +485,7 @@ in \secref{sec:comp_dc_block}. This high-pass filters unfortunately
 not only remove \gls{DC} but also a small portion of the signal,
 resulting in some \gls{ISI}. \\
 
-\begin{table}
+\begin{table}[h]
   \centering
   \begin{tabular}{|l|r@{}l@{~}l|}
     \hline
@@ -654,7 +654,7 @@ the converter is specified for an \gls{IF} of 1-5 GHz as noted in
 \secref{sec:comp_sivers}.
 Since the desired signal, which has a full bandwidth of 1.8 GHz,
 results in an \gls{RX} \gls{IF} between 1.0 and 2.8 GHz,
-we meet the specification of the \gls{ADC} and coverter boards. \\
+we meet the specification of the \gls{ADC} and converter boards. \\
 
 The \gls{ADC} 12d1800 has an analog bandwidth of 2.8 GHz
 as described in \secref{sec:comp_adc}.
@@ -849,4 +849,4 @@ $f_{\text{RX IF}} - f_s = 100 \; \text{MHz}$:
 %%  LocalWords:  Sivers IMA sivers USBand LSBand DAC coupler rx rf bd
 %%  LocalWords:  interferer SNR LNA convolve Couplers couplers Hs Hb
 %%  LocalWords:  hilbert Baseband baseband adc eq ja Nyquist Meca ISI
-%%  LocalWords:  jitter nyquist
+%%  LocalWords:  jitter nyquist SDR tx Pre pre symb

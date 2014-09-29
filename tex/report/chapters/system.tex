@@ -15,7 +15,7 @@ were investigated. \\
 To achieve all this goals, a flexible simulation framework based on Matlab
 supporting many configurations like different receiver architectures,
 configurable \gls{IF} frequencies, different channel estimation algorithms
-and modulation schems was ritten. It is able to simulate
+and modulation schemes was written. It is able to simulate
 the different receivers designs but also interfaces to the hardware
 to replace the \gls{RF} parts by real hardware. Matlab was chosen
 because of it's widespread use in communication systems research. \\
@@ -62,7 +62,7 @@ the maximal frequency offset. \\
 The absolute phase of the first data symbol is detected and corrected by the
 channel correction. In our case of a system working on 60 GHz, the
 phase is heavily affected by phase noise as it was characterized in
-\todo{cite radoslav's work}. This results in consecutive symbols to be
+\cite{radoslav}. This results in consecutive symbols to be
 rotated such that less than a few hundred symbols at $f_s = 1.8 \;\text{GHz}$
 could be transmitted before the rotation is so severe that detection
 becomes impossible. \\
@@ -123,7 +123,7 @@ where $f_s$ is the sample rate. \\
 
 \section{Time Synchronization \& Channel Estimation and Correction}
 \label{sec:sys_ces}
-For channel estimation a low complexity channel estimator for long dealy
+For channel estimation a low complexity channel estimator for long delay
 spreads is used.
 The \gls{CES} field consists of Golay complementary sequences which
 have very specific autocorrelation properties as described in \cite{golay}. \\
@@ -137,10 +137,8 @@ structure by always having a \gls{CES} field before and after the data field.
 Therefor the data blocks (data field \& \gls{CES} field) can be transformed
 to frequency domain using the \gls{FFT} and back using the \gls{IFFT}. \\
 
-This was used to implement a Zero Forcing Equalizer
-\todo{find reference for this. Book?}
-by transforming
-the estimated channel reponse $h$ and the received symbols $y$
+This was used to implement a Zero Forcing Equalizer by transforming
+the estimated channel response $h$ and the received symbols $y$
 to the frequency domains signals $H$ and $Y$, then correct the channel
 by forcing the frequency spectrum to be flat any finally transform
 the received symbols back to time domain: \\

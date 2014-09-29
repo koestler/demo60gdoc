@@ -3,48 +3,35 @@
 During the evaluation of different receiver architectures, it was found
 that sub-Nyquist sampling reduces the analog receiver complexity.
 Using quadrature sub-Nyquist sampling gives even more flexibility in frequency
-planning.
+planning. \\
 
 The chosen approach to build an \gls{FPGA} based hardware platform to get
 actual measurements and using Matlab to implement all signal processing steps
 in software has proven to be very efficient. The Matlab implementations
 allowed for much faster development compared to implementing everything on the
-\gls{FPGA}. Therby more time was left to investigate different designs and
+\gls{FPGA}. Thereby more time was left to investigate different designs and
 effects. \\
 
 The real hardware in contrast to the simulations allowed to find
 different hardware impairments like phase noise, frequency selectivity of
-miscellanous components, amplifier compression and local oscillator leacke at
+miscellaneous components, amplifier compression and local oscillator leakage at
 mixers were found while using the hardware platform. \\
 
 Finally it was shown, that an \gls{EVM} of -30 dB can be achieved using a channel
-bandwidth of 450 MHZ which allows for \gls{QAM}-256 modulation.
+bandwidth of 450 MHZ, which allows for \gls{QAM}-256 modulation.
 When using the full channel width of 1.8 GHz, the non-perfect
 reconstruction of the analytic \gls{RX} \gls{IF} signal lead to a reduction of the
 \gls{EVM} to -17 dB. 
 
-
 \section{Outlook}
-This research area definitively allows for further research in improving
+This area allows for further research in improving
 the full bandwidth transmission system using the result described in
-\chapref{chap:res_1800} as a starting point.
+\chapref{chap:res_450} as a starting point.
 
 Also the implemented \gls{FPGA} design provides a good platform
 for further circuit development. One could immediately start to
-move more receiver components, which are currently implemented in Matlab,
-to programmable logic since this tricky interfaces to the \gls{ADC}
+move receiver components, which are currently implemented in Matlab,
+to programmable logic since the tricky interfaces to the \gls{ADC}
 and the \gls{USB} communication with a host computer are already implemented.
 
-
-
-
-\todo{write Conclusion \& Outlook chapter}
-
-\begin{itemize}
-\item Multi GB/s throughput is possible using high \gls{QAM} modulation rates.
-\item Phase noise must be considered.
-\item Floating point Matlab implementations could be replaced by fixed-point implementations
-\item Complete receiver could be implemented in \gls{FPGA}
-\end{itemize}
-
-%%  LocalWords:  Multi QAM Matlab FPGA
+%%  LocalWords:  Multi QAM Matlab FPGA Nyquist EVM
