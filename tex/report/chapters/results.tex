@@ -26,7 +26,7 @@ in \tblref{tab:res_450}. \\
 \end{table}
 
 \section{Measurement Setup and RF System Analysis}
-\secref{sec:res_450_setup}
+\label{sec:res_450_setup}
 
 A block diagram providing an overview of the test setup,
 used for all following measurements, can be found in \figref{fig:res_450_bd}. \\
@@ -143,7 +143,7 @@ of the 60 GHz converters even at full gain of 40 dB. \\
 
 The same 60 GHz converter was used for transmission and reception and
 configured as shown in \tblref{tab:res_450_sivers} (configuration script
-see \appref{app:}).
+see \appref{app:res_450_cnf}).
 A 10 MHz reference clock was fed from the \gls{AWG}.
 An aluminium plate in a distance of about 15 cm was used as a reflector. \\
 
@@ -157,7 +157,7 @@ An aluminium plate in a distance of about 15 cm was used as a reflector. \\
     TX Power & 0x80 \\ \hline
   \end{tabular}
   \caption{Configuration Parameters of 60 GHz Converter}
-  \label{tab:res_450}
+  \label{tab:res_450_sivers}
 \end{table}
 
 Both channels on the \gls{RX} side of the converer first connect to a
@@ -209,47 +209,6 @@ more or less flat, reflector. \\
     with Narrow Band \gls{QAM}-4 Transmission Setup}
   \label{fig:res_450_qam4_h}
 \end{figure}
-
-\subsection{Root Mean Square Delay Spread}
-As given in wikipedia:
-\begin{align}
-  \overline{\tau} &=\frac{\int_0^\infty\tau A_c(\tau)d\tau}{\int_0^\infty A_c(\tau)d\tau} \\
-  \tau_{\text{rms}} &=\sqrt{\frac{\int_0^\infty(\tau-\overline{\tau})^2
-      A_c(\tau)d\tau}{\int_0^\infty A_c(\tau)d\tau}}
-\end{align}
-
-As given in \cite{burg_wr1}:
-\begin{align}
-  \sigma_\tau &= \sqrt{
-    \frac{\sum \tau_i^2 \abs{\overline{h_i}}^2}
-         {\sum \abs{\overline{h_i}}^2}
-         - \left(\sum \tau_i \right)^2
-  }
-\end{align}
-
-\todo{figure out the difference of definitions, calc one of them}
-
-\subsection{Delay Spread}
-Root Mean Square Delay Spread is a nice statistical property of a channel.
-When designing a receiver, it is more relevant though, that we now how many
-samples have to be considered to capture enough energy of a symbol. \\
-
-How much energy is significant, can be estimated depending on the \gls{SNR}
-we want to achiev. The \gls{SNR} we want to reach depends on the modulation rate
-we want to achiev. Therefor we first calculate the needed \gls{SNR} for
-\gls{QAM}-256. \\
-
-\todo{do SNR calculation and calc delay spread}
-The delay spread $\approx $ 5 ps, which corresponds to about 7 symbols
-at 450 MS/s and about 15 symbols at 1.8 GS/s. \\
-
-% EVM_D measurement 1 frame
-% EVM_R measurement 1 frame
-% -> inital rotation
-% EVM_D rotation, increasing frame window
-% -> worse, worse
-% phase noise correction
-% -> steady at EVM_R?
 
 \section{Error Vector Magnitude Definitions}
 In this report, two different calculation schemes for the \acrfull{EVM}
@@ -366,9 +325,6 @@ There was no need for any frequency estimation and correction, since all the
 oscillators were looked to the same 10 MHz reference clock generated
 by the \gls{AWG}. \\
 
-\section{Time Synchronization}
-\todo{show plot of correlation}
-
 \section{Channel Estimation and Correction}
 The result of the the Golay estimator and the channel correction
 as described in \secref{sec:sys_ces} are shown in \figref{fig:res_450_cp_corr}.
@@ -426,12 +382,11 @@ works very well. \\
 
 The phase estimations can also be used to produce a plot showing how the
 phase noise affects the absolute phase over time
-(see \figref{fig:res_450_qam4_phase_est}).
-\todo{add comparison to CIFS etc.} \\
+(see \figref{fig:res_450_qam4_phase_est}). \\
 
 \figref{fig:res_450_qam4_evm} shows nicely, that the \gls{DEVM},
-which shows how well the data can be demodulated, is only below -20 dB
-for \todo{calculate time} when no phase noise correction is applied.
+soon gets too high for proper demodulation when no phase noise correction is
+applied.
 The applied phase noise correction keeps the \gls{DEVM} constant over time
 as shown in \figref{fig:res_450_qam4_evm_pcorr_initial} at about 1.32 dB
 worse than the \gls{REVM} due to the non perfect initial phase
