@@ -6,7 +6,7 @@ to show what the best achievable \gls{EVM} values are. \\
 
 As receiver architecture, the Quadrature Intermediate Frequency Sub-Nyquist
 Sampling Receiver as described in \secref{sec:rx_2} is used with the difference
-that the signal bandwith is only $B = 450 MHz$. All the other properties are listed
+that the signal bandwidth is only $B = 450 MHz$. All the other properties are listed
 in \tblref{tab:res_450}. \\
 
 \begin{table}[h]
@@ -46,11 +46,12 @@ used for all following measurements, can be found in \figref{fig:res_450_bd}. \\
 \end{figure}
 
 \subsection{Matlab}
-The Matlab script was configured such that it generates the transmitt signal,
+The Matlab script was configured such that it generates the transmit signal,
 programs the \gls{AWG}, reads the data acquired by the \gls{FPGA},
-runs the receiver code and finally generets reports and figures. \\
+runs the receiver code and finally generates reports and figures. \\
 
-All measurements in this chapter are based on two measurements.
+All measurements in this chapter are based on two different transmit
+configurations.
 One used \gls{QAM}-4 and the other one \gls{QAM}-256 to
 modulate the data. The important properties can be found in
 \tblref{tab:res_450_cnf}.
@@ -61,7 +62,7 @@ The configuration file used for these tests can be found in
   \centering
   \begin{tabular}{|c|c|c|}
     \hline
-    Modulation of Data Fiels & \gls{QAM}-4 & \gls{QAM}-256 \\ \hline
+    Modulation of Data Fields & \gls{QAM}-4 & \gls{QAM}-256 \\ \hline
     Modulation of Estimation Fields & \mc{2}{\gls{BPSK}} \\ \hline
     Length of \gls{FES} field & \mc{2}{256 symbols} \\ \hline
     Length of \gls{CES} field & \mc{2}{1152 symbols} \\ \hline
@@ -77,14 +78,14 @@ The configuration file used for these tests can be found in
 \subsection{\gls{AWG}}
 The \gls{AWG} was configured to output the \gls{TX} \gls{IF} signal $i[k]$,
 the sample clock for the \gls{ADC} as well as synchronization pulses to trigger
-the \gls{FPGA} and oscillocope. It's configuration and port assignment
+the \gls{FPGA} and oscilloscope. It's configuration and port assignment
 are shown in \tblref{tab:res_450_awg}.
 
 It was noticed, that the used \gls{AWG} has some cross talk from
 channel 1 marker 1 output to the channel 1 analog output. Therefor the
-\gls{ADC} clock should always be output on marker 2 and not on marker 1.
-For synchronization pulses, this is not an issue, since they are ware always
-configured to give a 100 cycle wide positive pulse $> 100 \text{ns}$ before
+\gls{ADC} clock should always be on marker 2 and not on marker 1.
+For synchronization pulses, this is not an issue, since they were always
+configured to give a 100 cycle wide positive pulse $> 100 \; \text{ns}$ before
 the signal starts. \\
 
 \begin{table}[h]
@@ -107,7 +108,7 @@ the signal starts. \\
   \label{tab:res_450_awg}
 \end{table}
 
-An osilloscope plot (see \secref{sec:comp_osci}) of the generated
+An oscilloscope plot (see \secref{sec:comp_osci}) of the generated
 \gls{TX} \gls{IF} signal and it's \gls{FFT} can be found in
 \figref{fig:res_450_awg_analog}.
 The \gls{ADC} clock signal and the sync pulse are shown
@@ -145,7 +146,7 @@ The same 60 GHz converter was used for transmission and reception and
 configured as shown in \tblref{tab:res_450_sivers} (configuration script
 see \appref{app:res_450_cnf}).
 A 10 MHz reference clock was fed from the \gls{AWG}.
-An aluminium plate in a distance of about 15 cm was used as a reflector. \\
+An aluminum plate in a distance of about 15 cm was used as a reflector. \\
 
 \begin{table}[h]
   \centering
@@ -160,9 +161,9 @@ An aluminium plate in a distance of about 15 cm was used as a reflector. \\
   \label{tab:res_450_sivers}
 \end{table}
 
-Both channels on the \gls{RX} side of the converer first connect to a
+Both channels on the \gls{RX} side of the converter first connect to a
 \gls{MC} BHP-1000+ high-pass filter. As we can see in \figref{fig:res_450_rx_if},
-the \gls{TX} \gls{LO} leackage is attenuated by about 35 dB. Also the \gls{TX}
+the \gls{TX} \gls{LO} leakage is attenuated by about 35 dB. Also the \gls{TX}
 \gls{LSBand} signal (centered around 3.6 GHz) is about 17 dB weaker than
 the desired \gls{TX} \gls{USBand} signal. This is due to the transmitter's
 image rejection and the fact that the \gls{LSBand} signal is outside the
@@ -175,7 +176,7 @@ image rejection and the fact that the \gls{LSBand} signal is outside the
   \label{fig:res_450_rx_if}
 \end{figure}
 
-Next the signal amplified by 12 dB to drive the \gls{ADC} input to about 70\%
+Next the signal is amplified by 12 dB to drive the \gls{ADC} input to about 70\%
 as shown in \figref{fig:res_450_rx_amp}. \\
 
 \begin{figure}[p]
@@ -187,7 +188,7 @@ as shown in \figref{fig:res_450_rx_amp}. \\
 
 Finally the signal is converted to a differential signal using a ADC-WB-BB Balun
 (\secref{sec:comp_balun}), passes a \gls{DC} block (\secref{sec:comp_dc_block})
-and digitized by the \gls{ADC}. \\
+and is digitized by the \gls{ADC}. \\
 
 The channel filter shown in \figref{fig:rx_2_bd} is therefor build using
 the BHP-1000+ high-pass filter and the \gls{ADC} analog input bandwidth which
@@ -197,7 +198,7 @@ cuts of at about 2.8 GHz. \\
 \subsection{Channel impulse response}
 \label{sec:res_450_h}
 First we should have a short look at the channel response of the simple
-reflector. The estimated channel response using the Goaly estimator and a
+reflector. The estimated channel response using the Golay estimator and a
 1152 long \gls{CES} field is shown in \figref{fig:res_450_qam4_h}.
 As we can see, there is one very distinctive peak confirming one single,
 more or less flat, reflector. \\
@@ -227,7 +228,7 @@ It is calculated as stated in \eqref{eq:devm} \cite{razavi2011rf}.
 \end{align}
 
 Where $N$ is the total number of symbols, $s_j$ the complex value of the
-received symobol $j$ and $i_j$ the ideal position of the symbol. \\
+received symbol $j$ and $i_j$ the ideal position of the symbol. \\
 
 \subsubsection{\acrfull{REVM}}
 During the implementation phase and to show the improvements due to correction
@@ -256,7 +257,7 @@ points per received symbol and data block.
 
 \subsubsection{\gls{EVM} per Data Block}
 Both \gls{EVM} values can be calculated for the whole frame or for each
-data block sperately $\text{EVM}_\text{D,b}$ respectively
+data block separately $\text{EVM}_\text{D,b}$ respectively
 $\text{EVM}_\text{R,b}$.
 
 \section{Correction Performance}
@@ -295,8 +296,8 @@ phase noise correction will be analyzed. \\
 \end{table}
 
 \subsection{Uncorrected Signal}
-As it was already shown in the last section, the energy of one sent symbol
-is spread across multiple recevied symbols. Therefor we excpect a hugh
+It was already shown in the last section, that the energy of one sent symbol
+is spread across multiple received symbols. Therefor we expect a huge
 \gls{ISI} in the uncorrected signal which is shown in
 \figref{fig:res_450_cp_rx}. \\
 
@@ -328,10 +329,10 @@ by the \gls{AWG}. \\
 \section{Channel Estimation and Correction}
 The result of the the Golay estimator and the channel correction
 as described in \secref{sec:sys_ces} are shown in \figref{fig:res_450_cp_corr}.
-The different data blocks were colored differentely. \\
+The different data blocks were colored differently. \\
 
-As we can see in \figref{fig:res_450_qam4_cp_corr}, the \gls{ISI} is was
-corrected nicely but the recevied symbols are still spread on a circle
+As we can see in \figref{fig:res_450_qam4_cp_corr}, the \gls{ISI} was
+corrected nicely but the received symbols are still spread on a circle
 due to phase noise. \\
 
 \begin{figure}[p]
@@ -357,34 +358,34 @@ due to phase noise. \\
 \subsection{Phase Noise Correction}
 \label{sec:res_450_phase}
 The $\max \text{EVM}_\text{R,b} = 29.70 \;\text{dB}$ value for the
-\gls{QAM}-4 case shows, that, when the phase noise can be fully compoensated
+\gls{QAM}-4 case shows, that, when the phase noise can be fully compensated
 for, a value of at least 29.70 dB should be reach for $\text{EVM}_\text{D}$. \\
 
-\figref{fig:res_450_cp_corr_pcorr} show the results, after the phase noise
+\figref{fig:res_450_cp_corr_pcorr} shows the results, after phase noise
 estimation and correction, as described in \secref{sec:sys_pes}, has been
 activated. The phase noise estimations seem to nicely align all received
 data blocks.
 The $\text{EVM}_\text{D} = -23.88 \;\text{dB} \geq -29.70 \;\text{dB}$ is still
 not where it should be though. This is due to the fact, that the whole
-picture is slightly rotated. This comes from the fact, that the phase cannot
-be assumed to be constant during the transmission of the relatively
+picture is slightly rotated. This is due to the phase not being
+constant during the transmission of the relatively
 long \gls{CES} field (1152 symbols) when transmitting at only 450 MS/s. \\
 
 Therefor, an initial phase correction was implemented by measuring the phase
 rotation between the middle of the \gls{CES} field an the first \gls{PES}
 field. This was possible by choosing the \gls{PES} field to consist
-of exactely these symbols of the \gls{CES} field. \\
+of exactly these symbols of the \gls{CES} field. \\
 
 The result can be seen in \figref{fig:res_450_cp_corr_pcorr_initial} and the
 $\text{EVM}_\text{D} = -30.29 \;\text{dB}$ is finally only 1.32 dB worse than
 $\text{EVM}_\text{R} = -31.61 \;\text{dB}$ which shows that the correction
-works very well. \\
+works. \\
 
 The phase estimations can also be used to produce a plot showing how the
 phase noise affects the absolute phase over time
 (see \figref{fig:res_450_qam4_phase_est}). \\
 
-\figref{fig:res_450_qam4_evm} shows nicely, that the \gls{DEVM},
+\figref{fig:res_450_qam4_evm} shows nicely, that the \gls{DEVM}
 soon gets too high for proper demodulation when no phase noise correction is
 applied.
 The applied phase noise correction keeps the \gls{DEVM} constant over time
@@ -464,55 +465,33 @@ estimation. \\
 \chapter{Full Bandwidth Transmission}
 \label{chap:res_1350}
 
-To achieve even higher throughput than those using 450 MS/s with \gls{QAM}-8,
+To achieve even higher throughput than the one reached using 450 MS/s with \gls{QAM}-8,
 higher symbols rates were analyzed using the exact same hardware as described
 in \secref{sec:res_450_setup} and drawn in \figref{fig:res_450_bd}. Only a
 few software parameters had to be changed. \\
 
-\subsection{Receiver Image Recjection}
-Since this receiver uses quadrature sub-nyquist sampling as described in
-\secref{sec:rx_adc_2}, we will first have a look at the \gls{RX} \gls{LSBand}
-suppression performance of the current setup. \\
+The main difference of having a higher symbol rate is, that the signal does not
+fit into a single Nyquist-zone anymore. Therefor the performance of the
+quadrature baseband sampling gets important. \\
 
-Therefor we will first stick to the parameters used for the narrow band
-This results in an \gls{RDR} of -8.16 dB. \\
+Using the exact same setup as in \chapref{chap:res_450} but with a symbol rate
+of 1.8 GS/s a \gls{DEVM} of -7.73 was measured, which is significantly
+worse than the in the 450 MS/s case. \\
 
 \subsubsection{Simple Approach}
-In order to improve the \gls{RDR}, two correction coefficients, $\alpha$ and
+In order to investigate the cause of this sudden degradation of the \gls{DEVM},
+we again look at a signal with 450 MS/s with an \gls{RX} \gls{IF}
+of 2.2 GHz. When this signal is sampled at 1.8 GHz, we get the two signals
+Re(Rx.Rf) and Im(Rx.Rf) shown in \figref{fig:res_450_freq_uncorr}.
+After calculating the analytic signal shown in the second subplot,
+we see that the negative frequency part does not fully cancel out
+as it does in the simple theoretical model. \\
+
+In order to improve the \acrfull{DEVM}, two correction coefficients, $\alpha$ and
 $\beta$ were introduced which are applied on the second \gls{ADC} channel
 before combining both channels to one complex signal \eqref{eq:res_1350_a_hat}.
 $\alpha$ allows to correct time and $\beta$ phase differences between
 the two channels. \\
-
-\begin{align}
-  c[k] &= b[k] + j \cdot \hat a[k] \\
-  \hat a[k] &= a[k]  \cdot \exp\left(
-  \frac{-j}{2 \pi} \cdot \left(\frac{\alpha \cdot k}{N} + \beta\right)
-  \right) \;\forall\; k \in \{0, 1, \dots,  N-1\}
-  \label{eq:res_1350_a_hat}
-\end{align}
-
-Do find the optimal correction coefficients, a coarse sweep was done to approximately
-find the correct values followed by a more fine grained sweep over both parameters
-which is shown in \figref{fig:res_1350_ab_sweep}.
-The absolute minimum is for reach for $\alpha = -0.08$ and $\beta = 0.096$ witn an
-a \gls{RDR} of -23.24 dB. \\
-
-\subsubsection{Signal Theory Approach}
-\[s_{\text{sig}}[k] = (s[k] + j \mathcal{H}\{s\}[k])/2 \]
-\[s_{\text{err}}[k] = (s[k] - j \mathcal{H}\{s\}[k])/2 \]
-\[s_{\text{sig, mirr}}[k] = s_{\text{sig}}^*[k]\]
-\[c[m] = \sum_k s_{\text{sig, mirr}}[k+m] \cdot s_{\text{Err}}[k] \]
-\[C = \frac{\sup_m c[m]}{\sum_k |s_{\text{sig}}[k]|^2}\]
-\[s_{\text{corr}}[k] = s[k] - (s^*[k] .* C^*)\]
-
-\begin{figure}[p]
-  \centering
-  \includegraphics[width=0.8\textwidth]{figures/matlab/res_1350_ab_sweep}
-  \caption{\gls{RDR} [dB] when sweeping over $\beta \in [0.07 \; 0.12]$
-    (outer loop) and $\alpha \in [-0.17 \; 0.0]$ (inner loop)}
-  \label{fig:res_1350_ab_sweep}
-\end{figure}
 
 \begin{figure}[p]
   \centering
@@ -554,144 +533,60 @@ a \gls{RDR} of -23.24 dB. \\
   \label{fig:res_450_freq_uncorr}
 \end{figure}
 
-\subsection{\gls{QAM}-4 Transmission}
-To see how well the system performs, when the \gls{RX} \gls{LSBand} overlaps
-with the \gls{RX} \gls{USBand}, a higher symbol rate of 1350 MS / s was chosen
-as shown in \tblref{tab:res_1350_freq}. The phase noise and initial phase
-rotation compensation is done us in the narrow band case. \\
+\begin{align}
+  c[k] &= b[k] + j \cdot \hat a[k] \\
+  \hat a[k] &= a[k]  \cdot \exp\left(
+  \frac{-j}{2 \pi} \cdot \left(\frac{\alpha \cdot k}{N} + \beta\right)
+  \right) \;\forall\; k \in \{0, 1, \dots,  N-1\}
+  \label{eq:res_1350_a_hat}
+\end{align}
 
-\begin{table}[h]
+To find the optimal correction coefficients, a coarse sweep was done to approximately
+find the correct values followed by a more fine grained sweep over both parameters
+which is shown in \figref{fig:res_1350_ab_sweep}.
+The absolute minimum is reached for $\alpha = -0.08$ and $\beta = 0.096$. \\
+
+Applying this correction to the 1.8 GS/s signal resulted in a significant
+improvement of the \gls{DEVM} to -16.04 dB.
+
+\begin{figure}[p]
   \centering
-  \begin{tabular}{|l|r@{}l@{~}l|}
-    \hline
-    $f_{\text{TX IF}}$ & 2&.6&GHz \\ \hline
-    $f_{\text{TX LO}}$ & 57&.5&GHz \\ \hline
-    $f_{\text{RX LO}}$ & 58&.2&GHz \\ \hline
-    $f_{\text{RX IF}}$ & 1&.9&GHz \\ \hline
-    $f_c$            & 60&.6&GHz \\ \hline
-    Signal Bandwidth B & 1&.35&GHz \\ \hline
-    Sample Rate $f_s$ & 1&.8&GHz \\ \hline
-  \end{tabular}
-  \caption{Properties of Wide Band Transmission System}
-  \label{tab:res_1350_freq}
-\end{table}
+  \includegraphics[width=0.8\textwidth]{figures/matlab/res_1350_ab_sweep}
+  \caption{\gls{RDR} [dB] when sweeping over $\beta \in [0.07 \; 0.12]$
+    (outer loop) and $\alpha \in [-0.17 \; 0.0]$ (inner loop)}
+  \label{fig:res_1350_ab_sweep}
+\end{figure}
 
-This result in the EVM values as shown in \tblref{tab:res_1350_evm}:
+\subsubsection{Signal Theory Approach}
+Since the above approach requires a search over the optimal correction values,
+a better approach was needed. Again in the case of the 450 MS/s signal,
+the positive frequency half contains the desired signal and the negative frequency
+half is supposed to be zero if the quadrature sampling would work as described
+in the theory \secref{sec:rx_adc_1}. The real signal shows however an error
+signal term in the negative frequency half which is assumed to be the
+complex conjugate of the positive frequency half. By mirroring the desired signal
+and correlating it with the error signal, one can see a strong
+correlation peak showing that the error term is more or less the
+desired signal attenuated by 10 dB and rotated by a fixed phase.
+A corrected signal can be calculated by taking the signal, multiplying
+it by this measured constant and subtracting this correction term
+from the signal. This also works for the 1.8 GS/s case, where the desired
+and the error signal fully overlap, because the error in the correction signal
+due to the overlapping error signal is again another 10 dB attenuated.
 
-without correction:
-evm r : -7.04
-evm d : -6.99
+\begin{align}
+  s_{\text{sig}}[k] &= (s[k] + j \mathcal{H}\{s\}[k])/2 \\
+  s_{\text{err}}[k] &= (s[k] - j \mathcal{H}\{s\}[k])/2 \\
+  s_{\text{sig, mirr}}[k] &= s_{\text{sig}}^*[k] \\
+  c[m] &= \sum_k s_{\text{sig, mirr}}[k+m] \cdot s_{\text{Err}}[k] \\
+  C &= \frac{\sup_m c[m]}{\sum_k |s_{\text{sig}}[k]|^2} \\
+  s_{\text{corr}}[k] &= s[k] - (s^*[k] .* C^*)
+\end{align}
 
-with alpha/beta correction:
-evm r : -17.82
-evm d : -17.78
+Using this correction approach, a \gls{DEVM} of -17.42 dB was achieved.
 
-
-\subsection{\gls{QAM}-4 Transmission at 1800 GS/s}
-cnf.SymbolRate        = 1.8E9/4;
-cnf.Tx.SimulationRate = 10.8E9;
-cnf.Rx.SimulationRate = 1.8E9;
-cnf.Rx.CarrierFreq    = 2.2E9;
-cnf.Tx.CarrierFreq    = cnf.Rx.CarrierFreq + 0.7E9;
-%/home/lk/demo60gData/res_450_ab_sweep2/*.[bin|mat]
-
-without correction:
-evmRandAll: -7.8247
-evmDeteAll: -7.7295
-
-with alpha/beta correction:
-evmRandAll: -16.3462
-evmDeteAll: -16.0498
-cnf.HwRx.FCorr.a = -0.08;
-cnf.HwRx.FCorr.b = 0.096;
-
-with lsb res correction:
-evmRandAll: -17.4470
-evmDeteAll: -17.4186
-cnf.Rx.LsbResC = 0.0552 + 0.3746i;
-
-\subsection{Setup using 90deg coupler on IF}
-%/home/lk/demo60gData/res_s2_450_qam4
-
-cnf.SymbolRate        = 1.8E9/4;
-cnf.Tx.SimulationRate = 10.8E9;
-cnf.Rx.SimulationRate = 1.8E9;
-cnf.Rx.CarrierFreq    = 2.2E9;
-cnf.Tx.CarrierFreq    = cnf.Rx.CarrierFreq + 0.7E9;
-
-without correction:
-evmRandAll: -27.2776
-evmDeteAll: -26.5677
-RdrDb: -34.3493
-
-analyzeLsbResidualHilbert:
-sigPwr = 0.0210
-sigE =  2.5308e+04
-errPwr =  1.3555e-05
-errE =  16.3206
-C = -0.0035 + 0.0092i
-corPwr =  1.5897e-05
-corE = 19.1400
-supDb =  0.6921
-RdrDb = -31.2131
-
-with C = -0.0035 + 0.0092i correction:
-evmRandAll: -27.2635
-evmDeteAll: -26.5561
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%/home/lk/demo60gData/res_s2_1800_qam4
-cnf.SymbolRate        = 1.8E9;
-cnf.Tx.SimulationRate = 10.8E9;
-cnf.Rx.SimulationRate = 1.8E9;
-cnf.Rx.CarrierFreq    = 1.9E9;
-cnf.Tx.CarrierFreq    = cnf.Rx.CarrierFreq + 0.7E9;
-cnf.Rx.Shaping.Disable = 1;
-
-without correction:
-evmRandAll: -16.9579
-evmDeteAll: -16.9430
-
-with C = -0.0035 + 0.0092i correction:
-evmRandAll: -16.8526
-evmDeteAll: -16.8379
-
-\subsection{Setup using 90deg coupler on IF and Oscilloscope}
-
-
-
-% old
-450 MS/s TX IF 2.6 GHz:
-evmRandAll: -26.6974
-evmDeteAll: -26.0090
-
-450 MS/s TX IF 2.2 GHz:
-evmRandAll: -25.8382
-evmDeteAll: -24.0677
-RdrDb: -27.7770
-
-1800 MS/s TX IF 1.9 GHz:
-evmRandAll: -17.3894
-evmDeteAll: -17.3511
-
-
-
-
-\subsection{Transmitter Channel Imbalance}
-\begin{itemize}
-\item Show that transmitter channel imbalance is not an issue
-\end{itemize}
-
-\subsection{High Modulation Rate}
-\begin{itemize}
-\item Show that high modulation rates and multi GB/s throughput is possible (\gls{QAM} 256?)
-\end{itemize}
-
-\subsection{90deg Coupler Error Measurement and Correction}
-\begin{itemize}
-\item Show error introduced by non-perfect 90 deg coupler.
-\item Show the best correction I will come up with
-\item Compare to best result achieved by classical architecture (with additional mixer)
-\end{itemize}
-
-%%  LocalWords:  multi QAM Coupler coupler
+%%  LocalWords:  multi QAM Coupler coupler EVM Nyquist rx bd Matlab
+%%  LocalWords:  AWG FPGA cnf BPSK FES CES PES awg ns DAC osci FFT eq
+%%  LocalWords:  dBm pwr sivers BHP LSBand USBand WB Balun balun qam
+%%  LocalWords:  Golay DEVM devm REVM affine ph ISI cp sys ces pcorr
+%%  LocalWords:  pes evm baseband Im uncorr RDR adc sig mirr

@@ -117,6 +117,8 @@ NET "QOrNxSI"      LOC = "P26" |IOSTANDARD = LVDS; # bank=36, byte_group=3
 
 \chapter{Narrom Band Transmission Matlab Configuration File}
 \label{app:res_450_cnf}
+
+\section{Minimalistic Setup}
 \begin{verbatim}
 % 1: convert to baseband, 2: undersample, 3: 90deg coupler,
 % 4: HwBasebandQI, 5: HwIfQI,
@@ -233,8 +235,7 @@ cnf.Pes.Length = 32;
 cnf.Pes.Skip = 16; % max expected delay spread + sync error
 \end{verbatim}
 
-
-\section{Setup using 90deg coupler on IF}
+\section{Setup using 90deg Coupler on IF}
 \begin{verbatim}
 % 1: convert to baseband, 2: undersample, 3: 90deg coupler,
 % 4: HwBasebandQI, 5: HwIfQI,

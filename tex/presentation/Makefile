@@ -21,3 +21,6 @@ clean:  soft-clean
 
 show:
 	gnome-open presentation.pdf
+
+screen: compile
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dUseCIEColor -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=presentation_screen.pdf presentation.pdf
